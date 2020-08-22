@@ -1,0 +1,7 @@
+_env*
+lightkube/models
+lightkube/resources
+__pycache__
+.idea
+build/
+dist/
