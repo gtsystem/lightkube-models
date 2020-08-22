@@ -222,10 +222,6 @@ def compile(resources, path: Path, test_fname: Path):
 
 if __name__ == "__main__":
     import sys
-    import yaml
 
     compile(aggregate(extract(sys.argv[1])), Path(sys.argv[2]), Path(sys.argv[3]))
-    #    print()
-    #    print(yaml.safe_dump(k, default_flow_style=None))
-
 

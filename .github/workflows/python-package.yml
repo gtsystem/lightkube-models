@@ -31,4 +31,11 @@ jobs:
     - name: Package
       run: |
         python setup.py sdist
+    - name: Archive artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sdist
+          path: |
+            dist
+
 

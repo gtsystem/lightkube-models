@@ -1,7 +1,7 @@
 import json
 import re
 from collections import defaultdict
-from typing import List, NamedTuple
+from typing import List
 import shutil
 from pathlib import Path
 
