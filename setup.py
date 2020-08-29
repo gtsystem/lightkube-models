@@ -1,6 +1,7 @@
 import json
-import os
 from setuptools import setup
+
+PATCH_VERSION = 1
 
 
 def get_version(fname):
@@ -8,8 +9,7 @@ def get_version(fname):
         schema = json.load(f)
         k8s_version = schema["info"]["version"].lstrip('v')
 
-    patch = os.environ.get('GITHUB_RUN_ID', 'dev0')
-    return f"{k8s_version}.{patch}"
+    return f"{k8s_version}.{PATCH_VERSION}"
 
 
 setup(
@@ -21,7 +21,7 @@ setup(
     author_email='gtsystem@gmail.com',
     license='Apache Software License',
     url='https://github.com/gtsystem/lightkube-models',
-    packages=['lightkube.models', 'lightkube.resources', 'lightkube.base'],
+    packages=['lightkube.models', 'lightkube.resources'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
