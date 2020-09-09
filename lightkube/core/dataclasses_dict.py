@@ -2,5 +2,5 @@
 Real implementation is in the lightkube library"""
 
 
-def dataclass_json(_cls=None, **kwargs):
-    return _cls
+class DataclassDictMixIn:
+    pass

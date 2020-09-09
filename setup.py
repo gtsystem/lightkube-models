@@ -1,7 +1,7 @@
 import json
 from setuptools import setup
 
-PATCH_VERSION = 1
+PATCH_VERSION = 2
 
 
 def get_version(fname):
