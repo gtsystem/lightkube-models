@@ -5,7 +5,7 @@ from typing import List
 import shutil
 from pathlib import Path
 
-from .compile import get_template
+from .compile_resources import get_template
 from .model import Model, Import
 
 RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
