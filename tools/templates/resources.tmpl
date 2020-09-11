@@ -6,17 +6,17 @@ from ..core import resource as res
 from ..models import {{ imp }}
 {% endfor %}
 
-{% for name, properties, actions, classes in objects %}
+{% for cls in objects %}
 
-class {{ name }}(res.{{ ', '.join(classes) }}):
+class {{ cls.name }}(res.{{ ', '.join(cls.classes) }}):
     api_info = res.ApiInfo(
-      {% for k, v in properties.items(): %}
+      {% for k, v in cls.properties.items(): %}
         {{k}}={{v}},
       {% endfor %}
     )
-  {% if actions %}
+  {% if cls.actions %}
 
-  {% for k, v in actions.items(): %}
+  {% for k, v in cls.actions.items(): %}
     {{k}}: ClassVar = {{v}}
   {% endfor %}
   {% endif %}

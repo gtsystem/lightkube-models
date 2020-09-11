@@ -3,7 +3,7 @@ import shutil
 from collections import defaultdict
 import re
 from pathlib import Path
-from typing import NamedTuple, Iterable, Dict, List
+from typing import NamedTuple, Iterable, Dict, List, Optional
 
 from jinja2 import Template
 
@@ -30,6 +30,18 @@ class Resource(NamedTuple):
     def definition(self):
         return f"res.ResourceDef{tuple(self)}"
 
+    @property
+    def py_import(self):
+        group, version, name = self
+        if group == '':
+            group = 'core'
+        group = group.split(".", 1)[0]
+        return f"{group}_{version}"
+
+    @property
+    def py_full_class(self):
+        return f"{self.py_import}.{self.kind}"
+
 
 class SpecPath(NamedTuple):
     path: str
@@ -39,6 +51,9 @@ class SpecPath(NamedTuple):
     module: str
     namespaced: bool
     sub_action: str
+
+    def to_subaction(self):
+        return SubAction(self.sub_action, usorted(self.methods), self.resource)
 
 
 class SubAction(NamedTuple):
@@ -56,6 +71,14 @@ class Compiled(NamedTuple):
     sub_actions: List[SubAction]
 
 
+class Class(NamedTuple):
+    name: str
+    properties: Dict[str, str]
+    actions: Dict[str, str]
+    classes: List[str]
+    model_import: str
+
+
 def extract(fname: Path):
     """Extract the main information from each path entry"""
     with fname.open() as f:
@@ -70,6 +93,10 @@ def extract(fname: Path):
             continue
 
         key = ApiKey((path_match["group"] or "").lstrip("/"), path_match["version"], path_match["plural"])
+        if not key.plural:
+            #print(key)
+            continue
+
         methods = []
         resource = None
         tags = set()
@@ -94,6 +121,8 @@ def extract(fname: Path):
                         methods.append("watch")
         if resource:
             resource = Resource(**resource)
+        else:
+            print(path)
 
         if methods:     # at least one method
             yield SpecPath(
@@ -119,34 +148,34 @@ def usorted(l):
     return sorted(set(l))
 
 
-def compile_one(key: ApiKey, elements: List[SpecPath]):
+def compile_one(key: ApiKey, elements: List[SpecPath]) -> Optional[Compiled]:
     namespaced = False
     module = None
-    kind = None
+    resource = None
     for ele in elements:
         if ele.namespaced:
             namespaced = True
         if ele.resource and ele.sub_action is None:
-            kind = ele.resource.kind
+            resource = ele.resource
         if not module and ele.module:
             module = ele.module
 
-    if kind is None:
+    if resource is None:
         return
 
     sub_actions = []
     actions = set()
     for ele in elements:
         if ele.sub_action:
-            sub_actions.append(SubAction(ele.sub_action, usorted(ele.methods), ele.resource))
+            sub_actions.append(ele.to_subaction())
         elif namespaced and not ele.namespaced:
             actions.update([f"global_{m}" for m in ele.methods])
         else:
             actions.update(ele.methods)
 
-    if key:
+    if resource:
         return Compiled(
-            resource=Resource(key.group, key.version, kind),
+            resource=resource,
             plural=key.plural,
             module=module,
             namespaced=namespaced,
@@ -155,40 +184,39 @@ def compile_one(key: ApiKey, elements: List[SpecPath]):
         )
 
 
-def model_class(resource: Resource):
-    group, version, name = resource
-    if group == '':
-        group = 'core'
-    group = group.split(".", 1)[0]
-    return f"m_{group}_{version}.{name}"
-
-
-def add_class(compiled: Compiled):
+def get_classes(compiled: Compiled):
     res = compiled.resource
 
     class_ = "NamespacedSubResource" if compiled.namespaced else "GlobalSubResource"
     actions = {}
     for suba in compiled.sub_actions:
         kind = res.kind + suba.name.capitalize()
+        sres = suba.resource
 
-        yield (kind, dict(
-            resource=suba.resource.definition(),
-            parent=res.definition(),
-            plural=repr(compiled.plural),
-            verbs=suba.actions,
-            action=repr(suba.name),
-        ), {}, [class_, model_class(suba.resource)])
+        yield Class(
+            name=kind,
+            properties=dict(
+                resource=sres.definition(), parent=res.definition(),
+                plural=repr(compiled.plural), verbs=suba.actions, action=repr(suba.name),
+            ),
+            actions={},
+            classes=[class_, f"m_{sres.py_full_class}"],
+            model_import=sres.py_import
+        )
         actions[suba.name.capitalize()] = kind
 
     if 'global_list' in compiled.actions:
         class_ = "NamespacedResourceG"
     else:
         class_ = "NamespacedResource" if compiled.namespaced else "GlobalResource"
-    yield (res.kind, dict(
-        resource=res.definition(),
-        plural=repr(compiled.plural),
-        verbs=compiled.actions
-    ), actions, [class_, model_class(res)])
+
+    yield Class(
+        name=res.kind,
+        properties=dict(resource=res.definition(), plural=repr(compiled.plural), verbs=compiled.actions),
+        actions=actions,
+        classes=[class_, f"m_{res.py_full_class}"],
+        model_import=res.py_import
+    )
 
 
 def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path, test_fname: Path):
@@ -202,22 +230,21 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
         if c:
             modules[c.module].append(c)
 
-    tmpl = get_template("tools/templates/class.tmpl")
-    for module, content in modules.items():
+    tmpl = get_template("tools/templates/resources.tmpl")
+    for module, compiled_res in modules.items():
         module_name = p.joinpath(f"{module}.py")
 
-        data = []
-        for c in content:
-            for r in add_class(c):
-                data.append(r)
         imports = set()
-        for _, _, _, classes in data:
-            imports.add(classes[1].split(".")[0])
+        classes = []
+        for c in compiled_res:
+            for cls in get_classes(c):
+                classes.append(cls)
+                imports.add(cls.model_import)
 
-        imports = [f"{t[2:]} as {t}" for t in sorted(imports)]
+        imports = [f"{t} as m_{t}" for t in sorted(imports)]
 
         with module_name.open('w') as fw:
-            fw.write(tmpl.render(objects=data, imports=imports))
+            fw.write(tmpl.render(objects=classes, imports=imports))
 
     with test_fname.open('w') as fw:
         for module in modules.keys():
