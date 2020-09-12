@@ -5,15 +5,11 @@ import re
 from pathlib import Path
 from typing import NamedTuple, Iterable, Dict, List, Optional
 
-from jinja2 import Template
+from .get_template import get_template
 
-
-RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)(?:/{name}(?P<action>/[^/]*)?)?")
-
-
-def get_template(fname):
-    with open(fname) as f:
-        return Template(f.read(), trim_blocks=True, lstrip_blocks=True)
+RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?"
+                     "(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)"
+                     "(?:/{name}(?P<action>/[^/]*)?)?")
 
 
 class ApiKey(NamedTuple):
@@ -230,7 +226,7 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
         if c:
             modules[c.module].append(c)
 
-    tmpl = get_template("tools/templates/resources.tmpl")
+    tmpl = get_template("resources.tmpl")
     for module, compiled_res in modules.items():
         module_name = p.joinpath(f"{module}.py")
 
@@ -245,20 +241,12 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
 
         with module_name.open('w') as fw:
             fw.write(tmpl.render(objects=classes, imports=imports))
+        print(f"Generated {module_name} with {len(classes)} resources")
 
     with test_fname.open('w') as fw:
         for module in modules.keys():
             fw.write(f"from lightkube.resources import {module}\n")
 
 
-if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Generate resources from k8s API swagger file")
-    parser.add_argument("specs", help="Specification file for Kubernetes")
-    parser.add_argument("dest", help="Package directory")
-    parser.add_argument("testfile", help="Test file to be generated")
-    args = parser.parse_args()
-
-    compile_resources(aggregate(extract(Path(args.specs))), Path(args.dest), Path(args.testfile))
-
+def execute(specs: Path, dest: Path, testdir: Path):
+    compile_resources(aggregate(extract(specs)), dest, testdir.joinpath("test_resources.py"))
