@@ -18,7 +18,7 @@ class ApiInfo:
 
 
 class Resource:
-    api_info: ApiInfo
+    _api_info: ApiInfo
 
 
 class NamespacedResource(Resource):

@@ -1,7 +1,15 @@
+import os
+import sys
 import json
 from setuptools import setup
 
-PATCH_VERSION = 2
+PATCH_VERSION = 0
+
+try:
+    SPECFILE = os.environ["SPECFILE"]
+except KeyError:
+    print("Environment variable SPECFILE not set")
+    sys.exit(-1)
 
 
 def get_version(fname):
@@ -14,7 +22,7 @@ def get_version(fname):
 
 setup(
     name='lightkube-models',
-    version=get_version("openapi/swagger.json"),
+    version=get_version(SPECFILE),
     description='Models and Resources for lightkube module',
     long_description='Models and Resources for lightkube module',
     author='Giuseppe Tribulato',

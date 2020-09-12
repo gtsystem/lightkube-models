@@ -9,7 +9,7 @@ from ..models import {{ imp }}
 {% for cls in objects %}
 
 class {{ cls.name }}(res.{{ ', '.join(cls.classes) }}):
-    api_info = res.ApiInfo(
+    _api_info = res.ApiInfo(
       {% for k, v in cls.properties.items(): %}
         {{k}}={{v}},
       {% endfor %}
