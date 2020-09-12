@@ -30,7 +30,7 @@ jobs:
         python test_resources.py
     - name: Package
       run: |
-        python setup.py sdist
+        SPECFILE=openapi/kubernetes_v1.15.12.json python setup.py sdist
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:
