@@ -60,6 +60,14 @@ class Property(NamedTuple):
 
 
 class Model:
+    OAS_TO_PY = {
+        'string': 'str',
+        'integer': 'int',
+        'number': 'float',
+        'boolean': 'bool',
+        'object': 'dict'
+    }
+
     def __init__(self, name, defi):
         sc = schema_name(name)
         self.module = sc.module
@@ -122,10 +130,4 @@ class Model:
                 return f'{sc.module}.{sc.name}'
 
         if 'type' in defi:
-            return {
-                'string': 'str',
-                'integer': 'int',
-                'number': 'float',
-                'boolean': 'bool',
-                'object': 'dict'
-            }[defi['type']]
+            return self.OAS_TO_PY[defi['type']]

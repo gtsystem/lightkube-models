@@ -5,7 +5,7 @@ from typing import List
 import shutil
 from pathlib import Path
 
-from .compile_resources import get_template
+from .get_template import get_template
 from .model import Model, Import
 
 RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
@@ -27,7 +27,7 @@ def collect_imports(module: Import, models: List[Model]):
     return imports
 
 
-def extract(fname, path, test_fname):
+def execute(fname, path: Path, testdir: Path):
     with open(fname) as f:
         sw = json.load(f)
 
@@ -42,16 +42,13 @@ def extract(fname, path, test_fname):
         model = Model(name, defi)
         modules[model.module].append(model)
 
-    tmpl = get_template("tools/templates/models.tmpl")
+    tmpl = get_template("models.tmpl")
     for module, models in modules.items():
-        with p.joinpath(f"{module}.py").open("w") as fw:
+        module_name = p.joinpath(f"{module}.py")
+        with module_name.open("w") as fw:
             fw.write(tmpl.render(models=models, modules=collect_imports(Import(".", module), models)))
+        print(f"Generated {module_name} with {len(models)} models")
 
-    with test_fname.open('w') as fw:
+    with testdir.joinpath("test_models.py").open('w') as fw:
         for module, models in modules.items():
             fw.write(f"from lightkube.models import {module}\n")
-
-
-if __name__ == "__main__":
-    import sys
-    extract(sys.argv[1], Path(sys.argv[2]), Path(sys.argv[3]))
