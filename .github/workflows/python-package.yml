@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
-        kubernetes-version: ['1.15.12', '1.16.15', '1.17.11', '1.18.8', '1.19.1']
+        kube-version: ['1.15.12', '1.16.15', '1.17.11', '1.18.8', '1.19.1']
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        python -m lightkube-generate resources models openapi/kubernetes_v${{ kubernetes-version }}.json
+        python -m lightkube-generate resources models openapi/kubernetes_v${{ matrix.kube-version }}.json
     - name: Test
       run: |
         python test_models.py
@@ -36,7 +36,7 @@ jobs:
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:
-        name: v${{ kubernetes-version }}
+        name: v${{ matrix.kube-version }}
         path: |
           dist
 
