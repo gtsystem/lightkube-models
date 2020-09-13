@@ -27,7 +27,7 @@ def collect_imports(module: Import, models: List[Model]):
     return imports
 
 
-def execute(fname, path: Path, testdir: Path):
+def execute(fname, path: Path, testdir: Path, compiler_major: str):
     with open(fname) as f:
         sw = json.load(f)
 
@@ -52,3 +52,7 @@ def execute(fname, path: Path, testdir: Path):
     with testdir.joinpath("test_models.py").open('w') as fw:
         for module, models in modules.items():
             fw.write(f"from lightkube.models import {module}\n")
+
+    spec_version = sw["info"]["version"].lstrip('v')
+    with p.joinpath("__init__.py").open("w") as fw:
+        fw.write(f'__version__ = "{spec_version}.{compiler_major}"\n')

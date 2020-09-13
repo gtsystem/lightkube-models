@@ -1,28 +1,11 @@
-import os
-import sys
-import json
 from setuptools import setup
 
-PATCH_VERSION = 0
-
-try:
-    SPECFILE = os.environ["SPECFILE"]
-except KeyError:
-    print("Environment variable SPECFILE not set")
-    sys.exit(-1)
-
-
-def get_version(fname):
-    with open(fname) as f:
-        schema = json.load(f)
-        k8s_version = schema["info"]["version"].lstrip('v')
-
-    return f"{k8s_version}.{PATCH_VERSION}"
+from lightkube.models import __version__
 
 
 setup(
     name='lightkube-models',
-    version=get_version(SPECFILE),
+    version=__version__,
     description='Models and Resources for lightkube module',
     long_description='Models and Resources for lightkube module',
     author='Giuseppe Tribulato',

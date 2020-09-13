@@ -1,7 +1,6 @@
 from pathlib import Path
 
-from . import compile_resources
-from . import compile_models
+from . import compile_resources, compile_models, __version__
 
 
 if __name__ == "__main__":
@@ -14,8 +13,9 @@ if __name__ == "__main__":
     parser.add_argument("-t", "--testdir", help="Directory where to generate the test file", default=".")
     args = parser.parse_args()
 
+    compiler_major = __version__.split(".", 1)[0]
     if "resources" in args.command:
         compile_resources.execute(Path(args.specs), Path(args.dest), Path(args.testdir))
     if "models" in args.command:
-        compile_models.execute(Path(args.specs), Path(args.dest), Path(args.testdir))
+        compile_models.execute(Path(args.specs), Path(args.dest), Path(args.testdir), compiler_major)
 
