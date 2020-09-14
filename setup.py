@@ -1,4 +1,5 @@
 from setuptools import setup
+from pathlib import Path
 
 from lightkube.models import __version__
 
@@ -7,7 +8,8 @@ setup(
     name='lightkube-models',
     version=__version__,
     description='Models and Resources for lightkube module',
-    long_description='Models and Resources for lightkube module',
+    long_description=Path("README.md").read_text(),
+    long_description_content_type="text/markdown",
     author='Giuseppe Tribulato',
     author_email='gtsystem@gmail.com',
     license='Apache Software License',

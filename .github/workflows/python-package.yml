@@ -12,7 +12,12 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
-        kube-version: ['1.15.12', '1.16.15', '1.17.11', '1.18.8', '1.19.1']
+        kube-version:
+        - 1.15.12
+        - 1.16.15
+        - 1.17.11
+        - 1.18.8
+        - 1.19.1
 
     steps:
     - uses: actions/checkout@v2
