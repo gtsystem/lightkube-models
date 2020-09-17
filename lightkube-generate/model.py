@@ -48,6 +48,7 @@ class Property(NamedTuple):
     required: bool
     import_module: Import
     alias: str = None
+    description: str = ""
 
     @property
     def default_repr(self):
@@ -74,6 +75,7 @@ class Model:
         self.name = sc.name
         self.import_module = None
         self.type = None
+        self.description = defi.get("description")
         if 'properties' in defi:
             self.properties = self.get_props(defi)
         else:
@@ -110,7 +112,8 @@ class Model:
                 type=p_type,
                 required=req,
                 import_module=get_module_from_property_def(p_defi),
-                alias=p_name if p_name != real_name else None
+                alias=p_name if p_name != real_name else None,
+                description=p_defi.get("description")
             ))
 
         properties.sort(key=lambda x: x.required, reverse=True)
@@ -131,3 +134,4 @@ class Model:
 
         if 'type' in defi:
             return self.OAS_TO_PY[defi['type']]
+

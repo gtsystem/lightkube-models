@@ -13,6 +13,15 @@ from {{mod.from_module}} import {{mod.module}}
 {% if model.has_properties %}
 @dataclass
 class {{ model.name }}(DataclassDictMixIn):
+    """{{ (model.description or "") | wordwrap(78, wrapstring='\n  ') | indent( width=4, indentfirst=False) }}
+
+      **parameters**
+
+      {% for prop in model.properties %}
+      * **{{prop.name}}** `{{prop.type}}` - {% if not prop.required %}*(optional)* {% endif %}{{ (prop.description or "") |
+        wordwrap(78, wrapstring='\n    ') | indent( width=4, indentfirst=False) }}
+      {% endfor %}
+    """
    {% for prop in model.properties %}
     {{prop.name}}: '{{prop.type}}'{{prop.default_repr}}
    {% endfor %}
