@@ -1,0 +1,1991 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>apps_v1beta2 - LightKube</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e56c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apps_v1beta2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="LightKube" class="md-header-nav__button md-logo" aria-label="LightKube">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            LightKube
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              apps_v1beta2
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LightKube" class="md-nav__button md-logo" aria-label="LightKube">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    LightKube
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="lightkube-models 1.15.12" class="md-nav__link">
+      lightkube-models 1.15.12
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Models
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Models" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="All models" class="md-nav__link">
+      All models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admissionregistration_v1beta1/" title="admissionregistration_v1beta1" class="md-nav__link">
+      admissionregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiextensions_v1beta1/" title="apiextensions_v1beta1" class="md-nav__link">
+      apiextensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
+      apiregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiregistration_v1beta1/" title="apiregistration_v1beta1" class="md-nav__link">
+      apiregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apps_v1/" title="apps_v1" class="md-nav__link">
+      apps_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apps_v1beta1/" title="apps_v1beta1" class="md-nav__link">
+      apps_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        apps_v1beta2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="apps_v1beta2" class="md-nav__link md-nav__link--active">
+      apps_v1beta2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controllerrevision" class="md-nav__link">
+    ControllerRevision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controllerrevisionlist" class="md-nav__link">
+    ControllerRevisionList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonset" class="md-nav__link">
+    DaemonSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetcondition" class="md-nav__link">
+    DaemonSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetlist" class="md-nav__link">
+    DaemonSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetspec" class="md-nav__link">
+    DaemonSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetstatus" class="md-nav__link">
+    DaemonSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetupdatestrategy" class="md-nav__link">
+    DaemonSetUpdateStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentcondition" class="md-nav__link">
+    DeploymentCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentlist" class="md-nav__link">
+    DeploymentList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentspec" class="md-nav__link">
+    DeploymentSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentstatus" class="md-nav__link">
+    DeploymentStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentstrategy" class="md-nav__link">
+    DeploymentStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" class="md-nav__link">
+    ReplicaSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetcondition" class="md-nav__link">
+    ReplicaSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetlist" class="md-nav__link">
+    ReplicaSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetspec" class="md-nav__link">
+    ReplicaSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetstatus" class="md-nav__link">
+    ReplicaSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatedaemonset" class="md-nav__link">
+    RollingUpdateDaemonSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatedeployment" class="md-nav__link">
+    RollingUpdateDeployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatestatefulsetstrategy" class="md-nav__link">
+    RollingUpdateStatefulSetStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    Scale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalespec" class="md-nav__link">
+    ScaleSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalestatus" class="md-nav__link">
+    ScaleStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulset" class="md-nav__link">
+    StatefulSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetcondition" class="md-nav__link">
+    StatefulSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetlist" class="md-nav__link">
+    StatefulSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetspec" class="md-nav__link">
+    StatefulSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetstatus" class="md-nav__link">
+    StatefulSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetupdatestrategy" class="md-nav__link">
+    StatefulSetUpdateStrategy
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../auditregistration_v1alpha1/" title="auditregistration_v1alpha1" class="md-nav__link">
+      auditregistration_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1/" title="authentication_v1" class="md-nav__link">
+      authentication_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
+      authentication_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authorization_v1/" title="authorization_v1" class="md-nav__link">
+      authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authorization_v1beta1/" title="authorization_v1beta1" class="md-nav__link">
+      authorization_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
+      autoscaling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v2beta1/" title="autoscaling_v2beta1" class="md-nav__link">
+      autoscaling_v2beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v2beta2/" title="autoscaling_v2beta2" class="md-nav__link">
+      autoscaling_v2beta2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v1/" title="batch_v1" class="md-nav__link">
+      batch_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v1beta1/" title="batch_v1beta1" class="md-nav__link">
+      batch_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v2alpha1/" title="batch_v2alpha1" class="md-nav__link">
+      batch_v2alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../certificates_v1beta1/" title="certificates_v1beta1" class="md-nav__link">
+      certificates_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coordination_v1/" title="coordination_v1" class="md-nav__link">
+      coordination_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coordination_v1beta1/" title="coordination_v1beta1" class="md-nav__link">
+      coordination_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../core_v1/" title="core_v1" class="md-nav__link">
+      core_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events_v1beta1/" title="events_v1beta1" class="md-nav__link">
+      events_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions_v1beta1/" title="extensions_v1beta1" class="md-nav__link">
+      extensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../meta_v1/" title="meta_v1" class="md-nav__link">
+      meta_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1/" title="networking_v1" class="md-nav__link">
+      networking_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1beta1/" title="networking_v1beta1" class="md-nav__link">
+      networking_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1alpha1/" title="node_v1alpha1" class="md-nav__link">
+      node_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1beta1/" title="node_v1beta1" class="md-nav__link">
+      node_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policy_v1beta1/" title="policy_v1beta1" class="md-nav__link">
+      policy_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1/" title="rbac_v1" class="md-nav__link">
+      rbac_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1alpha1/" title="rbac_v1alpha1" class="md-nav__link">
+      rbac_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1beta1/" title="rbac_v1beta1" class="md-nav__link">
+      rbac_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource/" title="resource" class="md-nav__link">
+      resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="runtime" class="md-nav__link">
+      runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1/" title="scheduling_v1" class="md-nav__link">
+      scheduling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1alpha1/" title="scheduling_v1alpha1" class="md-nav__link">
+      scheduling_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1beta1/" title="scheduling_v1beta1" class="md-nav__link">
+      scheduling_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../settings_v1alpha1/" title="settings_v1alpha1" class="md-nav__link">
+      settings_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1/" title="storage_v1" class="md-nav__link">
+      storage_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1alpha1/" title="storage_v1alpha1" class="md-nav__link">
+      storage_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1beta1/" title="storage_v1beta1" class="md-nav__link">
+      storage_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../util_intstr/" title="util_intstr" class="md-nav__link">
+      util_intstr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version/" title="version" class="md-nav__link">
+      version
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#controllerrevision" class="md-nav__link">
+    ControllerRevision
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controllerrevisionlist" class="md-nav__link">
+    ControllerRevisionList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonset" class="md-nav__link">
+    DaemonSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetcondition" class="md-nav__link">
+    DaemonSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetlist" class="md-nav__link">
+    DaemonSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetspec" class="md-nav__link">
+    DaemonSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetstatus" class="md-nav__link">
+    DaemonSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daemonsetupdatestrategy" class="md-nav__link">
+    DaemonSetUpdateStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentcondition" class="md-nav__link">
+    DeploymentCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentlist" class="md-nav__link">
+    DeploymentList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentspec" class="md-nav__link">
+    DeploymentSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentstatus" class="md-nav__link">
+    DeploymentStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploymentstrategy" class="md-nav__link">
+    DeploymentStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" class="md-nav__link">
+    ReplicaSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetcondition" class="md-nav__link">
+    ReplicaSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetlist" class="md-nav__link">
+    ReplicaSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetspec" class="md-nav__link">
+    ReplicaSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicasetstatus" class="md-nav__link">
+    ReplicaSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatedaemonset" class="md-nav__link">
+    RollingUpdateDaemonSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatedeployment" class="md-nav__link">
+    RollingUpdateDeployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rollingupdatestatefulsetstrategy" class="md-nav__link">
+    RollingUpdateStatefulSetStrategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    Scale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalespec" class="md-nav__link">
+    ScaleSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalestatus" class="md-nav__link">
+    ScaleStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulset" class="md-nav__link">
+    StatefulSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetcondition" class="md-nav__link">
+    StatefulSetCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetlist" class="md-nav__link">
+    StatefulSetList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetspec" class="md-nav__link">
+    StatefulSetSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetstatus" class="md-nav__link">
+    StatefulSetStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsetupdatestrategy" class="md-nav__link">
+    StatefulSetUpdateStrategy
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="apps_v1beta2">apps_v1beta2</h1>
+<h2 id="controllerrevision">ControllerRevision</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ControllerRevision</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">revision</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">data=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DEPRECATED - This group version of ControllerRevision is deprecated by
+apps/v1/ControllerRevision. See the release notes for more information.
+ControllerRevision implements an immutable snapshot of state data. Clients are
+responsible for serializing and deserializing the objects that contain their
+internal state. Once a ControllerRevision has been successfully created, it
+can not be updated. The API Server will fail validation of all requests that
+attempt to mutate the Data field. ControllerRevisions may, however, be
+deleted. Note that, due to its use by both the DaemonSet and StatefulSet
+controllers for update and rollback, this object is beta. However, it may be
+subject to name and representation changes in future releases, and clients
+should not depend on its stability. It is primarily for internal use by
+controllers.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>revision</strong> <code>int</code> - Revision indicates the revision of the state represented by Data.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>data</strong> <code>runtime.RawExtension</code> - <em>(optional)</em> Data is the serialized representation of the state.</li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
+  rs/devel/sig-architecture/api-conventions.md#metadata</li>
+</ul></div>
+</div>
+<h2 id="controllerrevisionlist">ControllerRevisionList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ControllerRevisionList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ControllerRevisionList is a resource containing a list of ControllerRevision
+objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[ControllerRevision]</code> - Items is the list of ControllerRevisions</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/ap">https://git.k8s.io/community/contributors/devel/sig-architecture/ap</a>
+  i-conventions.md#metadata</li>
+</ul></div>
+</div>
+<h2 id="daemonset">DaemonSet</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSet</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DEPRECATED - This group version of DaemonSet is deprecated by
+apps/v1/DaemonSet. See the release notes for more information. DaemonSet
+represents the configuration of a daemon set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
+  rs/devel/sig-architecture/api-conventions.md#metadata</li>
+<li><strong>spec</strong> <code>DaemonSetSpec</code> - <em>(optional)</em> The desired behavior of this daemon set. More info: <a href="https://git.k8s.io/communi">https://git.k8s.io/communi</a>
+  ty/contributors/devel/sig-architecture/api-conventions.md#spec-and-status</li>
+<li><strong>status</strong> <code>DaemonSetStatus</code> - <em>(optional)</em> The current status of this daemon set. This data may be out of date by some
+  window of time. Populated by the system. Read-only. More info: <a href="https://git.k8s">https://git.k8s</a>
+  .io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-
+  status</li>
+</ul></div>
+</div>
+<h2 id="daemonsetcondition">DaemonSetCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSetCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DaemonSetCondition describes the state of a DaemonSet at a certain point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - Type of DaemonSet condition.</li>
+<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="daemonsetlist">DaemonSetList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSetList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DaemonSetList is a collection of daemon sets.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[DaemonSet]</code> - A list of daemon sets.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
+  evel/sig-architecture/api-conventions.md#metadata</li>
+</ul></div>
+</div>
+<h2 id="daemonsetspec">DaemonSetSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSetSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">selector</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">template</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">minReadySeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">revisionHistoryLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updateStrategy=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DaemonSetSpec is the specification of a daemon set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - A label query over pods that are managed by the daemon set. Must match in
+  order to be controlled. It must match the pod template's labels. More info: ht
+  tps://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-
+  selectors</li>
+<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - An object that describes the pod that will be created. The DaemonSet will
+  create exactly one copy of this pod on every node that matches the template's
+  node selector (or on every node if no node selector is specified). More info:
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontrolle">https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontrolle</a>
+  r#pod-template</li>
+<li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> The minimum number of seconds for which a newly created DaemonSet pod should
+  be ready without any of its container crashing, for it to be considered
+  available. Defaults to 0 (pod will be considered available as soon as it is
+  ready).</li>
+<li><strong>revisionHistoryLimit</strong> <code>int</code> - <em>(optional)</em> The number of old history to retain to allow rollback. This is a pointer to
+  distinguish between explicit zero and not specified. Defaults to 10.</li>
+<li><strong>updateStrategy</strong> <code>DaemonSetUpdateStrategy</code> - <em>(optional)</em> An update strategy to replace existing DaemonSet pods with new pods.</li>
+</ul></div>
+</div>
+<h2 id="daemonsetstatus">DaemonSetStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSetStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">currentNumberScheduled</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">desiredNumberScheduled</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">numberMisscheduled</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">numberReady</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">collisionCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">numberAvailable=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">numberUnavailable=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedNumberScheduled=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DaemonSetStatus represents the current status of a daemon set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>currentNumberScheduled</strong> <code>int</code> - The number of nodes that are running at least 1 daemon pod and are supposed to
+  run the daemon pod. More info:
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+<li><strong>desiredNumberScheduled</strong> <code>int</code> - The total number of nodes that should be running the daemon pod (including
+  nodes correctly running the daemon pod). More info:
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+<li><strong>numberMisscheduled</strong> <code>int</code> - The number of nodes that are running the daemon pod, but are not supposed to
+  run the daemon pod. More info:
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+<li><strong>numberReady</strong> <code>int</code> - The number of nodes that should be running the daemon pod and have one or more
+  of the daemon pod running and ready.</li>
+<li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> Count of hash collisions for the DaemonSet. The DaemonSet controller uses this
+  field as a collision avoidance mechanism when it needs to create the name for
+  the newest ControllerRevision.</li>
+<li><strong>conditions</strong> <code>List[DaemonSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a DaemonSet's current state.</li>
+<li><strong>numberAvailable</strong> <code>int</code> - <em>(optional)</em> The number of nodes that should be running the daemon pod and have one or more
+  of the daemon pod running and available (ready for at least
+  spec.minReadySeconds)</li>
+<li><strong>numberUnavailable</strong> <code>int</code> - <em>(optional)</em> The number of nodes that should be running the daemon pod and have none of the
+  daemon pod running and available (ready for at least spec.minReadySeconds)</li>
+<li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> The most recent generation observed by the daemon set controller.</li>
+<li><strong>updatedNumberScheduled</strong> <code>int</code> - <em>(optional)</em> The total number of nodes that are running updated daemon pod</li>
+</ul></div>
+</div>
+<h2 id="daemonsetupdatestrategy">DaemonSetUpdateStrategy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DaemonSetUpdateStrategy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">rollingUpdate=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DaemonSetUpdateStrategy is a struct used to control the update strategy for a
+DaemonSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>rollingUpdate</strong> <code>RollingUpdateDaemonSet</code> - <em>(optional)</em> Rolling update config params. Present only if type = "RollingUpdate".</li>
+<li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is
+  RollingUpdate.</li>
+</ul></div>
+</div>
+<h2 id="deployment">Deployment</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>Deployment</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DEPRECATED - This group version of Deployment is deprecated by
+apps/v1/Deployment. See the release notes for more information. Deployment
+enables declarative updates for Pods and ReplicaSets.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata.</li>
+<li><strong>spec</strong> <code>DeploymentSpec</code> - <em>(optional)</em> Specification of the desired behavior of the Deployment.</li>
+<li><strong>status</strong> <code>DeploymentStatus</code> - <em>(optional)</em> Most recently observed status of the Deployment.</li>
+</ul></div>
+</div>
+<h2 id="deploymentcondition">DeploymentCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DeploymentCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastUpdateTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeploymentCondition describes the state of a deployment at a certain point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - Type of deployment condition.</li>
+<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>lastUpdateTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> The last time this condition was updated.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="deploymentlist">DeploymentList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DeploymentList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeploymentList is a list of Deployments.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[Deployment]</code> - Items is the list of Deployments.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata.</li>
+</ul></div>
+</div>
+<h2 id="deploymentspec">DeploymentSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DeploymentSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">selector</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">template</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">minReadySeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">paused=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">progressDeadlineSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">replicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">revisionHistoryLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">strategy=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeploymentSpec is the specification of the desired behavior of the Deployment.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - Label selector for pods. Existing ReplicaSets whose pods are selected by this
+  will be the ones affected by this deployment. It must match the pod template's
+  labels.</li>
+<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - Template describes the pods that will be created.</li>
+<li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> Minimum number of seconds for which a newly created pod should be ready
+  without any of its container crashing, for it to be considered available.
+  Defaults to 0 (pod will be considered available as soon as it is ready)</li>
+<li><strong>paused</strong> <code>bool</code> - <em>(optional)</em> Indicates that the deployment is paused.</li>
+<li><strong>progressDeadlineSeconds</strong> <code>int</code> - <em>(optional)</em> The maximum time in seconds for a deployment to make progress before it is
+  considered to be failed. The deployment controller will continue to process
+  failed deployments and a condition with a ProgressDeadlineExceeded reason will
+  be surfaced in the deployment status. Note that progress will not be estimated
+  during the time a deployment is paused. Defaults to 600s.</li>
+<li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> Number of desired pods. This is a pointer to distinguish between explicit zero
+  and not specified. Defaults to 1.</li>
+<li><strong>revisionHistoryLimit</strong> <code>int</code> - <em>(optional)</em> The number of old ReplicaSets to retain to allow rollback. This is a pointer
+  to distinguish between explicit zero and not specified. Defaults to 10.</li>
+<li><strong>strategy</strong> <code>DeploymentStrategy</code> - <em>(optional)</em> The deployment strategy to use to replace existing pods with new ones.</li>
+</ul></div>
+</div>
+<h2 id="deploymentstatus">DeploymentStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DeploymentStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">availableReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">collisionCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">readyReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">replicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">unavailableReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedReplicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeploymentStatus is the most recently observed status of the Deployment.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>availableReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of available pods (ready for at least minReadySeconds) targeted
+  by this deployment.</li>
+<li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> Count of hash collisions for the Deployment. The Deployment controller uses
+  this field as a collision avoidance mechanism when it needs to create the name
+  for the newest ReplicaSet.</li>
+<li><strong>conditions</strong> <code>List[DeploymentCondition]</code> - <em>(optional)</em> Represents the latest available observations of a deployment's current state.</li>
+<li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> The generation observed by the deployment controller.</li>
+<li><strong>readyReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of ready pods targeted by this deployment.</li>
+<li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> Total number of non-terminated pods targeted by this deployment (their labels
+  match the selector).</li>
+<li><strong>unavailableReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of unavailable pods targeted by this deployment. This is the
+  total number of pods that are still required for the deployment to have 100%
+  available capacity. They may either be pods that are running but not yet
+  available or pods that still have not been created.</li>
+<li><strong>updatedReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of non-terminated pods targeted by this deployment that have the
+  desired template spec.</li>
+</ul></div>
+</div>
+<h2 id="deploymentstrategy">DeploymentStrategy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>DeploymentStrategy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">rollingUpdate=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeploymentStrategy describes how to replace existing pods with new ones.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>rollingUpdate</strong> <code>RollingUpdateDeployment</code> - <em>(optional)</em> Rolling update config params. Present only if DeploymentStrategyType =
+  RollingUpdate.</li>
+<li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of deployment. Can be "Recreate" or "RollingUpdate". Default is
+  RollingUpdate.</li>
+</ul></div>
+</div>
+<h2 id="replicaset">ReplicaSet</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ReplicaSet</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DEPRECATED - This group version of ReplicaSet is deprecated by
+apps/v1/ReplicaSet. See the release notes for more information. ReplicaSet
+ensures that a specified number of pod replicas are running at any given time.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> If the Labels of a ReplicaSet are empty, they are defaulted to be the same as
+  the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventio">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventio</a>
+  ns.md#metadata</li>
+<li><strong>spec</strong> <code>ReplicaSetSpec</code> - <em>(optional)</em> Spec defines the specification of the desired behavior of the ReplicaSet. More
+  info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-con">https://git.k8s.io/community/contributors/devel/sig-architecture/api-con</a>
+  ventions.md#spec-and-status</li>
+<li><strong>status</strong> <code>ReplicaSetStatus</code> - <em>(optional)</em> Status is the most recently observed status of the ReplicaSet. This data may
+  be out of date by some window of time. Populated by the system. Read-only.
+  More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/ap">https://git.k8s.io/community/contributors/devel/sig-architecture/ap</a>
+  i-conventions.md#spec-and-status</li>
+</ul></div>
+</div>
+<h2 id="replicasetcondition">ReplicaSetCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ReplicaSetCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ReplicaSetCondition describes the state of a replica set at a certain point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - Type of replica set condition.</li>
+<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> The last time the condition transitioned from one status to another.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="replicasetlist">ReplicaSetList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ReplicaSetList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ReplicaSetList is a collection of ReplicaSets.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[ReplicaSet]</code> - List of ReplicaSets. More info: <a href="https://kubernetes.io/docs/concepts/workloads/">https://kubernetes.io/docs/concepts/workloads/</a>
+  controllers/replicationcontroller</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
+  evel/sig-architecture/api-conventions.md#types-kinds</li>
+</ul></div>
+</div>
+<h2 id="replicasetspec">ReplicaSetSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ReplicaSetSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">selector</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">minReadySeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">replicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">template=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ReplicaSetSpec is the specification of a ReplicaSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - Selector is a label query over pods that should match the replica count. Label
+  keys and values that must match in order to be controlled by this replica set.
+  It must match the pod template's labels. More info: <a href="https://kubernetes.io/docs">https://kubernetes.io/docs</a>
+  /concepts/overview/working-with-objects/labels/#label-selectors</li>
+<li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> Minimum number of seconds for which a newly created pod should be ready
+  without any of its container crashing, for it to be considered available.
+  Defaults to 0 (pod will be considered available as soon as it is ready)</li>
+<li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> Replicas is the number of desired replicas. This is a pointer to distinguish
+  between explicit zero and unspecified. Defaults to 1. More info: <a href="https://kuber">https://kuber</a>
+  netes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-
+  replicationcontroller</li>
+<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - <em>(optional)</em> Template is the object that describes the pod that will be created if
+  insufficient replicas are detected. More info: <a href="https://kubernetes.io/docs/conc">https://kubernetes.io/docs/conc</a>
+  epts/workloads/controllers/replicationcontroller#pod-template</li>
+</ul></div>
+</div>
+<h2 id="replicasetstatus">ReplicaSetStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ReplicaSetStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">replicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">availableReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">fullyLabeledReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">readyReplicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ReplicaSetStatus represents the current status of a ReplicaSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>replicas</strong> <code>int</code> - Replicas is the most recently oberved number of replicas. More info: https://k
+  ubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-i
+  s-a-replicationcontroller</li>
+<li><strong>availableReplicas</strong> <code>int</code> - <em>(optional)</em> The number of available replicas (ready for at least minReadySeconds) for this
+  replica set.</li>
+<li><strong>conditions</strong> <code>List[ReplicaSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a replica set's current state.</li>
+<li><strong>fullyLabeledReplicas</strong> <code>int</code> - <em>(optional)</em> The number of pods that have labels matching the labels of the pod template of
+  the replicaset.</li>
+<li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> ObservedGeneration reflects the generation of the most recently observed
+  ReplicaSet.</li>
+<li><strong>readyReplicas</strong> <code>int</code> - <em>(optional)</em> The number of ready replicas for this replica set.</li>
+</ul></div>
+</div>
+<h2 id="rollingupdatedaemonset">RollingUpdateDaemonSet</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>RollingUpdateDaemonSet</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">maxUnavailable=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Spec to control the desired behavior of daemon set rolling update.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>maxUnavailable</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of DaemonSet pods that can be unavailable during the
+  update. Value can be an absolute number (ex: 5) or a percentage of total
+  number of DaemonSet pods at the start of the update (ex: 10%). Absolute number
+  is calculated from percentage by rounding up. This cannot be 0. Default value
+  is 1. Example: when this is set to 30%, at most 30% of the total number of
+  nodes that should be running the daemon pod (i.e.
+  status.desiredNumberScheduled) can have their pods stopped for an update at
+  any given time. The update starts by stopping at most 30% of those DaemonSet
+  pods and then brings up new DaemonSet pods in their place. Once the new pods
+  are available, it then proceeds onto other DaemonSet pods, thus ensuring that
+  at least 70% of original number of DaemonSet pods are available at all times
+  during the update.</li>
+</ul></div>
+</div>
+<h2 id="rollingupdatedeployment">RollingUpdateDeployment</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>RollingUpdateDeployment</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">maxSurge=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">maxUnavailable=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Spec to control the desired behavior of rolling update.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>maxSurge</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of pods that can be scheduled above the desired number of
+  pods. Value can be an absolute number (ex: 5) or a percentage of desired pods
+  (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is
+  calculated from percentage by rounding up. Defaults to 25%. Example: when this
+  is set to 30%, the new ReplicaSet can be scaled up immediately when the
+  rolling update starts, such that the total number of old and new pods do not
+  exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet
+  can be scaled up further, ensuring that total number of pods running at any
+  time during the update is at most 130% of desired pods.</li>
+<li><strong>maxUnavailable</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of pods that can be unavailable during the update. Value
+  can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%).
+  Absolute number is calculated from percentage by rounding down. This can not
+  be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the
+  old ReplicaSet can be scaled down to 70% of desired pods immediately when the
+  rolling update starts. Once new pods are ready, old ReplicaSet can be scaled
+  down further, followed by scaling up the new ReplicaSet, ensuring that the
+  total number of pods available at all times during the update is at least 70%
+  of desired pods.</li>
+</ul></div>
+</div>
+<h2 id="rollingupdatestatefulsetstrategy">RollingUpdateStatefulSetStrategy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>RollingUpdateStatefulSetStrategy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">partition=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>RollingUpdateStatefulSetStrategy is used to communicate parameter for
+RollingUpdateStatefulSetStrategyType.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>partition</strong> <code>int</code> - <em>(optional)</em> Partition indicates the ordinal at which the StatefulSet should be
+  partitioned. Default value is 0.</li>
+</ul></div>
+</div>
+<h2 id="scale">Scale</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>Scale</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Scale represents a scaling request for a resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata; More info: <a href="https://git.k8s.io/community/contributors">https://git.k8s.io/community/contributors</a>
+  /devel/sig-architecture/api-conventions.md#metadata.</li>
+<li><strong>spec</strong> <code>ScaleSpec</code> - <em>(optional)</em> defines the behavior of the scale. More info: <a href="https://git.k8s.io/community/con">https://git.k8s.io/community/con</a>
+  tributors/devel/sig-architecture/api-conventions.md#spec-and-status.</li>
+<li><strong>status</strong> <code>ScaleStatus</code> - <em>(optional)</em> current status of the scale. More info: <a href="https://git.k8s.io/community/contribut">https://git.k8s.io/community/contribut</a>
+  ors/devel/sig-architecture/api-conventions.md#spec-and-status. Read-only.</li>
+</ul></div>
+</div>
+<h2 id="scalespec">ScaleSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ScaleSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">replicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ScaleSpec describes the attributes of a scale subresource</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> desired number of instances for the scaled object.</li>
+</ul></div>
+</div>
+<h2 id="scalestatus">ScaleStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>ScaleStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">replicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">targetSelector=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ScaleStatus represents the current status of a scale subresource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>replicas</strong> <code>int</code> - actual number of observed instances of the scaled object.</li>
+<li><strong>selector</strong> <code>dict</code> - <em>(optional)</em> label query over pods that should match the replicas count. More info:
+  <a href="http://kubernetes.io/docs/user-guide/labels#label-selectors">http://kubernetes.io/docs/user-guide/labels#label-selectors</a></li>
+<li><strong>targetSelector</strong> <code>str</code> - <em>(optional)</em> label selector for pods that should match the replicas count. This is a
+  serializated version of both map-based and more expressive set-based
+  selectors. This is done to avoid introspection in the clients. The string will
+  be in the same format as the query-param syntax. If the target type only
+  supports map-based selectors, both this field and map-based selector field are
+  populated. More info: <a href="https://kubernetes.io/docs/concepts/overview/working-wit">https://kubernetes.io/docs/concepts/overview/working-wit</a>
+  h-objects/labels/#label-selectors</li>
+</ul></div>
+</div>
+<h2 id="statefulset">StatefulSet</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSet</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DEPRECATED - This group version of StatefulSet is deprecated by
+apps/v1/StatefulSet. See the release notes for more information. StatefulSet
+represents a set of pods with consistent identities. Identities are defined
+as:
+ - Network: A single stable DNS and hostname.
+ - Storage: As many VolumeClaims as requested.
+The StatefulSet guarantees that a given network identity will always map to
+the same storage identity.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
+<li><strong>spec</strong> <code>StatefulSetSpec</code> - <em>(optional)</em> Spec defines the desired identities of pods in this set.</li>
+<li><strong>status</strong> <code>StatefulSetStatus</code> - <em>(optional)</em> Status is the current status of Pods in this StatefulSet. This data may be out
+  of date by some window of time.</li>
+</ul></div>
+</div>
+<h2 id="statefulsetcondition">StatefulSetCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSetCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatefulSetCondition describes the state of a statefulset at a certain point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - Type of statefulset condition.</li>
+<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="statefulsetlist">StatefulSetList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSetList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatefulSetList is a collection of StatefulSets.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[StatefulSet]</code> -</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. More info:
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em></li>
+</ul></div>
+</div>
+<h2 id="statefulsetspec">StatefulSetSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSetSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">selector</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">serviceName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">template</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">podManagementPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">replicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">revisionHistoryLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updateStrategy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">volumeClaimTemplates=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>A StatefulSetSpec is the specification of a StatefulSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - selector is a label query over pods that should match the replica count. It
+  must match the pod template's labels. More info: <a href="https://kubernetes.io/docs/co">https://kubernetes.io/docs/co</a>
+  ncepts/overview/working-with-objects/labels/#label-selectors</li>
+<li><strong>serviceName</strong> <code>str</code> - serviceName is the name of the service that governs this StatefulSet. This
+  service must exist before the StatefulSet, and is responsible for the network
+  identity of the set. Pods get DNS/hostnames that follow the pattern:
+  pod-specific-string.serviceName.default.svc.cluster.local where
+  "pod-specific-string" is managed by the StatefulSet controller.</li>
+<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - template is the object that describes the pod that will be created if
+  insufficient replicas are detected. Each pod stamped out by the StatefulSet
+  will fulfill this Template, but have a unique identity from the rest of the
+  StatefulSet.</li>
+<li><strong>podManagementPolicy</strong> <code>str</code> - <em>(optional)</em> podManagementPolicy controls how pods are created during initial scale up,
+  when replacing pods on nodes, or when scaling down. The default policy is
+  <code>OrderedReady</code>, where pods are created in increasing order (pod-0, then pod-1,
+  etc) and the controller will wait until each pod is ready before continuing.
+  When scaling down, the pods are removed in the opposite order. The alternative
+  policy is <code>Parallel</code> which will create pods in parallel to match the desired
+  scale without waiting, and on scale down will delete all pods at once.</li>
+<li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> replicas is the desired number of replicas of the given Template. These are
+  replicas in the sense that they are instantiations of the same Template, but
+  individual replicas also have a consistent identity. If unspecified, defaults
+  to 1.</li>
+<li><strong>revisionHistoryLimit</strong> <code>int</code> - <em>(optional)</em> revisionHistoryLimit is the maximum number of revisions that will be
+  maintained in the StatefulSet's revision history. The revision history
+  consists of all revisions not represented by a currently applied
+  StatefulSetSpec version. The default value is 10.</li>
+<li><strong>updateStrategy</strong> <code>StatefulSetUpdateStrategy</code> - <em>(optional)</em> updateStrategy indicates the StatefulSetUpdateStrategy that will be employed
+  to update Pods in the StatefulSet when a revision is made to Template.</li>
+<li><strong>volumeClaimTemplates</strong> <code>List[core_v1.PersistentVolumeClaim]</code> - <em>(optional)</em> volumeClaimTemplates is a list of claims that pods are allowed to reference.
+  The StatefulSet controller is responsible for mapping network identities to
+  claims in a way that maintains the identity of a pod. Every claim in this list
+  must have at least one matching (by name) volumeMount in one container in the
+  template. A claim in this list takes precedence over any volumes in the
+  template, with the same name.</li>
+</ul></div>
+</div>
+<h2 id="statefulsetstatus">StatefulSetStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSetStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">replicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">collisionCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">readyReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updateRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedReplicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatefulSetStatus represents the current state of a StatefulSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>replicas</strong> <code>int</code> - replicas is the number of Pods created by the StatefulSet controller.</li>
+<li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> collisionCount is the count of hash collisions for the StatefulSet. The
+  StatefulSet controller uses this field as a collision avoidance mechanism when
+  it needs to create the name for the newest ControllerRevision.</li>
+<li><strong>conditions</strong> <code>List[StatefulSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a statefulset's current state.</li>
+<li><strong>currentReplicas</strong> <code>int</code> - <em>(optional)</em> currentReplicas is the number of Pods created by the StatefulSet controller
+  from the StatefulSet version indicated by currentRevision.</li>
+<li><strong>currentRevision</strong> <code>str</code> - <em>(optional)</em> currentRevision, if not empty, indicates the version of the StatefulSet used
+  to generate Pods in the sequence [0,currentReplicas).</li>
+<li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> observedGeneration is the most recent generation observed for this
+  StatefulSet. It corresponds to the StatefulSet's generation, which is updated
+  on mutation by the API Server.</li>
+<li><strong>readyReplicas</strong> <code>int</code> - <em>(optional)</em> readyReplicas is the number of Pods created by the StatefulSet controller that
+  have a Ready Condition.</li>
+<li><strong>updateRevision</strong> <code>str</code> - <em>(optional)</em> updateRevision, if not empty, indicates the version of the StatefulSet used to
+  generate Pods in the sequence [replicas-updatedReplicas,replicas)</li>
+<li><strong>updatedReplicas</strong> <code>int</code> - <em>(optional)</em> updatedReplicas is the number of Pods created by the StatefulSet controller
+  from the StatefulSet version indicated by updateRevision.</li>
+</ul></div>
+</div>
+<h2 id="statefulsetupdatestrategy">StatefulSetUpdateStrategy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1beta2.<strong>StatefulSetUpdateStrategy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">rollingUpdate=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatefulSetUpdateStrategy indicates the strategy that the StatefulSet
+controller will use to perform updates. It includes any additional parameters
+necessary to perform the update for the indicated strategy.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>rollingUpdate</strong> <code>RollingUpdateStatefulSetStrategy</code> - <em>(optional)</em> RollingUpdate is used to communicate parameters when Type is
+  RollingUpdateStatefulSetStrategyType.</li>
+<li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type indicates the type of the StatefulSetUpdateStrategy. Default is
+  RollingUpdate.</li>
+</ul></div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../apps_v1beta1/" title="apps_v1beta1" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                apps_v1beta1
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../auditregistration_v1alpha1/" title="auditregistration_v1alpha1" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                auditregistration_v1alpha1
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
