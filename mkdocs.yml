@@ -1,0 +1,38 @@
+site_name: LightKube
+theme:
+  name: material
+  hljs_style: monokai
+  palette:
+    primary: deep purple
+
+repo_name: gtsystem/lightkube-models
+repo_url: https://github.com/gtsystem/lightkube-models
+edit_uri: ""
+
+extra_css:
+  - css/custom.css
+
+markdown_extensions:
+  - lightkube-generate.mkextension:ModelLinkExtension
+  - lightkube-generate.mkextension:K8SLinkExtension
+  - admonition
+  - mkautodoc
+  - codehilite
+  - pymdownx.magiclink
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - markdown_include.include:
+      base_path: .
+
+#plugins:
+#  - mkdocstrings:
+#      handlers:
+#        python:
+#          rendering:
+#            show_root_heading: yes
+#            show_if_no_docstring: yes
+#          selection:
+#            filters: []
+#              #- "!^_"  # exlude all members starting with _
+#             #- "^__init__$"  # but always include __init__ modules and methods
+#          inherited_members: true

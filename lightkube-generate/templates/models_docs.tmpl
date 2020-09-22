@@ -1,0 +1,11 @@
+# {{module}}
+
+{% for model in models %}
+## {{ model.name }}
+
+{% if model.has_properties %}
+::: lightkube.models.{{ module }}.{{ model.name }}
+    :docstring:
+
+{% endif %}
+{% endfor %}

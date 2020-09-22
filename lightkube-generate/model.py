@@ -1,8 +1,9 @@
 import re
 from typing import NamedTuple
 import keyword
-RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
 
+RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
+RE_NEW_LINE = re.compile(r"\n\s*\n")
 KEYWORDS = set(keyword.kwlist)
 
 class Schema(NamedTuple):
@@ -107,13 +108,16 @@ class Model:
             req = p_name in required
             p_type = self.to_pytype(p_defi, required=req)
             real_name = make_prop_name(p_name)
+            desc = p_defi.get("description")
+            if desc:
+                desc = RE_NEW_LINE.sub("\n", desc)
             properties.append(Property(
                 name=real_name,
                 type=p_type,
                 required=req,
                 import_module=get_module_from_property_def(p_defi),
                 alias=p_name if p_name != real_name else None,
-                description=p_defi.get("description")
+                description=desc
             ))
 
         properties.sort(key=lambda x: x.required, reverse=True)

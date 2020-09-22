@@ -1,0 +1,11 @@
+# All models
+
+{% macro link(text, name) -%}
+[{{ text }}]({{ text }}.md#{{ name | lower }})
+{%- endmacro %}
+
+Model name | Available versions |
+|---|---|
+{% for name, modules in models_to_opts %}
+|{{name}} |{% for mod in modules %}{{link(mod, name)}}{{ ", " if not loop.last }}{% endfor %}|
+{% endfor %}
