@@ -945,20 +945,17 @@ pod.  For more details, see
   is immutable.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/ap">https://git.k8s.io/community/contributors/devel/sig-architecture/ap</a>
-  i-conventions.md#metadata</li>
-<li><strong>overhead</strong> <code>Overhead</code> - <em>(optional)</em> Overhead represents the resource overhead associated with running a pod for a
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>overhead</strong> <code><a href="#overhead">Overhead</a></code> - <em>(optional)</em> Overhead represents the resource overhead associated with running a pod for a
   given RuntimeClass. For more details, see
   <a href="https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md">https://git.k8s.io/enhancements/keps/sig-node/20190226-pod-overhead.md</a> This
   field is alpha-level as of Kubernetes v1.15, and is only honored by servers
   that enable the PodOverhead feature.</li>
-<li><strong>scheduling</strong> <code>Scheduling</code> - <em>(optional)</em> Scheduling holds the scheduling constraints to ensure that pods running with
+<li><strong>scheduling</strong> <code><a href="#scheduling">Scheduling</a></code> - <em>(optional)</em> Scheduling holds the scheduling constraints to ensure that pods running with
   this RuntimeClass are scheduled to nodes that support it. If scheduling is
   nil, this RuntimeClass is assumed to be supported by all nodes.</li>
 </ul></div>
@@ -969,17 +966,14 @@ pod.  For more details, see
 <div class="autodoc-docstring"><p>RuntimeClassList is a list of RuntimeClass objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[RuntimeClass]</code> - Items is a list of schema objects.</li>
+<li><strong>items</strong> <code><a href="#runtimeclass">List[RuntimeClass]</a></code> - Items is a list of schema objects.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
-  evel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="scheduling">Scheduling</h2>
@@ -994,7 +988,7 @@ RuntimeClass.</p>
   matched by this selector. The RuntimeClass nodeSelector is merged with a pod's
   existing nodeSelector. Any conflicts will cause the pod to be rejected in
   admission.</li>
-<li><strong>tolerations</strong> <code>List[core_v1.Toleration]</code> - <em>(optional)</em> tolerations are appended (excluding duplicates) to pods running with this
+<li><strong>tolerations</strong> <code><a href="../core_v1/index.html#toleration">List[core_v1.Toleration]</a></code> - <em>(optional)</em> tolerations are appended (excluding duplicates) to pods running with this
   RuntimeClass during admission, effectively unioning the set of nodes tolerated
   by the pod and the RuntimeClass.</li>
 </ul></div>

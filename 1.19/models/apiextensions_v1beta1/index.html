@@ -1172,13 +1172,15 @@
 <li><strong>JSONPath</strong> <code>str</code> - JSONPath is a simple JSON path (i.e. with array notation) which is evaluated
   against each custom resource to produce the value for this column.</li>
 <li><strong>name</strong> <code>str</code> - name is a human readable name for the column.</li>
-<li><strong>type</strong> <code>str</code> - type is an OpenAPI type definition for this column. See <a href="https://github.com/OAI">https://github.com/OAI</a>
-  /OpenAPI-Specification/blob/master/versions/2.0.md#data-types for details.</li>
+<li><strong>type</strong> <code>str</code> - type is an OpenAPI type definition for this column. See
+  <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types</a>
+  for details.</li>
 <li><strong>description</strong> <code>str</code> - <em>(optional)</em> description is a human readable description of this column.</li>
 <li><strong>format</strong> <code>str</code> - <em>(optional)</em> format is an optional OpenAPI type definition for this column. The 'name'
   format is applied to the primary identifier column to assist in clients
-  identifying column is the resource name. See <a href="https://github.com/OAI/OpenAPI-Sp">https://github.com/OAI/OpenAPI-Sp</a>
-  ecification/blob/master/versions/2.0.md#data-types for details.</li>
+  identifying column is the resource name. See
+  <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types</a>
+  for details.</li>
 <li><strong>priority</strong> <code>int</code> - <em>(optional)</em> priority is an integer defining the relative importance of this column
   compared to others. Lower numbers are considered higher priority. Columns that
   may be omitted in limited space scenarios should be given a priority greater
@@ -1198,14 +1200,14 @@
   information
     is needed for this option. This requires spec.preserveUnknownFields to be
   false, and spec.conversion.webhookClientConfig to be set.</li>
-<li><strong>conversionReviewVersions</strong> <code>List[str]</code> - <em>(optional)</em> conversionReviewVersions is an ordered list of preferred <code>ConversionReview</code>
+<li><strong>conversionReviewVersions</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> conversionReviewVersions is an ordered list of preferred <code>ConversionReview</code>
   versions the Webhook expects. The API server will use the first version in the
   list which it supports. If none of the versions specified in this list are
   supported by API server, conversion will fail for the custom resource. If a
   persisted Webhook configuration specifies allowed versions and does not
   include any versions known to the API Server, calls to the webhook will fail.
   Defaults to <code>["v1beta1"]</code>.</li>
-<li><strong>webhookClientConfig</strong> <code>WebhookClientConfig</code> - <em>(optional)</em> webhookClientConfig is the instructions for how to call the webhook if
+<li><strong>webhookClientConfig</strong> <code><a href="#webhookclientconfig">WebhookClientConfig</a></code> - <em>(optional)</em> webhookClientConfig is the instructions for how to call the webhook if
   strategy is <code>Webhook</code>. Required when <code>strategy</code> is set to <code>Webhook</code>.</li>
 </ul></div>
 </div>
@@ -1218,17 +1220,15 @@ Deprecated in v1.16, planned for removal in v1.22. Use apiextensions.k8s.io/v1
 CustomResourceDefinition instead.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>CustomResourceDefinitionSpec</code> - spec describes how the user wants the resources to appear</li>
+<li><strong>spec</strong> <code><a href="#customresourcedefinitionspec">CustomResourceDefinitionSpec</a></code> - spec describes how the user wants the resources to appear</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>CustomResourceDefinitionStatus</code> - <em>(optional)</em> status indicates the actual state of the CustomResourceDefinition</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#customresourcedefinitionstatus">CustomResourceDefinitionStatus</a></code> - <em>(optional)</em> status indicates the actual state of the CustomResourceDefinition</li>
 </ul></div>
 </div>
 <h2 id="customresourcedefinitioncondition">CustomResourceDefinitionCondition</h2>
@@ -1241,7 +1241,7 @@ of this pod.</p>
 <li><strong>status</strong> <code>str</code> - status is the status of the condition. Can be True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - type is the type of the condition. Types include Established, NamesAccepted
   and Terminating.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> lastTransitionTime last time the condition transitioned from one status to
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> lastTransitionTime last time the condition transitioned from one status to
   another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> message is a human-readable message indicating details about last transition.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> reason is a unique, one-word, CamelCase reason for the condition's last
@@ -1254,16 +1254,14 @@ of this pod.</p>
 <div class="autodoc-docstring"><p>CustomResourceDefinitionList is a list of CustomResourceDefinition objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[CustomResourceDefinition]</code> - items list individual CustomResourceDefinition objects</li>
+<li><strong>items</strong> <code><a href="#customresourcedefinition">List[CustomResourceDefinition]</a></code> - items list individual CustomResourceDefinition objects</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em></li>
 </ul></div>
 </div>
 <h2 id="customresourcedefinitionnames">CustomResourceDefinitionNames</h2>
@@ -1280,12 +1278,12 @@ CustomResourceDefinition</p>
   served under <code>/apis/&lt;group&gt;/&lt;version&gt;/.../&lt;plural&gt;</code>. Must match the name of
   the CustomResourceDefinition (in the form <code>&lt;names.plural&gt;.&lt;group&gt;</code>). Must be
   all lowercase.</li>
-<li><strong>categories</strong> <code>List[str]</code> - <em>(optional)</em> categories is a list of grouped resources this custom resource belongs to
+<li><strong>categories</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> categories is a list of grouped resources this custom resource belongs to
   (e.g. 'all'). This is published in API discovery documents, and used by
   clients to support invocations like <code>kubectl get all</code>.</li>
 <li><strong>listKind</strong> <code>str</code> - <em>(optional)</em> listKind is the serialized kind of the list for this resource. Defaults to
   "<code>kind</code>List".</li>
-<li><strong>shortNames</strong> <code>List[str]</code> - <em>(optional)</em> shortNames are short names for the resource, exposed in API discovery
+<li><strong>shortNames</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> shortNames are short names for the resource, exposed in API discovery
   documents, and used by clients to support invocations like <code>kubectl get
   &lt;shortname&gt;</code>. It must be all lowercase.</li>
 <li><strong>singular</strong> <code>str</code> - <em>(optional)</em> singular is the singular name of the resource. It must be all lowercase.
@@ -1302,30 +1300,31 @@ appear</p>
 <li><strong>group</strong> <code>str</code> - group is the API group of the defined custom resource. The custom resources
   are served under <code>/apis/&lt;group&gt;/...</code>. Must match the name of the
   CustomResourceDefinition (in the form <code>&lt;names.plural&gt;.&lt;group&gt;</code>).</li>
-<li><strong>names</strong> <code>CustomResourceDefinitionNames</code> - names specify the resource and kind names for the custom resource.</li>
+<li><strong>names</strong> <code><a href="#customresourcedefinitionnames">CustomResourceDefinitionNames</a></code> - names specify the resource and kind names for the custom resource.</li>
 <li><strong>scope</strong> <code>str</code> - scope indicates whether the defined custom resource is cluster- or
   namespace-scoped. Allowed values are <code>Cluster</code> and <code>Namespaced</code>. Default is
   <code>Namespaced</code>.</li>
-<li><strong>additionalPrinterColumns</strong> <code>List[CustomResourceColumnDefinition]</code> - <em>(optional)</em> additionalPrinterColumns specifies additional columns returned in Table
-  output. See <a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#recei">https://kubernetes.io/docs/reference/using-api/api-concepts/#recei</a>
-  ving-resources-as-tables for details. If present, this field configures
-  columns for all versions. Top-level and per-version columns are mutually
-  exclusive. If no top-level or per-version columns are specified, a single
-  column displaying the age of the custom resource is used.</li>
-<li><strong>conversion</strong> <code>CustomResourceConversion</code> - <em>(optional)</em> conversion defines conversion settings for the CRD.</li>
+<li><strong>additionalPrinterColumns</strong> <code><a href="#customresourcecolumndefinition">List[CustomResourceColumnDefinition]</a></code> - <em>(optional)</em> additionalPrinterColumns specifies additional columns returned in Table
+  output. See
+  <a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables">https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables</a>
+  for details. If present, this field configures columns for all versions.
+  Top-level and per-version columns are mutually exclusive. If no top-level or
+  per-version columns are specified, a single column displaying the age of the
+  custom resource is used.</li>
+<li><strong>conversion</strong> <code><a href="#customresourceconversion">CustomResourceConversion</a></code> - <em>(optional)</em> conversion defines conversion settings for the CRD.</li>
 <li><strong>preserveUnknownFields</strong> <code>bool</code> - <em>(optional)</em> preserveUnknownFields indicates that object fields which are not specified in
   the OpenAPI schema should be preserved when persisting to storage. apiVersion,
   kind, metadata and known fields inside metadata are always preserved. If
   false, schemas must be defined for all versions. Defaults to true in v1beta
   for backwards compatibility. Deprecated: will be required to be false in v1.
   Preservation of unknown fields can be specified in the validation schema using
-  the <code>x-kubernetes-preserve-unknown-fields: true</code> extension. See <a href="https://kubern">https://kubern</a>
-  etes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-defi
-  nitions/#pruning-versus-preserving-unknown-fields for details.</li>
-<li><strong>subresources</strong> <code>CustomResourceSubresources</code> - <em>(optional)</em> subresources specify what subresources the defined custom resource has. If
+  the <code>x-kubernetes-preserve-unknown-fields: true</code> extension. See
+  <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#pruning-versus-preserving-unknown-fields">https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/#pruning-versus-preserving-unknown-fields</a>
+  for details.</li>
+<li><strong>subresources</strong> <code><a href="#customresourcesubresources">CustomResourceSubresources</a></code> - <em>(optional)</em> subresources specify what subresources the defined custom resource has. If
   present, this field configures subresources for all versions. Top-level and
   per-version subresources are mutually exclusive.</li>
-<li><strong>validation</strong> <code>CustomResourceValidation</code> - <em>(optional)</em> validation describes the schema used for validation and pruning of the custom
+<li><strong>validation</strong> <code><a href="#customresourcevalidation">CustomResourceValidation</a></code> - <em>(optional)</em> validation describes the schema used for validation and pruning of the custom
   resource. If present, this validation schema is used to validate all versions.
   Top-level and per-version schemas are mutually exclusive.</li>
 <li><strong>version</strong> <code>str</code> - <em>(optional)</em> version is the API version of the defined custom resource. The custom
@@ -1333,7 +1332,7 @@ appear</p>
   of the first item in the <code>versions</code> list if <code>version</code> and <code>versions</code> are both
   specified. Optional if <code>versions</code> is specified. Deprecated: use <code>versions</code>
   instead.</li>
-<li><strong>versions</strong> <code>List[CustomResourceDefinitionVersion]</code> - <em>(optional)</em> versions is the list of all API versions of the defined custom resource.
+<li><strong>versions</strong> <code><a href="#customresourcedefinitionversion">List[CustomResourceDefinitionVersion]</a></code> - <em>(optional)</em> versions is the list of all API versions of the defined custom resource.
   Optional if <code>version</code> is specified. The name of the first item in the
   <code>versions</code> list must match the <code>version</code> field if <code>version</code> and <code>versions</code> are
   both specified. Version names are used to compute the order in which served
@@ -1355,10 +1354,10 @@ appear</p>
 CustomResourceDefinition</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>acceptedNames</strong> <code>CustomResourceDefinitionNames</code> - <em>(optional)</em> acceptedNames are the names that are actually being used to serve discovery.
+<li><strong>acceptedNames</strong> <code><a href="#customresourcedefinitionnames">CustomResourceDefinitionNames</a></code> - <em>(optional)</em> acceptedNames are the names that are actually being used to serve discovery.
   They may be different than the names in spec.</li>
-<li><strong>conditions</strong> <code>List[CustomResourceDefinitionCondition]</code> - <em>(optional)</em> conditions indicate state for particular aspects of a CustomResourceDefinition</li>
-<li><strong>storedVersions</strong> <code>List[str]</code> - <em>(optional)</em> storedVersions lists all versions of CustomResources that were ever persisted.
+<li><strong>conditions</strong> <code><a href="#customresourcedefinitioncondition">List[CustomResourceDefinitionCondition]</a></code> - <em>(optional)</em> conditions indicate state for particular aspects of a CustomResourceDefinition</li>
+<li><strong>storedVersions</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> storedVersions lists all versions of CustomResources that were ever persisted.
   Tracking these versions allows a migration path for stored versions in etcd.
   The field is mutable so a migration controller can finish a migration to
   another version (ensuring no old objects are left in storage), and then remove
@@ -1379,13 +1378,13 @@ CustomResourceDefinition</p>
   APIs</li>
 <li><strong>storage</strong> <code>bool</code> - storage indicates this version should be used when persisting custom resources
   to storage. There must be exactly one version with storage=true.</li>
-<li><strong>additionalPrinterColumns</strong> <code>List[CustomResourceColumnDefinition]</code> - <em>(optional)</em> additionalPrinterColumns specifies additional columns returned in Table
-  output. See <a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#recei">https://kubernetes.io/docs/reference/using-api/api-concepts/#recei</a>
-  ving-resources-as-tables for details. Top-level and per-version columns are
-  mutually exclusive. Per-version columns must not all be set to identical
-  values (top-level columns should be used instead). If no top-level or
-  per-version columns are specified, a single column displaying the age of the
-  custom resource is used.</li>
+<li><strong>additionalPrinterColumns</strong> <code><a href="#customresourcecolumndefinition">List[CustomResourceColumnDefinition]</a></code> - <em>(optional)</em> additionalPrinterColumns specifies additional columns returned in Table
+  output. See
+  <a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables">https://kubernetes.io/docs/reference/using-api/api-concepts/#receiving-resources-as-tables</a>
+  for details. Top-level and per-version columns are mutually exclusive.
+  Per-version columns must not all be set to identical values (top-level columns
+  should be used instead). If no top-level or per-version columns are specified,
+  a single column displaying the age of the custom resource is used.</li>
 <li><strong>deprecated</strong> <code>bool</code> - <em>(optional)</em> deprecated indicates this version of the custom resource API is deprecated.
   When set to true, API requests to this version receive a warning header in the
   server response. Defaults to false.</li>
@@ -1393,11 +1392,11 @@ CustomResourceDefinition</p>
   only be set when <code>deprecated</code> is true. The default warning indicates this
   version is deprecated and recommends use of the newest served version of equal
   or greater stability, if one exists.</li>
-<li><strong>schema</strong> <code>CustomResourceValidation</code> - <em>(optional)</em> schema describes the schema used for validation and pruning of this version of
+<li><strong>schema</strong> <code><a href="#customresourcevalidation">CustomResourceValidation</a></code> - <em>(optional)</em> schema describes the schema used for validation and pruning of this version of
   the custom resource. Top-level and per-version schemas are mutually exclusive.
   Per-version schemas must not all be set to identical values (top-level
   validation schema should be used instead).</li>
-<li><strong>subresources</strong> <code>CustomResourceSubresources</code> - <em>(optional)</em> subresources specify what subresources this version of the defined custom
+<li><strong>subresources</strong> <code><a href="#customresourcesubresources">CustomResourceSubresources</a></code> - <em>(optional)</em> subresources specify what subresources this version of the defined custom
   resource have. Top-level and per-version subresources are mutually exclusive.
   Per-version subresources must not all be set to identical values (top-level
   subresources should be used instead).</li>
@@ -1425,11 +1424,10 @@ CustomResources.</p>
   notation are allowed. Must be a JSON Path under <code>.status</code> or <code>.spec</code>. Must be
   set to work with HorizontalPodAutoscaler. The field pointed by this JSON path
   must be a string field (not a complex selector struct) which contains a
-  serialized label selector in string form. More info: <a href="https://kubernetes.io/doc">https://kubernetes.io/doc</a>
-  s/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions#sca
-  le-subresource If there is no value under the given path in the custom
-  resource, the <code>status.selector</code> value in the <code>/scale</code> subresource will default
-  to the empty string.</li>
+  serialized label selector in string form. <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions#scale-subresource">More info</a>
+  If there is no value under the given path in the custom resource, the
+  <code>status.selector</code> value in the <code>/scale</code> subresource will default to the empty
+  string.</li>
 </ul></div>
 </div>
 <h2 id="customresourcesubresourcestatus">CustomResourceSubresourceStatus</h2>
@@ -1440,9 +1438,9 @@ CustomResources.</p>
 CustomResources.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>scale</strong> <code>CustomResourceSubresourceScale</code> - <em>(optional)</em> scale indicates the custom resource should serve a <code>/scale</code> subresource that
+<li><strong>scale</strong> <code><a href="#customresourcesubresourcescale">CustomResourceSubresourceScale</a></code> - <em>(optional)</em> scale indicates the custom resource should serve a <code>/scale</code> subresource that
   returns an <code>autoscaling/v1</code> Scale object.</li>
-<li><strong>status</strong> <code>CustomResourceSubresourceStatus</code> - <em>(optional)</em> status indicates the custom resource should serve a <code>/status</code> subresource.
+<li><strong>status</strong> <code><a href="#customresourcesubresourcestatus">CustomResourceSubresourceStatus</a></code> - <em>(optional)</em> status indicates the custom resource should serve a <code>/status</code> subresource.
   When enabled: 1. requests to the custom resource primary endpoint ignore
   changes to the <code>status</code> stanza of the object. 2. requests to the custom
   resource <code>/status</code> subresource ignore changes to anything other than the
@@ -1455,7 +1453,7 @@ CustomResources.</p>
 <div class="autodoc-docstring"><p>CustomResourceValidation is a list of validation methods for CustomResources.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>openAPIV3Schema</strong> <code>JSONSchemaProps</code> - <em>(optional)</em> openAPIV3Schema is the OpenAPI v3 schema to use for validation and pruning.</li>
+<li><strong>openAPIV3Schema</strong> <code><a href="#jsonschemaprops">JSONSchemaProps</a></code> - <em>(optional)</em> openAPIV3Schema is the OpenAPI v3 schema to use for validation and pruning.</li>
 </ul></div>
 </div>
 <h2 id="externaldocumentation">ExternalDocumentation</h2>
@@ -1479,22 +1477,22 @@ documentation.</p>
 <ul>
 <li><strong>d_ref</strong> <code>str</code> - <em>(optional)</em></li>
 <li><strong>d_schema</strong> <code>str</code> - <em>(optional)</em></li>
-<li><strong>additionalItems</strong> <code>JSONSchemaPropsOrBool</code> - <em>(optional)</em></li>
-<li><strong>additionalProperties</strong> <code>JSONSchemaPropsOrBool</code> - <em>(optional)</em></li>
-<li><strong>allOf</strong> <code>List[JSONSchemaProps]</code> - <em>(optional)</em></li>
-<li><strong>anyOf</strong> <code>List[JSONSchemaProps]</code> - <em>(optional)</em></li>
-<li><strong>default</strong> <code>JSON</code> - <em>(optional)</em> default is a default value for undefined object fields. Defaulting is a beta
+<li><strong>additionalItems</strong> <code><a href="#jsonschemapropsorbool">JSONSchemaPropsOrBool</a></code> - <em>(optional)</em></li>
+<li><strong>additionalProperties</strong> <code><a href="#jsonschemapropsorbool">JSONSchemaPropsOrBool</a></code> - <em>(optional)</em></li>
+<li><strong>allOf</strong> <code><a href="#jsonschemaprops">List[JSONSchemaProps]</a></code> - <em>(optional)</em></li>
+<li><strong>anyOf</strong> <code><a href="#jsonschemaprops">List[JSONSchemaProps]</a></code> - <em>(optional)</em></li>
+<li><strong>default</strong> <code><a href="#json">JSON</a></code> - <em>(optional)</em> default is a default value for undefined object fields. Defaulting is a beta
   feature under the CustomResourceDefaulting feature gate.
   CustomResourceDefinitions with defaults must be created using the v1 (or
   newer) CustomResourceDefinition API.</li>
 <li><strong>definitions</strong> <code>dict</code> - <em>(optional)</em></li>
 <li><strong>dependencies</strong> <code>dict</code> - <em>(optional)</em></li>
 <li><strong>description</strong> <code>str</code> - <em>(optional)</em></li>
-<li><strong>enum</strong> <code>List[JSON]</code> - <em>(optional)</em></li>
-<li><strong>example</strong> <code>JSON</code> - <em>(optional)</em></li>
+<li><strong>enum</strong> <code><a href="#json">List[JSON]</a></code> - <em>(optional)</em></li>
+<li><strong>example</strong> <code><a href="#json">JSON</a></code> - <em>(optional)</em></li>
 <li><strong>exclusiveMaximum</strong> <code>bool</code> - <em>(optional)</em></li>
 <li><strong>exclusiveMinimum</strong> <code>bool</code> - <em>(optional)</em></li>
-<li><strong>externalDocs</strong> <code>ExternalDocumentation</code> - <em>(optional)</em></li>
+<li><strong>externalDocs</strong> <code><a href="#externaldocumentation">ExternalDocumentation</a></code> - <em>(optional)</em></li>
 <li><strong>format</strong> <code>str</code> - <em>(optional)</em> format is an OpenAPI v3 format string. Unknown formats are ignored. The
   following formats are validated:</li>
 <li>bsonobjectid: a bson object ID, i.e. a 24 characters hex string - uri: an
@@ -1515,11 +1513,11 @@ documentation.</p>
 <li>isbn: an ISBN10 or ISBN13 number string like "0321751043" or
   "978-0321751041" - isbn10: an ISBN10 number string like "0321751043" - isbn13:
   an ISBN13 number string like "978-0321751041" - creditcard: a credit card
-  number defined by the regex ^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:01
-  1|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|
-  1800|35\d{3})\d{11})$ with any non digit characters mixed in - ssn: a U.S.
-  social security number following the regex ^\d{3}[- ]?\d{2}[- ]?\d{4}$ -
-  hexcolor: an hexadecimal color code like "#FFFFFF: following the regex
+  number defined by the regex
+  ^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$
+  with any non digit characters mixed in - ssn: a U.S. social security number
+  following the regex ^\d{3}[- ]?\d{2}[- ]?\d{4}$ - hexcolor: an hexadecimal
+  color code like "#FFFFFF: following the regex
   ^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$ - rgbcolor: an RGB color code like rgb
   like "rgb(255,255,2559" - byte: base64 encoded binary data - password: any
   kind of string - date: a date string like "2006-01-02" as defined by full-date
@@ -1528,7 +1526,7 @@ documentation.</p>
   time string like "2014-12-15T19:30:20.000Z" as defined by date-time in
   RFC3339.</li>
 <li><strong>id</strong> <code>str</code> - <em>(optional)</em></li>
-<li><strong>items</strong> <code>JSONSchemaPropsOrArray</code> - <em>(optional)</em></li>
+<li><strong>items</strong> <code><a href="#jsonschemapropsorarray">JSONSchemaPropsOrArray</a></code> - <em>(optional)</em></li>
 <li><strong>maxItems</strong> <code>int</code> - <em>(optional)</em></li>
 <li><strong>maxLength</strong> <code>int</code> - <em>(optional)</em></li>
 <li><strong>maxProperties</strong> <code>int</code> - <em>(optional)</em></li>
@@ -1538,13 +1536,13 @@ documentation.</p>
 <li><strong>minProperties</strong> <code>int</code> - <em>(optional)</em></li>
 <li><strong>minimum</strong> <code>float</code> - <em>(optional)</em></li>
 <li><strong>multipleOf</strong> <code>float</code> - <em>(optional)</em></li>
-<li><strong>not_</strong> <code>JSONSchemaProps</code> - <em>(optional)</em></li>
+<li><strong>not_</strong> <code><a href="#jsonschemaprops">JSONSchemaProps</a></code> - <em>(optional)</em></li>
 <li><strong>nullable</strong> <code>bool</code> - <em>(optional)</em></li>
-<li><strong>oneOf</strong> <code>List[JSONSchemaProps]</code> - <em>(optional)</em></li>
+<li><strong>oneOf</strong> <code><a href="#jsonschemaprops">List[JSONSchemaProps]</a></code> - <em>(optional)</em></li>
 <li><strong>pattern</strong> <code>str</code> - <em>(optional)</em></li>
 <li><strong>patternProperties</strong> <code>dict</code> - <em>(optional)</em></li>
 <li><strong>properties</strong> <code>dict</code> - <em>(optional)</em></li>
-<li><strong>required</strong> <code>List[str]</code> - <em>(optional)</em></li>
+<li><strong>required</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em></li>
 <li><strong>title</strong> <code>str</code> - <em>(optional)</em></li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em></li>
 <li><strong>uniqueItems</strong> <code>bool</code> - <em>(optional)</em></li>
@@ -1567,7 +1565,7 @@ documentation.</p>
 <li>... zero or more</li>
 </ul>
 </li>
-<li><strong>x_kubernetes_list_map_keys</strong> <code>List[str]</code> - <em>(optional)</em> x-kubernetes-list-map-keys annotates an array with the x-kubernetes-list-type
+<li><strong>x_kubernetes_list_map_keys</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> x-kubernetes-list-map-keys annotates an array with the x-kubernetes-list-type
   <code>map</code> by specifying the keys used as the index of the map.
   This tag MUST only be used on lists that have the "x-kubernetes-list-type"
   extension set to "map". Also, the values specified for this attribute must be
@@ -1635,7 +1633,7 @@ webhook.</p>
 <li><strong>caBundle</strong> <code>str</code> - <em>(optional)</em> caBundle is a PEM encoded CA bundle which will be used to validate the
   webhook's server certificate. If unspecified, system trust roots on the
   apiserver are used.</li>
-<li><strong>service</strong> <code>ServiceReference</code> - <em>(optional)</em> service is a reference to the service for this webhook. Either service or url
+<li><strong>service</strong> <code><a href="#servicereference">ServiceReference</a></code> - <em>(optional)</em> service is a reference to the service for this webhook. Either service or url
   must be specified.
   If the webhook is running within the cluster, then you should use <code>service</code>.</li>
 <li><strong>url</strong> <code>str</code> - <em>(optional)</em> url gives the location of the webhook, in standard URL form

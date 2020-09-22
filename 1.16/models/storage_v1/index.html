@@ -992,21 +992,18 @@ etcd is in ObjectMeta.Name.</p>
 <ul>
 <li><strong>provisioner</strong> <code>str</code> - Provisioner indicates the type of the provisioner.</li>
 <li><strong>allowVolumeExpansion</strong> <code>bool</code> - <em>(optional)</em> AllowVolumeExpansion shows whether the storage class allow volume expand</li>
-<li><strong>allowedTopologies</strong> <code>List[core_v1.TopologySelectorTerm]</code> - <em>(optional)</em> Restrict the node topologies where volumes can be dynamically provisioned.
+<li><strong>allowedTopologies</strong> <code><a href="../core_v1/index.html#topologyselectorterm">List[core_v1.TopologySelectorTerm]</a></code> - <em>(optional)</em> Restrict the node topologies where volumes can be dynamically provisioned.
   Each volume plugin defines its own supported topology specifications. An empty
   TopologySelectorTerm list means there is no topology restriction. This field
   is only honored by servers that enable the VolumeScheduling feature.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
-  rs/devel/sig-architecture/api-conventions.md#metadata</li>
-<li><strong>mountOptions</strong> <code>List[str]</code> - <em>(optional)</em> Dynamically provisioned PersistentVolumes of this storage class are created
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>mountOptions</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Dynamically provisioned PersistentVolumes of this storage class are created
   with these mountOptions, e.g. ["ro", "soft"]. Not validated - mount of the PVs
   will simply fail if one is invalid.</li>
 <li><strong>parameters</strong> <code>dict</code> - <em>(optional)</em> Parameters holds the parameters for the provisioner that should create volumes
@@ -1024,17 +1021,14 @@ etcd is in ObjectMeta.Name.</p>
 <div class="autodoc-docstring"><p>StorageClassList is a collection of storage classes.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[StorageClass]</code> - Items is the list of StorageClasses</li>
+<li><strong>items</strong> <code><a href="#storageclass">List[StorageClass]</a></code> - Items is the list of StorageClasses</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata More info: <a href="https://git.k8s.io/community/contributors/de">https://git.k8s.io/community/contributors/de</a>
-  vel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="volumeattachment">VolumeAttachment</h2>
@@ -1045,19 +1039,16 @@ to/from the specified node.</p>
 <p>VolumeAttachment objects are non-namespaced.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>VolumeAttachmentSpec</code> - Specification of the desired attach/detach volume behavior. Populated by the
+<li><strong>spec</strong> <code><a href="#volumeattachmentspec">VolumeAttachmentSpec</a></code> - Specification of the desired attach/detach volume behavior. Populated by the
   Kubernetes system.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata. More info: <a href="https://git.k8s.io/community/contributors">https://git.k8s.io/community/contributors</a>
-  /devel/sig-architecture/api-conventions.md#metadata</li>
-<li><strong>status</strong> <code>VolumeAttachmentStatus</code> - <em>(optional)</em> Status of the VolumeAttachment request. Populated by the entity completing the
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code><a href="#volumeattachmentstatus">VolumeAttachmentStatus</a></code> - <em>(optional)</em> Status of the VolumeAttachment request. Populated by the entity completing the
   attach or detach operation, i.e. the external-attacher.</li>
 </ul></div>
 </div>
@@ -1067,17 +1058,14 @@ to/from the specified node.</p>
 <div class="autodoc-docstring"><p>VolumeAttachmentList is a collection of VolumeAttachment objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[VolumeAttachment]</code> - Items is the list of VolumeAttachments</li>
+<li><strong>items</strong> <code><a href="#volumeattachment">List[VolumeAttachment]</a></code> - Items is the list of VolumeAttachments</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata More info: <a href="https://git.k8s.io/community/contributors/de">https://git.k8s.io/community/contributors/de</a>
-  vel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="volumeattachmentsource">VolumeAttachmentSource</h2>
@@ -1088,7 +1076,7 @@ only PersistenVolumes can be attached via external attacher, in future we may
 allow also inline volumes in pods. Exactly one member can be set.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>inlineVolumeSpec</strong> <code>core_v1.PersistentVolumeSpec</code> - <em>(optional)</em> inlineVolumeSpec contains all the information necessary to attach a persistent
+<li><strong>inlineVolumeSpec</strong> <code><a href="../core_v1/index.html#persistentvolumespec">core_v1.PersistentVolumeSpec</a></code> - <em>(optional)</em> inlineVolumeSpec contains all the information necessary to attach a persistent
   volume defined by a pod's inline VolumeSource. This field is populated only
   for the CSIMigration feature. It contains translated fields from a pod's
   inline VolumeSource to a PersistentVolumeSpec. This field is alpha-level and
@@ -1105,7 +1093,7 @@ allow also inline volumes in pods. Exactly one member can be set.</p>
 <li><strong>attacher</strong> <code>str</code> - Attacher indicates the name of the volume driver that MUST handle this
   request. This is the name returned by GetPluginName().</li>
 <li><strong>nodeName</strong> <code>str</code> - The node that the volume should be attached to.</li>
-<li><strong>source</strong> <code>VolumeAttachmentSource</code> - Source represents the volume that should be attached.</li>
+<li><strong>source</strong> <code><a href="#volumeattachmentsource">VolumeAttachmentSource</a></code> - Source represents the volume that should be attached.</li>
 </ul></div>
 </div>
 <h2 id="volumeattachmentstatus">VolumeAttachmentStatus</h2>
@@ -1116,14 +1104,14 @@ allow also inline volumes in pods. Exactly one member can be set.</p>
 <ul>
 <li><strong>attached</strong> <code>bool</code> - Indicates the volume is successfully attached. This field must only be set by
   the entity completing the attach operation, i.e. the external-attacher.</li>
-<li><strong>attachError</strong> <code>VolumeError</code> - <em>(optional)</em> The last error encountered during attach operation, if any. This field must
+<li><strong>attachError</strong> <code><a href="#volumeerror">VolumeError</a></code> - <em>(optional)</em> The last error encountered during attach operation, if any. This field must
   only be set by the entity completing the attach operation, i.e. the
   external-attacher.</li>
 <li><strong>attachmentMetadata</strong> <code>dict</code> - <em>(optional)</em> Upon successful attach, this field is populated with any information returned
   by the attach operation that must be passed into subsequent WaitForAttach or
   Mount calls. This field must only be set by the entity completing the attach
   operation, i.e. the external-attacher.</li>
-<li><strong>detachError</strong> <code>VolumeError</code> - <em>(optional)</em> The last error encountered during detach operation, if any. This field must
+<li><strong>detachError</strong> <code><a href="#volumeerror">VolumeError</a></code> - <em>(optional)</em> The last error encountered during detach operation, if any. This field must
   only be set by the entity completing the detach operation, i.e. the
   external-attacher.</li>
 </ul></div>
@@ -1136,7 +1124,7 @@ allow also inline volumes in pods. Exactly one member can be set.</p>
 <ul>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> String detailing the error encountered during Attach or Detach operation. This
   string may be logged, so it should not contain sensitive information.</li>
-<li><strong>time</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Time the error was encountered.</li>
+<li><strong>time</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Time the error was encountered.</li>
 </ul></div>
 </div>
                 

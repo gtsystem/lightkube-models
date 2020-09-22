@@ -1209,19 +1209,13 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
-<li><strong>spec</strong> <code>FlowSchemaSpec</code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a FlowSchema. More
-  info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-">https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-</a>
-  and-status</li>
-<li><strong>status</strong> <code>FlowSchemaStatus</code> - <em>(optional)</em> <code>status</code> is the current status of a FlowSchema. More info: <a href="https://git.k8s.io/">https://git.k8s.io/</a>
-  community/contributors/devel/api-conventions.md#spec-and-status</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#flowschemaspec">FlowSchemaSpec</a></code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a FlowSchema. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#flowschemastatus">FlowSchemaStatus</a></code> - <em>(optional)</em> <code>status</code> is the current status of a FlowSchema. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="flowschemacondition">FlowSchemaCondition</h2>
@@ -1230,7 +1224,7 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <div class="autodoc-docstring"><p>FlowSchemaCondition describes conditions for a FlowSchema.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
   status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> <code>message</code> is a human-readable message indicating details about last
   transition.</li>
@@ -1247,17 +1241,14 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <div class="autodoc-docstring"><p>FlowSchemaList is a list of FlowSchema objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[FlowSchema]</code> - <code>items</code> is a list of FlowSchemas.</li>
+<li><strong>items</strong> <code><a href="#flowschema">List[FlowSchema]</a></code> - <code>items</code> is a list of FlowSchemas.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> <code>metadata</code> is the standard list metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="flowschemaspec">FlowSchemaSpec</h2>
@@ -1266,10 +1257,10 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <div class="autodoc-docstring"><p>FlowSchemaSpec describes how the FlowSchema's specification looks like.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>priorityLevelConfiguration</strong> <code>PriorityLevelConfigurationReference</code> - <code>priorityLevelConfiguration</code> should reference a PriorityLevelConfiguration in
+<li><strong>priorityLevelConfiguration</strong> <code><a href="#prioritylevelconfigurationreference">PriorityLevelConfigurationReference</a></code> - <code>priorityLevelConfiguration</code> should reference a PriorityLevelConfiguration in
   the cluster. If the reference cannot be resolved, the FlowSchema will be
   ignored and marked as invalid in its status. Required.</li>
-<li><strong>distinguisherMethod</strong> <code>FlowDistinguisherMethod</code> - <em>(optional)</em> <code>distinguisherMethod</code> defines how to compute the flow distinguisher for
+<li><strong>distinguisherMethod</strong> <code><a href="#flowdistinguishermethod">FlowDistinguisherMethod</a></code> - <em>(optional)</em> <code>distinguisherMethod</code> defines how to compute the flow distinguisher for
   requests that match this schema. <code>nil</code> specifies that the distinguisher is
   disabled and thus will always be the empty string.</li>
 <li><strong>matchingPrecedence</strong> <code>int</code> - <em>(optional)</em> <code>matchingPrecedence</code> is used to choose among the FlowSchemas that match a
@@ -1277,7 +1268,7 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
   lowest (which we take to be logically highest) MatchingPrecedence.  Each
   MatchingPrecedence value must be non-negative. Note that if the precedence is
   not specified or zero, it will be set to 1000 as default.</li>
-<li><strong>rules</strong> <code>List[PolicyRulesWithSubjects]</code> - <em>(optional)</em> <code>rules</code> describes which requests will match this flow schema. This FlowSchema
+<li><strong>rules</strong> <code><a href="#policyruleswithsubjects">List[PolicyRulesWithSubjects]</a></code> - <em>(optional)</em> <code>rules</code> describes which requests will match this flow schema. This FlowSchema
   matches a request if and only if at least one member of rules matches the
   request. if it is an empty slice, there will be no requests matching the
   FlowSchema.</li>
@@ -1289,7 +1280,7 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <div class="autodoc-docstring"><p>FlowSchemaStatus represents the current state of a FlowSchema.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>conditions</strong> <code>List[FlowSchemaCondition]</code> - <em>(optional)</em> <code>conditions</code> is a list of the current states of FlowSchema.</li>
+<li><strong>conditions</strong> <code><a href="#flowschemacondition">List[FlowSchemaCondition]</a></code> - <em>(optional)</em> <code>conditions</code> is a list of the current states of FlowSchema.</li>
 </ul></div>
 </div>
 <h2 id="groupsubject">GroupSubject</h2>
@@ -1298,9 +1289,9 @@ a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
 <div class="autodoc-docstring"><p>GroupSubject holds detailed information for group-kind subject.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>name</strong> <code>str</code> - name is the user group that matches, or "*" to match all user groups. See http
-  s://github.com/kubernetes/apiserver/blob/master/pkg/authentication/user/user.g
-  o for some well-known group names. Required.</li>
+<li><strong>name</strong> <code>str</code> - name is the user group that matches, or "*" to match all user groups. See
+  <a href="https://github.com/kubernetes/apiserver/blob/master/pkg/authentication/user/user.go">https://github.com/kubernetes/apiserver/blob/master/pkg/authentication/user/user.go</a>
+  for some well-known group names. Required.</li>
 </ul></div>
 </div>
 <h2 id="limitresponse">LimitResponse</h2>
@@ -1314,7 +1305,7 @@ now.</p>
   executed upon arrival are held in a queue until they can be executed or a
   queuing limit is reached. "Reject" means that requests that can not be
   executed upon arrival are rejected. Required.</li>
-<li><strong>queuing</strong> <code>QueuingConfiguration</code> - <em>(optional)</em> <code>queuing</code> holds the configuration parameters for queuing. This field may be
+<li><strong>queuing</strong> <code><a href="#queuingconfiguration">QueuingConfiguration</a></code> - <em>(optional)</em> <code>queuing</code> holds the configuration parameters for queuing. This field may be
   non-empty only if <code>type</code> is <code>"Queue"</code>.</li>
 </ul></div>
 </div>
@@ -1337,7 +1328,7 @@ subject to limits. It addresses two issues:
               ACV(l) = ceil( SCL * ACS(l) / ( sum[priority levels k] ACS(k) ) )
   bigger numbers of ACS mean more reserved concurrent requests (at the expense
   of every other PL). This field has a default value of 30.</li>
-<li><strong>limitResponse</strong> <code>LimitResponse</code> - <em>(optional)</em> <code>limitResponse</code> indicates what to do with requests that can not be executed
+<li><strong>limitResponse</strong> <code><a href="#limitresponse">LimitResponse</a></code> - <em>(optional)</em> <code>limitResponse</code> indicates what to do with requests that can not be executed
   right now</li>
 </ul></div>
 </div>
@@ -1351,7 +1342,7 @@ member of verbs matches the request and (b) at least one member of
 nonResourceURLs matches the request.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>nonResourceURLs</strong> <code>List[str]</code> - <code>nonResourceURLs</code> is a set of url prefixes that a user should have access to
+<li><strong>nonResourceURLs</strong> <code><a href="#str">List[str]</a></code> - <code>nonResourceURLs</code> is a set of url prefixes that a user should have access to
   and may not be empty. For example:<ul>
 <li>"/healthz" is legal</li>
 <li>"/hea<em>" is illegal</li>
@@ -1362,7 +1353,7 @@ nonResourceURLs matches the request.</p>
   entry. Required.</li>
 </ul>
 </li>
-<li><strong>verbs</strong> <code>List[str]</code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
+<li><strong>verbs</strong> <code><a href="#str">List[str]</a></code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
   verbs. If it is present, it must be the only entry. Required.</li>
 </ul></div>
 </div>
@@ -1377,13 +1368,13 @@ matches the request and (b) at least one member of resourceRules or
 nonResourceRules matches the request.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>subjects</strong> <code>List[Subject]</code> - subjects is the list of normal user, serviceaccount, or group that this rule
+<li><strong>subjects</strong> <code><a href="#subject">List[Subject]</a></code> - subjects is the list of normal user, serviceaccount, or group that this rule
   cares about. There must be at least one member in this slice. A slice that
   includes both the system:authenticated and system:unauthenticated user groups
   matches every request. Required.</li>
-<li><strong>nonResourceRules</strong> <code>List[NonResourcePolicyRule]</code> - <em>(optional)</em> <code>nonResourceRules</code> is a list of NonResourcePolicyRules that identify matching
+<li><strong>nonResourceRules</strong> <code><a href="#nonresourcepolicyrule">List[NonResourcePolicyRule]</a></code> - <em>(optional)</em> <code>nonResourceRules</code> is a list of NonResourcePolicyRules that identify matching
   requests according to their verb and the target non-resource URL.</li>
-<li><strong>resourceRules</strong> <code>List[ResourcePolicyRule]</code> - <em>(optional)</em> <code>resourceRules</code> is a slice of ResourcePolicyRules that identify matching
+<li><strong>resourceRules</strong> <code><a href="#resourcepolicyrule">List[ResourcePolicyRule]</a></code> - <em>(optional)</em> <code>resourceRules</code> is a slice of ResourcePolicyRules that identify matching
   requests according to their verb and the target resource. At least one of
   <code>resourceRules</code> and <code>nonResourceRules</code> has to be non-empty.</li>
 </ul></div>
@@ -1396,19 +1387,14 @@ nonResourceRules matches the request.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
-<li><strong>spec</strong> <code>PriorityLevelConfigurationSpec</code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a "request-priority".
-  More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#">https://git.k8s.io/community/contributors/devel/api-conventions.md#</a>
-  spec-and-status</li>
-<li><strong>status</strong> <code>PriorityLevelConfigurationStatus</code> - <em>(optional)</em> <code>status</code> is the current status of a "request-priority". More info: <a href="https://git">https://git</a>
-  .k8s.io/community/contributors/devel/api-conventions.md#spec-and-status</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#prioritylevelconfigurationspec">PriorityLevelConfigurationSpec</a></code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a "request-priority".
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#prioritylevelconfigurationstatus">PriorityLevelConfigurationStatus</a></code> - <em>(optional)</em> <code>status</code> is the current status of a "request-priority". <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="prioritylevelconfigurationcondition">PriorityLevelConfigurationCondition</h2>
@@ -1417,7 +1403,7 @@ nonResourceRules matches the request.</p>
 <div class="autodoc-docstring"><p>PriorityLevelConfigurationCondition defines the condition of priority level.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
   status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> <code>message</code> is a human-readable message indicating details about last
   transition.</li>
@@ -1435,17 +1421,14 @@ nonResourceRules matches the request.</p>
 objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[PriorityLevelConfiguration]</code> - <code>items</code> is a list of request-priorities.</li>
+<li><strong>items</strong> <code><a href="#prioritylevelconfiguration">List[PriorityLevelConfiguration]</a></code> - <code>items</code> is a list of request-priorities.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="prioritylevelconfigurationreference">PriorityLevelConfigurationReference</h2>
@@ -1473,7 +1456,7 @@ level.</p>
   <code>"Limited"</code> means that (a) requests of this priority level <em>are</em> subject to
   limits and (b) some of the server's limited capacity is made available
   exclusively to this priority level. Required.</li>
-<li><strong>limited</strong> <code>LimitedPriorityLevelConfiguration</code> - <em>(optional)</em> <code>limited</code> specifies how requests are handled for a Limited priority level.
+<li><strong>limited</strong> <code><a href="#limitedprioritylevelconfiguration">LimitedPriorityLevelConfiguration</a></code> - <em>(optional)</em> <code>limited</code> specifies how requests are handled for a Limited priority level.
   This field must be non-empty if and only if <code>type</code> is <code>"Limited"</code>.</li>
 </ul></div>
 </div>
@@ -1484,7 +1467,7 @@ level.</p>
 "request-priority".</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>conditions</strong> <code>List[PriorityLevelConfigurationCondition]</code> - <em>(optional)</em> <code>conditions</code> is the current state of "request-priority".</li>
+<li><strong>conditions</strong> <code><a href="#prioritylevelconfigurationcondition">List[PriorityLevelConfigurationCondition]</a></code> - <em>(optional)</em> <code>conditions</code> is the current state of "request-priority".</li>
 </ul></div>
 </div>
 <h2 id="queuingconfiguration">QueuingConfiguration</h2>
@@ -1522,19 +1505,19 @@ least one member of resources matches the request, and (d) least one member of
 namespaces matches the request.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>apiGroups</strong> <code>List[str]</code> - <code>apiGroups</code> is a list of matching API groups and may not be empty. "<em>" matches
+<li><strong>apiGroups</strong> <code><a href="#str">List[str]</a></code> - <code>apiGroups</code> is a list of matching API groups and may not be empty. "<em>" matches
   all API groups and, if present, must be the only entry. Required.</li>
-<li><strong>resources</strong> <code>List[str]</code> - <code>resources</code> is a list of matching resources (i.e., lowercase and plural) with,
+<li><strong>resources</strong> <code><a href="#str">List[str]</a></code> - <code>resources</code> is a list of matching resources (i.e., lowercase and plural) with,
   if desired, subresource.  For example, [ "services", "nodes/status" ].  This
   list may not be empty. "</em>" matches all resources and, if present, must be the
   only entry. Required.</li>
-<li><strong>verbs</strong> <code>List[str]</code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
+<li><strong>verbs</strong> <code><a href="#str">List[str]</a></code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
   verbs and, if present, must be the only entry. Required.</li>
 <li><strong>clusterScope</strong> <code>bool</code> - <em>(optional)</em> <code>clusterScope</code> indicates whether to match requests that do not specify a
   namespace (which happens either because the resource is not namespaced or the
   request targets all namespaces). If this field is omitted or false then the
   <code>namespaces</code> field must contain a non-empty list.</li>
-<li><strong>namespaces</strong> <code>List[str]</code> - <em>(optional)</em> <code>namespaces</code> is a list of target namespaces that restricts matches.  A request
+<li><strong>namespaces</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> <code>namespaces</code> is a list of target namespaces that restricts matches.  A request
   that specifies a target namespace matches only if either (a) this list
   contains that target namespace or (b) this list contains "<em>".  Note that "</em>"
   matches any specified namespace but does not match a request that <em>does not
@@ -1563,9 +1546,9 @@ user, group, or service account.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>kind</strong> <code>str</code> - Required</li>
-<li><strong>group</strong> <code>GroupSubject</code> - <em>(optional)</em></li>
-<li><strong>serviceAccount</strong> <code>ServiceAccountSubject</code> - <em>(optional)</em></li>
-<li><strong>user</strong> <code>UserSubject</code> - <em>(optional)</em></li>
+<li><strong>group</strong> <code><a href="#groupsubject">GroupSubject</a></code> - <em>(optional)</em></li>
+<li><strong>serviceAccount</strong> <code><a href="#serviceaccountsubject">ServiceAccountSubject</a></code> - <em>(optional)</em></li>
+<li><strong>user</strong> <code><a href="#usersubject">UserSubject</a></code> - <em>(optional)</em></li>
 </ul></div>
 </div>
 <h2 id="usersubject">UserSubject</h2>

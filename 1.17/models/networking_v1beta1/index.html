@@ -1014,7 +1014,7 @@
 the path are forwarded to the backend.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>backend</strong> <code>IngressBackend</code> - Backend defines the referenced service endpoint to which the traffic will be
+<li><strong>backend</strong> <code><a href="#ingressbackend">IngressBackend</a></code> - Backend defines the referenced service endpoint to which the traffic will be
   forwarded to.</li>
 <li><strong>path</strong> <code>str</code> - <em>(optional)</em> Path is an extended POSIX regex as defined by IEEE Std 1003.1, (i.e this
   follows the egrep/unix syntax, not the perl syntax) matched against the path
@@ -1033,7 +1033,7 @@ url correspond to RFC 3986, this resource will be used to match against
 everything after the last '/' and before the first '?' or '#'.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>paths</strong> <code>List[HTTPIngressPath]</code> - A collection of paths that map requests to backends.</li>
+<li><strong>paths</strong> <code><a href="#httpingresspath">List[HTTPIngressPath]</a></code> - A collection of paths that map requests to backends.</li>
 </ul></div>
 </div>
 <h2 id="ingress">Ingress</h2>
@@ -1047,18 +1047,13 @@ based virtual hosting etc.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
-  rs/devel/sig-architecture/api-conventions.md#metadata</li>
-<li><strong>spec</strong> <code>IngressSpec</code> - <em>(optional)</em> Spec is the desired state of the Ingress. More info: <a href="https://git.k8s.io/commun">https://git.k8s.io/commun</a>
-  ity/contributors/devel/sig-architecture/api-conventions.md#spec-and-status</li>
-<li><strong>status</strong> <code>IngressStatus</code> - <em>(optional)</em> Status is the current state of the Ingress. More info: <a href="https://git.k8s.io/comm">https://git.k8s.io/comm</a>
-  unity/contributors/devel/sig-architecture/api-conventions.md#spec-and-status</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#ingressspec">IngressSpec</a></code> - <em>(optional)</em> Spec is the desired state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#ingressstatus">IngressStatus</a></code> - <em>(optional)</em> Status is the current state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ingressbackend">IngressBackend</h2>
@@ -1068,7 +1063,7 @@ based virtual hosting etc.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>serviceName</strong> <code>str</code> - Specifies the name of the referenced service.</li>
-<li><strong>servicePort</strong> <code>util_intstr.IntOrString</code> - Specifies the port of the referenced service.</li>
+<li><strong>servicePort</strong> <code><a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a></code> - Specifies the port of the referenced service.</li>
 </ul></div>
 </div>
 <h2 id="ingresslist">IngressList</h2>
@@ -1077,17 +1072,14 @@ based virtual hosting etc.</p>
 <div class="autodoc-docstring"><p>IngressList is a collection of Ingress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[Ingress]</code> - Items is the list of Ingress.</li>
+<li><strong>items</strong> <code><a href="#ingress">List[Ingress]</a></code> - Items is the list of Ingress.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
-  rs/devel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ingressrule">IngressRule</h2>
@@ -1110,7 +1102,7 @@ IngressRuleValue.</p>
   Both these may change in the future. Incoming requests are matched against the
   host before the IngressRuleValue. If the host is unspecified, the Ingress
   routes all traffic based on the specified IngressRuleValue.</li>
-<li><strong>http</strong> <code>HTTPIngressRuleValue</code> - <em>(optional)</em></li>
+<li><strong>http</strong> <code><a href="#httpingressrulevalue">HTTPIngressRuleValue</a></code> - <em>(optional)</em></li>
 </ul></div>
 </div>
 <h2 id="ingressspec">IngressSpec</h2>
@@ -1119,13 +1111,13 @@ IngressRuleValue.</p>
 <div class="autodoc-docstring"><p>IngressSpec describes the Ingress the user wishes to exist.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>backend</strong> <code>IngressBackend</code> - <em>(optional)</em> A default backend capable of servicing requests that don't match any rule. At
+<li><strong>backend</strong> <code><a href="#ingressbackend">IngressBackend</a></code> - <em>(optional)</em> A default backend capable of servicing requests that don't match any rule. At
   least one of 'backend' or 'rules' must be specified. This field is optional to
   allow the loadbalancer controller or defaulting logic to specify a global
   default.</li>
-<li><strong>rules</strong> <code>List[IngressRule]</code> - <em>(optional)</em> A list of host rules used to configure the Ingress. If unspecified, or no rule
+<li><strong>rules</strong> <code><a href="#ingressrule">List[IngressRule]</a></code> - <em>(optional)</em> A list of host rules used to configure the Ingress. If unspecified, or no rule
   matches, all traffic is sent to the default backend.</li>
-<li><strong>tls</strong> <code>List[IngressTLS]</code> - <em>(optional)</em> TLS configuration. Currently the Ingress only supports a single TLS port, 443.
+<li><strong>tls</strong> <code><a href="#ingresstls">List[IngressTLS]</a></code> - <em>(optional)</em> TLS configuration. Currently the Ingress only supports a single TLS port, 443.
   If multiple members of this list specify different hosts, they will be
   multiplexed on the same port according to the hostname specified through the
   SNI TLS extension, if the ingress controller fulfilling the ingress supports
@@ -1138,7 +1130,7 @@ IngressRuleValue.</p>
 <div class="autodoc-docstring"><p>IngressStatus describe the current state of the Ingress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>loadBalancer</strong> <code>core_v1.LoadBalancerStatus</code> - <em>(optional)</em> LoadBalancer contains the current status of the load-balancer.</li>
+<li><strong>loadBalancer</strong> <code><a href="../core_v1/index.html#loadbalancerstatus">core_v1.LoadBalancerStatus</a></code> - <em>(optional)</em> LoadBalancer contains the current status of the load-balancer.</li>
 </ul></div>
 </div>
 <h2 id="ingresstls">IngressTLS</h2>
@@ -1147,7 +1139,7 @@ IngressRuleValue.</p>
 <div class="autodoc-docstring"><p>IngressTLS describes the transport layer security associated with an Ingress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>hosts</strong> <code>List[str]</code> - <em>(optional)</em> Hosts are a list of hosts included in the TLS certificate. The values in this
+<li><strong>hosts</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Hosts are a list of hosts included in the TLS certificate. The values in this
   list must match the name/s used in the tlsSecret. Defaults to the wildcard
   host setting for the loadbalancer controller fulfilling this Ingress, if left
   unspecified.</li>

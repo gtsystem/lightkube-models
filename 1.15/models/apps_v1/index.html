@@ -1243,15 +1243,12 @@ controllers.</p>
 <li><strong>revision</strong> <code>int</code> - Revision indicates the revision of the state represented by Data.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
-<li><strong>data</strong> <code>runtime.RawExtension</code> - <em>(optional)</em> Data is the serialized representation of the state.</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
+<li><strong>data</strong> <code><a href="../runtime/index.html#rawextension">runtime.RawExtension</a></code> - <em>(optional)</em> Data is the serialized representation of the state.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="controllerrevisionlist">ControllerRevisionList</h2>
@@ -1261,17 +1258,14 @@ controllers.</p>
 objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[ControllerRevision]</code> - Items is the list of ControllerRevisions</li>
+<li><strong>items</strong> <code><a href="#controllerrevision">List[ControllerRevision]</a></code> - Items is the list of ControllerRevisions</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="daemonset">DaemonSet</h2>
@@ -1282,19 +1276,14 @@ objects.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
-<li><strong>spec</strong> <code>DaemonSetSpec</code> - <em>(optional)</em> The desired behavior of this daemon set. More info: <a href="https://git.k8s.io/communi">https://git.k8s.io/communi</a>
-  ty/contributors/devel/api-conventions.md#spec-and-status</li>
-<li><strong>status</strong> <code>DaemonSetStatus</code> - <em>(optional)</em> The current status of this daemon set. This data may be out of date by some
-  window of time. Populated by the system. Read-only. More info: <a href="https://git.k8s">https://git.k8s</a>
-  .io/community/contributors/devel/api-conventions.md#spec-and-status</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#daemonsetspec">DaemonSetSpec</a></code> - <em>(optional)</em> The desired behavior of this daemon set. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#daemonsetstatus">DaemonSetStatus</a></code> - <em>(optional)</em> The current status of this daemon set. This data may be out of date by some
+  window of time. Populated by the system. Read-only. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="daemonsetcondition">DaemonSetCondition</h2>
@@ -1305,7 +1294,7 @@ objects.</p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type of DaemonSet condition.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
 </ul></div>
@@ -1316,17 +1305,14 @@ objects.</p>
 <div class="autodoc-docstring"><p>DaemonSetList is a collection of daemon sets.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[DaemonSet]</code> - A list of daemon sets.</li>
+<li><strong>items</strong> <code><a href="#daemonset">List[DaemonSet]</a></code> - A list of daemon sets.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="daemonsetspec">DaemonSetSpec</h2>
@@ -1335,22 +1321,18 @@ objects.</p>
 <div class="autodoc-docstring"><p>DaemonSetSpec is the specification of a daemon set.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - A label query over pods that are managed by the daemon set. Must match in
-  order to be controlled. It must match the pod template's labels. More info: ht
-  tps://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-
-  selectors</li>
-<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - An object that describes the pod that will be created. The DaemonSet will
+<li><strong>selector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - A label query over pods that are managed by the daemon set. Must match in
+  order to be controlled. It must match the pod template's labels. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">More info</a></li>
+<li><strong>template</strong> <code><a href="../core_v1/index.html#podtemplatespec">core_v1.PodTemplateSpec</a></code> - An object that describes the pod that will be created. The DaemonSet will
   create exactly one copy of this pod on every node that matches the template's
-  node selector (or on every node if no node selector is specified). More info:
-  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontrolle">https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontrolle</a>
-  r#pod-template</li>
+  node selector (or on every node if no node selector is specified). <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template">More info</a></li>
 <li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> The minimum number of seconds for which a newly created DaemonSet pod should
   be ready without any of its container crashing, for it to be considered
   available. Defaults to 0 (pod will be considered available as soon as it is
   ready).</li>
 <li><strong>revisionHistoryLimit</strong> <code>int</code> - <em>(optional)</em> The number of old history to retain to allow rollback. This is a pointer to
   distinguish between explicit zero and not specified. Defaults to 10.</li>
-<li><strong>updateStrategy</strong> <code>DaemonSetUpdateStrategy</code> - <em>(optional)</em> An update strategy to replace existing DaemonSet pods with new pods.</li>
+<li><strong>updateStrategy</strong> <code><a href="#daemonsetupdatestrategy">DaemonSetUpdateStrategy</a></code> - <em>(optional)</em> An update strategy to replace existing DaemonSet pods with new pods.</li>
 </ul></div>
 </div>
 <h2 id="daemonsetstatus">DaemonSetStatus</h2>
@@ -1360,20 +1342,17 @@ objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>currentNumberScheduled</strong> <code>int</code> - The number of nodes that are running at least 1 daemon pod and are supposed to
-  run the daemon pod. More info:
-  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+  run the daemon pod. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">More info</a></li>
 <li><strong>desiredNumberScheduled</strong> <code>int</code> - The total number of nodes that should be running the daemon pod (including
-  nodes correctly running the daemon pod). More info:
-  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+  nodes correctly running the daemon pod). <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">More info</a></li>
 <li><strong>numberMisscheduled</strong> <code>int</code> - The number of nodes that are running the daemon pod, but are not supposed to
-  run the daemon pod. More info:
-  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/</a></li>
+  run the daemon pod. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">More info</a></li>
 <li><strong>numberReady</strong> <code>int</code> - The number of nodes that should be running the daemon pod and have one or more
   of the daemon pod running and ready.</li>
 <li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> Count of hash collisions for the DaemonSet. The DaemonSet controller uses this
   field as a collision avoidance mechanism when it needs to create the name for
   the newest ControllerRevision.</li>
-<li><strong>conditions</strong> <code>List[DaemonSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a DaemonSet's current state.</li>
+<li><strong>conditions</strong> <code><a href="#daemonsetcondition">List[DaemonSetCondition]</a></code> - <em>(optional)</em> Represents the latest available observations of a DaemonSet's current state.</li>
 <li><strong>numberAvailable</strong> <code>int</code> - <em>(optional)</em> The number of nodes that should be running the daemon pod and have one or more
   of the daemon pod running and available (ready for at least
   spec.minReadySeconds)</li>
@@ -1390,7 +1369,7 @@ objects.</p>
 DaemonSet.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>rollingUpdate</strong> <code>RollingUpdateDaemonSet</code> - <em>(optional)</em> Rolling update config params. Present only if type = "RollingUpdate".</li>
+<li><strong>rollingUpdate</strong> <code><a href="#rollingupdatedaemonset">RollingUpdateDaemonSet</a></code> - <em>(optional)</em> Rolling update config params. Present only if type = "RollingUpdate".</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is
   RollingUpdate.</li>
 </ul></div>
@@ -1403,15 +1382,13 @@ DaemonSet.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata.</li>
-<li><strong>spec</strong> <code>DeploymentSpec</code> - <em>(optional)</em> Specification of the desired behavior of the Deployment.</li>
-<li><strong>status</strong> <code>DeploymentStatus</code> - <em>(optional)</em> Most recently observed status of the Deployment.</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata.</li>
+<li><strong>spec</strong> <code><a href="#deploymentspec">DeploymentSpec</a></code> - <em>(optional)</em> Specification of the desired behavior of the Deployment.</li>
+<li><strong>status</strong> <code><a href="#deploymentstatus">DeploymentStatus</a></code> - <em>(optional)</em> Most recently observed status of the Deployment.</li>
 </ul></div>
 </div>
 <h2 id="deploymentcondition">DeploymentCondition</h2>
@@ -1422,8 +1399,8 @@ DaemonSet.</p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type of deployment condition.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
-<li><strong>lastUpdateTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> The last time this condition was updated.</li>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>lastUpdateTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> The last time this condition was updated.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
 </ul></div>
@@ -1434,16 +1411,14 @@ DaemonSet.</p>
 <div class="autodoc-docstring"><p>DeploymentList is a list of Deployments.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[Deployment]</code> - Items is the list of Deployments.</li>
+<li><strong>items</strong> <code><a href="#deployment">List[Deployment]</a></code> - Items is the list of Deployments.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata.</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata.</li>
 </ul></div>
 </div>
 <h2 id="deploymentspec">DeploymentSpec</h2>
@@ -1452,10 +1427,10 @@ DaemonSet.</p>
 <div class="autodoc-docstring"><p>DeploymentSpec is the specification of the desired behavior of the Deployment.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - Label selector for pods. Existing ReplicaSets whose pods are selected by this
+<li><strong>selector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - Label selector for pods. Existing ReplicaSets whose pods are selected by this
   will be the ones affected by this deployment. It must match the pod template's
   labels.</li>
-<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - Template describes the pods that will be created.</li>
+<li><strong>template</strong> <code><a href="../core_v1/index.html#podtemplatespec">core_v1.PodTemplateSpec</a></code> - Template describes the pods that will be created.</li>
 <li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> Minimum number of seconds for which a newly created pod should be ready
   without any of its container crashing, for it to be considered available.
   Defaults to 0 (pod will be considered available as soon as it is ready)</li>
@@ -1469,7 +1444,7 @@ DaemonSet.</p>
   and not specified. Defaults to 1.</li>
 <li><strong>revisionHistoryLimit</strong> <code>int</code> - <em>(optional)</em> The number of old ReplicaSets to retain to allow rollback. This is a pointer
   to distinguish between explicit zero and not specified. Defaults to 10.</li>
-<li><strong>strategy</strong> <code>DeploymentStrategy</code> - <em>(optional)</em> The deployment strategy to use to replace existing pods with new ones.</li>
+<li><strong>strategy</strong> <code><a href="#deploymentstrategy">DeploymentStrategy</a></code> - <em>(optional)</em> The deployment strategy to use to replace existing pods with new ones.</li>
 </ul></div>
 </div>
 <h2 id="deploymentstatus">DeploymentStatus</h2>
@@ -1483,7 +1458,7 @@ DaemonSet.</p>
 <li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> Count of hash collisions for the Deployment. The Deployment controller uses
   this field as a collision avoidance mechanism when it needs to create the name
   for the newest ReplicaSet.</li>
-<li><strong>conditions</strong> <code>List[DeploymentCondition]</code> - <em>(optional)</em> Represents the latest available observations of a deployment's current state.</li>
+<li><strong>conditions</strong> <code><a href="#deploymentcondition">List[DeploymentCondition]</a></code> - <em>(optional)</em> Represents the latest available observations of a deployment's current state.</li>
 <li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> The generation observed by the deployment controller.</li>
 <li><strong>readyReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of ready pods targeted by this deployment.</li>
 <li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> Total number of non-terminated pods targeted by this deployment (their labels
@@ -1502,7 +1477,7 @@ DaemonSet.</p>
 <div class="autodoc-docstring"><p>DeploymentStrategy describes how to replace existing pods with new ones.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>rollingUpdate</strong> <code>RollingUpdateDeployment</code> - <em>(optional)</em> Rolling update config params. Present only if DeploymentStrategyType =
+<li><strong>rollingUpdate</strong> <code><a href="#rollingupdatedeployment">RollingUpdateDeployment</a></code> - <em>(optional)</em> Rolling update config params. Present only if DeploymentStrategyType =
   RollingUpdate.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of deployment. Can be "Recreate" or "RollingUpdate". Default is
   RollingUpdate.</li>
@@ -1517,22 +1492,16 @@ given time.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> If the Labels of a ReplicaSet are empty, they are defaulted to be the same as
-  the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></li>
-<li><strong>spec</strong> <code>ReplicaSetSpec</code> - <em>(optional)</em> Spec defines the specification of the desired behavior of the ReplicaSet. More
-  info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-">https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-</a>
-  and-status</li>
-<li><strong>status</strong> <code>ReplicaSetStatus</code> - <em>(optional)</em> Status is the most recently observed status of the ReplicaSet. This data may
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> If the Labels of a ReplicaSet are empty, they are defaulted to be the same as
+  the Pod(s) that the ReplicaSet manages. Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#replicasetspec">ReplicaSetSpec</a></code> - <em>(optional)</em> Spec defines the specification of the desired behavior of the ReplicaSet. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#replicasetstatus">ReplicaSetStatus</a></code> - <em>(optional)</em> Status is the most recently observed status of the ReplicaSet. This data may
   be out of date by some window of time. Populated by the system. Read-only.
-  More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#">https://git.k8s.io/community/contributors/devel/api-conventions.md#</a>
-  spec-and-status</li>
+  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="replicasetcondition">ReplicaSetCondition</h2>
@@ -1543,7 +1512,7 @@ given time.</p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type of replica set condition.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> The last time the condition transitioned from one status to another.</li>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> The last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
 </ul></div>
@@ -1554,18 +1523,14 @@ given time.</p>
 <div class="autodoc-docstring"><p>ReplicaSetList is a collection of ReplicaSets.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[ReplicaSet]</code> - List of ReplicaSets. More info: <a href="https://kubernetes.io/docs/concepts/workloads/">https://kubernetes.io/docs/concepts/workloads/</a>
-  controllers/replicationcontroller</li>
+<li><strong>items</strong> <code><a href="#replicaset">List[ReplicaSet]</a></code> - List of ReplicaSets. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller">More info</a></li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="replicasetspec">ReplicaSetSpec</h2>
@@ -1574,20 +1539,16 @@ given time.</p>
 <div class="autodoc-docstring"><p>ReplicaSetSpec is the specification of a ReplicaSet.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - Selector is a label query over pods that should match the replica count. Label
+<li><strong>selector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - Selector is a label query over pods that should match the replica count. Label
   keys and values that must match in order to be controlled by this replica set.
-  It must match the pod template's labels. More info: <a href="https://kubernetes.io/docs">https://kubernetes.io/docs</a>
-  /concepts/overview/working-with-objects/labels/#label-selectors</li>
+  It must match the pod template's labels. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">More info</a></li>
 <li><strong>minReadySeconds</strong> <code>int</code> - <em>(optional)</em> Minimum number of seconds for which a newly created pod should be ready
   without any of its container crashing, for it to be considered available.
   Defaults to 0 (pod will be considered available as soon as it is ready)</li>
 <li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> Replicas is the number of desired replicas. This is a pointer to distinguish
-  between explicit zero and unspecified. Defaults to 1. More info: <a href="https://kuber">https://kuber</a>
-  netes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-
-  replicationcontroller</li>
-<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - <em>(optional)</em> Template is the object that describes the pod that will be created if
-  insufficient replicas are detected. More info: <a href="https://kubernetes.io/docs/conc">https://kubernetes.io/docs/conc</a>
-  epts/workloads/controllers/replicationcontroller#pod-template</li>
+  between explicit zero and unspecified. Defaults to 1. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller">More info</a></li>
+<li><strong>template</strong> <code><a href="../core_v1/index.html#podtemplatespec">core_v1.PodTemplateSpec</a></code> - <em>(optional)</em> Template is the object that describes the pod that will be created if
+  insufficient replicas are detected. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template">More info</a></li>
 </ul></div>
 </div>
 <h2 id="replicasetstatus">ReplicaSetStatus</h2>
@@ -1596,12 +1557,10 @@ given time.</p>
 <div class="autodoc-docstring"><p>ReplicaSetStatus represents the current status of a ReplicaSet.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>replicas</strong> <code>int</code> - Replicas is the most recently oberved number of replicas. More info: https://k
-  ubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-i
-  s-a-replicationcontroller</li>
+<li><strong>replicas</strong> <code>int</code> - Replicas is the most recently oberved number of replicas. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/#what-is-a-replicationcontroller">More info</a></li>
 <li><strong>availableReplicas</strong> <code>int</code> - <em>(optional)</em> The number of available replicas (ready for at least minReadySeconds) for this
   replica set.</li>
-<li><strong>conditions</strong> <code>List[ReplicaSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a replica set's current state.</li>
+<li><strong>conditions</strong> <code><a href="#replicasetcondition">List[ReplicaSetCondition]</a></code> - <em>(optional)</em> Represents the latest available observations of a replica set's current state.</li>
 <li><strong>fullyLabeledReplicas</strong> <code>int</code> - <em>(optional)</em> The number of pods that have labels matching the labels of the pod template of
   the replicaset.</li>
 <li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> ObservedGeneration reflects the generation of the most recently observed
@@ -1615,7 +1574,7 @@ given time.</p>
 <div class="autodoc-docstring"><p>Spec to control the desired behavior of daemon set rolling update.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>maxUnavailable</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of DaemonSet pods that can be unavailable during the
+<li><strong>maxUnavailable</strong> <code><a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a></code> - <em>(optional)</em> The maximum number of DaemonSet pods that can be unavailable during the
   update. Value can be an absolute number (ex: 5) or a percentage of total
   number of DaemonSet pods at the start of the update (ex: 10%). Absolute number
   is calculated from percentage by rounding up. This cannot be 0. Default value
@@ -1635,7 +1594,7 @@ given time.</p>
 <div class="autodoc-docstring"><p>Spec to control the desired behavior of rolling update.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>maxSurge</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of pods that can be scheduled above the desired number of
+<li><strong>maxSurge</strong> <code><a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a></code> - <em>(optional)</em> The maximum number of pods that can be scheduled above the desired number of
   pods. Value can be an absolute number (ex: 5) or a percentage of desired pods
   (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is
   calculated from percentage by rounding up. Defaults to 25%. Example: when this
@@ -1644,7 +1603,7 @@ given time.</p>
   exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet
   can be scaled up further, ensuring that total number of pods running at any
   time during the update is at most 130% of desired pods.</li>
-<li><strong>maxUnavailable</strong> <code>util_intstr.IntOrString</code> - <em>(optional)</em> The maximum number of pods that can be unavailable during the update. Value
+<li><strong>maxUnavailable</strong> <code><a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a></code> - <em>(optional)</em> The maximum number of pods that can be unavailable during the update. Value
   can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%).
   Absolute number is calculated from percentage by rounding down. This can not
   be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the
@@ -1679,15 +1638,13 @@ the same storage identity.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>spec</strong> <code>StatefulSetSpec</code> - <em>(optional)</em> Spec defines the desired identities of pods in this set.</li>
-<li><strong>status</strong> <code>StatefulSetStatus</code> - <em>(optional)</em> Status is the current status of Pods in this StatefulSet. This data may be out
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>spec</strong> <code><a href="#statefulsetspec">StatefulSetSpec</a></code> - <em>(optional)</em> Spec defines the desired identities of pods in this set.</li>
+<li><strong>status</strong> <code><a href="#statefulsetstatus">StatefulSetStatus</a></code> - <em>(optional)</em> Status is the current status of Pods in this StatefulSet. This data may be out
   of date by some window of time.</li>
 </ul></div>
 </div>
@@ -1699,7 +1656,7 @@ the same storage identity.</p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type of statefulset condition.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human readable message indicating details about the transition.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> The reason for the condition's last transition.</li>
 </ul></div>
@@ -1710,16 +1667,14 @@ the same storage identity.</p>
 <div class="autodoc-docstring"><p>StatefulSetList is a collection of StatefulSets.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[StatefulSet]</code> -</li>
+<li><strong>items</strong> <code><a href="#statefulset">List[StatefulSet]</a></code> -</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em></li>
 </ul></div>
 </div>
 <h2 id="statefulsetspec">StatefulSetSpec</h2>
@@ -1728,15 +1683,14 @@ the same storage identity.</p>
 <div class="autodoc-docstring"><p>A StatefulSetSpec is the specification of a StatefulSet.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>selector</strong> <code>meta_v1.LabelSelector</code> - selector is a label query over pods that should match the replica count. It
-  must match the pod template's labels. More info: <a href="https://kubernetes.io/docs/co">https://kubernetes.io/docs/co</a>
-  ncepts/overview/working-with-objects/labels/#label-selectors</li>
+<li><strong>selector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - selector is a label query over pods that should match the replica count. It
+  must match the pod template's labels. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">More info</a></li>
 <li><strong>serviceName</strong> <code>str</code> - serviceName is the name of the service that governs this StatefulSet. This
   service must exist before the StatefulSet, and is responsible for the network
   identity of the set. Pods get DNS/hostnames that follow the pattern:
   pod-specific-string.serviceName.default.svc.cluster.local where
   "pod-specific-string" is managed by the StatefulSet controller.</li>
-<li><strong>template</strong> <code>core_v1.PodTemplateSpec</code> - template is the object that describes the pod that will be created if
+<li><strong>template</strong> <code><a href="../core_v1/index.html#podtemplatespec">core_v1.PodTemplateSpec</a></code> - template is the object that describes the pod that will be created if
   insufficient replicas are detected. Each pod stamped out by the StatefulSet
   will fulfill this Template, but have a unique identity from the rest of the
   StatefulSet.</li>
@@ -1755,9 +1709,9 @@ the same storage identity.</p>
   maintained in the StatefulSet's revision history. The revision history
   consists of all revisions not represented by a currently applied
   StatefulSetSpec version. The default value is 10.</li>
-<li><strong>updateStrategy</strong> <code>StatefulSetUpdateStrategy</code> - <em>(optional)</em> updateStrategy indicates the StatefulSetUpdateStrategy that will be employed
+<li><strong>updateStrategy</strong> <code><a href="#statefulsetupdatestrategy">StatefulSetUpdateStrategy</a></code> - <em>(optional)</em> updateStrategy indicates the StatefulSetUpdateStrategy that will be employed
   to update Pods in the StatefulSet when a revision is made to Template.</li>
-<li><strong>volumeClaimTemplates</strong> <code>List[core_v1.PersistentVolumeClaim]</code> - <em>(optional)</em> volumeClaimTemplates is a list of claims that pods are allowed to reference.
+<li><strong>volumeClaimTemplates</strong> <code><a href="../core_v1/index.html#persistentvolumeclaim">List[core_v1.PersistentVolumeClaim]</a></code> - <em>(optional)</em> volumeClaimTemplates is a list of claims that pods are allowed to reference.
   The StatefulSet controller is responsible for mapping network identities to
   claims in a way that maintains the identity of a pod. Every claim in this list
   must have at least one matching (by name) volumeMount in one container in the
@@ -1775,7 +1729,7 @@ the same storage identity.</p>
 <li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> collisionCount is the count of hash collisions for the StatefulSet. The
   StatefulSet controller uses this field as a collision avoidance mechanism when
   it needs to create the name for the newest ControllerRevision.</li>
-<li><strong>conditions</strong> <code>List[StatefulSetCondition]</code> - <em>(optional)</em> Represents the latest available observations of a statefulset's current state.</li>
+<li><strong>conditions</strong> <code><a href="#statefulsetcondition">List[StatefulSetCondition]</a></code> - <em>(optional)</em> Represents the latest available observations of a statefulset's current state.</li>
 <li><strong>currentReplicas</strong> <code>int</code> - <em>(optional)</em> currentReplicas is the number of Pods created by the StatefulSet controller
   from the StatefulSet version indicated by currentRevision.</li>
 <li><strong>currentRevision</strong> <code>str</code> - <em>(optional)</em> currentRevision, if not empty, indicates the version of the StatefulSet used
@@ -1799,7 +1753,7 @@ controller will use to perform updates. It includes any additional parameters
 necessary to perform the update for the indicated strategy.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>rollingUpdate</strong> <code>RollingUpdateStatefulSetStrategy</code> - <em>(optional)</em> RollingUpdate is used to communicate parameters when Type is
+<li><strong>rollingUpdate</strong> <code><a href="#rollingupdatestatefulsetstrategy">RollingUpdateStatefulSetStrategy</a></code> - <em>(optional)</em> RollingUpdate is used to communicate parameters when Type is
   RollingUpdateStatefulSetStrategyType.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type indicates the type of the StatefulSetUpdateStrategy. Default is
   RollingUpdate.</li>

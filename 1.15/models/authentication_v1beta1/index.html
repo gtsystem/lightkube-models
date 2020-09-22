@@ -897,17 +897,15 @@ TokenReview requests may be cached by the webhook token authenticator plugin
 in the kube-apiserver.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>TokenReviewSpec</code> - Spec holds information about the request being evaluated</li>
+<li><strong>spec</strong> <code><a href="#tokenreviewspec">TokenReviewSpec</a></code> - Spec holds information about the request being evaluated</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>TokenReviewStatus</code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request can be
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#tokenreviewstatus">TokenReviewStatus</a></code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request can be
   authenticated.</li>
 </ul></div>
 </div>
@@ -917,7 +915,7 @@ in the kube-apiserver.</p>
 <div class="autodoc-docstring"><p>TokenReviewSpec is a description of the token authentication request.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>audiences</strong> <code>List[str]</code> - <em>(optional)</em> Audiences is a list of the identifiers that the resource server presented with
+<li><strong>audiences</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Audiences is a list of the identifiers that the resource server presented with
   the token identifies as. Audience-aware token authenticators will verify that
   the token was intended for at least one of the audiences in this list. If no
   audiences are provided, the audience will default to the audience of the
@@ -931,7 +929,7 @@ in the kube-apiserver.</p>
 <div class="autodoc-docstring"><p>TokenReviewStatus is the result of the token authentication request.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>audiences</strong> <code>List[str]</code> - <em>(optional)</em> Audiences are audience identifiers chosen by the authenticator that are
+<li><strong>audiences</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Audiences are audience identifiers chosen by the authenticator that are
   compatible with both the TokenReview and token. An identifier is any
   identifier in the intersection of the TokenReviewSpec audiences and the
   token's audiences. A client of the TokenReview API that sets the
@@ -942,7 +940,7 @@ in the kube-apiserver.</p>
   of the Kubernetes API server.</li>
 <li><strong>authenticated</strong> <code>bool</code> - <em>(optional)</em> Authenticated indicates that the token was associated with a known user.</li>
 <li><strong>error</strong> <code>str</code> - <em>(optional)</em> Error indicates that the token couldn't be checked</li>
-<li><strong>user</strong> <code>UserInfo</code> - <em>(optional)</em> User is the UserInfo associated with the provided token.</li>
+<li><strong>user</strong> <code><a href="#userinfo">UserInfo</a></code> - <em>(optional)</em> User is the UserInfo associated with the provided token.</li>
 </ul></div>
 </div>
 <h2 id="userinfo">UserInfo</h2>
@@ -953,7 +951,7 @@ user.Info interface.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>extra</strong> <code>dict</code> - <em>(optional)</em> Any additional information provided by the authenticator.</li>
-<li><strong>groups</strong> <code>List[str]</code> - <em>(optional)</em> The names of groups this user is a part of.</li>
+<li><strong>groups</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> The names of groups this user is a part of.</li>
 <li><strong>uid</strong> <code>str</code> - <em>(optional)</em> A unique value that identifies this user across time. If this user is deleted
   and another user by the same name is added, they will have different UIDs.</li>
 <li><strong>username</strong> <code>str</code> - <em>(optional)</em> The name that uniquely identifies this user among all active users.</li>

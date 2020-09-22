@@ -955,19 +955,17 @@ kube-apiserver (with the "kubernetes.io/kube-apiserver-client" signerName), or
 to obtain certificates from custom non-Kubernetes signers.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>CertificateSigningRequestSpec</code> - spec contains the certificate request, and is immutable after creation. Only
+<li><strong>spec</strong> <code><a href="#certificatesigningrequestspec">CertificateSigningRequestSpec</a></code> - spec contains the certificate request, and is immutable after creation. Only
   the request, signerName, and usages fields can be set on creation. Other
   fields are derived by Kubernetes and cannot be modified by users.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>CertificateSigningRequestStatus</code> - <em>(optional)</em> status contains information about whether the request is approved or denied,
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#certificatesigningrequeststatus">CertificateSigningRequestStatus</a></code> - <em>(optional)</em> status contains information about whether the request is approved or denied,
   and the certificate issued by the signer, or the failure condition indicating
   signer failure.</li>
 </ul></div>
@@ -992,10 +990,10 @@ CertificateSigningRequest object</p>
   Approved and Denied conditions are mutually exclusive. Approved, Denied, and
   Failed conditions cannot be removed once added.
   Only one condition of a given type is allowed.</li>
-<li><strong>lastTransitionTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> lastTransitionTime is the time the condition last transitioned from one status
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> lastTransitionTime is the time the condition last transitioned from one status
   to another. If unset, when a new condition type is added or an existing
   condition's status is changed, the server defaults this to the current time.</li>
-<li><strong>lastUpdateTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> lastUpdateTime is the time of the last update to this condition</li>
+<li><strong>lastUpdateTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> lastUpdateTime is the time of the last update to this condition</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> message contains a human readable message with details about the request state</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> reason indicates a brief reason for the request state</li>
 </ul></div>
@@ -1007,16 +1005,14 @@ CertificateSigningRequest object</p>
 objects</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[CertificateSigningRequest]</code> - items is a collection of CertificateSigningRequest objects</li>
+<li><strong>items</strong> <code><a href="#certificatesigningrequest">List[CertificateSigningRequest]</a></code> - items is a collection of CertificateSigningRequest objects</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em></li>
 </ul></div>
 </div>
 <h2 id="certificatesigningrequestspec">CertificateSigningRequestSpec</h2>
@@ -1045,8 +1041,8 @@ objects</p>
   use to serve TLS endpoints, which kube-apiserver can connect to securely.
     Requests for this signer are never auto-approved by kube-controller-manager,
   and can be issued by the "csrsigning" controller in kube-controller-manager.
-  More details are available at <a href="https://k8s.io/docs/reference/access-authn-authz">https://k8s.io/docs/reference/access-authn-authz</a>
-  /certificate-signing-requests/#kubernetes-signers
+  More details are available at
+  <a href="https://k8s.io/docs/reference/access-authn-authz/certificate-signing-requests/#kubernetes-signers">https://k8s.io/docs/reference/access-authn-authz/certificate-signing-requests/#kubernetes-signers</a>
   Custom signerNames can also be specified. The signer defines:</li>
 <li>Trust distribution: how trust (CA bundles) are distributed.</li>
 <li>Permitted subjects: and behavior when a disallowed subject is requested.</li>
@@ -1060,12 +1056,12 @@ objects</p>
 <li><strong>extra</strong> <code>dict</code> - <em>(optional)</em> extra contains extra attributes of the user that created the
   CertificateSigningRequest. Populated by the API server on creation and
   immutable.</li>
-<li><strong>groups</strong> <code>List[str]</code> - <em>(optional)</em> groups contains group membership of the user that created the
+<li><strong>groups</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> groups contains group membership of the user that created the
   CertificateSigningRequest. Populated by the API server on creation and
   immutable.</li>
 <li><strong>uid</strong> <code>str</code> - <em>(optional)</em> uid contains the uid of the user that created the CertificateSigningRequest.
   Populated by the API server on creation and immutable.</li>
-<li><strong>usages</strong> <code>List[str]</code> - <em>(optional)</em> usages specifies a set of key usages requested in the issued certificate.
+<li><strong>usages</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> usages specifies a set of key usages requested in the issued certificate.
   Requests for TLS client certificates typically request: "digital signature",
   "key encipherment", "client auth".
   Requests for TLS serving certificates typically request: "key encipherment",
@@ -1118,7 +1114,7 @@ approved/denied/failed status of the request, and the issued certificate.</p>
       ...
       -----END CERTIFICATE-----
       )</li>
-<li><strong>conditions</strong> <code>List[CertificateSigningRequestCondition]</code> - <em>(optional)</em> conditions applied to the request. Known conditions are "Approved", "Denied",
+<li><strong>conditions</strong> <code><a href="#certificatesigningrequestcondition">List[CertificateSigningRequestCondition]</a></code> - <em>(optional)</em> conditions applied to the request. Known conditions are "Approved", "Denied",
   and "Failed".</li>
 </ul></div>
 </div>

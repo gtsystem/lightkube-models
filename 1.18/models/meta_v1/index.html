@@ -1187,18 +1187,16 @@ of a group.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>name</strong> <code>str</code> - name is the name of the group.</li>
-<li><strong>versions</strong> <code>List[GroupVersionForDiscovery]</code> - versions are the versions supported in this group.</li>
+<li><strong>versions</strong> <code><a href="#groupversionfordiscovery">List[GroupVersionForDiscovery]</a></code> - versions are the versions supported in this group.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>preferredVersion</strong> <code>GroupVersionForDiscovery</code> - <em>(optional)</em> preferredVersion is the version preferred by the API server, which probably is
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>preferredVersion</strong> <code><a href="#groupversionfordiscovery">GroupVersionForDiscovery</a></code> - <em>(optional)</em> preferredVersion is the version preferred by the API server, which probably is
   the storage version.</li>
-<li><strong>serverAddressByClientCIDRs</strong> <code>List[ServerAddressByClientCIDR]</code> - <em>(optional)</em> a map of client CIDR to server address that is serving this group. This is to
+<li><strong>serverAddressByClientCIDRs</strong> <code><a href="#serveraddressbyclientcidr">List[ServerAddressByClientCIDR]</a></code> - <em>(optional)</em> a map of client CIDR to server address that is serving this group. This is to
   help clients reach servers in the most network-efficient way possible. Clients
   can use the appropriate server address as per the CIDR that they match. In
   case of multiple matches, clients should use the longest matching CIDR. The
@@ -1216,15 +1214,13 @@ of a group.</p>
 /apis.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>groups</strong> <code>List[APIGroup]</code> - groups is a list of APIGroup.</li>
+<li><strong>groups</strong> <code><a href="#apigroup">List[APIGroup]</a></code> - groups is a list of APIGroup.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="apiresource">APIResource</h2>
@@ -1241,14 +1237,14 @@ of a group.</p>
   handle plural and singular opaquely. The singularName is more correct for
   reporting status on a single item and both singular and plural are allowed
   from the kubectl CLI interface.</li>
-<li><strong>verbs</strong> <code>List[str]</code> - verbs is a list of supported kube verbs (this includes get, list, watch,
+<li><strong>verbs</strong> <code><a href="#str">List[str]</a></code> - verbs is a list of supported kube verbs (this includes get, list, watch,
   create, update, patch, delete, deletecollection, and proxy)</li>
-<li><strong>categories</strong> <code>List[str]</code> - <em>(optional)</em> categories is a list of the grouped resources this resource belongs to (e.g.
+<li><strong>categories</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> categories is a list of the grouped resources this resource belongs to (e.g.
   'all')</li>
 <li><strong>group</strong> <code>str</code> - <em>(optional)</em> group is the preferred group of the resource.  Empty implies the group of the
   containing resource list. For subresources, this may have a different value,
   for example: Scale".</li>
-<li><strong>shortNames</strong> <code>List[str]</code> - <em>(optional)</em> shortNames is a list of suggested short names of the resource.</li>
+<li><strong>shortNames</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> shortNames is a list of suggested short names of the resource.</li>
 <li><strong>storageVersionHash</strong> <code>str</code> - <em>(optional)</em> The hash value of the storage version, the version this resource is converted
   to when written to the data store. Value must be treated as opaque by clients.
   Only equality comparison on the value is valid. This is an alpha feature and
@@ -1270,15 +1266,13 @@ namespaced.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>groupVersion</strong> <code>str</code> - groupVersion is the group and version this APIResourceList is for.</li>
-<li><strong>resources</strong> <code>List[APIResource]</code> - resources contains the name of the resources and if they are namespaced.</li>
+<li><strong>resources</strong> <code><a href="#apiresource">List[APIResource]</a></code> - resources contains the name of the resources and if they are namespaced.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="apiversions">APIVersions</h2>
@@ -1288,7 +1282,7 @@ namespaced.</p>
 discover the API at /api, which is the root path of the legacy v1 API.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>serverAddressByClientCIDRs</strong> <code>List[ServerAddressByClientCIDR]</code> - a map of client CIDR to server address that is serving this group. This is to
+<li><strong>serverAddressByClientCIDRs</strong> <code><a href="#serveraddressbyclientcidr">List[ServerAddressByClientCIDR]</a></code> - a map of client CIDR to server address that is serving this group. This is to
   help clients reach servers in the most network-efficient way possible. Clients
   can use the appropriate server address as per the CIDR that they match. In
   case of multiple matches, clients should use the longest matching CIDR. The
@@ -1297,15 +1291,13 @@ discover the API at /api, which is the root path of the legacy v1 API.</p>
   reaches the server using an internal IP. Server looks at X-Forwarded-For
   header or X-Real-Ip header or request.RemoteAddr (in that order) to get the
   client IP.</li>
-<li><strong>versions</strong> <code>List[str]</code> - versions are the api versions that are available.</li>
+<li><strong>versions</strong> <code><a href="#str">List[str]</a></code> - versions are the api versions that are available.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="deleteoptions">DeleteOptions</h2>
@@ -1316,9 +1308,8 @@ discover the API at /api, which is the root path of the legacy v1 API.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
-<li><strong>dryRun</strong> <code>List[str]</code> - <em>(optional)</em> When present, indicates that modifications should not be persisted. An invalid
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>dryRun</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> When present, indicates that modifications should not be persisted. An invalid
   or unrecognized dryRun directive will result in an error response and no
   further processing of the request. Valid values are: - All: all dry run stages
   will be processed</li>
@@ -1329,13 +1320,12 @@ discover the API at /api, which is the root path of the legacy v1 API.</p>
   immediately.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 <li><strong>orphanDependents</strong> <code>bool</code> - <em>(optional)</em> Deprecated: please use the PropagationPolicy, this field will be deprecated in
   1.7. Should the dependent objects be orphaned. If true/false, the "orphan"
   finalizer will be added to/removed from the object's finalizers list. Either
   this field or PropagationPolicy may be set, but not both.</li>
-<li><strong>preconditions</strong> <code>Preconditions</code> - <em>(optional)</em> Must be fulfilled before a deletion is carried out. If not possible, a 409
+<li><strong>preconditions</strong> <code><a href="#preconditions">Preconditions</a></code> - <em>(optional)</em> Must be fulfilled before a deletion is carried out. If not possible, a 409
   Conflict status will be returned.</li>
 <li><strong>propagationPolicy</strong> <code>str</code> - <em>(optional)</em> Whether and how garbage collection will be performed. Either this field or
   OrphanDependents may be set, but not both. The default policy is decided by
@@ -1367,7 +1357,7 @@ matchLabels and matchExpressions are ANDed. An empty label selector matches
 all objects. A null label selector matches no objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>matchExpressions</strong> <code>List[LabelSelectorRequirement]</code> - <em>(optional)</em> matchExpressions is a list of label selector requirements. The requirements
+<li><strong>matchExpressions</strong> <code><a href="#labelselectorrequirement">List[LabelSelectorRequirement]</a></code> - <em>(optional)</em> matchExpressions is a list of label selector requirements. The requirements
   are ANDed.</li>
 <li><strong>matchLabels</strong> <code>dict</code> - <em>(optional)</em> matchLabels is a map of {key,value} pairs. A single {key,value} in the
   matchLabels map is equivalent to an element of matchExpressions, whose key
@@ -1385,7 +1375,7 @@ operator that relates the key and values.</p>
 <li><strong>key</strong> <code>str</code> - key is the label key that the selector applies to.</li>
 <li><strong>operator</strong> <code>str</code> - operator represents a key's relationship to a set of values. Valid operators
   are In, NotIn, Exists and DoesNotExist.</li>
-<li><strong>values</strong> <code>List[str]</code> - <em>(optional)</em> values is an array of string values. If the operator is In or NotIn, the
+<li><strong>values</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> values is an array of string values. If the operator is In or NotIn, the
   values array must be non-empty. If the operator is Exists or DoesNotExist, the
   values array must be empty. This array is replaced during a strategic merge
   patch.</li>
@@ -1419,9 +1409,7 @@ ListMeta}.</p>
 <li><strong>resourceVersion</strong> <code>str</code> - <em>(optional)</em> String that identifies the server's internal version of this object that can
   be used by clients to determine when objects have changed. Value must be
   treated as opaque by clients and passed unmodified back to the server.
-  Populated by the system. Read-only. More info: <a href="https://git.k8s.io/community/co">https://git.k8s.io/community/co</a>
-  ntributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-c
-  onsistency</li>
+  Populated by the system. Read-only. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency">More info</a></li>
 <li><strong>selfLink</strong> <code>str</code> - <em>(optional)</em> selfLink is a URL representing this object. Populated by the system.
   Read-only.
   DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the
@@ -1441,12 +1429,12 @@ resource that the fieldset applies to.</p>
   automatically converted.</li>
 <li><strong>fieldsType</strong> <code>str</code> - <em>(optional)</em> FieldsType is the discriminator for the different fields format and version.
   There is currently only one possible value: "FieldsV1"</li>
-<li><strong>fieldsV1</strong> <code>FieldsV1</code> - <em>(optional)</em> FieldsV1 holds the first JSON version format as described in the "FieldsV1"
+<li><strong>fieldsV1</strong> <code><a href="#fieldsv1">FieldsV1</a></code> - <em>(optional)</em> FieldsV1 holds the first JSON version format as described in the "FieldsV1"
   type.</li>
 <li><strong>manager</strong> <code>str</code> - <em>(optional)</em> Manager is an identifier of the workflow managing these fields.</li>
 <li><strong>operation</strong> <code>str</code> - <em>(optional)</em> Operation is the type of operation which lead to this ManagedFieldsEntry being
   created. The only valid values for this field are 'Apply' and 'Update'.</li>
-<li><strong>time</strong> <code>Time</code> - <em>(optional)</em> Time is timestamp of when these fields were set. It should always be empty if
+<li><strong>time</strong> <code><a href="#time">Time</a></code> - <em>(optional)</em> Time is timestamp of when these fields were set. It should always be empty if
   Operation is 'Apply'</li>
 </ul></div>
 </div>
@@ -1460,22 +1448,20 @@ all objects users must create.</p>
 <ul>
 <li><strong>annotations</strong> <code>dict</code> - <em>(optional)</em> Annotations is an unstructured key value map stored with a resource that may
   be set by external tools to store and retrieve arbitrary metadata. They are
-  not queryable and should be preserved when modifying objects. More info:
-  <a href="http://kubernetes.io/docs/user-guide/annotations">http://kubernetes.io/docs/user-guide/annotations</a></li>
+  not queryable and should be preserved when modifying objects. <a href="http://kubernetes.io/docs/user-guide/annotations">More info</a></li>
 <li><strong>clusterName</strong> <code>str</code> - <em>(optional)</em> The name of the cluster which the object belongs to. This is used to
   distinguish resources with same name and namespace in different clusters. This
   field is not set anywhere right now and apiserver is going to ignore it if set
   in create or update request.</li>
-<li><strong>creationTimestamp</strong> <code>Time</code> - <em>(optional)</em> CreationTimestamp is a timestamp representing the server time when this object
+<li><strong>creationTimestamp</strong> <code><a href="#time">Time</a></code> - <em>(optional)</em> CreationTimestamp is a timestamp representing the server time when this object
   was created. It is not guaranteed to be set in happens-before order across
   separate operations. Clients may not set this value. It is represented in
   RFC3339 form and is in UTC.
-  Populated by the system. Read-only. Null for lists. More info: <a href="https://git.k8s">https://git.k8s</a>
-  .io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</li>
+  Populated by the system. Read-only. Null for lists. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 <li><strong>deletionGracePeriodSeconds</strong> <code>int</code> - <em>(optional)</em> Number of seconds allowed for this object to gracefully terminate before it
   will be removed from the system. Only set when deletionTimestamp is also set.
   May only be shortened. Read-only.</li>
-<li><strong>deletionTimestamp</strong> <code>Time</code> - <em>(optional)</em> DeletionTimestamp is RFC 3339 date and time at which this resource will be
+<li><strong>deletionTimestamp</strong> <code><a href="#time">Time</a></code> - <em>(optional)</em> DeletionTimestamp is RFC 3339 date and time at which this resource will be
   deleted. This field is set by the server when a graceful deletion is requested
   by the user, and is not directly settable by a client. The resource is
   expected to be deleted (no longer visible from resource lists, and not
@@ -1492,10 +1478,8 @@ all objects users must create.</p>
   administrator or automated process can determine the resource is fully
   terminated. If not set, graceful deletion of the object has not been
   requested.
-  Populated by the system when a graceful deletion is requested. Read-only. More
-  info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-con">https://git.k8s.io/community/contributors/devel/sig-architecture/api-con</a>
-  ventions.md#metadata</li>
-<li><strong>finalizers</strong> <code>List[str]</code> - <em>(optional)</em> Must be empty before the object is deleted from the registry. Each entry is an
+  Populated by the system when a graceful deletion is requested. Read-only. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>finalizers</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Must be empty before the object is deleted from the registry. Each entry is an
   identifier for the responsible component that will remove the entry from the
   list. If the deletionTimestamp of the object is non-nil, entries in this list
   can only be removed. Finalizers may be processed and removed in any order.
@@ -1518,14 +1502,13 @@ all objects users must create.</p>
   ServerTimeout indicating a unique name could not be found in the time
   allotted, and the client should retry (optionally after the time indicated in
   the Retry-After header).
-  Applied only if Name is not specified. More info: <a href="https://git.k8s.io/community">https://git.k8s.io/community</a>
-  /contributors/devel/sig-architecture/api-conventions.md#idempotency</li>
+  Applied only if Name is not specified. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency">More info</a></li>
 <li><strong>generation</strong> <code>int</code> - <em>(optional)</em> A sequence number representing a specific generation of the desired state.
   Populated by the system. Read-only.</li>
 <li><strong>labels</strong> <code>dict</code> - <em>(optional)</em> Map of string keys and values that can be used to organize and categorize
   (scope and select) objects. May match selectors of replication controllers and
-  services. More info: <a href="http://kubernetes.io/docs/user-guide/labels">http://kubernetes.io/docs/user-guide/labels</a></li>
-<li><strong>managedFields</strong> <code>List[ManagedFieldsEntry]</code> - <em>(optional)</em> ManagedFields maps workflow-id and version to the set of fields that are
+  services. <a href="http://kubernetes.io/docs/user-guide/labels">More info</a></li>
+<li><strong>managedFields</strong> <code><a href="#managedfieldsentry">List[ManagedFieldsEntry]</a></code> - <em>(optional)</em> ManagedFields maps workflow-id and version to the set of fields that are
   managed by that workflow. This is mostly for internal housekeeping, and users
   typically shouldn't need to set or understand this field. A workflow can be
   the user's name, a controller's name, or the name of a specific apply path
@@ -1534,15 +1517,13 @@ all objects users must create.</p>
 <li><strong>name</strong> <code>str</code> - <em>(optional)</em> Name must be unique within a namespace. Is required when creating resources,
   although some resources may allow a client to request the generation of an
   appropriate name automatically. Name is primarily intended for creation
-  idempotence and configuration definition. Cannot be updated. More info:
-  <a href="http://kubernetes.io/docs/user-guide/identifiers#names">http://kubernetes.io/docs/user-guide/identifiers#names</a></li>
+  idempotence and configuration definition. Cannot be updated. <a href="http://kubernetes.io/docs/user-guide/identifiers#names">More info</a></li>
 <li><strong>namespace</strong> <code>str</code> - <em>(optional)</em> Namespace defines the space within each name must be unique. An empty
   namespace is equivalent to the "default" namespace, but "default" is the
   canonical representation. Not all objects are required to be scoped to a
   namespace - the value of this field for those objects will be empty.
-  Must be a DNS_LABEL. Cannot be updated. More info:
-  <a href="http://kubernetes.io/docs/user-guide/namespaces">http://kubernetes.io/docs/user-guide/namespaces</a></li>
-<li><strong>ownerReferences</strong> <code>List[OwnerReference]</code> - <em>(optional)</em> List of objects depended by this object. If ALL objects in the list have been
+  Must be a DNS_LABEL. Cannot be updated. <a href="http://kubernetes.io/docs/user-guide/namespaces">More info</a></li>
+<li><strong>ownerReferences</strong> <code><a href="#ownerreference">List[OwnerReference]</a></code> - <em>(optional)</em> List of objects depended by this object. If ALL objects in the list have been
   deleted, this object will be garbage collected. If this object is managed by a
   controller, then an entry in this list will point to this controller, with the
   controller field set to true. There cannot be more than one managing
@@ -1554,8 +1535,7 @@ all objects users must create.</p>
   passed unmodified back to the server. They may only be valid for a particular
   resource or set of resources.
   Populated by the system. Read-only. Value must be treated as opaque by clients
-  and . More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architect">https://git.k8s.io/community/contributors/devel/sig-architect</a>
-  ure/api-conventions.md#concurrency-control-and-consistency</li>
+  and . <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency">More info</a></li>
 <li><strong>selfLink</strong> <code>str</code> - <em>(optional)</em> SelfLink is a URL representing this object. Populated by the system.
   Read-only.
   DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the
@@ -1563,8 +1543,7 @@ all objects users must create.</p>
 <li><strong>uid</strong> <code>str</code> - <em>(optional)</em> UID is the unique in time and space value for this object. It is typically
   generated by the server on successful creation of a resource and is not
   allowed to change on PUT operations.
-  Populated by the system. Read-only. More info:
-  <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">http://kubernetes.io/docs/user-guide/identifiers#uids</a></li>
+  Populated by the system. Read-only. <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ownerreference">OwnerReference</h2>
@@ -1576,12 +1555,9 @@ cluster-scoped, so there is no namespace field.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - API version of the referent.</li>
-<li><strong>kind</strong> <code>str</code> - Kind of the referent. More info: <a href="https://git.k8s.io/community/contributors/dev">https://git.k8s.io/community/contributors/dev</a>
-  el/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>name</strong> <code>str</code> - Name of the referent. More info:
-  <a href="http://kubernetes.io/docs/user-guide/identifiers#names">http://kubernetes.io/docs/user-guide/identifiers#names</a></li>
-<li><strong>uid</strong> <code>str</code> - UID of the referent. More info:
-  <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">http://kubernetes.io/docs/user-guide/identifiers#uids</a></li>
+<li><strong>kind</strong> <code>str</code> - Kind of the referent. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>name</strong> <code>str</code> - Name of the referent. <a href="http://kubernetes.io/docs/user-guide/identifiers#names">More info</a></li>
+<li><strong>uid</strong> <code>str</code> - UID of the referent. <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">More info</a></li>
 <li><strong>blockOwnerDeletion</strong> <code>bool</code> - <em>(optional)</em> If true, AND if the owner has the "foregroundDeletion" finalizer, then the
   owner cannot be deleted from the key-value store until this reference is
   removed. Defaults to false. To set this field, a user needs "delete"
@@ -1623,25 +1599,20 @@ that they should use, depending on the clientCIDR that they match.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>code</strong> <code>int</code> - <em>(optional)</em> Suggested HTTP return code for this status, 0 if not set.</li>
-<li><strong>details</strong> <code>StatusDetails</code> - <em>(optional)</em> Extended data associated with the reason.  Each reason may define its own
+<li><strong>details</strong> <code><a href="#statusdetails">StatusDetails</a></code> - <em>(optional)</em> Extended data associated with the reason.  Each reason may define its own
   extended details. This field is optional and the data returned is not
   guaranteed to conform to any schema except that defined by the reason type.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human-readable description of the status of this operation.</li>
-<li><strong>metadata</strong> <code>ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
-  evel/sig-architecture/api-conventions.md#types-kinds</li>
+<li><strong>metadata</strong> <code><a href="#listmeta">ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> A machine-readable description of why this operation is in the "Failure"
   status. If this value is empty there is no information available. A Reason
   clarifies an HTTP status code but does not override it.</li>
-<li><strong>status</strong> <code>str</code> - <em>(optional)</em> Status of the operation. One of: "Success" or "Failure". More info: <a href="https://gi">https://gi</a>
-  t.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec
-  -and-status</li>
+<li><strong>status</strong> <code>str</code> - <em>(optional)</em> Status of the operation. One of: "Success" or "Failure". <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="statuscause">StatusCause</h2>
@@ -1674,13 +1645,11 @@ that do not match the defined type of each attribute, and should assume that
 any attribute may be empty, invalid, or under defined.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>causes</strong> <code>List[StatusCause]</code> - <em>(optional)</em> The Causes array includes more details associated with the StatusReason
+<li><strong>causes</strong> <code><a href="#statuscause">List[StatusCause]</a></code> - <em>(optional)</em> The Causes array includes more details associated with the StatusReason
   failure. Not all StatusReasons may provide detailed causes.</li>
 <li><strong>group</strong> <code>str</code> - <em>(optional)</em> The group attribute of the resource associated with the status StatusReason.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> The kind attribute of the resource associated with the status StatusReason. On
-  some operations may differ from the requested resource Kind. More info: https:
-  //git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#
-  types-kinds</li>
+  some operations may differ from the requested resource Kind. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 <li><strong>name</strong> <code>str</code> - <em>(optional)</em> The name attribute of the resource associated with the status StatusReason
   (when there is a single name which can be described).</li>
 <li><strong>retryAfterSeconds</strong> <code>int</code> - <em>(optional)</em> If specified, the time in seconds before the operation should be retried. Some
@@ -1688,7 +1657,7 @@ any attribute may be empty, invalid, or under defined.</p>
   errors this field may indicate how long to wait before taking the alternate
   action.</li>
 <li><strong>uid</strong> <code>str</code> - <em>(optional)</em> UID of the resource. (when there is a single resource which can be described).
-  More info: <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">http://kubernetes.io/docs/user-guide/identifiers#uids</a></li>
+  <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">More info</a></li>
 </ul></div>
 </div>
 <h2 id="time">Time</h2>
@@ -1698,7 +1667,7 @@ any attribute may be empty, invalid, or under defined.</p>
 <div class="autodoc-docstring"><p>Event represents a single event to a watched resource.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>object</strong> <code>runtime.RawExtension</code> - Object is:</li>
+<li><strong>object</strong> <code><a href="../runtime/index.html#rawextension">runtime.RawExtension</a></code> - Object is:</li>
 <li>If Type is Added or Modified: the new state of the object.</li>
 <li>If Type is Deleted: the state of the object immediately before deletion.</li>
 <li>If Type is Error: *Status is recommended; other types may make sense

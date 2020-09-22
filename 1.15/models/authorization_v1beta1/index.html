@@ -1023,19 +1023,17 @@ action in a given namespace. Having a namespace scoped resource makes it much
 easier to grant namespace scoped policy that includes permissions checking.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>SubjectAccessReviewSpec</code> - Spec holds information about the request being evaluated.  spec.namespace must
+<li><strong>spec</strong> <code><a href="#subjectaccessreviewspec">SubjectAccessReviewSpec</a></code> - Spec holds information about the request being evaluated.  spec.namespace must
   be equal to the namespace you made the request against.  If empty, it is
   defaulted.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>SubjectAccessReviewStatus</code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a></code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -1056,9 +1054,9 @@ non-resource requests to the Authorizer interface</p>
 <div class="autodoc-docstring"><p>NonResourceRule holds information that describes a rule for the non-resource</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>verbs</strong> <code>List[str]</code> - Verb is a list of kubernetes non-resource API verbs, like: get, post, put,
+<li><strong>verbs</strong> <code><a href="#str">List[str]</a></code> - Verb is a list of kubernetes non-resource API verbs, like: get, post, put,
   delete, patch, head, options.  "*" means all.</li>
-<li><strong>nonResourceURLs</strong> <code>List[str]</code> - <em>(optional)</em> NonResourceURLs is a set of partial urls that a user should have access to.
+<li><strong>nonResourceURLs</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> NonResourceURLs is a set of partial urls that a user should have access to.
   <em>s are allowed, but only as the full, final step in the path.  "</em>" means all.</li>
 </ul></div>
 </div>
@@ -1092,14 +1090,14 @@ resources. The list ordering isn't significant, may contain duplicates, and
 possibly be incomplete.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>verbs</strong> <code>List[str]</code> - Verb is a list of kubernetes resource API verbs, like: get, list, watch,
+<li><strong>verbs</strong> <code><a href="#str">List[str]</a></code> - Verb is a list of kubernetes resource API verbs, like: get, list, watch,
   create, update, delete, proxy.  "<em>" means all.</li>
-<li><strong>apiGroups</strong> <code>List[str]</code> - <em>(optional)</em> APIGroups is the name of the APIGroup that contains the resources.  If
+<li><strong>apiGroups</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> APIGroups is the name of the APIGroup that contains the resources.  If
   multiple API groups are specified, any action requested against one of the
   enumerated resources in any API group will be allowed.  "</em>" means all.</li>
-<li><strong>resourceNames</strong> <code>List[str]</code> - <em>(optional)</em> ResourceNames is an optional white list of names that the rule applies to.  An
+<li><strong>resourceNames</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> ResourceNames is an optional white list of names that the rule applies to.  An
   empty set means that everything is allowed.  "*" means all.</li>
-<li><strong>resources</strong> <code>List[str]</code> - <em>(optional)</em> Resources is a list of resources this rule applies to.  "<em>" means all in the
+<li><strong>resources</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Resources is a list of resources this rule applies to.  "<em>" means all in the
   specified apiGroups.
    "</em>/foo" represents the subresource 'foo' for all resources in the specified
   apiGroups.</li>
@@ -1114,18 +1112,16 @@ special case, because users should always be able to check whether they can
 perform an action</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>SelfSubjectAccessReviewSpec</code> - Spec holds information about the request being evaluated.  user and groups
+<li><strong>spec</strong> <code><a href="#selfsubjectaccessreviewspec">SelfSubjectAccessReviewSpec</a></code> - Spec holds information about the request being evaluated.  user and groups
   must be empty</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>SubjectAccessReviewStatus</code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a></code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -1137,8 +1133,8 @@ one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes
 must be set</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>nonResourceAttributes</strong> <code>NonResourceAttributes</code> - <em>(optional)</em> NonResourceAttributes describes information for a non-resource access request</li>
-<li><strong>resourceAttributes</strong> <code>ResourceAttributes</code> - <em>(optional)</em> ResourceAuthorizationAttributes describes information for a resource access
+<li><strong>nonResourceAttributes</strong> <code><a href="#nonresourceattributes">NonResourceAttributes</a></code> - <em>(optional)</em> NonResourceAttributes describes information for a non-resource access request</li>
+<li><strong>resourceAttributes</strong> <code><a href="#resourceattributes">ResourceAttributes</a></code> - <em>(optional)</em> ResourceAuthorizationAttributes describes information for a resource access
   request</li>
 </ul></div>
 </div>
@@ -1156,17 +1152,15 @@ correctness concerns. SubjectAccessReview, and LocalAccessReview are the
 correct way to defer authorization decisions to the API server.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>SelfSubjectRulesReviewSpec</code> - Spec holds information about the request being evaluated.</li>
+<li><strong>spec</strong> <code><a href="#selfsubjectrulesreviewspec">SelfSubjectRulesReviewSpec</a></code> - Spec holds information about the request being evaluated.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>SubjectRulesReviewStatus</code> - <em>(optional)</em> Status is filled in by the server and indicates the set of actions a user can
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#subjectrulesreviewstatus">SubjectRulesReviewStatus</a></code> - <em>(optional)</em> Status is filled in by the server and indicates the set of actions a user can
   perform.</li>
 </ul></div>
 </div>
@@ -1185,17 +1179,15 @@ correct way to defer authorization decisions to the API server.</p>
 action.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>spec</strong> <code>SubjectAccessReviewSpec</code> - Spec holds information about the request being evaluated</li>
+<li><strong>spec</strong> <code><a href="#subjectaccessreviewspec">SubjectAccessReviewSpec</a></code> - Spec holds information about the request being evaluated</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</a></li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
-<li><strong>status</strong> <code>SubjectAccessReviewStatus</code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
+<li><strong>status</strong> <code><a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a></code> - <em>(optional)</em> Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -1209,9 +1201,9 @@ be set</p>
 <ul>
 <li><strong>extra</strong> <code>dict</code> - <em>(optional)</em> Extra corresponds to the user.Info.GetExtra() method from the authenticator.
   Since that is input to the authorizer it needs a reflection here.</li>
-<li><strong>group</strong> <code>List[str]</code> - <em>(optional)</em> Groups is the groups you're testing for.</li>
-<li><strong>nonResourceAttributes</strong> <code>NonResourceAttributes</code> - <em>(optional)</em> NonResourceAttributes describes information for a non-resource access request</li>
-<li><strong>resourceAttributes</strong> <code>ResourceAttributes</code> - <em>(optional)</em> ResourceAuthorizationAttributes describes information for a resource access
+<li><strong>group</strong> <code><a href="#str">List[str]</a></code> - <em>(optional)</em> Groups is the groups you're testing for.</li>
+<li><strong>nonResourceAttributes</strong> <code><a href="#nonresourceattributes">NonResourceAttributes</a></code> - <em>(optional)</em> NonResourceAttributes describes information for a non-resource access request</li>
+<li><strong>resourceAttributes</strong> <code><a href="#resourceattributes">ResourceAttributes</a></code> - <em>(optional)</em> ResourceAuthorizationAttributes describes information for a resource access
   request</li>
 <li><strong>uid</strong> <code>str</code> - <em>(optional)</em> UID information about the requesting user.</li>
 <li><strong>user</strong> <code>str</code> - <em>(optional)</em> User is the user you're testing for. If you specify "User" but not "Group",
@@ -1249,10 +1241,10 @@ that permission, even if that list is incomplete.</p>
 <li><strong>incomplete</strong> <code>bool</code> - Incomplete is true when the rules returned by this call are incomplete. This
   is most commonly encountered when an authorizer, such as an external
   authorizer, doesn't support rules evaluation.</li>
-<li><strong>nonResourceRules</strong> <code>List[NonResourceRule]</code> - NonResourceRules is the list of actions the subject is allowed to perform on
+<li><strong>nonResourceRules</strong> <code><a href="#nonresourcerule">List[NonResourceRule]</a></code> - NonResourceRules is the list of actions the subject is allowed to perform on
   non-resources. The list ordering isn't significant, may contain duplicates,
   and possibly be incomplete.</li>
-<li><strong>resourceRules</strong> <code>List[ResourceRule]</code> - ResourceRules is the list of actions the subject is allowed to perform on
+<li><strong>resourceRules</strong> <code><a href="#resourcerule">List[ResourceRule]</a></code> - ResourceRules is the list of actions the subject is allowed to perform on
   resources. The list ordering isn't significant, may contain duplicates, and
   possibly be incomplete.</li>
 <li><strong>evaluationError</strong> <code>str</code> - <em>(optional)</em> EvaluationError can appear in combination with Rules. It indicates an error

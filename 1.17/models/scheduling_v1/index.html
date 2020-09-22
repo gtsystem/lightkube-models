@@ -920,8 +920,7 @@ integer value. The value can be any valid integer.</p>
   receive when they have the name of this class in their pod spec.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>description</strong> <code>str</code> - <em>(optional)</em> description is an arbitrary string that usually provides guidelines on when
   this priority class should be used.</li>
 <li><strong>globalDefault</strong> <code>bool</code> - <em>(optional)</em> globalDefault specifies whether this PriorityClass should be considered as the
@@ -932,10 +931,8 @@ integer value. The value can be any valid integer.</p>
   default priority.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
-  rs/devel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 <li><strong>preemptionPolicy</strong> <code>str</code> - <em>(optional)</em> PreemptionPolicy is the Policy for preempting pods with lower priority. One of
   Never, PreemptLowerPriority. Defaults to PreemptLowerPriority if unset. This
   field is alpha-level and is only honored by servers that enable the
@@ -948,17 +945,14 @@ integer value. The value can be any valid integer.</p>
 <div class="autodoc-docstring"><p>PriorityClassList is a collection of priority classes.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[PriorityClass]</code> - items is the list of PriorityClasses</li>
+<li><strong>items</strong> <code><a href="#priorityclass">List[PriorityClass]</a></code> - items is the list of PriorityClasses</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata More info: <a href="https://git.k8s.io/community/contributors/de">https://git.k8s.io/community/contributors/de</a>
-  vel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
                 

@@ -935,19 +935,14 @@
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata. More info: <a href="https://git.k8s.io/community/contributo">https://git.k8s.io/community/contributo</a>
-  rs/devel/sig-architecture/api-conventions.md#metadata</li>
-<li><strong>spec</strong> <code>CronJobSpec</code> - <em>(optional)</em> Specification of the desired behavior of a cron job, including the schedule.
-  More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/ap">https://git.k8s.io/community/contributors/devel/sig-architecture/ap</a>
-  i-conventions.md#spec-and-status</li>
-<li><strong>status</strong> <code>CronJobStatus</code> - <em>(optional)</em> Current status of a cron job. More info: <a href="https://git.k8s.io/community/contribu">https://git.k8s.io/community/contribu</a>
-  tors/devel/sig-architecture/api-conventions.md#spec-and-status</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#cronjobspec">CronJobSpec</a></code> - <em>(optional)</em> Specification of the desired behavior of a cron job, including the schedule.
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#cronjobstatus">CronJobStatus</a></code> - <em>(optional)</em> Current status of a cron job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="cronjoblist">CronJobList</h2>
@@ -956,17 +951,14 @@
 <div class="autodoc-docstring"><p>CronJobList is a collection of cron jobs.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[CronJob]</code> - items is the list of CronJobs.</li>
+<li><strong>items</strong> <code><a href="#cronjob">List[CronJob]</a></code> - items is the list of CronJobs.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
-  evel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="cronjobspec">CronJobSpec</h2>
@@ -976,7 +968,7 @@
 actually run.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>jobTemplate</strong> <code>JobTemplateSpec</code> - Specifies the job that will be created when executing a CronJob.</li>
+<li><strong>jobTemplate</strong> <code><a href="#jobtemplatespec">JobTemplateSpec</a></code> - Specifies the job that will be created when executing a CronJob.</li>
 <li><strong>schedule</strong> <code>str</code> - The schedule in Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://en.wikipedia.org/wiki/Cron</a>.</li>
 <li><strong>concurrencyPolicy</strong> <code>str</code> - <em>(optional)</em> Specifies how to treat concurrent executions of a Job. Valid values are: -
   "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids
@@ -998,8 +990,8 @@ actually run.</p>
 <div class="autodoc-docstring"><p>CronJobStatus represents the current state of a cron job.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>active</strong> <code>List[core_v1.ObjectReference]</code> - <em>(optional)</em> A list of pointers to currently running jobs.</li>
-<li><strong>lastScheduleTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> Information when was the last time the job was successfully scheduled.</li>
+<li><strong>active</strong> <code><a href="../core_v1/index.html#objectreference">List[core_v1.ObjectReference]</a></code> - <em>(optional)</em> A list of pointers to currently running jobs.</li>
+<li><strong>lastScheduleTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Information when was the last time the job was successfully scheduled.</li>
 </ul></div>
 </div>
 <h2 id="jobtemplatespec">JobTemplateSpec</h2>
@@ -1009,12 +1001,8 @@ actually run.</p>
 template</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object's metadata of the jobs created from this template. More info:
-  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventio">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventio</a>
-  ns.md#metadata</li>
-<li><strong>spec</strong> <code>batch_v1.JobSpec</code> - <em>(optional)</em> Specification of the desired behavior of the job. More info: <a href="https://git.k8s.i">https://git.k8s.i</a>
-  o/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-st
-  atus</li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata of the jobs created from this template. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="../batch_v1/index.html#jobspec">batch_v1.JobSpec</a></code> - <em>(optional)</em> Specification of the desired behavior of the job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
                 

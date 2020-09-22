@@ -1000,10 +1000,8 @@
 the referred resource.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>kind</strong> <code>str</code> - Kind of the referent; More info: <a href="https://git.k8s.io/community/contributors/dev">https://git.k8s.io/community/contributors/dev</a>
-  el/sig-architecture/api-conventions.md#types-kinds"</li>
-<li><strong>name</strong> <code>str</code> - Name of the referent; More info:
-  <a href="http://kubernetes.io/docs/user-guide/identifiers#names">http://kubernetes.io/docs/user-guide/identifiers#names</a></li>
+<li><strong>kind</strong> <code>str</code> - Kind of the referent; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds&quot;">More info</a></li>
+<li><strong>name</strong> <code>str</code> - Name of the referent; <a href="http://kubernetes.io/docs/user-guide/identifiers#names">More info</a></li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> API version of the referent</li>
 </ul></div>
 </div>
@@ -1015,17 +1013,13 @@ the referred resource.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata. More info: <a href="https://git.k8s.io/community/contributors">https://git.k8s.io/community/contributors</a>
-  /devel/sig-architecture/api-conventions.md#metadata</li>
-<li><strong>spec</strong> <code>HorizontalPodAutoscalerSpec</code> - <em>(optional)</em> behaviour of autoscaler. More info: <a href="https://git.k8s.io/community/contributors/">https://git.k8s.io/community/contributors/</a>
-  devel/sig-architecture/api-conventions.md#spec-and-status.</li>
-<li><strong>status</strong> <code>HorizontalPodAutoscalerStatus</code> - <em>(optional)</em> current information about the autoscaler.</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</a></code> - <em>(optional)</em> behaviour of autoscaler. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
+<li><strong>status</strong> <code><a href="#horizontalpodautoscalerstatus">HorizontalPodAutoscalerStatus</a></code> - <em>(optional)</em> current information about the autoscaler.</li>
 </ul></div>
 </div>
 <h2 id="horizontalpodautoscalerlist">HorizontalPodAutoscalerList</h2>
@@ -1034,16 +1028,14 @@ the referred resource.</p>
 <div class="autodoc-docstring"><p>list of horizontal pod autoscaler objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[HorizontalPodAutoscaler]</code> - list of horizontal pod autoscaler objects.</li>
+<li><strong>items</strong> <code><a href="#horizontalpodautoscaler">List[HorizontalPodAutoscaler]</a></code> - list of horizontal pod autoscaler objects.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata.</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata.</li>
 </ul></div>
 </div>
 <h2 id="horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</h2>
@@ -1054,7 +1046,7 @@ the referred resource.</p>
 <ul>
 <li><strong>maxReplicas</strong> <code>int</code> - upper limit for the number of pods that can be set by the autoscaler; cannot
   be smaller than MinReplicas.</li>
-<li><strong>scaleTargetRef</strong> <code>CrossVersionObjectReference</code> - reference to scaled resource; horizontal pod autoscaler will learn the current
+<li><strong>scaleTargetRef</strong> <code><a href="#crossversionobjectreference">CrossVersionObjectReference</a></code> - reference to scaled resource; horizontal pod autoscaler will learn the current
   resource consumption and will set the desired number of pods by using its
   Scale subresource.</li>
 <li><strong>minReplicas</strong> <code>int</code> - <em>(optional)</em> minReplicas is the lower limit for the number of replicas to which the
@@ -1078,7 +1070,7 @@ the referred resource.</p>
 <li><strong>currentCPUUtilizationPercentage</strong> <code>int</code> - <em>(optional)</em> current average CPU utilization over all pods, represented as a percentage of
   requested CPU, e.g. 70 means that an average pod is using now 70% of its
   requested CPU.</li>
-<li><strong>lastScaleTime</strong> <code>meta_v1.Time</code> - <em>(optional)</em> last time the HorizontalPodAutoscaler scaled the number of pods; used by the
+<li><strong>lastScaleTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> last time the HorizontalPodAutoscaler scaled the number of pods; used by the
   autoscaler to control how often the number of pods is changed.</li>
 <li><strong>observedGeneration</strong> <code>int</code> - <em>(optional)</em> most recent generation observed by this autoscaler.</li>
 </ul></div>
@@ -1091,18 +1083,14 @@ the referred resource.</p>
 <ul>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em> Standard object metadata; More info: <a href="https://git.k8s.io/community/contributors">https://git.k8s.io/community/contributors</a>
-  /devel/sig-architecture/api-conventions.md#metadata.</li>
-<li><strong>spec</strong> <code>ScaleSpec</code> - <em>(optional)</em> defines the behavior of the scale. More info: <a href="https://git.k8s.io/community/con">https://git.k8s.io/community/con</a>
-  tributors/devel/sig-architecture/api-conventions.md#spec-and-status.</li>
-<li><strong>status</strong> <code>ScaleStatus</code> - <em>(optional)</em> current status of the scale. More info: <a href="https://git.k8s.io/community/contribut">https://git.k8s.io/community/contribut</a>
-  ors/devel/sig-architecture/api-conventions.md#spec-and-status. Read-only.</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code><a href="#scalespec">ScaleSpec</a></code> - <em>(optional)</em> defines the behavior of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
+<li><strong>status</strong> <code><a href="#scalestatus">ScaleStatus</a></code> - <em>(optional)</em> current status of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a>
+  Read-only.</li>
 </ul></div>
 </div>
 <h2 id="scalespec">ScaleSpec</h2>

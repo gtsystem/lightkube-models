@@ -918,43 +918,41 @@
 some state change in the system.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>eventTime</strong> <code>meta_v1.MicroTime</code> - eventTime is the time when this Event was first observed. It is required.</li>
+<li><strong>eventTime</strong> <code><a href="../meta_v1/index.html#microtime">meta_v1.MicroTime</a></code> - eventTime is the time when this Event was first observed. It is required.</li>
 <li><strong>action</strong> <code>str</code> - <em>(optional)</em> action is what action was taken/failed regarding to the regarding object. It
   is machine-readable. This field can have at most 128 characters.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>deprecatedCount</strong> <code>int</code> - <em>(optional)</em> deprecatedCount is the deprecated field assuring backward compatibility with
   core.v1 Event type.</li>
-<li><strong>deprecatedFirstTimestamp</strong> <code>meta_v1.Time</code> - <em>(optional)</em> deprecatedFirstTimestamp is the deprecated field assuring backward
+<li><strong>deprecatedFirstTimestamp</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> deprecatedFirstTimestamp is the deprecated field assuring backward
   compatibility with core.v1 Event type.</li>
-<li><strong>deprecatedLastTimestamp</strong> <code>meta_v1.Time</code> - <em>(optional)</em> deprecatedLastTimestamp is the deprecated field assuring backward
+<li><strong>deprecatedLastTimestamp</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> deprecatedLastTimestamp is the deprecated field assuring backward
   compatibility with core.v1 Event type.</li>
-<li><strong>deprecatedSource</strong> <code>core_v1.EventSource</code> - <em>(optional)</em> deprecatedSource is the deprecated field assuring backward compatibility with
+<li><strong>deprecatedSource</strong> <code><a href="../core_v1/index.html#eventsource">core_v1.EventSource</a></code> - <em>(optional)</em> deprecatedSource is the deprecated field assuring backward compatibility with
   core.v1 Event type.</li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ObjectMeta</code> - <em>(optional)</em></li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em></li>
 <li><strong>note</strong> <code>str</code> - <em>(optional)</em> note is a human-readable description of the status of this operation. Maximal
   length of the note is 1kB, but libraries should be prepared to handle values
   up to 64kB.</li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> reason is why the action was taken. It is human-readable. This field can have
   at most 128 characters.</li>
-<li><strong>regarding</strong> <code>core_v1.ObjectReference</code> - <em>(optional)</em> regarding contains the object this Event is about. In most cases it's an
+<li><strong>regarding</strong> <code><a href="../core_v1/index.html#objectreference">core_v1.ObjectReference</a></code> - <em>(optional)</em> regarding contains the object this Event is about. In most cases it's an
   Object reporting controller implements, e.g. ReplicaSetController implements
   ReplicaSets and this event is emitted because it acts on some changes in a
   ReplicaSet object.</li>
-<li><strong>related</strong> <code>core_v1.ObjectReference</code> - <em>(optional)</em> related is the optional secondary object for more complex actions. E.g. when
+<li><strong>related</strong> <code><a href="../core_v1/index.html#objectreference">core_v1.ObjectReference</a></code> - <em>(optional)</em> related is the optional secondary object for more complex actions. E.g. when
   regarding object triggers a creation or deletion of related object.</li>
 <li><strong>reportingController</strong> <code>str</code> - <em>(optional)</em> reportingController is the name of the controller that emitted this Event,
   e.g. <code>kubernetes.io/kubelet</code>. This field cannot be empty for new Events.</li>
 <li><strong>reportingInstance</strong> <code>str</code> - <em>(optional)</em> reportingInstance is the ID of the controller instance, e.g. <code>kubelet-xyzf</code>.
   This field cannot be empty for new Events and it can have at most 128
   characters.</li>
-<li><strong>series</strong> <code>EventSeries</code> - <em>(optional)</em> series is data about the Event series this event represents or nil if it's a
+<li><strong>series</strong> <code><a href="#eventseries">EventSeries</a></code> - <em>(optional)</em> series is data about the Event series this event represents or nil if it's a
   singleton Event.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> type is the type of this event (Normal, Warning), new types could be added in
   the future. It is machine-readable.</li>
@@ -966,17 +964,14 @@ some state change in the system.</p>
 <div class="autodoc-docstring"><p>EventList is a list of Event objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code>List[Event]</code> - items is a list of schema objects.</li>
+<li><strong>items</strong> <code><a href="#event">List[Event]</a></code> - items is a list of schema objects.</li>
 <li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
-  may reject unrecognized values. More info: <a href="https://git.k8s.io/community/contri">https://git.k8s.io/community/contri</a>
-  butors/devel/sig-architecture/api-conventions.md#resources</li>
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
-  Cannot be updated. In CamelCase. More info: <a href="https://git.k8s.io/community/contr">https://git.k8s.io/community/contr</a>
-  ibutors/devel/sig-architecture/api-conventions.md#types-kinds</li>
-<li><strong>metadata</strong> <code>meta_v1.ListMeta</code> - <em>(optional)</em> Standard list metadata. More info: <a href="https://git.k8s.io/community/contributors/d">https://git.k8s.io/community/contributors/d</a>
-  evel/sig-architecture/api-conventions.md#metadata</li>
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="eventseries">EventSeries</h2>
@@ -988,7 +983,7 @@ happening continuously for some time.</p>
 <ul>
 <li><strong>count</strong> <code>int</code> - count is the number of occurrences in this series up to the last heartbeat
   time.</li>
-<li><strong>lastObservedTime</strong> <code>meta_v1.MicroTime</code> - lastObservedTime is the time when last Event from the series was seen before
+<li><strong>lastObservedTime</strong> <code><a href="../meta_v1/index.html#microtime">meta_v1.MicroTime</a></code> - lastObservedTime is the time when last Event from the series was seen before
   last heartbeat.</li>
 </ul></div>
 </div>
