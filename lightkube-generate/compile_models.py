@@ -108,6 +108,8 @@ def execute(fname, path: Path, testdir: Path, docsdir: Path, compiler_major: str
         model = Model(name, defi)
         modules[model.module].append(model)
 
+    if not docsdir.exists():
+        docsdir.mkdir()
     build_module(path, modules, spec_version, compiler_major)
     build_docs(docsdir, modules, spec_version)
     build_tests(testdir, modules)
