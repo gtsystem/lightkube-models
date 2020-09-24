@@ -9,6 +9,18 @@ from ..models import {{ imp }}
 {% for cls in objects %}
 
 class {{ cls.name }}(res.{{ ', '.join(cls.classes) }}):
+    """* **Extends**: ``models.{{cls.classes[-1][2:]}}``
+       * **Type**: {{'Namespaced' if cls.classes[0].startswith('Namespaced') else 'Global'}} Resource
+       * **Accepted client methods**: {{ cls.properties.verbs | map('pretty_method')| join(', ')}}
+       {% if cls.actions %}
+
+       **Subresources**:
+
+       {% for k, v in cls.actions.items(): %}
+       * **{{k}}**: ``{{v}}``
+       {% endfor %}
+       {% endif %}
+    """
     _api_info = res.ApiInfo(
       {% for k, v in cls.properties.items(): %}
         {{k}}={{v}},

@@ -1,0 +1,9 @@
+# {{module}}
+
+{% for res in resources %}
+## {{ res.name }}
+
+::: lightkube.resources.{{ module }}.{{ res.name }}
+    :docstring:
+
+{% endfor %}

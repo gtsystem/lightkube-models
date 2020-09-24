@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     compiler_major = __version__.split(".", 1)[0]
     if "resources" in args.command:
-        compile_resources.execute(Path(args.specs), Path(args.dest), Path(args.testdir))
+        compile_resources.execute(Path(args.specs), Path(args.dest), Path(args.testdir), Path(args.docs), compiler_major)
     if "models" in args.command:
         compile_models.execute(Path(args.specs), Path(args.dest), Path(args.testdir), Path(args.docs), compiler_major)
 

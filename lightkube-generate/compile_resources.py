@@ -6,10 +6,14 @@ from pathlib import Path
 from typing import NamedTuple, Iterable, Dict, List, Optional
 
 from .get_template import get_template
+from .compile_models import sort_key
+
 
 RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?"
                      "(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)"
                      "(?:/{name}(?P<action>/[^/]*)?)?")
+
+from jinja2 import environment
 
 
 class ApiKey(NamedTuple):
@@ -226,6 +230,7 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
         if c:
             modules[c.module].append(c)
 
+    results = {}
     tmpl = get_template("resources.tmpl")
     for module, compiled_res in modules.items():
         module_name = p.joinpath(f"{module}.py")
@@ -239,6 +244,7 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
 
         imports = [f"{t} as m_{t}" for t in sorted(imports)]
 
+        results[module] = classes
         with module_name.open('w') as fw:
             fw.write(tmpl.render(objects=classes, imports=imports))
         print(f"Generated {module_name} with {len(classes)} resources")
@@ -246,7 +252,52 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
     with test_fname.open('w') as fw:
         for module in modules.keys():
             fw.write(f"from lightkube.resources import {module}\n")
+    return results
 
 
-def execute(specs: Path, dest: Path, testdir: Path):
-    compile_resources(aggregate(extract(specs)), dest, testdir.joinpath("test_resources.py"))
+PRETTY_METHODS = {
+    'global_list': '`list` all',
+    'global_watch': '`watch` all',
+    'post': '`create`',
+    'put': '`replace`'
+}
+
+
+def pretty_method(method):
+    if method in PRETTY_METHODS:
+        return PRETTY_METHODS[method]
+    return f"`{method}`"
+
+
+environment.DEFAULT_FILTERS['pretty_method'] = pretty_method
+
+
+def build_docs(docsdir: Path, modules, version):
+    version = version.rsplit(".", 1)[0]
+    docsdir = docsdir.joinpath("resources")
+    if docsdir.exists():
+        shutil.rmtree(docsdir)
+    docsdir.mkdir()
+    docs_tmpl = get_template("resources_docs.tmpl")
+    for module, resources in modules.items():
+        with docsdir.joinpath(f"{module}.md").open("w") as fw:
+            fw.write(docs_tmpl.render(resources=resources, module=module, pretty_method=pretty_method))
+
+    docs_tmpl_idx = get_template("resources_docs_index.tmpl")
+    resources_to_opts = defaultdict(list)
+    for module, resources in modules.items():
+        for resource in resources:
+            if "parent" not in resource.properties:
+                resources_to_opts[resource.name].append(module)
+    for opts in resources_to_opts.values():
+        opts.sort(key=sort_key, reverse=True)
+
+    with docsdir.joinpath(f"index.md").open("w") as fw:
+        fw.write(docs_tmpl_idx.render(version=version, resources_to_opts=sorted(resources_to_opts.items())))
+
+
+def execute(specs: Path, dest: Path, testdir: Path, docsdir: Path, version: str):
+    modules = compile_resources(aggregate(extract(specs)), dest, testdir.joinpath("test_resources.py"))
+    if not docsdir.exists():
+        docsdir.mkdir()
+    build_docs(docsdir, modules, version)
