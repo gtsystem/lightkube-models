@@ -18,7 +18,7 @@ class {{ model.name }}(DataclassDictMixIn):
       **parameters**
 
       {% for prop in model.properties %}
-      * **{{prop.name}}** `{{prop.type}}` - {% if not prop.required %}*(optional)* {% endif %}{{ (prop.description or "") |
+      * **{{prop.name}}** ``{{prop.type}}`` - {% if not prop.required %}*(optional)* {% endif %}{{ (prop.description or "") |
         wordwrap(78, wrapstring='\n    ', break_on_hyphens=False, break_long_words=False) | indent( width=4, indentfirst=False) }}
       {% endfor %}
     """

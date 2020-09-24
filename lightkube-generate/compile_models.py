@@ -86,10 +86,12 @@ def build_docs(docsdir: Path, modules, version):
     with docsdir.joinpath(f"index.md").open("w") as fw:
         fw.write(docs_tmpl_idx.render(version=version, models_to_opts=sorted(models_to_opts.items())))
 
+
 def build_docs_index(docsdir: Path, version):
     docs_tmpl = get_template("docs_index.tmpl")
     with docsdir.joinpath(f"index.md").open("w") as fw:
         fw.write(docs_tmpl.render(version=version))
+
 
 def build_tests(testdir, modules):
     with testdir.joinpath("test_models.py").open('w') as fw:

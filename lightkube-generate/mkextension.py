@@ -5,27 +5,25 @@ import xml.etree.ElementTree as etree
 
 class ModelLinkProcessor(InlineProcessor):
     def handleMatch(self, m, data):
+        module, classe = m.group(1), m.group(2)
         code = etree.Element("code")
         el = etree.Element("a")
-        code.append(el)
+        el.text = (module or "") + classe
 
-        el.text = classe = m.group(1)
-        if classe.startswith("List["):
-            classe = classe[5:-1]
-        if "." in classe:
-            module, classe = classe.split(".")
-            href = f"../{module}/index.html#{classe.lower()}"
+        if module:
+            parts = module[:-1].split(".")
+            href = f"{'../'*len(parts)}{'/'.join(parts)}/index.html#{classe.lower()}"
         else:
             href = f"#{classe.lower()}"
 
         el.set("href", href)
-
-        return code, m.start(1)-1, m.end(1)+1
+        code.append(el)
+        return code, m.start(0), m.end(0)
 
 
 class ModelLinkExtension(Extension):
     def extendMarkdown(self, md):
-        PATTERN = r'\*\* `((.*?[.])?[A-Z].*?)` -'
+        PATTERN = r'``(?:List\[)?([a-z_0-9.]+)?([A-Z][a-z_0-9A-Z]+)\]?``'
         mp = ModelLinkProcessor(PATTERN, md)
         md.inlinePatterns.register(mp, 'class-link', 200)
         md.registeredExtensions.append(ModelLinkExtension())
