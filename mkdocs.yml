@@ -1,4 +1,4 @@
-site_name: LightKube
+site_name: lightkube-models
 theme:
   name: material
   hljs_style: monokai
@@ -23,16 +23,3 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
   - markdown_include.include:
       base_path: .
-
-#plugins:
-#  - mkdocstrings:
-#      handlers:
-#        python:
-#          rendering:
-#            show_root_heading: yes
-#            show_if_no_docstring: yes
-#          selection:
-#            filters: []
-#              #- "!^_"  # exlude all members starting with _
-#             #- "^__init__$"  # but always include __init__ modules and methods
-#          inherited_members: true
