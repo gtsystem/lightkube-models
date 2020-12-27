@@ -12,8 +12,14 @@ from .compile_models import sort_key
 RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?"
                      "(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)"
                      "(?:/{name}(?P<action>/[^/]*)?)?")
+RE_CAMELCASE = re.compile(r'(?<!^)(?=[A-Z])')
+
 
 from jinja2 import environment
+
+
+def to_snake_case(s):
+    return RE_CAMELCASE.sub('_', s).lower()
 
 
 class ApiKey(NamedTuple):
@@ -130,7 +136,7 @@ def extract(fname: Path):
                 group_key=key,
                 resource=resource,
                 methods=methods,
-                module=tags.pop(),
+                module=to_snake_case(tags.pop()),
                 namespaced=namespaced,
                 sub_action=sub_action
             )
