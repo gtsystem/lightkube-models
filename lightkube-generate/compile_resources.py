@@ -7,7 +7,7 @@ from typing import NamedTuple, Iterable, Dict, List, Optional
 
 from .get_template import get_template
 from .compile_models import sort_key
-
+from .model import Schema, schema_name
 
 RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?"
                      "(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)"
@@ -36,18 +36,6 @@ class Resource(NamedTuple):
     def definition(self):
         return f"res.ResourceDef{tuple(self)}"
 
-    @property
-    def py_import(self):
-        group, version, name = self
-        if group == '':
-            group = 'core'
-        group = group.split(".", 1)[0]
-        return f"{group}_{version}"
-
-    @property
-    def py_full_class(self):
-        return f"{self.py_import}.{self.kind}"
-
 
 class SpecPath(NamedTuple):
     path: str
@@ -55,23 +43,27 @@ class SpecPath(NamedTuple):
     resource: Resource
     methods: list
     module: str
+    model_schema: Schema
     namespaced: bool
     sub_action: str
 
     def to_subaction(self):
-        return SubAction(self.sub_action, usorted(self.methods), self.resource)
+        return SubAction(self.sub_action, usorted(self.methods), self.resource,
+                         model_schema=self.model_schema)
 
 
 class SubAction(NamedTuple):
     name: str
     actions:  List
     resource: Resource
+    model_schema: Schema
 
 
 class Compiled(NamedTuple):
     resource: Resource
     plural: str
     module: str
+    model_schema: Schema
     namespaced: bool
     actions: list
     sub_actions: List[SubAction]
@@ -104,12 +96,17 @@ def extract(fname: Path):
             continue
 
         methods = []
-        resource = None
+        resource = model_schema = None
         tags = set()
         namespaced = path_match["ns"] is not None
         sub_action = path_match["action"].lstrip("/") if path_match["action"] else None
         for method, mdef in defi.items():
             if method != "parameters":
+                schema = mdef['responses']['200']['schema']
+                if '$ref' in schema:
+                    model_schema = schema_name(schema['$ref'])
+                else:
+                    model_schema = Schema(name=schema['type'])
                 action = mdef.get('x-kubernetes-action', method)
                 if action != 'connect':     # TODO: add support for connect
                     methods.append(action)
@@ -137,6 +134,7 @@ def extract(fname: Path):
                 resource=resource,
                 methods=methods,
                 module=to_snake_case(tags.pop()),
+                model_schema=model_schema,
                 namespaced=namespaced,
                 sub_action=sub_action
             )
@@ -154,10 +152,23 @@ def usorted(l):
     return sorted(set(l))
 
 
+def transform_classes(classes):
+    res = []
+    for cls in classes:
+        if cls is None:
+            continue
+        if "." in cls:
+            res.append(f"m_{cls}")
+        else:
+            res.append(cls)
+    return res
+
+
 def compile_one(key: ApiKey, elements: List[SpecPath]) -> Optional[Compiled]:
     namespaced = False
     module = None
     resource = None
+    model_schema = None
     for ele in elements:
         if ele.namespaced:
             namespaced = True
@@ -165,6 +176,8 @@ def compile_one(key: ApiKey, elements: List[SpecPath]) -> Optional[Compiled]:
             resource = ele.resource
         if not module and ele.module:
             module = ele.module
+        if not model_schema and not ele.sub_action:
+            model_schema = ele.model_schema
 
     if resource is None:
         return
@@ -184,6 +197,7 @@ def compile_one(key: ApiKey, elements: List[SpecPath]) -> Optional[Compiled]:
             resource=resource,
             plural=key.plural,
             module=module,
+            model_schema=model_schema,
             namespaced=namespaced,
             actions=usorted(actions),
             sub_actions=sub_actions
@@ -206,8 +220,8 @@ def get_classes(compiled: Compiled):
                 plural=repr(compiled.plural), verbs=suba.actions, action=repr(suba.name),
             ),
             actions={},
-            classes=[class_, f"m_{sres.py_full_class}"],
-            model_import=sres.py_import
+            classes=transform_classes([class_, suba.model_schema.full_name()]),
+            model_import=suba.model_schema.module
         )
         actions[suba.name.capitalize()] = kind
 
@@ -220,8 +234,8 @@ def get_classes(compiled: Compiled):
         name=res.kind,
         properties=dict(resource=res.definition(), plural=repr(compiled.plural), verbs=compiled.actions),
         actions=actions,
-        classes=[class_, f"m_{res.py_full_class}"],
-        model_import=res.py_import
+        classes=transform_classes([class_, compiled.model_schema.full_name()]),
+        model_import=compiled.model_schema.module or None
     )
 
 
@@ -246,7 +260,8 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
         for c in compiled_res:
             for cls in get_classes(c):
                 classes.append(cls)
-                imports.add(cls.model_import)
+                if cls.model_import:
+                    imports.add(cls.model_import)
 
         imports = [f"{t} as m_{t}" for t in sorted(imports)]
 

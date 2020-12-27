@@ -6,9 +6,15 @@ RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
 RE_NEW_LINE = re.compile(r"\n\s*\n")
 KEYWORDS = set(keyword.kwlist)
 
+
 class Schema(NamedTuple):
-    module: str
     name: str
+    module: str = None
+
+    def full_name(self):
+        if self.module:
+            return f"{self.module}.{self.name}"
+        return None
 
 
 def schema_name(orig_name) -> Schema:
@@ -20,7 +26,7 @@ def schema_name(orig_name) -> Schema:
     else:
         module = parts[0]
     model = parts[-1]
-    return Schema(module, model)
+    return Schema(module=module, name=model)
 
 
 def make_prop_name(p_name):
