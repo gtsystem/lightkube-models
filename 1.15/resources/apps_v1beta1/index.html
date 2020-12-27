@@ -1236,8 +1236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../rbacAuthorization_v1/" title="rbacAuthorization_v1" class="md-nav__link">
-      rbacAuthorization_v1
+    <a href="../rbac_authorization_v1/" title="rbac_authorization_v1" class="md-nav__link">
+      rbac_authorization_v1
     </a>
   </li>
 
@@ -1248,8 +1248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../rbacAuthorization_v1alpha1/" title="rbacAuthorization_v1alpha1" class="md-nav__link">
-      rbacAuthorization_v1alpha1
+    <a href="../rbac_authorization_v1alpha1/" title="rbac_authorization_v1alpha1" class="md-nav__link">
+      rbac_authorization_v1alpha1
     </a>
   </li>
 
@@ -1260,8 +1260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../rbacAuthorization_v1beta1/" title="rbacAuthorization_v1beta1" class="md-nav__link">
-      rbacAuthorization_v1beta1
+    <a href="../rbac_authorization_v1beta1/" title="rbac_authorization_v1beta1" class="md-nav__link">
+      rbac_authorization_v1beta1
     </a>
   </li>
 
@@ -1453,18 +1453,18 @@
                 <h1 id="apps_v1beta1">apps_v1beta1</h1>
 <h2 id="controllerrevision">ControllerRevision</h2>
 <div class="autodoc">
-<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>ControllerRevision</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">revision</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">data=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>ControllerRevision</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
 <div class="autodoc-docstring"><ul>
-<li><strong>Extends</strong>: <code><a href="../../models/apps_v1beta1/index.html#controllerrevision">models.apps_v1beta1.ControllerRevision</a></code></li>
+<li><strong>Extends</strong>: <code><a href="../../models/apps_v1beta1/index.html#controllerrevisionlist">models.apps_v1beta1.ControllerRevisionList</a></code></li>
 <li><strong>Type</strong>: Namespaced Resource</li>
 <li><strong>Accepted client methods</strong>: <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code> all, <code>watch</code> all, <code>list</code>, <code>patch</code>, <code>create</code>, <code>replace</code>, <code>watch</code></li>
 </ul></div>
 </div>
 <h2 id="deploymentrollback">DeploymentRollback</h2>
 <div class="autodoc">
-<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>DeploymentRollback</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">rollbackTo</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedAnnotations=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>DeploymentRollback</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">code=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">details=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
 <div class="autodoc-docstring"><ul>
-<li><strong>Extends</strong>: <code><a href="../../models/apps_v1beta1/index.html#deploymentrollback">models.apps_v1beta1.DeploymentRollback</a></code></li>
+<li><strong>Extends</strong>: <code><a href="../../models/meta_v1/index.html#status">models.meta_v1.Status</a></code></li>
 <li><strong>Type</strong>: Namespaced Resource</li>
 <li><strong>Accepted client methods</strong>: <code>create</code></li>
 </ul></div>
@@ -1489,9 +1489,9 @@
 </div>
 <h2 id="deployment">Deployment</h2>
 <div class="autodoc">
-<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>Deployment</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-signature"><em>class </em><code>lightkube.resources.apps_v1beta1.<strong>Deployment</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
 <div class="autodoc-docstring"><ul>
-<li><strong>Extends</strong>: <code><a href="../../models/apps_v1beta1/index.html#deployment">models.apps_v1beta1.Deployment</a></code></li>
+<li><strong>Extends</strong>: <code><a href="../../models/apps_v1beta1/index.html#deploymentlist">models.apps_v1beta1.DeploymentList</a></code></li>
 <li><strong>Type</strong>: Namespaced Resource</li>
 <li><strong>Accepted client methods</strong>: <code>delete</code>, <code>deletecollection</code>, <code>get</code>, <code>list</code> all, <code>watch</code> all, <code>list</code>, <code>patch</code>, <code>create</code>, <code>replace</code>, <code>watch</code></li>
 </ul>

@@ -1,0 +1,2222 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>flowcontrol_v1alpha1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e56c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flowcontrol_v1alpha1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header-nav__button md-logo" aria-label="lightkube-models">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            lightkube-models
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              flowcontrol_v1alpha1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Models
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Models" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="All models" class="md-nav__link">
+      All models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
+      admissionregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admissionregistration_v1beta1/" title="admissionregistration_v1beta1" class="md-nav__link">
+      admissionregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
+      apiextensions_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiextensions_v1beta1/" title="apiextensions_v1beta1" class="md-nav__link">
+      apiextensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
+      apiregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiregistration_v1beta1/" title="apiregistration_v1beta1" class="md-nav__link">
+      apiregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiserverinternal_v1alpha1/" title="apiserverinternal_v1alpha1" class="md-nav__link">
+      apiserverinternal_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apps_v1/" title="apps_v1" class="md-nav__link">
+      apps_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1/" title="authentication_v1" class="md-nav__link">
+      authentication_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
+      authentication_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authorization_v1/" title="authorization_v1" class="md-nav__link">
+      authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authorization_v1beta1/" title="authorization_v1beta1" class="md-nav__link">
+      authorization_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
+      autoscaling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v2beta1/" title="autoscaling_v2beta1" class="md-nav__link">
+      autoscaling_v2beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v2beta2/" title="autoscaling_v2beta2" class="md-nav__link">
+      autoscaling_v2beta2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v1/" title="batch_v1" class="md-nav__link">
+      batch_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v1beta1/" title="batch_v1beta1" class="md-nav__link">
+      batch_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v2alpha1/" title="batch_v2alpha1" class="md-nav__link">
+      batch_v2alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../certificates_v1/" title="certificates_v1" class="md-nav__link">
+      certificates_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../certificates_v1beta1/" title="certificates_v1beta1" class="md-nav__link">
+      certificates_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coordination_v1/" title="coordination_v1" class="md-nav__link">
+      coordination_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coordination_v1beta1/" title="coordination_v1beta1" class="md-nav__link">
+      coordination_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../core_v1/" title="core_v1" class="md-nav__link">
+      core_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../discovery_v1beta1/" title="discovery_v1beta1" class="md-nav__link">
+      discovery_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events_v1/" title="events_v1" class="md-nav__link">
+      events_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events_v1beta1/" title="events_v1beta1" class="md-nav__link">
+      events_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions_v1beta1/" title="extensions_v1beta1" class="md-nav__link">
+      extensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        flowcontrol_v1alpha1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="flowcontrol_v1alpha1" class="md-nav__link md-nav__link--active">
+      flowcontrol_v1alpha1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flowdistinguishermethod" class="md-nav__link">
+    FlowDistinguisherMethod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschema" class="md-nav__link">
+    FlowSchema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemacondition" class="md-nav__link">
+    FlowSchemaCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemalist" class="md-nav__link">
+    FlowSchemaList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemaspec" class="md-nav__link">
+    FlowSchemaSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemastatus" class="md-nav__link">
+    FlowSchemaStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsubject" class="md-nav__link">
+    GroupSubject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitresponse" class="md-nav__link">
+    LimitResponse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitedprioritylevelconfiguration" class="md-nav__link">
+    LimitedPriorityLevelConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonresourcepolicyrule" class="md-nav__link">
+    NonResourcePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policyruleswithsubjects" class="md-nav__link">
+    PolicyRulesWithSubjects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfiguration" class="md-nav__link">
+    PriorityLevelConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationcondition" class="md-nav__link">
+    PriorityLevelConfigurationCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationlist" class="md-nav__link">
+    PriorityLevelConfigurationList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationreference" class="md-nav__link">
+    PriorityLevelConfigurationReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationspec" class="md-nav__link">
+    PriorityLevelConfigurationSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationstatus" class="md-nav__link">
+    PriorityLevelConfigurationStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queuingconfiguration" class="md-nav__link">
+    QueuingConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcepolicyrule" class="md-nav__link">
+    ResourcePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccountsubject" class="md-nav__link">
+    ServiceAccountSubject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject" class="md-nav__link">
+    Subject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usersubject" class="md-nav__link">
+    UserSubject
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flowcontrol_v1beta1/" title="flowcontrol_v1beta1" class="md-nav__link">
+      flowcontrol_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../meta_v1/" title="meta_v1" class="md-nav__link">
+      meta_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1/" title="networking_v1" class="md-nav__link">
+      networking_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1beta1/" title="networking_v1beta1" class="md-nav__link">
+      networking_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1/" title="node_v1" class="md-nav__link">
+      node_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1alpha1/" title="node_v1alpha1" class="md-nav__link">
+      node_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1beta1/" title="node_v1beta1" class="md-nav__link">
+      node_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policy_v1beta1/" title="policy_v1beta1" class="md-nav__link">
+      policy_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1/" title="rbac_v1" class="md-nav__link">
+      rbac_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1alpha1/" title="rbac_v1alpha1" class="md-nav__link">
+      rbac_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1beta1/" title="rbac_v1beta1" class="md-nav__link">
+      rbac_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource/" title="resource" class="md-nav__link">
+      resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="runtime" class="md-nav__link">
+      runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1/" title="scheduling_v1" class="md-nav__link">
+      scheduling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1alpha1/" title="scheduling_v1alpha1" class="md-nav__link">
+      scheduling_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1beta1/" title="scheduling_v1beta1" class="md-nav__link">
+      scheduling_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1/" title="storage_v1" class="md-nav__link">
+      storage_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1alpha1/" title="storage_v1alpha1" class="md-nav__link">
+      storage_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1beta1/" title="storage_v1beta1" class="md-nav__link">
+      storage_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../util_intstr/" title="util_intstr" class="md-nav__link">
+      util_intstr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version/" title="version" class="md-nav__link">
+      version
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Resources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/" title="All resources" class="md-nav__link">
+      All resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
+      admissionregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/admissionregistration_v1beta1/" title="admissionregistration_v1beta1" class="md-nav__link">
+      admissionregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
+      apiextensions_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiextensions_v1beta1/" title="apiextensions_v1beta1" class="md-nav__link">
+      apiextensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
+      apiregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiregistration_v1beta1/" title="apiregistration_v1beta1" class="md-nav__link">
+      apiregistration_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apps_v1/" title="apps_v1" class="md-nav__link">
+      apps_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authentication_v1/" title="authentication_v1" class="md-nav__link">
+      authentication_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
+      authentication_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authorization_v1/" title="authorization_v1" class="md-nav__link">
+      authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authorization_v1beta1/" title="authorization_v1beta1" class="md-nav__link">
+      authorization_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
+      autoscaling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/autoscaling_v2beta1/" title="autoscaling_v2beta1" class="md-nav__link">
+      autoscaling_v2beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/autoscaling_v2beta2/" title="autoscaling_v2beta2" class="md-nav__link">
+      autoscaling_v2beta2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/batch_v1/" title="batch_v1" class="md-nav__link">
+      batch_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/batch_v1beta1/" title="batch_v1beta1" class="md-nav__link">
+      batch_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/batch_v2alpha1/" title="batch_v2alpha1" class="md-nav__link">
+      batch_v2alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/certificates_v1/" title="certificates_v1" class="md-nav__link">
+      certificates_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/certificates_v1beta1/" title="certificates_v1beta1" class="md-nav__link">
+      certificates_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/coordination_v1/" title="coordination_v1" class="md-nav__link">
+      coordination_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/coordination_v1beta1/" title="coordination_v1beta1" class="md-nav__link">
+      coordination_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/core_v1/" title="core_v1" class="md-nav__link">
+      core_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/discovery_v1beta1/" title="discovery_v1beta1" class="md-nav__link">
+      discovery_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/events_v1/" title="events_v1" class="md-nav__link">
+      events_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/events_v1beta1/" title="events_v1beta1" class="md-nav__link">
+      events_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/extensions_v1beta1/" title="extensions_v1beta1" class="md-nav__link">
+      extensions_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flowcontrol_apiserver_v1alpha1/" title="flowcontrol_apiserver_v1alpha1" class="md-nav__link">
+      flowcontrol_apiserver_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flowcontrol_apiserver_v1beta1/" title="flowcontrol_apiserver_v1beta1" class="md-nav__link">
+      flowcontrol_apiserver_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/internal_apiserver_v1alpha1/" title="internal_apiserver_v1alpha1" class="md-nav__link">
+      internal_apiserver_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/networking_v1/" title="networking_v1" class="md-nav__link">
+      networking_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/networking_v1beta1/" title="networking_v1beta1" class="md-nav__link">
+      networking_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/node_v1/" title="node_v1" class="md-nav__link">
+      node_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/node_v1alpha1/" title="node_v1alpha1" class="md-nav__link">
+      node_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/node_v1beta1/" title="node_v1beta1" class="md-nav__link">
+      node_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/policy_v1beta1/" title="policy_v1beta1" class="md-nav__link">
+      policy_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/rbac_authorization_v1/" title="rbac_authorization_v1" class="md-nav__link">
+      rbac_authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/rbac_authorization_v1alpha1/" title="rbac_authorization_v1alpha1" class="md-nav__link">
+      rbac_authorization_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/rbac_authorization_v1beta1/" title="rbac_authorization_v1beta1" class="md-nav__link">
+      rbac_authorization_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/scheduling_v1/" title="scheduling_v1" class="md-nav__link">
+      scheduling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/scheduling_v1alpha1/" title="scheduling_v1alpha1" class="md-nav__link">
+      scheduling_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/scheduling_v1beta1/" title="scheduling_v1beta1" class="md-nav__link">
+      scheduling_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/storage_v1/" title="storage_v1" class="md-nav__link">
+      storage_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/storage_v1alpha1/" title="storage_v1alpha1" class="md-nav__link">
+      storage_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/storage_v1beta1/" title="storage_v1beta1" class="md-nav__link">
+      storage_v1beta1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flowdistinguishermethod" class="md-nav__link">
+    FlowDistinguisherMethod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschema" class="md-nav__link">
+    FlowSchema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemacondition" class="md-nav__link">
+    FlowSchemaCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemalist" class="md-nav__link">
+    FlowSchemaList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemaspec" class="md-nav__link">
+    FlowSchemaSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowschemastatus" class="md-nav__link">
+    FlowSchemaStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupsubject" class="md-nav__link">
+    GroupSubject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitresponse" class="md-nav__link">
+    LimitResponse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitedprioritylevelconfiguration" class="md-nav__link">
+    LimitedPriorityLevelConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonresourcepolicyrule" class="md-nav__link">
+    NonResourcePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policyruleswithsubjects" class="md-nav__link">
+    PolicyRulesWithSubjects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfiguration" class="md-nav__link">
+    PriorityLevelConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationcondition" class="md-nav__link">
+    PriorityLevelConfigurationCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationlist" class="md-nav__link">
+    PriorityLevelConfigurationList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationreference" class="md-nav__link">
+    PriorityLevelConfigurationReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationspec" class="md-nav__link">
+    PriorityLevelConfigurationSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioritylevelconfigurationstatus" class="md-nav__link">
+    PriorityLevelConfigurationStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queuingconfiguration" class="md-nav__link">
+    QueuingConfiguration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcepolicyrule" class="md-nav__link">
+    ResourcePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccountsubject" class="md-nav__link">
+    ServiceAccountSubject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subject" class="md-nav__link">
+    Subject
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usersubject" class="md-nav__link">
+    UserSubject
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="flowcontrol_v1alpha1">flowcontrol_v1alpha1</h1>
+<h2 id="flowdistinguishermethod">FlowDistinguisherMethod</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowDistinguisherMethod</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowDistinguisherMethod specifies the method of a flow distinguisher.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - <code>type</code> is the type of flow distinguisher method The supported types are
+  "ByUser" and "ByNamespace". Required.</li>
+</ul></div>
+</div>
+<h2 id="flowschema">FlowSchema</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowSchema</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowSchema defines the schema of a group of flows. Note that a flow is made up
+of a set of inbound API requests with similar attributes and is identified by
+a pair of strings: the name of the FlowSchema and a "flow distinguisher".</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#flowschemaspec">FlowSchemaSpec</a></code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a FlowSchema. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#flowschemastatus">FlowSchemaStatus</a></code> - <em>(optional)</em> <code>status</code> is the current status of a FlowSchema. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="flowschemacondition">FlowSchemaCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowSchemaCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowSchemaCondition describes conditions for a FlowSchema.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
+  status to another.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> <code>message</code> is a human-readable message indicating details about last
+  transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> <code>reason</code> is a unique, one-word, CamelCase reason for the condition's last
+  transition.</li>
+<li><strong>status</strong> <code>str</code> - <em>(optional)</em> <code>status</code> is the status of the condition. Can be True, False, Unknown.
+  Required.</li>
+<li><strong>type</strong> <code>str</code> - <em>(optional)</em> <code>type</code> is the type of the condition. Required.</li>
+</ul></div>
+</div>
+<h2 id="flowschemalist">FlowSchemaList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowSchemaList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowSchemaList is a list of FlowSchema objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#flowschema">FlowSchema</a></code> - <code>items</code> is a list of FlowSchemas.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="flowschemaspec">FlowSchemaSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowSchemaSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">priorityLevelConfiguration</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">distinguisherMethod=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchingPrecedence=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">rules=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowSchemaSpec describes how the FlowSchema's specification looks like.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>priorityLevelConfiguration</strong> <code><a href="#prioritylevelconfigurationreference">PriorityLevelConfigurationReference</a></code> - <code>priorityLevelConfiguration</code> should reference a PriorityLevelConfiguration in
+  the cluster. If the reference cannot be resolved, the FlowSchema will be
+  ignored and marked as invalid in its status. Required.</li>
+<li><strong>distinguisherMethod</strong> <code><a href="#flowdistinguishermethod">FlowDistinguisherMethod</a></code> - <em>(optional)</em> <code>distinguisherMethod</code> defines how to compute the flow distinguisher for
+  requests that match this schema. <code>nil</code> specifies that the distinguisher is
+  disabled and thus will always be the empty string.</li>
+<li><strong>matchingPrecedence</strong> <code>int</code> - <em>(optional)</em> <code>matchingPrecedence</code> is used to choose among the FlowSchemas that match a
+  given request. The chosen FlowSchema is among those with the numerically
+  lowest (which we take to be logically highest) MatchingPrecedence.  Each
+  MatchingPrecedence value must be ranged in [1,10000]. Note that if the
+  precedence is not specified, it will be set to 1000 as default.</li>
+<li><strong>rules</strong> <code><a href="#policyruleswithsubjects">PolicyRulesWithSubjects</a></code> - <em>(optional)</em> <code>rules</code> describes which requests will match this flow schema. This FlowSchema
+  matches a request if and only if at least one member of rules matches the
+  request. if it is an empty slice, there will be no requests matching the
+  FlowSchema.</li>
+</ul></div>
+</div>
+<h2 id="flowschemastatus">FlowSchemaStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>FlowSchemaStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FlowSchemaStatus represents the current state of a FlowSchema.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>conditions</strong> <code><a href="#flowschemacondition">FlowSchemaCondition</a></code> - <em>(optional)</em> <code>conditions</code> is a list of the current states of FlowSchema.</li>
+</ul></div>
+</div>
+<h2 id="groupsubject">GroupSubject</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>GroupSubject</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>GroupSubject holds detailed information for group-kind subject.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name is the user group that matches, or "*" to match all user groups. See
+  <a href="https://github.com/kubernetes/apiserver/blob/master/pkg/authentication/user/user.go">https://github.com/kubernetes/apiserver/blob/master/pkg/authentication/user/user.go</a>
+  for some well-known group names. Required.</li>
+</ul></div>
+</div>
+<h2 id="limitresponse">LimitResponse</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>LimitResponse</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">queuing=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>LimitResponse defines how to handle requests that can not be executed right
+now.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - <code>type</code> is "Queue" or "Reject". "Queue" means that requests that can not be
+  executed upon arrival are held in a queue until they can be executed or a
+  queuing limit is reached. "Reject" means that requests that can not be
+  executed upon arrival are rejected. Required.</li>
+<li><strong>queuing</strong> <code><a href="#queuingconfiguration">QueuingConfiguration</a></code> - <em>(optional)</em> <code>queuing</code> holds the configuration parameters for queuing. This field may be
+  non-empty only if <code>type</code> is <code>"Queue"</code>.</li>
+</ul></div>
+</div>
+<h2 id="limitedprioritylevelconfiguration">LimitedPriorityLevelConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>LimitedPriorityLevelConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">assuredConcurrencyShares=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">limitResponse=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>LimitedPriorityLevelConfiguration specifies how to handle requests that are
+subject to limits. It addresses two issues:
+ * How are requests for this priority level limited?
+ * What should be done with requests that exceed the limit?</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>assuredConcurrencyShares</strong> <code>int</code> - <em>(optional)</em> <code>assuredConcurrencyShares</code> (ACS) configures the execution limit, which is a
+  limit on the number of requests of this priority level that may be exeucting
+  at a given time.  ACS must be a positive number. The server's concurrency
+  limit (SCL) is divided among the concurrency-controlled priority levels in
+  proportion to their assured concurrency shares. This produces the assured
+  concurrency value (ACV) --- the number of requests that may be executing at a
+  time --- for each such priority level:
+              ACV(l) = ceil( SCL * ACS(l) / ( sum[priority levels k] ACS(k) ) )
+  bigger numbers of ACS mean more reserved concurrent requests (at the expense
+  of every other PL). This field has a default value of 30.</li>
+<li><strong>limitResponse</strong> <code><a href="#limitresponse">LimitResponse</a></code> - <em>(optional)</em> <code>limitResponse</code> indicates what to do with requests that can not be executed
+  right now</li>
+</ul></div>
+</div>
+<h2 id="nonresourcepolicyrule">NonResourcePolicyRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>NonResourcePolicyRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">nonResourceURLs</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">verbs</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NonResourcePolicyRule is a predicate that matches non-resource requests
+according to their verb and the target non-resource URL. A
+NonResourcePolicyRule matches a request if and only if both (a) at least one
+member of verbs matches the request and (b) at least one member of
+nonResourceURLs matches the request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>nonResourceURLs</strong> <code>List[str]</code> - <code>nonResourceURLs</code> is a set of url prefixes that a user should have access to
+  and may not be empty. For example:<ul>
+<li>"/healthz" is legal</li>
+<li>"/hea<em>" is illegal</li>
+<li>"/hea" is legal but matches nothing</li>
+<li>"/hea/</em>" also matches nothing</li>
+<li>"/healthz/<em>" matches all per-component health checks.
+  "</em>" matches all non-resource urls. if it is present, it must be the only
+  entry. Required.</li>
+</ul>
+</li>
+<li><strong>verbs</strong> <code>List[str]</code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
+  verbs. If it is present, it must be the only entry. Required.</li>
+</ul></div>
+</div>
+<h2 id="policyruleswithsubjects">PolicyRulesWithSubjects</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PolicyRulesWithSubjects</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">subjects</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nonResourceRules=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceRules=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PolicyRulesWithSubjects prescribes a test that applies to a request to an
+apiserver. The test considers the subject making the request, the verb being
+requested, and the resource to be acted upon. This PolicyRulesWithSubjects
+matches a request if and only if both (a) at least one member of subjects
+matches the request and (b) at least one member of resourceRules or
+nonResourceRules matches the request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>subjects</strong> <code><a href="#subject">Subject</a></code> - subjects is the list of normal user, serviceaccount, or group that this rule
+  cares about. There must be at least one member in this slice. A slice that
+  includes both the system:authenticated and system:unauthenticated user groups
+  matches every request. Required.</li>
+<li><strong>nonResourceRules</strong> <code><a href="#nonresourcepolicyrule">NonResourcePolicyRule</a></code> - <em>(optional)</em> <code>nonResourceRules</code> is a list of NonResourcePolicyRules that identify matching
+  requests according to their verb and the target non-resource URL.</li>
+<li><strong>resourceRules</strong> <code><a href="#resourcepolicyrule">ResourcePolicyRule</a></code> - <em>(optional)</em> <code>resourceRules</code> is a slice of ResourcePolicyRules that identify matching
+  requests according to their verb and the target resource. At least one of
+  <code>resourceRules</code> and <code>nonResourceRules</code> has to be non-empty.</li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfiguration">PriorityLevelConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfiguration represents the configuration of a priority level.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code><a href="#prioritylevelconfigurationspec">PriorityLevelConfigurationSpec</a></code> - <em>(optional)</em> <code>spec</code> is the specification of the desired behavior of a "request-priority".
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code><a href="#prioritylevelconfigurationstatus">PriorityLevelConfigurationStatus</a></code> - <em>(optional)</em> <code>status</code> is the current status of a "request-priority". <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfigurationcondition">PriorityLevelConfigurationCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfigurationCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfigurationCondition defines the condition of priority level.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> <code>lastTransitionTime</code> is the last time the condition transitioned from one
+  status to another.</li>
+<li><strong>message</strong> <code>str</code> - <em>(optional)</em> <code>message</code> is a human-readable message indicating details about last
+  transition.</li>
+<li><strong>reason</strong> <code>str</code> - <em>(optional)</em> <code>reason</code> is a unique, one-word, CamelCase reason for the condition's last
+  transition.</li>
+<li><strong>status</strong> <code>str</code> - <em>(optional)</em> <code>status</code> is the status of the condition. Can be True, False, Unknown.
+  Required.</li>
+<li><strong>type</strong> <code>str</code> - <em>(optional)</em> <code>type</code> is the type of the condition. Required.</li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfigurationlist">PriorityLevelConfigurationList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfigurationList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfigurationList is a list of PriorityLevelConfiguration
+objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#prioritylevelconfiguration">PriorityLevelConfiguration</a></code> - <code>items</code> is a list of request-priorities.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> <code>metadata</code> is the standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfigurationreference">PriorityLevelConfigurationReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfigurationReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfigurationReference contains information that points to the
+"request-priority" being used.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - <code>name</code> is the name of the priority level configuration being referenced
+  Required.</li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfigurationspec">PriorityLevelConfigurationSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfigurationSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">limited=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfigurationSpec specifies the configuration of a priority
+level.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - <code>type</code> indicates whether this priority level is subject to limitation on
+  request execution.  A value of <code>"Exempt"</code> means that requests of this priority
+  level are not subject to a limit (and thus are never queued) and do not
+  detract from the capacity made available to other priority levels.  A value of
+  <code>"Limited"</code> means that (a) requests of this priority level <em>are</em> subject to
+  limits and (b) some of the server's limited capacity is made available
+  exclusively to this priority level. Required.</li>
+<li><strong>limited</strong> <code><a href="#limitedprioritylevelconfiguration">LimitedPriorityLevelConfiguration</a></code> - <em>(optional)</em> <code>limited</code> specifies how requests are handled for a Limited priority level.
+  This field must be non-empty if and only if <code>type</code> is <code>"Limited"</code>.</li>
+</ul></div>
+</div>
+<h2 id="prioritylevelconfigurationstatus">PriorityLevelConfigurationStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>PriorityLevelConfigurationStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PriorityLevelConfigurationStatus represents the current state of a
+"request-priority".</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>conditions</strong> <code><a href="#prioritylevelconfigurationcondition">PriorityLevelConfigurationCondition</a></code> - <em>(optional)</em> <code>conditions</code> is the current state of "request-priority".</li>
+</ul></div>
+</div>
+<h2 id="queuingconfiguration">QueuingConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>QueuingConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">handSize=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">queueLengthLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">queues=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>QueuingConfiguration holds the configuration parameters for queuing</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>handSize</strong> <code>int</code> - <em>(optional)</em> <code>handSize</code> is a small positive number that configures the shuffle sharding of
+  requests into queues.  When enqueuing a request at this priority level the
+  request's flow identifier (a string pair) is hashed and the hash value is used
+  to shuffle the list of queues and deal a hand of the size specified here.  The
+  request is put into one of the shortest queues in that hand. <code>handSize</code> must
+  be no larger than <code>queues</code>, and should be significantly smaller (so that a few
+  heavy flows do not saturate most of the queues).  See the user-facing
+  documentation for more extensive guidance on setting this field.  This field
+  has a default value of 8.</li>
+<li><strong>queueLengthLimit</strong> <code>int</code> - <em>(optional)</em> <code>queueLengthLimit</code> is the maximum number of requests allowed to be waiting in
+  a given queue of this priority level at a time; excess requests are rejected.
+  This value must be positive.  If not specified, it will be defaulted to 50.</li>
+<li><strong>queues</strong> <code>int</code> - <em>(optional)</em> <code>queues</code> is the number of queues for this priority level. The queues exist
+  independently at each apiserver. The value must be positive.  Setting it to 1
+  effectively precludes shufflesharding and thus makes the distinguisher method
+  of associated flow schemas irrelevant.  This field has a default value of 64.</li>
+</ul></div>
+</div>
+<h2 id="resourcepolicyrule">ResourcePolicyRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>ResourcePolicyRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiGroups</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resources</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">verbs</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">clusterScope=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespaces=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourcePolicyRule is a predicate that matches some resource requests, testing
+the request's verb and the target resource. A ResourcePolicyRule matches a
+resource request if and only if: (a) at least one member of verbs matches the
+request, (b) at least one member of apiGroups matches the request, (c) at
+least one member of resources matches the request, and (d) least one member of
+namespaces matches the request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiGroups</strong> <code>List[str]</code> - <code>apiGroups</code> is a list of matching API groups and may not be empty. "<em>" matches
+  all API groups and, if present, must be the only entry. Required.</li>
+<li><strong>resources</strong> <code>List[str]</code> - <code>resources</code> is a list of matching resources (i.e., lowercase and plural) with,
+  if desired, subresource.  For example, [ "services", "nodes/status" ].  This
+  list may not be empty. "</em>" matches all resources and, if present, must be the
+  only entry. Required.</li>
+<li><strong>verbs</strong> <code>List[str]</code> - <code>verbs</code> is a list of matching verbs and may not be empty. "*" matches all
+  verbs and, if present, must be the only entry. Required.</li>
+<li><strong>clusterScope</strong> <code>bool</code> - <em>(optional)</em> <code>clusterScope</code> indicates whether to match requests that do not specify a
+  namespace (which happens either because the resource is not namespaced or the
+  request targets all namespaces). If this field is omitted or false then the
+  <code>namespaces</code> field must contain a non-empty list.</li>
+<li><strong>namespaces</strong> <code>List[str]</code> - <em>(optional)</em> <code>namespaces</code> is a list of target namespaces that restricts matches.  A request
+  that specifies a target namespace matches only if either (a) this list
+  contains that target namespace or (b) this list contains "<em>".  Note that "</em>"
+  matches any specified namespace but does not match a request that <em>does not
+  specify</em> a namespace (see the <code>clusterScope</code> field for that). This list may be
+  empty, but only if <code>clusterScope</code> is true.</li>
+</ul></div>
+</div>
+<h2 id="serviceaccountsubject">ServiceAccountSubject</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>ServiceAccountSubject</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespace</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ServiceAccountSubject holds detailed information for service-account-kind
+subject.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - <code>name</code> is the name of matching ServiceAccount objects, or "*" to match
+  regardless of name. Required.</li>
+<li><strong>namespace</strong> <code>str</code> - <code>namespace</code> is the namespace of matching ServiceAccount objects. Required.</li>
+</ul></div>
+</div>
+<h2 id="subject">Subject</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>Subject</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">group=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">serviceAccount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">user=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Subject matches the originator of a request, as identified by the request
+authentication system. There are three ways of matching an originator; by
+user, group, or service account.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - Required</li>
+<li><strong>group</strong> <code><a href="#groupsubject">GroupSubject</a></code> - <em>(optional)</em></li>
+<li><strong>serviceAccount</strong> <code><a href="#serviceaccountsubject">ServiceAccountSubject</a></code> - <em>(optional)</em></li>
+<li><strong>user</strong> <code><a href="#usersubject">UserSubject</a></code> - <em>(optional)</em></li>
+</ul></div>
+</div>
+<h2 id="usersubject">UserSubject</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.flowcontrol_v1alpha1.<strong>UserSubject</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>UserSubject holds detailed information for user-kind subject.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - <code>name</code> is the username that matches, or "*" to match all usernames. Required.</li>
+</ul></div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../extensions_v1beta1/" title="extensions_v1beta1" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                extensions_v1beta1
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../flowcontrol_v1beta1/" title="flowcontrol_v1beta1" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                flowcontrol_v1beta1
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
