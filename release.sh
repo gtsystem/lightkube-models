@@ -12,5 +12,3 @@ for v in $VERSIONS; do
   #twine upload dist/lightkube_models-${v}.*-py3-none-any.whl -r $1
   ls dist/lightkube_models-${v}.*-py3-none-any.whl
 done
-
-

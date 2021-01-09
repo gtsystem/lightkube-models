@@ -176,7 +176,7 @@ def compile_one(key: ApiKey, elements: List[SpecPath]) -> Optional[Compiled]:
             resource = ele.resource
         if not module and ele.module:
             module = ele.module
-        if not model_schema and not ele.sub_action:
+        if not model_schema and ele.sub_action is None and ('get' in ele.methods or 'post' in ele.methods):
             model_schema = ele.model_schema
 
     if resource is None:
