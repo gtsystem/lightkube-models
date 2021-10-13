@@ -36,10 +36,13 @@ jobs:
       run: |
         python test_models.py
         python test_resources.py
-    - name: Package
+    - name: Package (bdist_wheel)
       run: |
         pip install wheel
         python setup.py bdist_wheel
+    - name: Package (sdist)
+      run: |
+        python setup.py sdist
     - name: Archive artifact
       uses: actions/upload-artifact@v2
       with:

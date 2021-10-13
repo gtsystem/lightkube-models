@@ -1,6 +1,6 @@
 VERSIONS=$(awk '/([0-9]+.[0-9]+.[0-9]+)/ {print $2}' .github/workflows/python-package.yml)
 
-rm dist/*.whl
+rm dist/*.whl dist/*.tar.gz
 for v in $VERSIONS; do
   MAIN_VERSION=$(echo $v | cut -d. -f1,2 )
   echo "Building v$v"
@@ -9,7 +9,9 @@ for v in $VERSIONS; do
   python test_resources.py
   python setup.py clean --all
   python setup.py bdist_wheel
+  python setup.py sdist_wheel
   python -m mkdocs build -d site/$MAIN_VERSION
   #twine upload dist/lightkube_models-${v}.*-py3-none-any.whl -r $1
   ls dist/lightkube_models-${v}.*-py3-none-any.whl
+  ls dist/lightkube_models-${v}.tar.gz
 done
