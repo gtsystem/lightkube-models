@@ -13,5 +13,5 @@ for v in $VERSIONS; do
   python -m mkdocs build -d site/$MAIN_VERSION
   #twine upload dist/lightkube_models-${v}.*-py3-none-any.whl -r $1
   ls dist/lightkube_models-${v}.*-py3-none-any.whl
-  ls dist/lightkube_models-${v}.tar.gz
+  ls dist/lightkube_models-${v}.*.tar.gz
 done
