@@ -8,6 +8,7 @@ for v in $VERSIONS; do
   python test_models.py
   python test_resources.py
   python setup.py clean --all
+  python setup.py sdist
   python setup.py bdist_wheel
   python setup.py sdist
   python -m mkdocs build -d site/$MAIN_VERSION
