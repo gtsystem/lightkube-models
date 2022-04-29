@@ -1395,12 +1395,7 @@ actually run.</p>
 <li><strong>concurrencyPolicy</strong> <code>str</code> - <em>(optional)</em> Specifies how to treat concurrent executions of a Job. Valid values are: -
   "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids
   concurrent runs, skipping next run if previous run hasn't finished yet; -
-  "Replace": cancels currently running job and replaces it with a new one
-  Possible enum values:</li>
-<li><code>"Allow"</code> allows CronJobs to run concurrently.</li>
-<li><code>"Forbid"</code> forbids concurrent runs, skipping next run if previous hasn't
-  finished yet.</li>
-<li><code>"Replace"</code> cancels currently running job and replaces it with a new one.</li>
+  "Replace": cancels currently running job and replaces it with a new one</li>
 <li><strong>failedJobsHistoryLimit</strong> <code>int</code> - <em>(optional)</em> The number of failed finished jobs to retain. Value must be non-negative
   integer. Defaults to 1.</li>
 <li><strong>startingDeadlineSeconds</strong> <code>int</code> - <em>(optional)</em> Optional deadline in seconds for starting the job if it misses scheduled time
@@ -1446,11 +1441,7 @@ actually run.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
-<li><strong>type</strong> <code>str</code> - Type of job condition, Complete or Failed.
-  Possible enum values:</li>
-<li><code>"Complete"</code> means the job has completed its execution.</li>
-<li><code>"Failed"</code> means the job has failed its execution.</li>
-<li><code>"Suspended"</code> means the job has been suspended.</li>
+<li><strong>type</strong> <code>str</code> - Type of job condition, Complete or Failed.</li>
 <li><strong>lastProbeTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition was checked.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transit from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> Human readable message indicating details about last transition.</li>

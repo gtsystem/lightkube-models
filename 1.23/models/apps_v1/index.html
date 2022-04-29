@@ -1747,11 +1747,7 @@ DaemonSet.</p>
 <ul>
 <li><strong>rollingUpdate</strong> <code><a href="#rollingupdatedaemonset">RollingUpdateDaemonSet</a></code> - <em>(optional)</em> Rolling update config params. Present only if type = "RollingUpdate".</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is
-  RollingUpdate.
-  Possible enum values:</li>
-<li><code>"OnDelete"</code> Replace the old daemons only when it's killed</li>
-<li><code>"RollingUpdate"</code> Replace the old daemons by new ones using rolling update
-  i.e replace them on each node one after the other.</li>
+  RollingUpdate.</li>
 </ul></div>
 </div>
 <h2 id="deployment">Deployment</h2>
@@ -1861,11 +1857,7 @@ DaemonSet.</p>
 <li><strong>rollingUpdate</strong> <code><a href="#rollingupdatedeployment">RollingUpdateDeployment</a></code> - <em>(optional)</em> Rolling update config params. Present only if DeploymentStrategyType =
   RollingUpdate.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type of deployment. Can be "Recreate" or "RollingUpdate". Default is
-  RollingUpdate.
-  Possible enum values:</li>
-<li><code>"Recreate"</code> Kill all existing pods before creating new ones.</li>
-<li><code>"RollingUpdate"</code> Replace the old ReplicaSets by new one using rolling
-  update i.e gradually scale down the old ReplicaSets and scale up the new one.</li>
+  RollingUpdate.</li>
 </ul></div>
 </div>
 <h2 id="replicaset">ReplicaSet</h2>
@@ -2133,15 +2125,7 @@ PVCs created from the StatefulSet VolumeClaimTemplates.</p>
   etc) and the controller will wait until each pod is ready before continuing.
   When scaling down, the pods are removed in the opposite order. The alternative
   policy is <code>Parallel</code> which will create pods in parallel to match the desired
-  scale without waiting, and on scale down will delete all pods at once.
-  Possible enum values:</li>
-<li><code>"OrderedReady"</code> will create pods in strictly increasing order on scale up
-  and strictly decreasing order on scale down, progressing only when the
-  previous pod is ready or terminated. At most one pod will be changed at any
-  time.</li>
-<li><code>"Parallel"</code> will create and delete pods as soon as the stateful set
-  replica count is changed, and will not wait for pods to be ready or complete
-  termination.</li>
+  scale without waiting, and on scale down will delete all pods at once.</li>
 <li><strong>replicas</strong> <code>int</code> - <em>(optional)</em> replicas is the desired number of replicas of the given Template. These are
   replicas in the sense that they are instantiations of the same Template, but
   individual replicas also have a consistent identity. If unspecified, defaults
@@ -2162,14 +2146,14 @@ PVCs created from the StatefulSet VolumeClaimTemplates.</p>
 </div>
 <h2 id="statefulsetstatus">StatefulSetStatus</h2>
 <div class="autodoc">
-<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1.<strong>StatefulSetStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">availableReplicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">replicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">collisionCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">readyReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updateRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedReplicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.apps_v1.<strong>StatefulSetStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">replicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">availableReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">collisionCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">readyReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updateRevision=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">updatedReplicas=None</em><span class="autodoc-punctuation">)</span></div>
 <div class="autodoc-docstring"><p>StatefulSetStatus represents the current state of a StatefulSet.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>availableReplicas</strong> <code>int</code> - Total number of available pods (ready for at least minReadySeconds) targeted
+<li><strong>replicas</strong> <code>int</code> - replicas is the number of Pods created by the StatefulSet controller.</li>
+<li><strong>availableReplicas</strong> <code>int</code> - <em>(optional)</em> Total number of available pods (ready for at least minReadySeconds) targeted
   by this statefulset. This is a beta field and enabled/disabled by
   StatefulSetMinReadySeconds feature gate.</li>
-<li><strong>replicas</strong> <code>int</code> - replicas is the number of Pods created by the StatefulSet controller.</li>
 <li><strong>collisionCount</strong> <code>int</code> - <em>(optional)</em> collisionCount is the count of hash collisions for the StatefulSet. The
   StatefulSet controller uses this field as a collision avoidance mechanism when
   it needs to create the name for the newest ControllerRevision.</li>
@@ -2200,16 +2184,7 @@ necessary to perform the update for the indicated strategy.</p>
 <li><strong>rollingUpdate</strong> <code><a href="#rollingupdatestatefulsetstrategy">RollingUpdateStatefulSetStrategy</a></code> - <em>(optional)</em> RollingUpdate is used to communicate parameters when Type is
   RollingUpdateStatefulSetStrategyType.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> Type indicates the type of the StatefulSetUpdateStrategy. Default is
-  RollingUpdate.
-  Possible enum values:</li>
-<li><code>"OnDelete"</code> triggers the legacy behavior. Version tracking and ordered
-  rolling restarts are disabled. Pods are recreated from the StatefulSetSpec
-  when they are manually deleted. When a scale operation is performed with this
-  strategy,specification version indicated by the StatefulSet's currentRevision.</li>
-<li><code>"RollingUpdate"</code> indicates that update will be applied to all Pods in the
-  StatefulSet with respect to the StatefulSet ordering constraints. When a scale
-  operation is performed with this strategy, new Pods will be created from the
-  specification version indicated by the StatefulSet's updateRevision.</li>
+  RollingUpdate.</li>
 </ul></div>
 </div>
                 

@@ -1316,13 +1316,7 @@ CertificateSigningRequest object</p>
   signer failed to issue the certificate.
   Approved and Denied conditions are mutually exclusive. Approved, Denied, and
   Failed conditions cannot be removed once added.
-  Only one condition of a given type is allowed.
-  Possible enum values:</li>
-<li><code>"Approved"</code> Approved indicates the request was approved and should be
-  issued by the signer.</li>
-<li><code>"Denied"</code> Denied indicates the request was denied and should not be issued
-  by the signer.</li>
-<li><code>"Failed"</code> Failed indicates the signer failed to issue the certificate.</li>
+  Only one condition of a given type is allowed.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> lastTransitionTime is the time the condition last transitioned from one status
   to another. If unset, when a new condition type is added or an existing
   condition's status is changed, the server defaults this to the current time.</li>

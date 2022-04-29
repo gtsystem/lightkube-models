@@ -4343,14 +4343,7 @@ volumes support ownership management and SELinux relabeling.</p>
   to allow higher level config management to default or override container
   images in workload controllers like Deployments and StatefulSets.</li>
 <li><strong>imagePullPolicy</strong> <code>str</code> - <em>(optional)</em> Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if
-  :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/containers/images#updating-images">More info</a>
-  Possible enum values:</li>
-<li><code>"Always"</code> means that kubelet always attempts to pull the latest image.
-  Container will fail If the pull fails.</li>
-<li><code>"IfNotPresent"</code> means that kubelet pulls if the image isn't present on
-  disk. Container will fail if the image isn't present and the pull fails.</li>
-<li><code>"Never"</code> means that kubelet never pulls an image, but only uses a local
-  image. Container will fail if the image isn't present</li>
+  :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/containers/images#updating-images">More info</a></li>
 <li><strong>lifecycle</strong> <code><a href="#lifecycle">Lifecycle</a></code> - <em>(optional)</em> Actions that the management system should take in response to container
   lifecycle events. Cannot be updated.</li>
 <li><strong>livenessProbe</strong> <code><a href="#probe">Probe</a></code> - <em>(optional)</em> Periodic probe of container liveness. Container will be restarted if the probe
@@ -4395,14 +4388,7 @@ volumes support ownership management and SELinux relabeling.</p>
   both success and failure. FallbackToLogsOnError will use the last chunk of
   container log output if the termination message file is empty and the
   container exited with an error. The log output is limited to 2048 bytes or 80
-  lines, whichever is smaller. Defaults to File. Cannot be updated.
-  Possible enum values:</li>
-<li><code>"FallbackToLogsOnError"</code> will read the most recent contents of the
-  container logs for the container status message when the container exits with
-  an error and the terminationMessagePath has no contents.</li>
-<li><code>"File"</code> is the default behavior and will set the container status message
-  to the contents of the container's terminationMessagePath when the container
-  exits.</li>
+  lines, whichever is smaller. Defaults to File. Cannot be updated.</li>
 <li><strong>tty</strong> <code>bool</code> - <em>(optional)</em> Whether this container should allocate a TTY for itself, also requires 'stdin'
   to be true. Default is false.</li>
 <li><strong>volumeDevices</strong> <code><a href="#volumedevice">VolumeDevice</a></code> - <em>(optional)</em> volumeDevices is the list of block devices to be used by the container.</li>
@@ -4438,11 +4424,7 @@ volumes support ownership management and SELinux relabeling.</p>
 <li><strong>name</strong> <code>str</code> - <em>(optional)</em> If specified, this must be an IANA_SVC_NAME and unique within the pod. Each
   named port in a pod must have a unique name. Name for the port that can be
   referred to by services.</li>
-<li><strong>protocol</strong> <code>str</code> - <em>(optional)</em> Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP".
-  Possible enum values:</li>
-<li><code>"SCTP"</code> is the SCTP protocol.</li>
-<li><code>"TCP"</code> is the TCP protocol.</li>
-<li><code>"UDP"</code> is the UDP protocol.</li>
+<li><strong>protocol</strong> <code>str</code> - <em>(optional)</em> Protocol for port. Must be UDP, TCP, or SCTP. Defaults to "TCP".</li>
 </ul></div>
 </div>
 <h2 id="containerstate">ContainerState</h2>
@@ -4619,11 +4601,7 @@ ownership management and SELinux relabeling.</p>
   mycompany.com/my-custom-protocol.</li>
 <li><strong>name</strong> <code>str</code> - <em>(optional)</em> The name of this port.  This must match the 'name' field in the corresponding
   ServicePort. Must be a DNS_LABEL. Optional only if one port is defined.</li>
-<li><strong>protocol</strong> <code>str</code> - <em>(optional)</em> The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
-  Possible enum values:</li>
-<li><code>"SCTP"</code> is the SCTP protocol.</li>
-<li><code>"TCP"</code> is the TCP protocol.</li>
-<li><code>"UDP"</code> is the UDP protocol.</li>
+<li><strong>protocol</strong> <code>str</code> - <em>(optional)</em> The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.</li>
 </ul></div>
 </div>
 <h2 id="endpointsubset">EndpointSubset</h2>
@@ -4785,14 +4763,7 @@ EphemeralContainers feature gate.</p>
   precedence. Cannot be updated.</li>
 <li><strong>image</strong> <code>str</code> - <em>(optional)</em> Docker image name. <a href="https://kubernetes.io/docs/concepts/containers/images">More info</a></li>
 <li><strong>imagePullPolicy</strong> <code>str</code> - <em>(optional)</em> Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if
-  :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/containers/images#updating-images">More info</a>
-  Possible enum values:</li>
-<li><code>"Always"</code> means that kubelet always attempts to pull the latest image.
-  Container will fail If the pull fails.</li>
-<li><code>"IfNotPresent"</code> means that kubelet pulls if the image isn't present on
-  disk. Container will fail if the image isn't present and the pull fails.</li>
-<li><code>"Never"</code> means that kubelet never pulls an image, but only uses a local
-  image. Container will fail if the image isn't present</li>
+  :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/containers/images#updating-images">More info</a></li>
 <li><strong>lifecycle</strong> <code><a href="#lifecycle">Lifecycle</a></code> - <em>(optional)</em> Lifecycle is not allowed for ephemeral containers.</li>
 <li><strong>livenessProbe</strong> <code><a href="#probe">Probe</a></code> - <em>(optional)</em> Probes are not allowed for ephemeral containers.</li>
 <li><strong>ports</strong> <code><a href="#containerport">ContainerPort</a></code> - <em>(optional)</em> Ports are not allowed for ephemeral containers.</li>
@@ -4832,14 +4803,7 @@ EphemeralContainers feature gate.</p>
   both success and failure. FallbackToLogsOnError will use the last chunk of
   container log output if the termination message file is empty and the
   container exited with an error. The log output is limited to 2048 bytes or 80
-  lines, whichever is smaller. Defaults to File. Cannot be updated.
-  Possible enum values:</li>
-<li><code>"FallbackToLogsOnError"</code> will read the most recent contents of the
-  container logs for the container status message when the container exits with
-  an error and the terminationMessagePath has no contents.</li>
-<li><code>"File"</code> is the default behavior and will set the container status message
-  to the contents of the container's terminationMessagePath when the container
-  exits.</li>
+  lines, whichever is smaller. Defaults to File. Cannot be updated.</li>
 <li><strong>tty</strong> <code>bool</code> - <em>(optional)</em> Whether this container should allocate a TTY for itself, also requires 'stdin'
   to be true. Default is false.</li>
 <li><strong>volumeDevices</strong> <code><a href="#volumedevice">VolumeDevice</a></code> - <em>(optional)</em> volumeDevices is the list of block devices to be used by the container.</li>
@@ -5127,10 +5091,7 @@ volumes do not support ownership management or SELinux relabeling.</p>
   "Host" in httpHeaders instead.</li>
 <li><strong>httpHeaders</strong> <code><a href="#httpheader">HTTPHeader</a></code> - <em>(optional)</em> Custom headers to set in the request. HTTP allows repeated headers.</li>
 <li><strong>path</strong> <code>str</code> - <em>(optional)</em> Path to access on the HTTP server.</li>
-<li><strong>scheme</strong> <code>str</code> - <em>(optional)</em> Scheme to use for connecting to the host. Defaults to HTTP.
-  Possible enum values:</li>
-<li><code>"HTTP"</code> means that the scheme used will be http://</li>
-<li><code>"HTTPS"</code> means that the scheme used will be https://</li>
+<li><strong>scheme</strong> <code>str</code> - <em>(optional)</em> Scheme to use for connecting to the host. Defaults to HTTP.</li>
 </ul></div>
 </div>
 <h2 id="httpheader">HTTPHeader</h2>
@@ -5302,12 +5263,7 @@ Namespace.</p>
 kind.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>type</strong> <code>str</code> - Type of resource that this limit applies to.
-  Possible enum values:</li>
-<li><code>"Container"</code> Limit that applies to all containers in a namespace</li>
-<li><code>"PersistentVolumeClaim"</code> Limit that applies to all persistent volume
-  claims in a namespace</li>
-<li><code>"Pod"</code> Limit that applies to all pods in a namespace</li>
+<li><strong>type</strong> <code>str</code> - Type of resource that this limit applies to.</li>
 <li><strong>default</strong> <code>dict</code> - <em>(optional)</em> Default resource requirement limit value by resource name if resource limit is
   omitted.</li>
 <li><strong>defaultRequest</strong> <code>dict</code> - <em>(optional)</em> DefaultRequest is the default resource requirement request value by resource
@@ -5431,18 +5387,7 @@ support ownership management or SELinux relabeling.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
-<li><strong>type</strong> <code>str</code> - Type of namespace controller condition.
-  Possible enum values:</li>
-<li><code>"NamespaceContentRemaining"</code> contains information about resources
-  remaining in a namespace.</li>
-<li><code>"NamespaceDeletionContentFailure"</code> contains information about namespace
-  deleter errors during deletion of resources.</li>
-<li><code>"NamespaceDeletionDiscoveryFailure"</code> contains information about namespace
-  deleter errors during resource discovery.</li>
-<li><code>"NamespaceDeletionGroupVersionParsingFailure"</code> contains information about
-  namespace deleter errors parsing GV for legacy types.</li>
-<li><code>"NamespaceFinalizersRemaining"</code> contains information about which
-  finalizers are on resources remaining in a namespace.</li>
+<li><strong>type</strong> <code>str</code> - Type of namespace controller condition.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em></li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em></li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em></li>
@@ -5481,10 +5426,7 @@ support ownership management or SELinux relabeling.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>conditions</strong> <code><a href="#namespacecondition">NamespaceCondition</a></code> - <em>(optional)</em> Represents the latest available observations of a namespace's current state.</li>
-<li><strong>phase</strong> <code>str</code> - <em>(optional)</em> Phase is the current lifecycle phase of the namespace. <a href="https://kubernetes.io/docs/tasks/administer-cluster/namespaces/">More info</a>
-  Possible enum values:</li>
-<li><code>"Active"</code> means the namespace is available for use in the system</li>
-<li><code>"Terminating"</code> means the namespace is undergoing graceful termination</li>
+<li><strong>phase</strong> <code>str</code> - <em>(optional)</em> Phase is the current lifecycle phase of the namespace. <a href="https://kubernetes.io/docs/tasks/administer-cluster/namespaces/">More info</a></li>
 </ul></div>
 </div>
 <h2 id="node">Node</h2>
@@ -5514,34 +5456,7 @@ in the cache (i.e. in etcd).</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>address</strong> <code>str</code> - The node address.</li>
-<li><strong>type</strong> <code>str</code> - Node address type, one of Hostname, ExternalIP or InternalIP.
-  Possible enum values:</li>
-<li><code>"ExternalDNS"</code> identifies a DNS name which resolves to an IP address which
-  has the characteristics of a NodeExternalIP. The IP it resolves to may or may
-  not be a listed NodeExternalIP address.</li>
-<li><code>"ExternalIP"</code> identifies an IP address which is, in some way, intended to
-  be more usable from outside the cluster then an internal IP, though no
-  specific semantics are defined. It may be a globally routable IP, though it is
-  not required to be. External IPs may be assigned directly to an interface on
-  the node, like a NodeInternalIP, or alternatively, packets sent to the
-  external IP may be NAT'ed to an internal node IP rather than being delivered
-  directly (making the IP less efficient for node-to-node traffic than a
-  NodeInternalIP).</li>
-<li><code>"Hostname"</code> identifies a name of the node. Although every node can be
-  assumed to have a NodeAddress of this type, its exact syntax and semantics are
-  not defined, and are not consistent between different clusters.</li>
-<li><code>"InternalDNS"</code> identifies a DNS name which resolves to an IP address which
-  has the characteristics of a NodeInternalIP. The IP it resolves to may or may
-  not be a listed NodeInternalIP address.</li>
-<li><code>"InternalIP"</code> identifies an IP address which is assigned to one of the
-  node's network interfaces. Every node should have at least one address of this
-  type. An internal IP is normally expected to be reachable from every other
-  node, but may not be visible to hosts outside the cluster. By default it is
-  assumed that kube-apiserver can reach node internal IPs, though it is possible
-  to configure clusters where this is not the case. NodeInternalIP is the
-  default type of node IP, and does not necessarily imply that the IP is ONLY
-  reachable internally. If a node has multiple internal IPs, no specific
-  semantics are assigned to the additional IPs.</li>
+<li><strong>type</strong> <code>str</code> - Node address type, one of Hostname, ExternalIP or InternalIP.</li>
 </ul></div>
 </div>
 <h2 id="nodeaffinity">NodeAffinity</h2>
@@ -5572,17 +5487,7 @@ in the cache (i.e. in etcd).</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
-<li><strong>type</strong> <code>str</code> - Type of node condition.
-  Possible enum values:</li>
-<li><code>"DiskPressure"</code> means the kubelet is under pressure due to insufficient
-  available disk.</li>
-<li><code>"MemoryPressure"</code> means the kubelet is under pressure due to insufficient
-  available memory.</li>
-<li><code>"NetworkUnavailable"</code> means that network for the node is not correctly
-  configured.</li>
-<li><code>"PIDPressure"</code> means the kubelet is under pressure due to insufficient
-  available PID.</li>
-<li><code>"Ready"</code> means kubelet is healthy and ready to accept pods.</li>
+<li><strong>type</strong> <code>str</code> - Type of node condition.</li>
 <li><strong>lastHeartbeatTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time we got an update on a given condition.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transit from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> Human readable message indicating details about last transition.</li>
@@ -5692,14 +5597,7 @@ operator that relates the key and values.</p>
 <ul>
 <li><strong>key</strong> <code>str</code> - The label key that the selector applies to.</li>
 <li><strong>operator</strong> <code>str</code> - Represents a key's relationship to a set of values. Valid operators are In,
-  NotIn, Exists, DoesNotExist. Gt, and Lt.
-  Possible enum values:</li>
-<li><code>"DoesNotExist"</code></li>
-<li><code>"Exists"</code></li>
-<li><code>"Gt"</code></li>
-<li><code>"In"</code></li>
-<li><code>"Lt"</code></li>
-<li><code>"NotIn"</code></li>
+  NotIn, Exists, DoesNotExist. Gt, and Lt.</li>
 <li><strong>values</strong> <code>List[str]</code> - <em>(optional)</em> An array of string values. If the operator is In or NotIn, the values array
   must be non-empty. If the operator is Exists or DoesNotExist, the values array
   must be empty. If the operator is Gt or Lt, the values array must have a
@@ -5763,13 +5661,7 @@ NodeSelectorTerm.</p>
 <li><strong>images</strong> <code><a href="#containerimage">ContainerImage</a></code> - <em>(optional)</em> List of container images on this node</li>
 <li><strong>nodeInfo</strong> <code><a href="#nodesysteminfo">NodeSystemInfo</a></code> - <em>(optional)</em> Set of ids/uuids to uniquely identify the node. <a href="https://kubernetes.io/docs/concepts/nodes/node/#info">More info</a></li>
 <li><strong>phase</strong> <code>str</code> - <em>(optional)</em> NodePhase is the recently observed lifecycle phase of the node. <a href="https://kubernetes.io/docs/concepts/nodes/node/#phase">More info</a> The field is never
-  populated, and now is deprecated.
-  Possible enum values:</li>
-<li><code>"Pending"</code> means the node has been created/added by the system, but not
-  configured.</li>
-<li><code>"Running"</code> means the node has been configured and has Kubernetes
-  components running.</li>
-<li><code>"Terminated"</code> means the node has been removed from the cluster.</li>
+  populated, and now is deprecated.</li>
 <li><strong>volumesAttached</strong> <code><a href="#attachedvolume">AttachedVolume</a></code> - <em>(optional)</em> List of volumes that are attached to the node.</li>
 <li><strong>volumesInUse</strong> <code>List[str]</code> - <em>(optional)</em> List of attachable volumes in use (mounted) by the node.</li>
 </ul></div>
@@ -5878,11 +5770,7 @@ It is analogous to a node. <a href="https://kubernetes.io/docs/concepts/storage/
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>status</strong> <code>str</code> -</li>
-<li><strong>type</strong> <code>str</code> -
-  Possible enum values:</li>
-<li><code>"FileSystemResizePending"</code> - controller resize is finished and a file
-  system resize is pending on node</li>
-<li><code>"Resizing"</code> - a user trigger resize of pvc has been started</li>
+<li><strong>type</strong> <code>str</code> -</li>
 <li><strong>lastProbeTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time we probed the condition.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> Human-readable message indicating details about last transition.</li>
@@ -5972,13 +5860,7 @@ claim.</p>
 <li><strong>capacity</strong> <code>dict</code> - <em>(optional)</em> Represents the actual resources of the underlying volume.</li>
 <li><strong>conditions</strong> <code><a href="#persistentvolumeclaimcondition">PersistentVolumeClaimCondition</a></code> - <em>(optional)</em> Current Condition of persistent volume claim. If underlying persistent volume
   is being resized then the Condition will be set to 'ResizeStarted'.</li>
-<li><strong>phase</strong> <code>str</code> - <em>(optional)</em> Phase represents the current phase of PersistentVolumeClaim.
-  Possible enum values:</li>
-<li><code>"Bound"</code> used for PersistentVolumeClaims that are bound</li>
-<li><code>"Lost"</code> used for PersistentVolumeClaims that lost their underlying
-  PersistentVolume. The claim was bound to a PersistentVolume and this volume
-  does not exist any longer and all data on it was lost.</li>
-<li><code>"Pending"</code> used for PersistentVolumeClaims that are not yet bound</li>
+<li><strong>phase</strong> <code>str</code> - <em>(optional)</em> Phase represents the current phase of PersistentVolumeClaim.</li>
 <li><strong>resizeStatus</strong> <code>str</code> - <em>(optional)</em> ResizeStatus stores status of resize operation. ResizeStatus is not set by
   default but when expansion is complete resizeStatus is set to empty string by
   resize controller or kubelet. This is an alpha field and requires enabling
@@ -6081,15 +5963,7 @@ type of volume that is owned by someone else (the system).</p>
   options are Retain (default for manually created PersistentVolumes), Delete
   (default for dynamically provisioned PersistentVolumes), and Recycle
   (deprecated). Recycle must be supported by the volume plugin underlying this
-  PersistentVolume. <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming">More info</a>
-  Possible enum values:</li>
-<li><code>"Delete"</code> means the volume will be deleted from Kubernetes on release from
-  its claim. The volume plugin must support Deletion.</li>
-<li><code>"Recycle"</code> means the volume will be recycled back into the pool of unbound
-  persistent volumes on release from its claim. The volume plugin must support
-  Recycling.</li>
-<li><code>"Retain"</code> means the volume will be left in its current phase (Released)
-  for manual reclamation by the administrator. The default policy is Retain.</li>
+  PersistentVolume. <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming">More info</a></li>
 <li><strong>photonPersistentDisk</strong> <code><a href="#photonpersistentdiskvolumesource">PhotonPersistentDiskVolumeSource</a></code> - <em>(optional)</em> PhotonPersistentDisk represents a PhotonController persistent disk attached
   and mounted on kubelets host machine</li>
 <li><strong>portworxVolume</strong> <code><a href="#portworxvolumesource">PortworxVolumeSource</a></code> - <em>(optional)</em> PortworxVolume represents a portworx volume attached and mounted on kubelets
@@ -6119,18 +5993,7 @@ type of volume that is owned by someone else (the system).</p>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> A human-readable message indicating details about why the volume is in this
   state.</li>
 <li><strong>phase</strong> <code>str</code> - <em>(optional)</em> Phase indicates if a volume is available, bound to a claim, or released by a
-  claim. <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes#phase">More info</a>
-  Possible enum values:</li>
-<li><code>"Available"</code> used for PersistentVolumes that are not yet bound Available
-  volumes are held by the binder and matched to PersistentVolumeClaims</li>
-<li><code>"Bound"</code> used for PersistentVolumes that are bound</li>
-<li><code>"Failed"</code> used for PersistentVolumes that failed to be correctly recycled
-  or deleted after being released from a claim</li>
-<li><code>"Pending"</code> used for PersistentVolumes that are not available</li>
-<li><code>"Released"</code> used for PersistentVolumes where the bound
-  PersistentVolumeClaim was deleted released volumes must be recycled before
-  becoming available again this phase is used by the persistent volume claim
-  binder to signal to another process to reclaim the resource</li>
+  claim. <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes#phase">More info</a></li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> Reason is a brief CamelCase string that describes any failure and is meant for
   machine parsing and tidy display in the CLI.</li>
 </ul></div>
@@ -6249,14 +6112,7 @@ on which a pod of the set of pods is running</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status is the status of the condition. Can be True, False, Unknown. <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions">More info</a></li>
-<li><strong>type</strong> <code>str</code> - Type is the type of the condition. <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions">More info</a>
-  Possible enum values:</li>
-<li><code>"ContainersReady"</code> indicates whether all containers in the pod are ready.</li>
-<li><code>"Initialized"</code> means that all init containers in the pod have started
-  successfully.</li>
-<li><code>"PodScheduled"</code> represents status of the scheduling process for this pod.</li>
-<li><code>"Ready"</code> means the pod is able to service requests and should be added to
-  the load balancing pools of all matching services.</li>
+<li><strong>type</strong> <code>str</code> - Type is the type of the condition. <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions">More info</a></li>
 <li><strong>lastProbeTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time we probed the condition.</li>
 <li><strong>lastTransitionTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> Last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>str</code> - <em>(optional)</em> Human-readable message indicating details about last transition.</li>
@@ -6340,14 +6196,7 @@ cluster.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>conditionType</strong> <code>str</code> - ConditionType refers to a condition in the pod's condition list with matching
-  type.
-  Possible enum values:</li>
-<li><code>"ContainersReady"</code> indicates whether all containers in the pod are ready.</li>
-<li><code>"Initialized"</code> means that all init containers in the pod have started
-  successfully.</li>
-<li><code>"PodScheduled"</code> represents status of the scheduling process for this pod.</li>
-<li><code>"Ready"</code> means the pod is able to service requests and should be added to
-  the load balancing pools of all matching services.</li>
+  type.</li>
 </ul></div>
 </div>
 <h2 id="podsecuritycontext">PodSecurityContext</h2>
@@ -6432,19 +6281,7 @@ PodSecurityContext.</p>
   'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters
   given in DNSConfig will be merged with the policy selected with DNSPolicy. To
   have DNS options set along with hostNetwork, you have to specify DNS policy
-  explicitly to 'ClusterFirstWithHostNet'.
-  Possible enum values:</li>
-<li><code>"ClusterFirst"</code> indicates that the pod should use cluster DNS first unless
-  hostNetwork is true, if it is available, then fall back on the default (as
-  determined by kubelet) DNS settings.</li>
-<li><code>"ClusterFirstWithHostNet"</code> indicates that the pod should use cluster DNS
-  first, if it is available, then fall back on the default (as determined by
-  kubelet) DNS settings.</li>
-<li><code>"Default"</code> indicates that the pod should use the default (as determined by
-  kubelet) DNS settings.</li>
-<li><code>"None"</code> indicates that the pod should use empty DNS settings. DNS
-  parameters such as nameservers and search paths should be defined via
-  DNSConfig.</li>
+  explicitly to 'ClusterFirstWithHostNet'.</li>
 <li><strong>enableServiceLinks</strong> <code>bool</code> - <em>(optional)</em> EnableServiceLinks indicates whether information about services should be
   injected into pod's environment variables, matching the syntax of Docker
   links. Optional: Defaults to true.</li>
@@ -6534,11 +6371,7 @@ PodSecurityContext.</p>
   is ready when all its containers are ready AND all conditions specified in the
   readiness gates have status equal to "True" <a href="https://git.k8s.io/enhancements/keps/sig-network/580-pod-readiness-gates">More info</a></li>
 <li><strong>restartPolicy</strong> <code>str</code> - <em>(optional)</em> Restart policy for all containers within the pod. One of Always, OnFailure,
-  Never. Default to Always. <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy">More info</a>
-  Possible enum values:</li>
-<li><code>"Always"</code></li>
-<li><code>"Never"</code></li>
-<li><code>"OnFailure"</code></li>
+  Never. Default to Always. <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy">More info</a></li>
 <li><strong>runtimeClassName</strong> <code>str</code> - <em>(optional)</em> RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group,
   which should be used to run this pod.  If no RuntimeClass resource matches the
   named class, the pod will not be run. If unset or empty, the "legacy"
@@ -6628,24 +6461,7 @@ contact the control plane.</p>
   failure. The container either exited with non-zero status or was terminated by
   the system. Unknown: For some reason the state of the pod could not be
   obtained, typically due to an error in communicating with the host of the pod.
-  <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-phase">More info</a>
-  Possible enum values:</li>
-<li><code>"Failed"</code> means that all containers in the pod have terminated, and at
-  least one container has terminated in a failure (exited with a non-zero exit
-  code or was stopped by the system).</li>
-<li><code>"Pending"</code> means the pod has been accepted by the system, but one or more
-  of the containers has not been started. This includes time before being bound
-  to a node, as well as time spent pulling images onto the host.</li>
-<li><code>"Running"</code> means the pod has been bound to a node and all of the
-  containers have been started. At least one container is still running or is in
-  the process of being restarted.</li>
-<li><code>"Succeeded"</code> means that all containers in the pod have voluntarily
-  terminated with a container exit code of 0, and the system is not going to
-  restart any of these containers.</li>
-<li><code>"Unknown"</code> means that for some reason the state of the pod could not be
-  obtained, typically due to an error in communicating with the host of the pod.
-  Deprecated: It isn't being set since 2015
-  (74da3b14b0c0f658b3bb8d2def5094686d0e9095)</li>
+  <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-phase">More info</a></li>
 <li><strong>podIP</strong> <code>str</code> - <em>(optional)</em> IP address allocated to the pod. Routable at least within the cluster. Empty
   if not yet allocated.</li>
 <li><strong>podIPs</strong> <code><a href="#podip">PodIP</a></code> - <em>(optional)</em> podIPs holds the IP addresses allocated to the pod. If this field is
@@ -6653,11 +6469,7 @@ contact the control plane.</p>
   most 1 value for each of IPv4 and IPv6. This list is empty if no IPs have been
   allocated yet.</li>
 <li><strong>qosClass</strong> <code>str</code> - <em>(optional)</em> The Quality of Service (QOS) classification assigned to the pod based on
-  resource requirements See PodQOSClass type for available QOS classes <a href="https://git.k8s.io/community/contributors/design-proposals/node/resource-qos.md">More info</a>
-  Possible enum values:</li>
-<li><code>"BestEffort"</code> is the BestEffort qos class.</li>
-<li><code>"Burstable"</code> is the Burstable qos class.</li>
-<li><code>"Guaranteed"</code> is the Guaranteed qos class.</li>
+  resource requirements See PodQOSClass type for available QOS classes <a href="https://git.k8s.io/community/contributors/design-proposals/node/resource-qos.md">More info</a></li>
 <li><strong>reason</strong> <code>str</code> - <em>(optional)</em> A brief CamelCase message indicating details about why the pod is in this
   state. e.g. 'Evicted'</li>
 <li><strong>startTime</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> RFC 3339 date and time at which the object was acknowledged by the Kubelet.
@@ -6715,11 +6527,7 @@ template</p>
 <ul>
 <li><strong>port</strong> <code>int</code> - Port is the port number of the service port of which status is recorded here</li>
 <li><strong>protocol</strong> <code>str</code> - Protocol is the protocol of the service port of which status is recorded here
-  The supported values are: "TCP", "UDP", "SCTP"
-  Possible enum values:</li>
-<li><code>"SCTP"</code> is the SCTP protocol.</li>
-<li><code>"TCP"</code> is the TCP protocol.</li>
-<li><code>"UDP"</code> is the UDP protocol.</li>
+  The supported values are: "TCP", "UDP", "SCTP"</li>
 <li><strong>error</strong> <code>str</code> - <em>(optional)</em> Error is to record the problem with the service port The format of the error
   shall comply with the following rules: - built-in error values shall be
   specified in this file and those shall use
@@ -7121,25 +6929,8 @@ scope name, and an operator that relates the scope name and values.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>operator</strong> <code>str</code> - Represents a scope's relationship to a set of values. Valid operators are In,
-  NotIn, Exists, DoesNotExist.
-  Possible enum values:</li>
-<li><code>"DoesNotExist"</code></li>
-<li><code>"Exists"</code></li>
-<li><code>"In"</code></li>
-<li><code>"NotIn"</code></li>
-<li><strong>scopeName</strong> <code>str</code> - The name of the scope that the selector applies to.
-  Possible enum values:</li>
-<li><code>"BestEffort"</code> Match all pod objects that have best effort quality of
-  service</li>
-<li><code>"CrossNamespacePodAffinity"</code> Match all pod objects that have
-  cross-namespace pod (anti)affinity mentioned. This is a beta feature enabled
-  by the PodAffinityNamespaceSelector feature flag.</li>
-<li><code>"NotBestEffort"</code> Match all pod objects that do not have best effort
-  quality of service</li>
-<li><code>"NotTerminating"</code> Match all pod objects where spec.activeDeadlineSeconds
-  is nil</li>
-<li><code>"PriorityClass"</code> Match all pod objects that have priority class mentioned</li>
-<li><code>"Terminating"</code> Match all pod objects where spec.activeDeadlineSeconds &gt;=0</li>
+  NotIn, Exists, DoesNotExist.</li>
+<li><strong>scopeName</strong> <code>str</code> - The name of the scope that the selector applies to.</li>
 <li><strong>values</strong> <code>List[str]</code> - <em>(optional)</em> An array of string values. If the operator is In or NotIn, the values array
   must be non-empty. If the operator is Exists or DoesNotExist, the values array
   must be empty. This array is replaced during a strategic merge patch.</li>
@@ -7156,13 +6947,7 @@ profile source may be set.</p>
   are:
   Localhost - a profile defined in a file on the node should be used.
   RuntimeDefault - the container runtime default profile should be used.
-  Unconfined - no profile should be applied.
-  Possible enum values:</li>
-<li><code>"Localhost"</code> indicates a profile defined in a file on the node should be
-  used. The file's location relative to <kubelet-root-dir>/seccomp.</li>
-<li><code>"RuntimeDefault"</code> represents the default container runtime seccomp
-  profile.</li>
-<li><code>"Unconfined"</code> indicates no seccomp profile is applied (A.K.A. unconfined).</li>
+  Unconfined - no profile should be applied.</li>
 <li><strong>localhostProfile</strong> <code>str</code> - <em>(optional)</em> localhostProfile indicates a profile defined in a file on the node should be
   used. The profile must be preconfigured on the node to work. Must be a
   descending path, relative to the kubelet's configured seccomp profile
@@ -7479,11 +7264,7 @@ otherwise).</p>
   creation will fail. This field will be wiped when updating a Service to no
   longer need it (e.g. changing type from NodePort to ClusterIP). <a href="https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport">More info</a></li>
 <li><strong>protocol</strong> <code>str</code> - <em>(optional)</em> The IP protocol for this port. Supports "TCP", "UDP", and "SCTP". Default is
-  TCP.
-  Possible enum values:</li>
-<li><code>"SCTP"</code> is the SCTP protocol.</li>
-<li><code>"TCP"</code> is the TCP protocol.</li>
-<li><code>"UDP"</code> is the UDP protocol.</li>
+  TCP.</li>
 <li><strong>targetPort</strong> <code><a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a></code> - <em>(optional)</em> Number or name of the port to access on the pods targeted by the service.
   Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this
   is a string, it will be looked up as a named port in the target Pod's
@@ -7554,10 +7335,7 @@ otherwise).</p>
   source IP and avoids a second hop for LoadBalancer and Nodeport type services,
   but risks potentially imbalanced traffic spreading. "Cluster" obscures the
   client source IP and may cause a second hop to another node, but should have
-  good overall load-spreading.
-  Possible enum values:</li>
-<li><code>"Cluster"</code> specifies node-global (legacy) behavior.</li>
-<li><code>"Local"</code> specifies node-local endpoints behavior.</li>
+  good overall load-spreading.</li>
 <li><strong>healthCheckNodePort</strong> <code>int</code> - <em>(optional)</em> healthCheckNodePort specifies the healthcheck nodePort for the service. This
   only applies when type is set to LoadBalancer and externalTrafficPolicy is set
   to Local. If a value is specified, is in-range, and is not in use, it will be
@@ -7633,10 +7411,7 @@ otherwise).</p>
   ExternalName. <a href="https://kubernetes.io/docs/concepts/services-networking/service/">More info</a></li>
 <li><strong>sessionAffinity</strong> <code>str</code> - <em>(optional)</em> Supports "ClientIP" and "None". Used to maintain session affinity. Enable
   client IP based session affinity. Must be ClientIP or None. Defaults to None.
-  <a href="https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies">More info</a>
-  Possible enum values:</li>
-<li><code>"ClientIP"</code> is the Client IP based.</li>
-<li><code>"None"</code> - no session affinity.</li>
+  <a href="https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies">More info</a></li>
 <li><strong>sessionAffinityConfig</strong> <code><a href="#sessionaffinityconfig">SessionAffinityConfig</a></code> - <em>(optional)</em> sessionAffinityConfig contains the configurations of session affinity.</li>
 <li><strong>type</strong> <code>str</code> - <em>(optional)</em> type determines how the Service is exposed. Defaults to ClusterIP. Valid
   options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ClusterIP"
@@ -7650,17 +7425,7 @@ otherwise).</p>
   external load-balancer (if supported in the current cloud) which routes to the
   same endpoints as the clusterIP. "ExternalName" aliases this service to the
   specified externalName. Several other fields do not apply to ExternalName
-  services. <a href="https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types">More info</a>
-  Possible enum values:</li>
-<li><code>"ClusterIP"</code> means a service will only be accessible inside the cluster,
-  via the cluster IP.</li>
-<li><code>"ExternalName"</code> means a service consists of only a reference to an
-  external name that kubedns or equivalent will return as a CNAME record, with
-  no exposing or proxying of any pods involved.</li>
-<li><code>"LoadBalancer"</code> means a service will be exposed via an external load
-  balancer (if the cloud provider supports it), in addition to 'NodePort' type.</li>
-<li><code>"NodePort"</code> means a service will be exposed on one port of every node, in
-  addition to 'ClusterIP' type.</li>
+  services. <a href="https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types">More info</a></li>
 </ul></div>
 </div>
 <h2 id="servicestatus">ServiceStatus</h2>
@@ -7758,17 +7523,7 @@ tolerate the Taint.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>effect</strong> <code>str</code> - Required. The effect of the taint on pods that do not tolerate the taint.
-  Valid effects are NoSchedule, PreferNoSchedule and NoExecute.
-  Possible enum values:</li>
-<li><code>"NoExecute"</code> Evict any already-running pods that do not tolerate the
-  taint. Currently enforced by NodeController.</li>
-<li><code>"NoSchedule"</code> Do not allow new pods to schedule onto the node unless they
-  tolerate the taint, but allow all pods submitted to Kubelet without going
-  through the scheduler to start, and allow all already-running pods to continue
-  running. Enforced by the scheduler.</li>
-<li><code>"PreferNoSchedule"</code> Like TaintEffectNoSchedule, but the scheduler tries
-  not to schedule new pods onto the node, rather than prohibiting new pods from
-  scheduling onto the node entirely. Enforced by the scheduler.</li>
+  Valid effects are NoSchedule, PreferNoSchedule and NoExecute.</li>
 <li><strong>key</strong> <code>str</code> - Required. The taint key to be applied to a node.</li>
 <li><strong>timeAdded</strong> <code><a href="../meta_v1/index.html#time">meta_v1.Time</a></code> - <em>(optional)</em> TimeAdded represents the time at which the taint was added. It is only written
   for NoExecute taints.</li>
@@ -7784,26 +7539,13 @@ triple <key,value,effect> using the matching operator <operator>.</p>
 <ul>
 <li><strong>effect</strong> <code>str</code> - <em>(optional)</em> Effect indicates the taint effect to match. Empty means match all taint
   effects. When specified, allowed values are NoSchedule, PreferNoSchedule and
-  NoExecute.
-  Possible enum values:</li>
-<li><code>"NoExecute"</code> Evict any already-running pods that do not tolerate the
-  taint. Currently enforced by NodeController.</li>
-<li><code>"NoSchedule"</code> Do not allow new pods to schedule onto the node unless they
-  tolerate the taint, but allow all pods submitted to Kubelet without going
-  through the scheduler to start, and allow all already-running pods to continue
-  running. Enforced by the scheduler.</li>
-<li><code>"PreferNoSchedule"</code> Like TaintEffectNoSchedule, but the scheduler tries
-  not to schedule new pods onto the node, rather than prohibiting new pods from
-  scheduling onto the node entirely. Enforced by the scheduler.</li>
+  NoExecute.</li>
 <li><strong>key</strong> <code>str</code> - <em>(optional)</em> Key is the taint key that the toleration applies to. Empty means match all
   taint keys. If the key is empty, operator must be Exists; this combination
   means to match all values and all keys.</li>
 <li><strong>operator</strong> <code>str</code> - <em>(optional)</em> Operator represents a key's relationship to the value. Valid operators are
   Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for
-  value, so that a pod can tolerate all taints of a particular category.
-  Possible enum values:</li>
-<li><code>"Equal"</code></li>
-<li><code>"Exists"</code></li>
+  value, so that a pod can tolerate all taints of a particular category.</li>
 <li><strong>tolerationSeconds</strong> <code>int</code> - <em>(optional)</em> TolerationSeconds represents the period of time the toleration (which must be
   of effect NoExecute, otherwise this field is ignored) tolerates the taint. By
   default, it is not set, which means tolerate the taint forever (do not evict).
@@ -7874,12 +7616,7 @@ topology.</p>
   only be scheduled to zone2(zone3) to become 3/2/1(3/1/2) as ActualSkew(2-1) on
   zone2(zone3) satisfies MaxSkew(1). In other words, the cluster can still be
   imbalanced, but scheduler won't make it <em>more</em> imbalanced. It's a required
-  field.
-  Possible enum values:</li>
-<li><code>"DoNotSchedule"</code> instructs the scheduler not to schedule the pod when
-  constraints are not satisfied.</li>
-<li><code>"ScheduleAnyway"</code> instructs the scheduler to schedule the pod even if
-  constraints are not satisfied.</li>
+  field.</li>
 <li><strong>labelSelector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - <em>(optional)</em> LabelSelector is used to find matching pods. Pods that match this label
   selector are counted to determine the number of pods in their corresponding
   topology domain.</li>
