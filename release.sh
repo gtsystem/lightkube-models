@@ -1,6 +1,10 @@
-VERSIONS=$(awk '/([0-9]+.[0-9]+.[0-9]+)/ {print $2}' .github/workflows/python-package.yml)
+if [[ ! -z "$1" ]]; then
+  VERSIONS=$1   # provide version without `v`
+else
+  VERSIONS=$(awk '/([0-9]+.[0-9]+.[0-9]+)/ {print $2}' .github/workflows/python-package.yml)
+  rm dist/*.whl dist/*.tar.gz
+fi
 
-rm dist/*.whl dist/*.tar.gz
 for v in $VERSIONS; do
   MAIN_VERSION=$(echo $v | cut -d. -f1,2 )
   echo "Building v$v"
