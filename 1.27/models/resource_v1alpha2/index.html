@@ -1,0 +1,1792 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>resource_v1alpha2 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e56c2">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resource_v1alpha2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header-nav__button md-logo" aria-label="lightkube-models">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            lightkube-models
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              resource_v1alpha2
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Models
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Models" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="All models" class="md-nav__link">
+      All models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
+      admissionregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admissionregistration_v1alpha1/" title="admissionregistration_v1alpha1" class="md-nav__link">
+      admissionregistration_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
+      apiextensions_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
+      apiregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apiserverinternal_v1alpha1/" title="apiserverinternal_v1alpha1" class="md-nav__link">
+      apiserverinternal_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../apps_v1/" title="apps_v1" class="md-nav__link">
+      apps_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1/" title="authentication_v1" class="md-nav__link">
+      authentication_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1alpha1/" title="authentication_v1alpha1" class="md-nav__link">
+      authentication_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
+      authentication_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authorization_v1/" title="authorization_v1" class="md-nav__link">
+      authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
+      autoscaling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autoscaling_v2/" title="autoscaling_v2" class="md-nav__link">
+      autoscaling_v2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../batch_v1/" title="batch_v1" class="md-nav__link">
+      batch_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../certificates_v1/" title="certificates_v1" class="md-nav__link">
+      certificates_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../certificates_v1alpha1/" title="certificates_v1alpha1" class="md-nav__link">
+      certificates_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coordination_v1/" title="coordination_v1" class="md-nav__link">
+      coordination_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../core_v1/" title="core_v1" class="md-nav__link">
+      core_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../discovery_v1/" title="discovery_v1" class="md-nav__link">
+      discovery_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../events_v1/" title="events_v1" class="md-nav__link">
+      events_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flowcontrol_v1beta2/" title="flowcontrol_v1beta2" class="md-nav__link">
+      flowcontrol_v1beta2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flowcontrol_v1beta3/" title="flowcontrol_v1beta3" class="md-nav__link">
+      flowcontrol_v1beta3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../meta_v1/" title="meta_v1" class="md-nav__link">
+      meta_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1/" title="networking_v1" class="md-nav__link">
+      networking_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking_v1alpha1/" title="networking_v1alpha1" class="md-nav__link">
+      networking_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../node_v1/" title="node_v1" class="md-nav__link">
+      node_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../policy_v1/" title="policy_v1" class="md-nav__link">
+      policy_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rbac_v1/" title="rbac_v1" class="md-nav__link">
+      rbac_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resource/" title="resource" class="md-nav__link">
+      resource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        resource_v1alpha2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="resource_v1alpha2" class="md-nav__link md-nav__link--active">
+      resource_v1alpha2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allocationresult" class="md-nav__link">
+    AllocationResult
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontext" class="md-nav__link">
+    PodSchedulingContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextlist" class="md-nav__link">
+    PodSchedulingContextList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextspec" class="md-nav__link">
+    PodSchedulingContextSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextstatus" class="md-nav__link">
+    PodSchedulingContextStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaim" class="md-nav__link">
+    ResourceClaim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimconsumerreference" class="md-nav__link">
+    ResourceClaimConsumerReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimlist" class="md-nav__link">
+    ResourceClaimList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimparametersreference" class="md-nav__link">
+    ResourceClaimParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimschedulingstatus" class="md-nav__link">
+    ResourceClaimSchedulingStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimspec" class="md-nav__link">
+    ResourceClaimSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimstatus" class="md-nav__link">
+    ResourceClaimStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplate" class="md-nav__link">
+    ResourceClaimTemplate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatelist" class="md-nav__link">
+    ResourceClaimTemplateList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatespec" class="md-nav__link">
+    ResourceClaimTemplateSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclass" class="md-nav__link">
+    ResourceClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclasslist" class="md-nav__link">
+    ResourceClassList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclassparametersreference" class="md-nav__link">
+    ResourceClassParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcehandle" class="md-nav__link">
+    ResourceHandle
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="runtime" class="md-nav__link">
+      runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scheduling_v1/" title="scheduling_v1" class="md-nav__link">
+      scheduling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage_v1/" title="storage_v1" class="md-nav__link">
+      storage_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../util_intstr/" title="util_intstr" class="md-nav__link">
+      util_intstr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version/" title="version" class="md-nav__link">
+      version
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Resources
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/" title="All resources" class="md-nav__link">
+      All resources
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
+      admissionregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/admissionregistration_v1alpha1/" title="admissionregistration_v1alpha1" class="md-nav__link">
+      admissionregistration_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
+      apiextensions_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
+      apiregistration_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/apps_v1/" title="apps_v1" class="md-nav__link">
+      apps_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authentication_v1/" title="authentication_v1" class="md-nav__link">
+      authentication_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authentication_v1alpha1/" title="authentication_v1alpha1" class="md-nav__link">
+      authentication_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
+      authentication_v1beta1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/authorization_v1/" title="authorization_v1" class="md-nav__link">
+      authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
+      autoscaling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/autoscaling_v2/" title="autoscaling_v2" class="md-nav__link">
+      autoscaling_v2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/batch_v1/" title="batch_v1" class="md-nav__link">
+      batch_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/certificates_v1/" title="certificates_v1" class="md-nav__link">
+      certificates_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/certificates_v1alpha1/" title="certificates_v1alpha1" class="md-nav__link">
+      certificates_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/coordination_v1/" title="coordination_v1" class="md-nav__link">
+      coordination_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/core_v1/" title="core_v1" class="md-nav__link">
+      core_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/discovery_v1/" title="discovery_v1" class="md-nav__link">
+      discovery_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/events_v1/" title="events_v1" class="md-nav__link">
+      events_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flowcontrol_apiserver_v1beta2/" title="flowcontrol_apiserver_v1beta2" class="md-nav__link">
+      flowcontrol_apiserver_v1beta2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/flowcontrol_apiserver_v1beta3/" title="flowcontrol_apiserver_v1beta3" class="md-nav__link">
+      flowcontrol_apiserver_v1beta3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/internal_apiserver_v1alpha1/" title="internal_apiserver_v1alpha1" class="md-nav__link">
+      internal_apiserver_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/networking_v1/" title="networking_v1" class="md-nav__link">
+      networking_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/networking_v1alpha1/" title="networking_v1alpha1" class="md-nav__link">
+      networking_v1alpha1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/node_v1/" title="node_v1" class="md-nav__link">
+      node_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/policy_v1/" title="policy_v1" class="md-nav__link">
+      policy_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/rbac_authorization_v1/" title="rbac_authorization_v1" class="md-nav__link">
+      rbac_authorization_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/resource_v1alpha2/" title="resource_v1alpha2" class="md-nav__link">
+      resource_v1alpha2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/scheduling_v1/" title="scheduling_v1" class="md-nav__link">
+      scheduling_v1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/storage_v1/" title="storage_v1" class="md-nav__link">
+      storage_v1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allocationresult" class="md-nav__link">
+    AllocationResult
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontext" class="md-nav__link">
+    PodSchedulingContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextlist" class="md-nav__link">
+    PodSchedulingContextList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextspec" class="md-nav__link">
+    PodSchedulingContextSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podschedulingcontextstatus" class="md-nav__link">
+    PodSchedulingContextStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaim" class="md-nav__link">
+    ResourceClaim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimconsumerreference" class="md-nav__link">
+    ResourceClaimConsumerReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimlist" class="md-nav__link">
+    ResourceClaimList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimparametersreference" class="md-nav__link">
+    ResourceClaimParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimschedulingstatus" class="md-nav__link">
+    ResourceClaimSchedulingStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimspec" class="md-nav__link">
+    ResourceClaimSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimstatus" class="md-nav__link">
+    ResourceClaimStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplate" class="md-nav__link">
+    ResourceClaimTemplate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatelist" class="md-nav__link">
+    ResourceClaimTemplateList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatespec" class="md-nav__link">
+    ResourceClaimTemplateSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclass" class="md-nav__link">
+    ResourceClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclasslist" class="md-nav__link">
+    ResourceClassList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclassparametersreference" class="md-nav__link">
+    ResourceClassParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcehandle" class="md-nav__link">
+    ResourceHandle
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="resource_v1alpha2">resource_v1alpha2</h1>
+<h2 id="allocationresult">AllocationResult</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>AllocationResult</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">availableOnNodes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceHandles=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">shareable=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>AllocationResult contains attributes of an allocated resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>availableOnNodes</strong> <code><a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a></code> - <em>(optional)</em> This field will get set by the resource driver after it has allocated the
+  resource to inform the scheduler where it can schedule Pods using the
+  ResourceClaim.
+  Setting this field is optional. If null, the resource is available everywhere.</li>
+<li><strong>resourceHandles</strong> <code><a href="#resourcehandle">ResourceHandle</a></code> - <em>(optional)</em> ResourceHandles contain the state associated with an allocation that should be
+  maintained throughout the lifetime of a claim. Each ResourceHandle contains
+  data that should be passed to a specific kubelet plugin once it lands on a
+  node. This data is returned by the driver after a successful allocation and is
+  opaque to Kubernetes. Driver documentation may explain to users how to
+  interpret this data if needed.
+  Setting this field is optional. It has a maximum size of 32 entries. If null
+  (or empty), it is assumed this allocation will be processed by a single
+  kubelet plugin with no ResourceHandle data attached. The name of the kubelet
+  plugin invoked will match the DriverName set in the ResourceClaimStatus this
+  AllocationResult is embedded in.</li>
+<li><strong>shareable</strong> <code>bool</code> - <em>(optional)</em> Shareable determines whether the resource supports more than one consumer at a
+  time.</li>
+</ul></div>
+</div>
+<h2 id="podschedulingcontext">PodSchedulingContext</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>PodSchedulingContext</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodSchedulingContext objects hold information that is needed to schedule a Pod
+with ResourceClaims that use "WaitForFirstConsumer" allocation mode.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#podschedulingcontextspec">PodSchedulingContextSpec</a></code> - Spec describes where resources for the Pod are needed.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata</li>
+<li><strong>status</strong> <code><a href="#podschedulingcontextstatus">PodSchedulingContextStatus</a></code> - <em>(optional)</em> Status describes where resources for the Pod can be allocated.</li>
+</ul></div>
+</div>
+<h2 id="podschedulingcontextlist">PodSchedulingContextList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>PodSchedulingContextList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodSchedulingContextList is a collection of Pod scheduling objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#podschedulingcontext">PodSchedulingContext</a></code> - Items is the list of PodSchedulingContext objects.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="podschedulingcontextspec">PodSchedulingContextSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>PodSchedulingContextSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">potentialNodes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selectedNode=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodSchedulingContextSpec describes where resources for the Pod are needed.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>potentialNodes</strong> <code>List[str]</code> - <em>(optional)</em> PotentialNodes lists nodes where the Pod might be able to run.
+  The size of this field is limited to 128. This is large enough for many
+  clusters. Larger clusters may need more attempts to find a node that suits all
+  pending resources. This may get increased in the future, but not reduced.</li>
+<li><strong>selectedNode</strong> <code>str</code> - <em>(optional)</em> SelectedNode is the node for which allocation of ResourceClaims that are
+  referenced by the Pod and that use "WaitForFirstConsumer" allocation is to be
+  attempted.</li>
+</ul></div>
+</div>
+<h2 id="podschedulingcontextstatus">PodSchedulingContextStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>PodSchedulingContextStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">resourceClaims=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodSchedulingContextStatus describes where resources for the Pod can be
+allocated.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>resourceClaims</strong> <code><a href="#resourceclaimschedulingstatus">ResourceClaimSchedulingStatus</a></code> - <em>(optional)</em> ResourceClaims describes resource availability for each pod.spec.resourceClaim
+  entry where the corresponding ResourceClaim uses "WaitForFirstConsumer"
+  allocation mode.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaim">ResourceClaim</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaim</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaim describes which resources are needed by a resource consumer. Its
+status tracks whether the resource has been allocated and what the resulting
+attributes are.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimspec">ResourceClaimSpec</a></code> - Spec describes the desired attributes of a resource that then needs to be
+  allocated. It can only be set once when creating the ResourceClaim.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata</li>
+<li><strong>status</strong> <code><a href="#resourceclaimstatus">ResourceClaimStatus</a></code> - <em>(optional)</em> Status describes whether the resource is available and with which attributes.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimconsumerreference">ResourceClaimConsumerReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimConsumerReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resource</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiGroup=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimConsumerReference contains enough information to let you locate
+the consumer of a ResourceClaim. The user must be a resource in the same
+namespace as the ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - Name is the name of resource being referenced.</li>
+<li><strong>resource</strong> <code>str</code> - Resource is the type of resource being referenced, for example "pods".</li>
+<li><strong>uid</strong> <code>str</code> - UID identifies exactly one incarnation of the resource.</li>
+<li><strong>apiGroup</strong> <code>str</code> - <em>(optional)</em> APIGroup is the group for the resource being referenced. It is empty for the
+  core API. This matches the group in the APIVersion that is used when creating
+  the resources.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimlist">ResourceClaimList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimList is a collection of claims.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#resourceclaim">ResourceClaim</a></code> - Items is the list of resource claims.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimparametersreference">ResourceClaimParametersReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimParametersReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiGroup=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimParametersReference contains enough information to let you locate
+the parameters for a ResourceClaim. The object must be in the same namespace
+as the ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - Kind is the type of resource being referenced. This is the same value as in
+  the parameter object's metadata, for example "ConfigMap".</li>
+<li><strong>name</strong> <code>str</code> - Name is the name of resource being referenced.</li>
+<li><strong>apiGroup</strong> <code>str</code> - <em>(optional)</em> APIGroup is the group for the resource being referenced. It is empty for the
+  core API. This matches the group in the APIVersion that is used when creating
+  the resources.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimschedulingstatus">ResourceClaimSchedulingStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimSchedulingStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">unsuitableNodes=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimSchedulingStatus contains information about one particular
+ResourceClaim with "WaitForFirstConsumer" allocation mode.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - <em>(optional)</em> Name matches the pod.spec.resourceClaims[*].Name field.</li>
+<li><strong>unsuitableNodes</strong> <code>List[str]</code> - <em>(optional)</em> UnsuitableNodes lists nodes that the ResourceClaim cannot be allocated for.
+  The size of this field is limited to 128, the same as for
+  PodSchedulingSpec.PotentialNodes. This may get increased in the future, but
+  not reduced.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimspec">ResourceClaimSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">resourceClassName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allocationMode=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parametersRef=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimSpec defines how a resource is to be allocated.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>resourceClassName</strong> <code>str</code> - ResourceClassName references the driver and additional parameters via the name
+  of a ResourceClass that was created as part of the driver deployment.</li>
+<li><strong>allocationMode</strong> <code>str</code> - <em>(optional)</em> Allocation can start immediately or when a Pod wants to use the resource.
+  "WaitForFirstConsumer" is the default.</li>
+<li><strong>parametersRef</strong> <code><a href="#resourceclaimparametersreference">ResourceClaimParametersReference</a></code> - <em>(optional)</em> ParametersRef references a separate object with arbitrary parameters that will
+  be used by the driver when allocating a resource for the claim.
+  The object must be in the same namespace as the ResourceClaim.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimstatus">ResourceClaimStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">allocation=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">deallocationRequested=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">driverName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reservedFor=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimStatus tracks whether the resource has been allocated and what
+the resulting attributes are.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>allocation</strong> <code><a href="#allocationresult">AllocationResult</a></code> - <em>(optional)</em> Allocation is set by the resource driver once a resource or set of resources
+  has been allocated successfully. If this is not specified, the resources have
+  not been allocated yet.</li>
+<li><strong>deallocationRequested</strong> <code>bool</code> - <em>(optional)</em> DeallocationRequested indicates that a ResourceClaim is to be deallocated.
+  The driver then must deallocate this claim and reset the field together with
+  clearing the Allocation field.
+  While DeallocationRequested is set, no new consumers may be added to
+  ReservedFor.</li>
+<li><strong>driverName</strong> <code>str</code> - <em>(optional)</em> DriverName is a copy of the driver name from the ResourceClass at the time
+  when allocation started.</li>
+<li><strong>reservedFor</strong> <code><a href="#resourceclaimconsumerreference">ResourceClaimConsumerReference</a></code> - <em>(optional)</em> ReservedFor indicates which entities are currently allowed to use the claim. A
+  Pod which references a ResourceClaim which is not reserved for that Pod will
+  not be started.
+  There can be at most 32 such reservations. This may get increased in the
+  future, but not reduced.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplate">ResourceClaimTemplate</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimTemplate</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplate is used to produce ResourceClaim objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimtemplatespec">ResourceClaimTemplateSpec</a></code> - Describes the ResourceClaim that is to be generated.
+  This field is immutable. A ResourceClaim will get created by the control plane
+  for a Pod when needed and then not get updated anymore.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplatelist">ResourceClaimTemplateList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimTemplateList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplateList is a collection of claim templates.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#resourceclaimtemplate">ResourceClaimTemplate</a></code> - Items is the list of resource claim templates.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplatespec">ResourceClaimTemplateSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClaimTemplateSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplateSpec contains the metadata and fields for a
+ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimspec">ResourceClaimSpec</a></code> - Spec for the ResourceClaim. The entire content is copied unchanged into the
+  ResourceClaim that gets created from this template. The same fields as in a
+  ResourceClaim are also valid here.</li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> ObjectMeta may contain labels and annotations that will be copied into the PVC
+  when creating it. No other fields are allowed and will be rejected during
+  validation.</li>
+</ul></div>
+</div>
+<h2 id="resourceclass">ResourceClass</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClass</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">driverName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parametersRef=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">suitableNodes=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClass is used by administrators to influence how resources are
+allocated.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>driverName</strong> <code>str</code> - DriverName defines the name of the dynamic resource driver that is used for
+  allocation of a ResourceClaim that uses this class.
+  Resource drivers have a unique name in forward domain order
+  (acme.example.com).</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object metadata</li>
+<li><strong>parametersRef</strong> <code><a href="#resourceclassparametersreference">ResourceClassParametersReference</a></code> - <em>(optional)</em> ParametersRef references an arbitrary separate object that may hold parameters
+  that will be used by the driver when allocating a resource that uses this
+  class. A dynamic resource driver can distinguish between parameters stored
+  here and and those stored in ResourceClaimSpec.</li>
+<li><strong>suitableNodes</strong> <code><a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a></code> - <em>(optional)</em> Only nodes matching the selector will be considered by the scheduler when
+  trying to find a Node that fits a Pod when that Pod uses a ResourceClaim that
+  has not been allocated yet.
+  Setting this field is optional. If null, all nodes are candidates.</li>
+</ul></div>
+</div>
+<h2 id="resourceclasslist">ResourceClassList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClassList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClassList is a collection of classes.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code><a href="#resourceclass">ResourceClass</a></code> - Items is the list of resource classes.</li>
+<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclassparametersreference">ResourceClassParametersReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceClassParametersReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiGroup=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespace=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClassParametersReference contains enough information to let you locate
+the parameters for a ResourceClass.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - Kind is the type of resource being referenced. This is the same value as in
+  the parameter object's metadata.</li>
+<li><strong>name</strong> <code>str</code> - Name is the name of resource being referenced.</li>
+<li><strong>apiGroup</strong> <code>str</code> - <em>(optional)</em> APIGroup is the group for the resource being referenced. It is empty for the
+  core API. This matches the group in the APIVersion that is used when creating
+  the resources.</li>
+<li><strong>namespace</strong> <code>str</code> - <em>(optional)</em> Namespace that contains the referenced resource. Must be empty for
+  cluster-scoped resources and non-empty for namespaced resources.</li>
+</ul></div>
+</div>
+<h2 id="resourcehandle">ResourceHandle</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1alpha2.<strong>ResourceHandle</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">data=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">driverName=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceHandle holds opaque resource data for processing by a specific kubelet
+plugin.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>data</strong> <code>str</code> - <em>(optional)</em> Data contains the opaque data associated with this ResourceHandle. It is set
+  by the controller component of the resource driver whose name matches the
+  DriverName set in the ResourceClaimStatus this ResourceHandle is embedded in.
+  It is set at allocation time and is intended for processing by the kubelet
+  plugin whose name matches the DriverName set in this ResourceHandle.
+  The maximum size of this field is 16KiB. This may get increased in the future,
+  but not reduced.</li>
+<li><strong>driverName</strong> <code>str</code> - <em>(optional)</em> DriverName specifies the name of the resource driver whose kubelet plugin
+  should be invoked to process this ResourceHandle's data once it lands on a
+  node. This may differ from the DriverName set in ResourceClaimStatus this
+  ResourceHandle is embedded in.</li>
+</ul></div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../resource/" title="resource" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                resource
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../runtime/" title="runtime" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                runtime
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
