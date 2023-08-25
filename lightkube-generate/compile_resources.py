@@ -76,6 +76,12 @@ class Class(NamedTuple):
     classes: List[str]
     model_import: str
 
+def iter_parameters(parameters, root_def):
+    for parameter in parameters:
+        if "$ref" in parameter:
+            yield root_def["parameters"][parameter["$ref"].split("/")[-1]]
+        else:
+            yield parameter
 
 def extract(fname: Path):
     """Extract the main information from each path entry"""
@@ -114,12 +120,12 @@ def extract(fname: Path):
                     resource = mdef.get("x-kubernetes-group-version-kind")
                 tags.update(set(mdef.get('tags', [])))
                 if "parameters" in mdef:
-                    for parameter in mdef["parameters"]:
+                    for parameter in iter_parameters(mdef["parameters"], sw):
                         if parameter["name"] == "watch":
                             methods.append("watch")
                             break
             else:
-                for parameter in mdef:
+                for parameter in iter_parameters(mdef, sw):
                     if parameter["name"] == "watch":
                         methods.append("watch")
         if resource:
