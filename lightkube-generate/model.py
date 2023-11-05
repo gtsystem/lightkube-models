@@ -131,7 +131,7 @@ class Model:
 
     def to_pytype(self, defi, required=True):
         if not required:
-            return self.to_pytype(defi)
+            return f'Optional[{self.to_pytype(defi)}]'
         if 'items' in defi:
             return f'List[{self.to_pytype(defi["items"])}]'
 

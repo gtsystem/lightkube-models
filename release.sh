@@ -8,7 +8,6 @@ fi
 for v in $VERSIONS; do
   MAIN_VERSION=$(echo $v | cut -d. -f1,2 )
   echo "Building v$v"
-  rm lightkube/models/*
   python -m lightkube-generate resources models openapi/kubernetes_v$v.json --docs docs
   python test_models.py
   python test_resources.py
