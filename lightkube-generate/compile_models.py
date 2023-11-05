@@ -45,6 +45,9 @@ def build_module(path: Path, modules, version, compiler_major):
     with p.joinpath("__init__.py").open("w") as fw:
         fw.write(f'__version__ = "{version}.{compiler_major}"\n')
 
+    schema_file = Path(__file__).parent.joinpath("templates", "schema.py")
+    shutil.copy(schema_file, p.joinpath("_schema.py"))
+
 
 def sort_key(module_name):
     """
