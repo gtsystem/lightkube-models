@@ -1,0 +1,2641 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../admissionregistration_v1alpha1/">
+      
+      
+        <link rel="next" href="../apiextensions_v1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>admissionregistration_v1beta1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#admissionregistration_v1beta1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              admissionregistration_v1beta1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#auditannotation" class="md-nav__link">
+    AuditAnnotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressionwarning" class="md-nav__link">
+    ExpressionWarning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matchcondition" class="md-nav__link">
+    MatchCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matchresources" class="md-nav__link">
+    MatchResources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namedrulewithoperations" class="md-nav__link">
+    NamedRuleWithOperations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paramkind" class="md-nav__link">
+    ParamKind
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paramref" class="md-nav__link">
+    ParamRef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typechecking" class="md-nav__link">
+    TypeChecking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicy" class="md-nav__link">
+    ValidatingAdmissionPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybinding" class="md-nav__link">
+    ValidatingAdmissionPolicyBinding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybindinglist" class="md-nav__link">
+    ValidatingAdmissionPolicyBindingList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybindingspec" class="md-nav__link">
+    ValidatingAdmissionPolicyBindingSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicylist" class="md-nav__link">
+    ValidatingAdmissionPolicyList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicyspec" class="md-nav__link">
+    ValidatingAdmissionPolicySpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicystatus" class="md-nav__link">
+    ValidatingAdmissionPolicyStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    Variable
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1beta3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1beta3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1beta3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1beta3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#auditannotation" class="md-nav__link">
+    AuditAnnotation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressionwarning" class="md-nav__link">
+    ExpressionWarning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matchcondition" class="md-nav__link">
+    MatchCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matchresources" class="md-nav__link">
+    MatchResources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namedrulewithoperations" class="md-nav__link">
+    NamedRuleWithOperations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paramkind" class="md-nav__link">
+    ParamKind
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paramref" class="md-nav__link">
+    ParamRef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typechecking" class="md-nav__link">
+    TypeChecking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicy" class="md-nav__link">
+    ValidatingAdmissionPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybinding" class="md-nav__link">
+    ValidatingAdmissionPolicyBinding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybindinglist" class="md-nav__link">
+    ValidatingAdmissionPolicyBindingList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicybindingspec" class="md-nav__link">
+    ValidatingAdmissionPolicyBindingSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicylist" class="md-nav__link">
+    ValidatingAdmissionPolicyList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicyspec" class="md-nav__link">
+    ValidatingAdmissionPolicySpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validatingadmissionpolicystatus" class="md-nav__link">
+    ValidatingAdmissionPolicyStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    Variable
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="admissionregistration_v1beta1">admissionregistration_v1beta1</h1>
+<h2 id="auditannotation">AuditAnnotation</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>AuditAnnotation</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">key</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">valueExpression</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>AuditAnnotation describes how to produce an audit annotation for an API
+request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>key</strong> <code>str</code> - key specifies the audit annotation key. The audit annotation keys of a
+  ValidatingAdmissionPolicy must be unique. The key must be a qualified name
+  ([A-Za-z0-9][-A-Za-z0-9_.]*) no more than 63 bytes in length.
+  The key is combined with the resource name of the ValidatingAdmissionPolicy to
+  construct an audit annotation key: "{ValidatingAdmissionPolicy name}/{key}".
+  If an admission webhook uses the same resource name as this
+  ValidatingAdmissionPolicy and the same audit annotation key, the annotation
+  key will be identical. In this case, the first annotation written with the key
+  will be included in the audit event and all subsequent annotations with the
+  same key will be discarded.
+  Required.</li>
+<li><strong>valueExpression</strong> <code>str</code> - valueExpression represents the expression which is evaluated by CEL to produce
+  an audit annotation value. The expression must evaluate to either a string or
+  null value. If the expression evaluates to a string, the audit annotation is
+  included with the string value. If the expression evaluates to null or empty
+  string the audit annotation will be omitted. The valueExpression may be no
+  longer than 5kb in length. If the result of the valueExpression is more than
+  10kb in length, it will be truncated to 10kb.
+  If multiple ValidatingAdmissionPolicyBinding resources match an API request,
+  then the valueExpression will be evaluated for each binding. All unique values
+  produced by the valueExpressions will be joined together in a comma-separated
+  list.
+  Required.</li>
+</ul></div>
+</div>
+<h2 id="expressionwarning">ExpressionWarning</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ExpressionWarning</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">fieldRef</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">warning</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ExpressionWarning is a warning information that targets a specific expression.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>fieldRef</strong> <code>str</code> - The path to the field that refers the expression. For example, the reference
+  to the expression of the first item of validations is
+  "spec.validations[0].expression"</li>
+<li><strong>warning</strong> <code>str</code> - The content of type checking information in a human-readable form. Each line
+  of the warning contains the type that the expression is checked against,
+  followed by the type check error from the compiler.</li>
+</ul></div>
+</div>
+<h2 id="matchcondition">MatchCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>MatchCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">expression</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MatchCondition represents a condition which must be fulfilled for a request to
+be sent to a webhook.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>expression</strong> <code>str</code> - Expression represents the expression which will be evaluated by CEL. Must
+  evaluate to bool. CEL expressions have access to the contents of the
+  AdmissionRequest and Authorizer, organized into CEL variables:
+  'object' - The object from the incoming request. The value is null for DELETE
+  requests. 'oldObject' - The existing object. The value is null for CREATE
+  requests. 'request' - Attributes of the admission
+  request(/pkg/apis/admission/types.go#AdmissionRequest). 'authorizer' - A CEL
+  Authorizer. May be used to perform authorization checks for the principal
+  (user or service account) of the request.
+    See <a href="https://pkg.go.dev/k8s.io/apiserver/pkg/cel/library#Authz">https://pkg.go.dev/k8s.io/apiserver/pkg/cel/library#Authz</a>
+  'authorizer.requestResource' - A CEL ResourceCheck constructed from the
+  'authorizer' and configured with the
+    request resource.
+  Documentation on CEL: <a href="https://kubernetes.io/docs/reference/using-api/cel/">https://kubernetes.io/docs/reference/using-api/cel/</a>
+  Required.</li>
+<li><strong>name</strong> <code>str</code> - Name is an identifier for this match condition, used for strategic merging of
+  MatchConditions, as well as providing an identifier for logging purposes. A
+  good name should be descriptive of the associated expression. Name must be a
+  qualified name consisting of alphanumeric characters, '-', '<em>' or '.', and
+  must start and end with an alphanumeric character (e.g. 'MyName',  or
+  'my.name',  or '123-abc', regex used for validation is
+  '([A-Za-z0-9][-A-Za-z0-9</em>.]*)?[A-Za-z0-9]') with an optional DNS subdomain
+  prefix and '/' (e.g. 'example.com/MyName')
+  Required.</li>
+</ul></div>
+</div>
+<h2 id="matchresources">MatchResources</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>MatchResources</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">excludeResourceRules=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespaceSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">objectSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceRules=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MatchResources decides whether to run the admission control policy on an
+object based on whether it meets the match criteria. The exclude rules take
+precedence over include rules (if a resource matches both, it is excluded)</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>excludeResourceRules</strong> <code>Optional[List[NamedRuleWithOperations]]</code> - ExcludeResourceRules describes what operations on what resources/subresources
+  the ValidatingAdmissionPolicy should not care about. The exclude rules take
+  precedence over include rules (if a resource matches both, it is excluded)</li>
+<li><strong>matchPolicy</strong> <code>Optional[str]</code> - matchPolicy defines how the "MatchResources" list is used to match incoming
+  requests. Allowed values are "Exact" or "Equivalent".</li>
+<li>Exact: match a request only if it exactly matches a specified rule. For
+  example, if deployments can be modified via apps/v1, apps/v1beta1, and
+  extensions/v1beta1, but "rules" only included <code>apiGroups:["apps"],
+  apiVersions:["v1"], resources: ["deployments"]</code>, a request to apps/v1beta1 or
+  extensions/v1beta1 would not be sent to the ValidatingAdmissionPolicy.</li>
+<li>Equivalent: match a request if modifies a resource listed in rules, even via
+  another API group or version. For example, if deployments can be modified via
+  apps/v1, apps/v1beta1, and extensions/v1beta1, and "rules" only included
+  <code>apiGroups:["apps"], apiVersions:["v1"], resources: ["deployments"]</code>, a
+  request to apps/v1beta1 or extensions/v1beta1 would be converted to apps/v1
+  and sent to the ValidatingAdmissionPolicy.
+  Defaults to "Equivalent"</li>
+<li><strong>namespaceSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - NamespaceSelector decides whether to run the admission control policy on an
+  object based on whether the namespace for that object matches the selector. If
+  the object itself is a namespace, the matching is performed on
+  object.metadata.labels. If the object is another cluster scoped resource, it
+  never skips the policy.
+  For example, to run the webhook on any objects whose namespace is not
+  associated with "runlevel" of "0" or "1";  you will set the selector as
+  follows: "namespaceSelector": {
+    "matchExpressions": [
+      {
+        "key": "runlevel",
+        "operator": "NotIn",
+        "values": [
+          "0",
+          "1"
+        ]
+      }
+    ]
+  }
+  If instead you want to only run the policy on any objects whose namespace is
+  associated with the "environment" of "prod" or "staging"; you will set the
+  selector as follows: "namespaceSelector": {
+    "matchExpressions": [
+      {
+        "key": "environment",
+        "operator": "In",
+        "values": [
+          "prod",
+          "staging"
+        ]
+      }
+    ]
+  }
+  See <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/</a>
+  for more examples of label selectors.
+  Default to the empty LabelSelector, which matches everything.</li>
+<li><strong>objectSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - ObjectSelector decides whether to run the validation based on if the object
+  has matching labels. objectSelector is evaluated against both the oldObject
+  and newObject that would be sent to the cel validation, and is considered to
+  match if either object matches the selector. A null object (oldObject in the
+  case of create, or newObject in the case of delete) or an object that cannot
+  have labels (like a DeploymentRollback or a PodProxyOptions object) is not
+  considered to match. Use the object selector only if the webhook is opt-in,
+  because end users may skip the admission webhook by setting the labels.
+  Default to the empty LabelSelector, which matches everything.</li>
+<li><strong>resourceRules</strong> <code>Optional[List[NamedRuleWithOperations]]</code> - ResourceRules describes what operations on what resources/subresources the
+  ValidatingAdmissionPolicy matches. The policy cares about an operation if it
+  matches <em>any</em> Rule.</li>
+</ul></div>
+</div>
+<h2 id="namedrulewithoperations">NamedRuleWithOperations</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>NamedRuleWithOperations</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiGroups=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">operations=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceNames=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resources=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">scope=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NamedRuleWithOperations is a tuple of Operations and Resources with
+ResourceNames.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiGroups</strong> <code>Optional[List[str]]</code> - APIGroups is the API groups the resources belong to. '<em>' is all groups. If '</em>'
+  is present, the length of the slice must be one. Required.</li>
+<li><strong>apiVersions</strong> <code>Optional[List[str]]</code> - APIVersions is the API versions the resources belong to. '<em>' is all versions.
+  If '</em>' is present, the length of the slice must be one. Required.</li>
+<li><strong>operations</strong> <code>Optional[List[str]]</code> - Operations is the operations the admission hook cares about - CREATE, UPDATE,
+  DELETE, CONNECT or * for all of those operations and any future admission
+  operations that are added. If '<em>' is present, the length of the slice must be
+  one. Required.</li>
+<li><strong>resourceNames</strong> <code>Optional[List[str]]</code> - ResourceNames is an optional white list of names that the rule applies to.  An
+  empty set means that everything is allowed.</li>
+<li><strong>resources</strong> <code>Optional[List[str]]</code> - Resources is a list of resources this rule applies to.
+  For example: 'pods' means pods. 'pods/log' means the log subresource of pods.
+  '<em>' means all resources, but not subresources. 'pods/</em>' means all subresources
+  of pods. '<em>/scale' means all scale subresources. '</em>/</em>' means all resources and
+  their subresources.
+  If wildcard is present, the validation rule will ensure resources do not
+  overlap with each other.
+  Depending on the enclosing object, subresources might not be allowed.
+  Required.</li>
+<li><strong>scope</strong> <code>Optional[str]</code> - scope specifies the scope of this rule. Valid values are "Cluster",
+  "Namespaced", and "<em>" "Cluster" means that only cluster-scoped resources will
+  match this rule. Namespace API objects are cluster-scoped. "Namespaced" means
+  that only namespaced resources will match this rule. "</em>" means that there are
+  no scope restrictions. Subresources match the scope of their parent resource.
+  Default is "*".</li>
+</ul></div>
+</div>
+<h2 id="paramkind">ParamKind</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ParamKind</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ParamKind is a tuple of Group Kind and Version.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion is the API group version the resources belong to. In format of
+  "group/version". Required.</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is the API kind the resources belong to. Required.</li>
+</ul></div>
+</div>
+<h2 id="paramref">ParamRef</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ParamRef</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespace=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parameterNotFoundAction=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selector=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ParamRef describes how to locate the params to be used as input to expressions
+of rules applied by a policy binding.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>Optional[str]</code> - name is the name of the resource being referenced.
+  One of <code>name</code> or <code>selector</code> must be set, but <code>name</code> and <code>selector</code> are
+  mutually exclusive properties. If one is set, the other must be unset.
+  A single parameter used for all admission requests can be configured by
+  setting the <code>name</code> field, leaving <code>selector</code> blank, and setting namespace if
+  <code>paramKind</code> is namespace-scoped.</li>
+<li><strong>namespace</strong> <code>Optional[str]</code> - namespace is the namespace of the referenced resource. Allows limiting the
+  search for params to a specific namespace. Applies to both <code>name</code> and
+  <code>selector</code> fields.
+  A per-namespace parameter may be used by specifying a namespace-scoped
+  <code>paramKind</code> in the policy and leaving this field empty.</li>
+<li>If <code>paramKind</code> is cluster-scoped, this field MUST be unset. Setting this
+  field results in a configuration error.</li>
+<li>If <code>paramKind</code> is namespace-scoped, the namespace of the object being
+  evaluated for admission will be used when this field is left unset. Take care
+  that if this is left empty the binding must not match any cluster-scoped
+  resources, which will result in an error.</li>
+<li><strong>parameterNotFoundAction</strong> <code>Optional[str]</code> - <code>parameterNotFoundAction</code> controls the behavior of the binding when the
+  resource exists, and name or selector is valid, but there are no parameters
+  matched by the binding. If the value is set to <code>Allow</code>, then no matched
+  parameters will be treated as successful validation by the binding. If set to
+  <code>Deny</code>, then no matched parameters will be subject to the <code>failurePolicy</code> of
+  the policy.
+  Allowed values are <code>Allow</code> or <code>Deny</code>
+  Required</li>
+<li><strong>selector</strong> <code>Optional[meta_v1.LabelSelector]</code> - selector can be used to match multiple param objects based on their labels.
+  Supply selector: {} to match all resources of the ParamKind.
+  If multiple params are found, they are all evaluated with the policy
+  expressions and the results are ANDed together.
+  One of <code>name</code> or <code>selector</code> must be set, but <code>name</code> and <code>selector</code> are
+  mutually exclusive properties. If one is set, the other must be unset.</li>
+</ul></div>
+</div>
+<h2 id="typechecking">TypeChecking</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>TypeChecking</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">expressionWarnings=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>TypeChecking contains results of type checking the expressions in the
+ValidatingAdmissionPolicy</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>expressionWarnings</strong> <code>Optional[List[ExpressionWarning]]</code> - The type checking warnings for each expression.</li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicy">ValidatingAdmissionPolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicy describes the definition of an admission validation
+policy that accepts or rejects an object without changing it.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code>Optional[ValidatingAdmissionPolicySpec]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicy.</li>
+<li><strong>status</strong> <code>Optional[ValidatingAdmissionPolicyStatus]</code> - The status of the ValidatingAdmissionPolicy, including warnings that are
+  useful to determine if the policy behaves in the expected way. Populated by
+  the system. Read-only.</li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicybinding">ValidatingAdmissionPolicyBinding</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicyBinding</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicyBinding binds the ValidatingAdmissionPolicy with
+paramerized resources. ValidatingAdmissionPolicyBinding and parameter CRDs
+together define how cluster administrators configure policies for clusters.</p>
+<p>For a given admission request, each binding will cause its policy to be
+evaluated N times, where N is 1 for policies/bindings that don't use params,
+otherwise N is the number of parameters selected by the binding.</p>
+<p>The CEL expressions of a policy must have a computed CEL cost below the
+maximum CEL budget. Each evaluation of the policy is given an independent CEL
+cost budget. Adding/removing policies, bindings, or params can not affect
+whether a given (policy, binding, param) combination is within its own CEL
+budget.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code>Optional[ValidatingAdmissionPolicyBindingSpec]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicyBinding.</li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicybindinglist">ValidatingAdmissionPolicyBindingList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicyBindingList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">items=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicyBindingList is a list of
+ValidatingAdmissionPolicyBinding.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>items</strong> <code>Optional[List[ValidatingAdmissionPolicyBinding]]</code> - List of PolicyBinding.</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicybindingspec">ValidatingAdmissionPolicyBindingSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicyBindingSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">matchResources=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">paramRef=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">policyName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">validationActions=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicyBindingSpec is the specification of the
+ValidatingAdmissionPolicyBinding.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>matchResources</strong> <code>Optional[MatchResources]</code> - MatchResources declares what resources match this binding and will be
+  validated by it. Note that this is intersected with the policy's
+  matchConstraints, so only requests that are matched by the policy can be
+  selected by this. If this is unset, all resources matched by the policy are
+  validated by this binding When resourceRules is unset, it does not constrain
+  resource matching. If a resource is matched by the other fields of this
+  object, it will be validated. Note that this is differs from
+  ValidatingAdmissionPolicy matchConstraints, where resourceRules are required.</li>
+<li><strong>paramRef</strong> <code>Optional[ParamRef]</code> - paramRef specifies the parameter resource used to configure the admission
+  control policy. It should point to a resource of the type specified in
+  ParamKind of the bound ValidatingAdmissionPolicy. If the policy specifies a
+  ParamKind and the resource referred to by ParamRef does not exist, this
+  binding is considered mis-configured and the FailurePolicy of the
+  ValidatingAdmissionPolicy applied. If the policy does not specify a ParamKind
+  then this field is ignored, and the rules are evaluated without a param.</li>
+<li><strong>policyName</strong> <code>Optional[str]</code> - PolicyName references a ValidatingAdmissionPolicy name which the
+  ValidatingAdmissionPolicyBinding binds to. If the referenced resource does not
+  exist, this binding is considered invalid and will be ignored Required.</li>
+<li><strong>validationActions</strong> <code>Optional[List[str]]</code> - validationActions declares how Validations of the referenced
+  ValidatingAdmissionPolicy are enforced. If a validation evaluates to false it
+  is always enforced according to these actions.
+  Failures defined by the ValidatingAdmissionPolicy's FailurePolicy are enforced
+  according to these actions only if the FailurePolicy is set to Fail, otherwise
+  the failures are ignored. This includes compilation errors, runtime errors and
+  misconfigurations of the policy.
+  validationActions is declared as a set of action values. Order does not
+  matter. validationActions may not contain duplicates of the same action.
+  The supported actions values are:
+  "Deny" specifies that a validation failure results in a denied request.
+  "Warn" specifies that a validation failure is reported to the request client
+  in HTTP Warning headers, with a warning code of 299. Warnings can be sent both
+  for allowed or denied admission responses.
+  "Audit" specifies that a validation failure is included in the published audit
+  event for the request. The audit event will contain a
+  <code>validation.policy.admission.k8s.io/validation_failure</code> audit annotation with
+  a value containing the details of the validation failures, formatted as a JSON
+  list of objects, each with the following fields: - message: The validation
+  failure message string - policy: The resource name of the
+  ValidatingAdmissionPolicy - binding: The resource name of the
+  ValidatingAdmissionPolicyBinding - expressionIndex: The index of the failed
+  validations in the ValidatingAdmissionPolicy - validationActions: The
+  enforcement actions enacted for the validation failure Example audit
+  annotation: <code>"validation.policy.admission.k8s.io/validation_failure":
+  "[{"message": "Invalid value", {"policy": "policy.example.com", {"binding":
+  "policybinding.example.com", {"expressionIndex": "1", {"validationActions":
+  ["Audit"]}]"</code>
+  Clients should expect to handle additional values by ignoring any values not
+  recognized.
+  "Deny" and "Warn" may not be used together since this combination needlessly
+  duplicates the validation failure both in the API response body and the HTTP
+  warning headers.
+  Required.</li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicylist">ValidatingAdmissionPolicyList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicyList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">items=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicyList is a list of ValidatingAdmissionPolicy.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>items</strong> <code>Optional[List[ValidatingAdmissionPolicy]]</code> - List of ValidatingAdmissionPolicy.</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicyspec">ValidatingAdmissionPolicySpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicySpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">auditAnnotations=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">failurePolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchConditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchConstraints=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">paramKind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">validations=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">variables=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicySpec is the specification of the desired behavior of
+the AdmissionPolicy.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>auditAnnotations</strong> <code>Optional[List[AuditAnnotation]]</code> - auditAnnotations contains CEL expressions which are used to produce audit
+  annotations for the audit event of the API request. validations and
+  auditAnnotations may not both be empty; a least one of validations or
+  auditAnnotations is required.</li>
+<li><strong>failurePolicy</strong> <code>Optional[str]</code> - failurePolicy defines how to handle failures for the admission policy.
+  Failures can occur from CEL expression parse errors, type check errors,
+  runtime errors and invalid or mis-configured policy definitions or bindings.
+  A policy is invalid if spec.paramKind refers to a non-existent Kind. A binding
+  is invalid if spec.paramRef.name refers to a non-existent resource.
+  failurePolicy does not define how validations that evaluate to false are
+  handled.
+  When failurePolicy is set to Fail, ValidatingAdmissionPolicyBinding
+  validationActions define how failures are enforced.
+  Allowed values are Ignore or Fail. Defaults to Fail.</li>
+<li><strong>matchConditions</strong> <code>Optional[List[MatchCondition]]</code> - MatchConditions is a list of conditions that must be met for a request to be
+  validated. Match conditions filter requests that have already been matched by
+  the rules, namespaceSelector, and objectSelector. An empty list of
+  matchConditions matches all requests. There are a maximum of 64 match
+  conditions allowed.
+  If a parameter object is provided, it can be accessed via the <code>params</code> handle
+  in the same manner as validation expressions.
+  The exact matching logic is (in order):<ol>
+<li>If ANY matchCondition evaluates to FALSE, the policy is skipped.</li>
+<li>If ALL matchConditions evaluate to TRUE, the policy is evaluated.</li>
+<li>If any matchCondition evaluates to an error (but none are FALSE):</li>
+<li>If failurePolicy=Fail, reject the request</li>
+<li>If failurePolicy=Ignore, the policy is skipped</li>
+</ol>
+</li>
+<li><strong>matchConstraints</strong> <code>Optional[MatchResources]</code> - MatchConstraints specifies what resources this policy is designed to validate.
+  The AdmissionPolicy cares about a request if it matches <em>all</em> Constraints.
+  However, in order to prevent clusters from being put into an unstable state
+  that cannot be recovered from via the API ValidatingAdmissionPolicy cannot
+  match ValidatingAdmissionPolicy and ValidatingAdmissionPolicyBinding.
+  Required.</li>
+<li><strong>paramKind</strong> <code>Optional[ParamKind]</code> - ParamKind specifies the kind of resources used to parameterize this policy. If
+  absent, there are no parameters for this policy and the param CEL variable
+  will not be provided to validation expressions. If ParamKind refers to a
+  non-existent kind, this policy definition is mis-configured and the
+  FailurePolicy is applied. If paramKind is specified but paramRef is unset in
+  ValidatingAdmissionPolicyBinding, the params variable will be null.</li>
+<li><strong>validations</strong> <code>Optional[List[Validation]]</code> - Validations contain CEL expressions which is used to apply the validation.
+  Validations and AuditAnnotations may not both be empty; a minimum of one
+  Validations or AuditAnnotations is required.</li>
+<li><strong>variables</strong> <code>Optional[List[Variable]]</code> - Variables contain definitions of variables that can be used in composition of
+  other expressions. Each variable is defined as a named CEL expression. The
+  variables defined here will be available under <code>variables</code> in other
+  expressions of the policy except MatchConditions because MatchConditions are
+  evaluated before the rest of the policy.
+  The expression of a variable can refer to other variables defined earlier in
+  the list but not those after. Thus, Variables must be sorted by the order of
+  first appearance and acyclic.</li>
+</ul></div>
+</div>
+<h2 id="validatingadmissionpolicystatus">ValidatingAdmissionPolicyStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>ValidatingAdmissionPolicyStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">typeChecking=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ValidatingAdmissionPolicyStatus represents the status of an admission
+validation policy.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>conditions</strong> <code>Optional[List[meta_v1.Condition]]</code> - The conditions represent the latest available observations of a policy's
+  current state.</li>
+<li><strong>observedGeneration</strong> <code>Optional[int]</code> - The generation observed by the controller.</li>
+<li><strong>typeChecking</strong> <code>Optional[TypeChecking]</code> - The results of type checking for each expression. Presence of this field
+  indicates the completion of the type checking.</li>
+</ul></div>
+</div>
+<h2 id="validation">Validation</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>Validation</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">expression</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">messageExpression=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Validation specifies the CEL expression which is used to apply the validation.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>expression</strong> <code>str</code> - Expression represents the expression which will be evaluated by CEL. ref:
+  <a href="https://github.com/google/cel-spec">https://github.com/google/cel-spec</a> CEL expressions have access to the contents
+  of the API request/response, organized into CEL variables as well as some
+  other useful variables:</li>
+<li>'object' - The object from the incoming request. The value is null for
+  DELETE requests. - 'oldObject' - The existing object. The value is null for
+  CREATE requests. - 'request' - Attributes of the API
+  request(<a href="/pkg/apis/admission/types.go#AdmissionRequest">ref</a>). - 'params' -
+  Parameter resource referred to by the policy binding being evaluated. Only
+  populated if the policy has a ParamKind. - 'namespaceObject' - The namespace
+  object that the incoming object belongs to. The value is null for
+  cluster-scoped resources. - 'variables' - Map of composited variables, from
+  its name to its lazily evaluated value.
+    For example, a variable named 'foo' can be accessed as 'variables.foo'.</li>
+<li>'authorizer' - A CEL Authorizer. May be used to perform authorization checks
+  for the principal (user or service account) of the request.
+    See <a href="https://pkg.go.dev/k8s.io/apiserver/pkg/cel/library#Authz">https://pkg.go.dev/k8s.io/apiserver/pkg/cel/library#Authz</a></li>
+<li>'authorizer.requestResource' - A CEL ResourceCheck constructed from the
+  'authorizer' and configured with the
+    request resource.
+  The <code>apiVersion</code>, <code>kind</code>, <code>metadata.name</code> and <code>metadata.generateName</code> are
+  always accessible from the root of the object. No other metadata properties
+  are accessible.
+  Only property names of the form <code>[a-zA-Z_.-/][a-zA-Z0-9_.-/]*</code> are accessible.
+  Accessible property names are escaped according to the following rules when
+  accessed in the expression: - '<strong>' escapes to '__underscores</strong>' - '.' escapes
+  to '<strong>dot</strong>' - '-' escapes to '<strong>dash</strong>' - '/' escapes to '<strong>slash</strong>' -
+  Property names that exactly match a CEL RESERVED keyword escape to
+  '<strong>{keyword}</strong>'. The keywords are:
+            "true", "false", "null", "in", "as", "break", "const", "continue", "else",
+  "for", "function", "if",
+            "import", "let", "loop", "package", "namespace", "return".
+  Examples:<ul>
+<li>Expression accessing a property named "namespace": {"Expression":
+  "object.<strong>namespace</strong> &gt; 0"}</li>
+<li>Expression accessing a property named "x-prop": {"Expression":
+  "object.x__dash__prop &gt; 0"}</li>
+<li>Expression accessing a property named "redact__d": {"Expression":
+  "object.redact__underscores__d &gt; 0"}
+  Equality on arrays with list type of 'set' or 'map' ignores element order,
+  i.e. [1, 2] == [2, 1]. Concatenation on arrays with x-kubernetes-list-type use
+  the semantics of the list type:</li>
+<li>'set': <code>X + Y</code> performs a union where the array positions of all elements
+  in <code>X</code> are preserved and
+  non-intersecting elements in <code>Y</code> are appended, retaining their partial
+  order.</li>
+<li>'map': <code>X + Y</code> performs a merge where the array positions of all keys in
+  <code>X</code> are preserved but the values
+  are overwritten by values in <code>Y</code> when the key sets of <code>X</code> and <code>Y</code>
+  intersect. Elements in <code>Y</code> with
+  non-intersecting keys are appended, retaining their partial order.
+  Required.</li>
+</ul>
+</li>
+<li><strong>message</strong> <code>Optional[str]</code> - Message represents the message displayed when validation fails. The message is
+  required if the Expression contains line breaks. The message must not contain
+  line breaks. If unset, the message is "failed rule: {Rule}". e.g. "must be a
+  URL with the host matching spec.host" If the Expression contains line breaks.
+  Message is required. The message must not contain line breaks. If unset, the
+  message is "failed Expression: {Expression}".</li>
+<li><strong>messageExpression</strong> <code>Optional[str]</code> - messageExpression declares a CEL expression that evaluates to the validation
+  failure message that is returned when this rule fails. Since messageExpression
+  is used as a failure message, it must evaluate to a string. If both message
+  and messageExpression are present on a validation, then messageExpression will
+  be used if validation fails. If messageExpression results in a runtime error,
+  the runtime error is logged, and the validation failure message is produced as
+  if the messageExpression field were unset. If messageExpression evaluates to
+  an empty string, a string with only spaces, or a string that contains line
+  breaks, then the validation failure message will also be produced as if the
+  messageExpression field were unset, and the fact that messageExpression
+  produced an empty string/string with only spaces/string with line breaks will
+  be logged. messageExpression has access to all the same variables as the
+  <code>expression</code> except for 'authorizer' and 'authorizer.requestResource'.
+  Example: "object.x must be less than max ("+string(params.max)+")"</li>
+<li><strong>reason</strong> <code>Optional[str]</code> - Reason represents a machine-readable description of why this validation
+  failed. If this is the first validation in the list to fail, this reason, as
+  well as the corresponding HTTP response code, are used in the HTTP response to
+  the client. The currently supported reasons are: "Unauthorized", "Forbidden",
+  "Invalid", "RequestEntityTooLarge". If not set, StatusReasonInvalid is used in
+  the response to the client.</li>
+</ul></div>
+</div>
+<h2 id="variable">Variable</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.admissionregistration_v1beta1.<strong>Variable</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">expression</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Variable is the definition of a variable that is used for composition. A
+variable is defined as a named expression.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>expression</strong> <code>str</code> - Expression is the expression that will be evaluated as the value of the
+  variable. The CEL expression has access to the same identifiers as the CEL
+  expressions in Validation.</li>
+<li><strong>name</strong> <code>str</code> - Name is the name of the variable. The name must be a valid CEL identifier and
+  unique among all variables. The variable can be accessed in other expressions
+  through <code>variables</code> For example, if name is "foo", the variable will be
+  available as <code>variables.foo</code></li>
+</ul></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -10,8 +8,15 @@
       
       
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-5.5.11">
+      
+        <link rel="prev" href="../policy_v1/">
+      
+      
+        <link rel="next" href="../resource/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -19,30 +24,35 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.860688db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.943997b5.min.css">
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
+      
+
+
+    
+    
+      
+    
+    
       
         
         
-        <meta name="theme-color" content="#7e56c2">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
-    
     
     
       <link rel="stylesheet" href="../../css/custom.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
+    
     
     
   </head>
@@ -51,8 +61,11 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="">
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
   
+    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -69,48 +82,67 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="lightkube-models" class="md-header-nav__button md-logo" aria-label="lightkube-models">
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
+    <label class="md-header__button md-icon" for="__drawer">
       
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             lightkube-models
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               rbac_v1
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
       
-<div class="md-search" data-md-component="search" role="dialog">
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -118,7 +150,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -126,12 +158,11 @@
 </div>
     
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     gtsystem/lightkube-models
@@ -140,39 +171,44 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
+      
         
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     lightkube-models
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     gtsystem/lightkube-models
@@ -184,388 +220,641 @@
     
       
       
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-    
-      
-      
-      
-
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
   
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
-    
-    <label class="md-nav__link" for="nav-2">
-      Models
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Models" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon"></span>
-        Models
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../" title="All models" class="md-nav__link">
-      All models
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
-      admissionregistration_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../admissionregistration_v1alpha1/" title="admissionregistration_v1alpha1" class="md-nav__link">
-      admissionregistration_v1alpha1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
-      apiextensions_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
-      apiregistration_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../apiserverinternal_v1alpha1/" title="apiserverinternal_v1alpha1" class="md-nav__link">
-      apiserverinternal_v1alpha1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../apps_v1/" title="apps_v1" class="md-nav__link">
-      apps_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../authentication_v1/" title="authentication_v1" class="md-nav__link">
-      authentication_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../authentication_v1alpha1/" title="authentication_v1alpha1" class="md-nav__link">
-      authentication_v1alpha1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
-      authentication_v1beta1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../authorization_v1/" title="authorization_v1" class="md-nav__link">
-      authorization_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
-      autoscaling_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../autoscaling_v2/" title="autoscaling_v2" class="md-nav__link">
-      autoscaling_v2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../batch_v1/" title="batch_v1" class="md-nav__link">
-      batch_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../certificates_v1/" title="certificates_v1" class="md-nav__link">
-      certificates_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../certificates_v1alpha1/" title="certificates_v1alpha1" class="md-nav__link">
-      certificates_v1alpha1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../coordination_v1/" title="coordination_v1" class="md-nav__link">
-      coordination_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../core_v1/" title="core_v1" class="md-nav__link">
-      core_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../discovery_v1/" title="discovery_v1" class="md-nav__link">
-      discovery_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../events_v1/" title="events_v1" class="md-nav__link">
-      events_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../flowcontrol_v1beta2/" title="flowcontrol_v1beta2" class="md-nav__link">
-      flowcontrol_v1beta2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../flowcontrol_v1beta3/" title="flowcontrol_v1beta3" class="md-nav__link">
-      flowcontrol_v1beta3
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../meta_v1/" title="meta_v1" class="md-nav__link">
-      meta_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../networking_v1/" title="networking_v1" class="md-nav__link">
-      networking_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../networking_v1alpha1/" title="networking_v1alpha1" class="md-nav__link">
-      networking_v1alpha1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../node_v1/" title="node_v1" class="md-nav__link">
-      node_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../policy_v1/" title="policy_v1" class="md-nav__link">
-      policy_v1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+      </a>
+    </li>
   
 
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
 
-  <li class="md-nav__item md-nav__item--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1beta2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1beta2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1beta3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1beta3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        rbac_v1
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="rbac_v1" class="md-nav__link md-nav__link--active">
-      rbac_v1
-    </a>
-    
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+      
+        
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -575,7 +864,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#aggregationrule" class="md-nav__link">
@@ -664,483 +953,800 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../resource/" title="resource" class="md-nav__link">
-      resource
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha2/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../resource_v1alpha2/" title="resource_v1alpha2" class="md-nav__link">
-      resource_v1alpha2
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../runtime/" title="runtime" class="md-nav__link">
-      runtime
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../scheduling_v1/" title="scheduling_v1" class="md-nav__link">
-      scheduling_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../storage_v1/" title="storage_v1" class="md-nav__link">
-      storage_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../util_intstr/" title="util_intstr" class="md-nav__link">
-      util_intstr
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../version/" title="version" class="md-nav__link">
-      version
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Resources
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Resources" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
-        Resources
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../resources/" title="All resources" class="md-nav__link">
-      All resources
-    </a>
-  </li>
-
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          
-          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../resources/admissionregistration_v1/" title="admissionregistration_v1" class="md-nav__link">
-      admissionregistration_v1
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../resources/admissionregistration_v1alpha1/" title="admissionregistration_v1alpha1" class="md-nav__link">
-      admissionregistration_v1alpha1
-    </a>
-  </li>
-
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/apiextensions_v1/" title="apiextensions_v1" class="md-nav__link">
-      apiextensions_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/apiregistration_v1/" title="apiregistration_v1" class="md-nav__link">
-      apiregistration_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/apps_v1/" title="apps_v1" class="md-nav__link">
-      apps_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/authentication_v1/" title="authentication_v1" class="md-nav__link">
-      authentication_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/authentication_v1alpha1/" title="authentication_v1alpha1" class="md-nav__link">
-      authentication_v1alpha1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/authentication_v1beta1/" title="authentication_v1beta1" class="md-nav__link">
-      authentication_v1beta1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/authorization_v1/" title="authorization_v1" class="md-nav__link">
-      authorization_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1alpha1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/autoscaling_v1/" title="autoscaling_v1" class="md-nav__link">
-      autoscaling_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1beta1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/autoscaling_v2/" title="autoscaling_v2" class="md-nav__link">
-      autoscaling_v2
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/batch_v1/" title="batch_v1" class="md-nav__link">
-      batch_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/certificates_v1/" title="certificates_v1" class="md-nav__link">
-      certificates_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/certificates_v1alpha1/" title="certificates_v1alpha1" class="md-nav__link">
-      certificates_v1alpha1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/coordination_v1/" title="coordination_v1" class="md-nav__link">
-      coordination_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/core_v1/" title="core_v1" class="md-nav__link">
-      core_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/discovery_v1/" title="discovery_v1" class="md-nav__link">
-      discovery_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/events_v1/" title="events_v1" class="md-nav__link">
-      events_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/flowcontrol_apiserver_v1beta2/" title="flowcontrol_apiserver_v1beta2" class="md-nav__link">
-      flowcontrol_apiserver_v1beta2
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/flowcontrol_apiserver_v1beta3/" title="flowcontrol_apiserver_v1beta3" class="md-nav__link">
-      flowcontrol_apiserver_v1beta3
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/internal_apiserver_v1alpha1/" title="internal_apiserver_v1alpha1" class="md-nav__link">
-      internal_apiserver_v1alpha1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1beta2/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1beta2
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/networking_v1/" title="networking_v1" class="md-nav__link">
-      networking_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1beta3/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1beta3
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/networking_v1alpha1/" title="networking_v1alpha1" class="md-nav__link">
-      networking_v1alpha1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/node_v1/" title="node_v1" class="md-nav__link">
-      node_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/policy_v1/" title="policy_v1" class="md-nav__link">
-      policy_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1alpha1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/rbac_authorization_v1/" title="rbac_authorization_v1" class="md-nav__link">
-      rbac_authorization_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/resource_v1alpha2/" title="resource_v1alpha2" class="md-nav__link">
-      resource_v1alpha2
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/scheduling_v1/" title="scheduling_v1" class="md-nav__link">
-      scheduling_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/storage_v1/" title="storage_v1" class="md-nav__link">
-      storage_v1
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha2/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
   </ul>
@@ -1150,11 +1756,14 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -1164,7 +1773,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#aggregationrule" class="md-nav__link">
@@ -1258,15 +1867,14 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
                   
-                
-                
-                <h1 id="rbac_v1">rbac_v1</h1>
+
+
+<h1 id="rbac_v1">rbac_v1</h1>
 <h2 id="aggregationrule">AggregationRule</h2>
 <div class="autodoc">
 <div class="autodoc-signature"><em>class </em><code>lightkube.models.rbac_v1.<strong>AggregationRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">clusterRoleSelectors=None</em><span class="autodoc-punctuation">)</span></div>
@@ -1274,7 +1882,7 @@
 ClusterRole</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>clusterRoleSelectors</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - <em>(optional)</em> ClusterRoleSelectors holds a list of selectors which will be used to find
+<li><strong>clusterRoleSelectors</strong> <code>Optional[List[meta_v1.LabelSelector]]</code> - ClusterRoleSelectors holds a list of selectors which will be used to find
   ClusterRoles and create the rules. If any of the selectors match, then the
   ClusterRole's permissions will be added</li>
 </ul></div>
@@ -1286,17 +1894,17 @@ ClusterRole</p>
 referenced as a unit by a RoleBinding or ClusterRoleBinding.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>aggregationRule</strong> <code><a href="#aggregationrule">AggregationRule</a></code> - <em>(optional)</em> AggregationRule is an optional field that describes how to build the Rules for
+<li><strong>aggregationRule</strong> <code>Optional[AggregationRule]</code> - AggregationRule is an optional field that describes how to build the Rules for
   this ClusterRole. If AggregationRule is set, then the Rules are controller
   managed and direct changes to Rules will be stomped by the controller.</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
-<li><strong>rules</strong> <code><a href="#policyrule">PolicyRule</a></code> - <em>(optional)</em> Rules holds all the PolicyRules for this ClusterRole</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
+<li><strong>rules</strong> <code>Optional[List[PolicyRule]]</code> - Rules holds all the PolicyRules for this ClusterRole</li>
 </ul></div>
 </div>
 <h2 id="clusterrolebinding">ClusterRoleBinding</h2>
@@ -1309,14 +1917,14 @@ Subject.</p>
 <ul>
 <li><strong>roleRef</strong> <code><a href="#roleref">RoleRef</a></code> - RoleRef can only reference a ClusterRole in the global namespace. If the
   RoleRef cannot be resolved, the Authorizer must return an error.</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
-<li><strong>subjects</strong> <code><a href="#subject">Subject</a></code> - <em>(optional)</em> Subjects holds references to the objects the role applies to.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
+<li><strong>subjects</strong> <code>Optional[List[Subject]]</code> - Subjects holds references to the objects the role applies to.</li>
 </ul></div>
 </div>
 <h2 id="clusterrolebindinglist">ClusterRoleBindingList</h2>
@@ -1326,13 +1934,13 @@ Subject.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>items</strong> <code><a href="#clusterrolebinding">ClusterRoleBinding</a></code> - Items is a list of ClusterRoleBindings</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="clusterrolelist">ClusterRoleList</h2>
@@ -1342,13 +1950,13 @@ Subject.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>items</strong> <code><a href="#clusterrole">ClusterRole</a></code> - Items is a list of ClusterRoles</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="policyrule">PolicyRule</h2>
@@ -1361,19 +1969,19 @@ applies to.</p>
 <ul>
 <li><strong>verbs</strong> <code>List[str]</code> - Verbs is a list of Verbs that apply to ALL the ResourceKinds contained in this
   rule. '<em>' represents all verbs.</li>
-<li><strong>apiGroups</strong> <code>List[str]</code> - <em>(optional)</em> APIGroups is the name of the APIGroup that contains the resources.  If
+<li><strong>apiGroups</strong> <code>Optional[List[str]]</code> - APIGroups is the name of the APIGroup that contains the resources.  If
   multiple API groups are specified, any action requested against one of the
   enumerated resources in any API group will be allowed. "" represents the core
   API group and "</em>" represents all API groups.</li>
-<li><strong>nonResourceURLs</strong> <code>List[str]</code> - <em>(optional)</em> NonResourceURLs is a set of partial urls that a user should have access to.
+<li><strong>nonResourceURLs</strong> <code>Optional[List[str]]</code> - NonResourceURLs is a set of partial urls that a user should have access to.
   <em>s are allowed, but only as the full, final step in the path Since
   non-resource URLs are not namespaced, this field is only applicable for
   ClusterRoles referenced from a ClusterRoleBinding. Rules can either apply to
   API resources (such as "pods" or "secrets") or non-resource URL paths (such as
   "/api"),  but not both.</li>
-<li><strong>resourceNames</strong> <code>List[str]</code> - <em>(optional)</em> ResourceNames is an optional white list of names that the rule applies to.  An
+<li><strong>resourceNames</strong> <code>Optional[List[str]]</code> - ResourceNames is an optional white list of names that the rule applies to.  An
   empty set means that everything is allowed.</li>
-<li><strong>resources</strong> <code>List[str]</code> - <em>(optional)</em> Resources is a list of resources this rule applies to. '</em>' represents all
+<li><strong>resources</strong> <code>Optional[List[str]]</code> - Resources is a list of resources this rule applies to. '</em>' represents all
   resources.</li>
 </ul></div>
 </div>
@@ -1384,14 +1992,14 @@ applies to.</p>
 as a unit by a RoleBinding.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
-<li><strong>rules</strong> <code><a href="#policyrule">PolicyRule</a></code> - <em>(optional)</em> Rules holds all the PolicyRules for this Role</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
+<li><strong>rules</strong> <code>Optional[List[PolicyRule]]</code> - Rules holds all the PolicyRules for this Role</li>
 </ul></div>
 </div>
 <h2 id="rolebinding">RoleBinding</h2>
@@ -1407,14 +2015,14 @@ namespace.</p>
 <li><strong>roleRef</strong> <code><a href="#roleref">RoleRef</a></code> - RoleRef can reference a Role in the current namespace or a ClusterRole in the
   global namespace. If the RoleRef cannot be resolved, the Authorizer must
   return an error.</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
-<li><strong>subjects</strong> <code><a href="#subject">Subject</a></code> - <em>(optional)</em> Subjects holds references to the objects the role applies to.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
+<li><strong>subjects</strong> <code>Optional[List[Subject]]</code> - Subjects holds references to the objects the role applies to.</li>
 </ul></div>
 </div>
 <h2 id="rolebindinglist">RoleBindingList</h2>
@@ -1424,13 +2032,13 @@ namespace.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>items</strong> <code><a href="#rolebinding">RoleBinding</a></code> - Items is a list of RoleBindings</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="rolelist">RoleList</h2>
@@ -1440,13 +2048,13 @@ namespace.</p>
 <p><strong>parameters</strong></p>
 <ul>
 <li><strong>items</strong> <code><a href="#role">Role</a></code> - Items is a list of Roles</li>
-<li><strong>apiVersion</strong> <code>str</code> - <em>(optional)</em> APIVersion defines the versioned schema of this representation of an object.
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>kind</strong> <code>str</code> - <em>(optional)</em> Kind is a string value representing the REST resource this object represents.
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code><a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a></code> - <em>(optional)</em> Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="roleref">RoleRef</h2>
@@ -1472,92 +2080,56 @@ for non-objects such as user and group names.</p>
   "Group", and "ServiceAccount". If the Authorizer does not recognized the kind
   value, the Authorizer should report an error.</li>
 <li><strong>name</strong> <code>str</code> - Name of the object being referenced.</li>
-<li><strong>apiGroup</strong> <code>str</code> - <em>(optional)</em> APIGroup holds the API group of the referenced subject. Defaults to "" for
+<li><strong>apiGroup</strong> <code>Optional[str]</code> - APIGroup holds the API group of the referenced subject. Defaults to "" for
   ServiceAccount subjects. Defaults to "rbac.authorization.k8s.io" for User and
   Group subjects.</li>
-<li><strong>namespace</strong> <code>str</code> - <em>(optional)</em> Namespace of the referenced object.  If the object kind is non-namespace, such
+<li><strong>namespace</strong> <code>Optional[str]</code> - Namespace of the referenced object.  If the object kind is non-namespace, such
   as "User" or "Group", and this value is not empty the Authorizer should report
   an error.</li>
 </ul></div>
 </div>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../policy_v1/" title="policy_v1" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                policy_v1
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../resource/" title="resource" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                resource
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
