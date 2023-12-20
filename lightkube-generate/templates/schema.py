@@ -4,8 +4,8 @@ try:
 except ImportError:
     # Support for older version of lightkube that lack this class
     from dataclasses import dataclass, field
-    from typing import get_args, get_origin, Union, get_type_hints
-    from ..core.dataclasses_dict import DataclassDictMixIn as DictMixin
+    from typing import Union, get_type_hints
+    from ..core.dataclasses_dict import DataclassDictMixIn as DictMixin, get_args, get_origin
     from ..core import dataclasses_dict
 
     NoneType = type(None)
