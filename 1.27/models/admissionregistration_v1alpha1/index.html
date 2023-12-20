@@ -2016,7 +2016,7 @@ object based on whether it meets the match criteria. The exclude rules take
 precedence over include rules (if a resource matches both, it is excluded)</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>excludeResourceRules</strong> <code>Optional[List[NamedRuleWithOperations]]</code> - ExcludeResourceRules describes what operations on what resources/subresources
+<li><strong>excludeResourceRules</strong> <code>Optional[List[<a href="#namedrulewithoperations">NamedRuleWithOperations</a>]]</code> - ExcludeResourceRules describes what operations on what resources/subresources
   the ValidatingAdmissionPolicy should not care about. The exclude rules take
   precedence over include rules (if a resource matches both, it is excluded)</li>
 <li><strong>matchPolicy</strong> <code>Optional[str]</code> - matchPolicy defines how the "MatchResources" list is used to match incoming
@@ -2033,7 +2033,7 @@ precedence over include rules (if a resource matches both, it is excluded)</p>
   request to apps/v1beta1 or extensions/v1beta1 would be converted to apps/v1
   and sent to the ValidatingAdmissionPolicy.
   Defaults to "Equivalent"</li>
-<li><strong>namespaceSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - NamespaceSelector decides whether to run the admission control policy on an
+<li><strong>namespaceSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - NamespaceSelector decides whether to run the admission control policy on an
   object based on whether the namespace for that object matches the selector. If
   the object itself is a namespace, the matching is performed on
   object.metadata.labels. If the object is another cluster scoped resource, it
@@ -2069,7 +2069,7 @@ precedence over include rules (if a resource matches both, it is excluded)</p>
   See <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/</a>
   for more examples of label selectors.
   Default to the empty LabelSelector, which matches everything.</li>
-<li><strong>objectSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - ObjectSelector decides whether to run the validation based on if the object
+<li><strong>objectSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - ObjectSelector decides whether to run the validation based on if the object
   has matching labels. objectSelector is evaluated against both the oldObject
   and newObject that would be sent to the cel validation, and is considered to
   match if either object matches the selector. A null object (oldObject in the
@@ -2078,7 +2078,7 @@ precedence over include rules (if a resource matches both, it is excluded)</p>
   considered to match. Use the object selector only if the webhook is opt-in,
   because end users may skip the admission webhook by setting the labels.
   Default to the empty LabelSelector, which matches everything.</li>
-<li><strong>resourceRules</strong> <code>Optional[List[NamedRuleWithOperations]]</code> - ResourceRules describes what operations on what resources/subresources the
+<li><strong>resourceRules</strong> <code>Optional[List[<a href="#namedrulewithoperations">NamedRuleWithOperations</a>]]</code> - ResourceRules describes what operations on what resources/subresources the
   ValidatingAdmissionPolicy matches. The policy cares about an operation if it
   matches <em>any</em> Rule.</li>
 </ul></div>
@@ -2146,7 +2146,7 @@ ResourceNames.</p>
 ValidatingAdmissionPolicy</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>expressionWarnings</strong> <code>Optional[List[ExpressionWarning]]</code> - The type checking warnings for each expression.</li>
+<li><strong>expressionWarnings</strong> <code>Optional[List[<a href="#expressionwarning">ExpressionWarning</a>]]</code> - The type checking warnings for each expression.</li>
 </ul></div>
 </div>
 <h2 id="validatingadmissionpolicy">ValidatingAdmissionPolicy</h2>
@@ -2162,9 +2162,9 @@ policy that accepts or rejects an object without changing it.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
-<li><strong>spec</strong> <code>Optional[ValidatingAdmissionPolicySpec]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicy.</li>
-<li><strong>status</strong> <code>Optional[ValidatingAdmissionPolicyStatus]</code> - The status of the ValidatingAdmissionPolicy, including warnings that are
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#validatingadmissionpolicyspec">ValidatingAdmissionPolicySpec</a>]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicy.</li>
+<li><strong>status</strong> <code>Optional[<a href="#validatingadmissionpolicystatus">ValidatingAdmissionPolicyStatus</a>]</code> - The status of the ValidatingAdmissionPolicy, including warnings that are
   useful to determine if the policy behaves in the expected way. Populated by
   the system. Read-only.</li>
 </ul></div>
@@ -2183,8 +2183,8 @@ together define how cluster administrators configure policies for clusters.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
-<li><strong>spec</strong> <code>Optional[ValidatingAdmissionPolicyBindingSpec]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicyBinding.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#validatingadmissionpolicybindingspec">ValidatingAdmissionPolicyBindingSpec</a>]</code> - Specification of the desired behavior of the ValidatingAdmissionPolicyBinding.</li>
 </ul></div>
 </div>
 <h2 id="validatingadmissionpolicybindinglist">ValidatingAdmissionPolicyBindingList</h2>
@@ -2197,11 +2197,11 @@ ValidatingAdmissionPolicyBinding.</p>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>items</strong> <code>Optional[List[ValidatingAdmissionPolicyBinding]]</code> - List of PolicyBinding.</li>
+<li><strong>items</strong> <code>Optional[List[<a href="#validatingadmissionpolicybinding">ValidatingAdmissionPolicyBinding</a>]]</code> - List of PolicyBinding.</li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="validatingadmissionpolicybindingspec">ValidatingAdmissionPolicyBindingSpec</h2>
@@ -2211,7 +2211,7 @@ ValidatingAdmissionPolicyBinding.</p>
 ValidatingAdmissionPolicyBinding.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>matchResources</strong> <code>Optional[MatchResources]</code> - MatchResources declares what resources match this binding and will be
+<li><strong>matchResources</strong> <code>Optional[<a href="#matchresources">MatchResources</a>]</code> - MatchResources declares what resources match this binding and will be
   validated by it. Note that this is intersected with the policy's
   matchConstraints, so only requests that are matched by the policy can be
   selected by this. If this is unset, all resources matched by the policy are
@@ -2219,7 +2219,7 @@ ValidatingAdmissionPolicyBinding.</p>
   resource matching. If a resource is matched by the other fields of this
   object, it will be validated. Note that this is differs from
   ValidatingAdmissionPolicy matchConstraints, where resourceRules are required.</li>
-<li><strong>paramRef</strong> <code>Optional[ParamRef]</code> - ParamRef specifies the parameter resource used to configure the admission
+<li><strong>paramRef</strong> <code>Optional[<a href="#paramref">ParamRef</a>]</code> - ParamRef specifies the parameter resource used to configure the admission
   control policy. It should point to a resource of the type specified in
   ParamKind of the bound ValidatingAdmissionPolicy. If the policy specifies a
   ParamKind and the resource referred to by ParamRef does not exist, this
@@ -2273,11 +2273,11 @@ ValidatingAdmissionPolicyBinding.</p>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>items</strong> <code>Optional[List[ValidatingAdmissionPolicy]]</code> - List of ValidatingAdmissionPolicy.</li>
+<li><strong>items</strong> <code>Optional[List[<a href="#validatingadmissionpolicy">ValidatingAdmissionPolicy</a>]]</code> - List of ValidatingAdmissionPolicy.</li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
 </ul></div>
 </div>
 <h2 id="validatingadmissionpolicyspec">ValidatingAdmissionPolicySpec</h2>
@@ -2287,7 +2287,7 @@ ValidatingAdmissionPolicyBinding.</p>
 the AdmissionPolicy.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>auditAnnotations</strong> <code>Optional[List[AuditAnnotation]]</code> - auditAnnotations contains CEL expressions which are used to produce audit
+<li><strong>auditAnnotations</strong> <code>Optional[List[<a href="#auditannotation">AuditAnnotation</a>]]</code> - auditAnnotations contains CEL expressions which are used to produce audit
   annotations for the audit event of the API request. validations and
   auditAnnotations may not both be empty; a least one of validations or
   auditAnnotations is required.</li>
@@ -2301,7 +2301,7 @@ the AdmissionPolicy.</p>
   When failurePolicy is set to Fail, ValidatingAdmissionPolicyBinding
   validationActions define how failures are enforced.
   Allowed values are Ignore or Fail. Defaults to Fail.</li>
-<li><strong>matchConditions</strong> <code>Optional[List[MatchCondition]]</code> - MatchConditions is a list of conditions that must be met for a request to be
+<li><strong>matchConditions</strong> <code>Optional[List[<a href="#matchcondition">MatchCondition</a>]]</code> - MatchConditions is a list of conditions that must be met for a request to be
   validated. Match conditions filter requests that have already been matched by
   the rules, namespaceSelector, and objectSelector. An empty list of
   matchConditions matches all requests. There are a maximum of 64 match
@@ -2316,19 +2316,19 @@ the AdmissionPolicy.</p>
 <li>If failurePolicy=Ignore, the policy is skipped</li>
 </ol>
 </li>
-<li><strong>matchConstraints</strong> <code>Optional[MatchResources]</code> - MatchConstraints specifies what resources this policy is designed to validate.
+<li><strong>matchConstraints</strong> <code>Optional[<a href="#matchresources">MatchResources</a>]</code> - MatchConstraints specifies what resources this policy is designed to validate.
   The AdmissionPolicy cares about a request if it matches <em>all</em> Constraints.
   However, in order to prevent clusters from being put into an unstable state
   that cannot be recovered from via the API ValidatingAdmissionPolicy cannot
   match ValidatingAdmissionPolicy and ValidatingAdmissionPolicyBinding.
   Required.</li>
-<li><strong>paramKind</strong> <code>Optional[ParamKind]</code> - ParamKind specifies the kind of resources used to parameterize this policy. If
+<li><strong>paramKind</strong> <code>Optional[<a href="#paramkind">ParamKind</a>]</code> - ParamKind specifies the kind of resources used to parameterize this policy. If
   absent, there are no parameters for this policy and the param CEL variable
   will not be provided to validation expressions. If ParamKind refers to a
   non-existent kind, this policy definition is mis-configured and the
   FailurePolicy is applied. If paramKind is specified but paramRef is unset in
   ValidatingAdmissionPolicyBinding, the params variable will be null.</li>
-<li><strong>validations</strong> <code>Optional[List[Validation]]</code> - Validations contain CEL expressions which is used to apply the validation.
+<li><strong>validations</strong> <code>Optional[List[<a href="#validation">Validation</a>]]</code> - Validations contain CEL expressions which is used to apply the validation.
   Validations and AuditAnnotations may not both be empty; a minimum of one
   Validations or AuditAnnotations is required.</li>
 </ul></div>
@@ -2340,10 +2340,10 @@ the AdmissionPolicy.</p>
 ValidatingAdmissionPolicy.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>conditions</strong> <code>Optional[List[meta_v1.Condition]]</code> - The conditions represent the latest available observations of a policy's
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - The conditions represent the latest available observations of a policy's
   current state.</li>
 <li><strong>observedGeneration</strong> <code>Optional[int]</code> - The generation observed by the controller.</li>
-<li><strong>typeChecking</strong> <code>Optional[TypeChecking]</code> - The results of type checking for each expression. Presence of this field
+<li><strong>typeChecking</strong> <code>Optional[<a href="#typechecking">TypeChecking</a>]</code> - The results of type checking for each expression. Presence of this field
   indicates the completion of the type checking.</li>
 </ul></div>
 </div>

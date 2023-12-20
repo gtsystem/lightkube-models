@@ -1838,11 +1838,11 @@ details, see <a href="https://kubernetes.io/docs/concepts/containers/runtime-cla
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>overhead</strong> <code>Optional[Overhead]</code> - overhead represents the resource overhead associated with running a pod for a
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>overhead</strong> <code>Optional[<a href="#overhead">Overhead</a>]</code> - overhead represents the resource overhead associated with running a pod for a
   given RuntimeClass. For more details, see
    <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/">https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/</a></li>
-<li><strong>scheduling</strong> <code>Optional[Scheduling]</code> - scheduling holds the scheduling constraints to ensure that pods running with
+<li><strong>scheduling</strong> <code>Optional[<a href="#scheduling">Scheduling</a>]</code> - scheduling holds the scheduling constraints to ensure that pods running with
   this RuntimeClass are scheduled to nodes that support it. If scheduling is
   nil, this RuntimeClass is assumed to be supported by all nodes.</li>
 </ul></div>
@@ -1853,14 +1853,14 @@ details, see <a href="https://kubernetes.io/docs/concepts/containers/runtime-cla
 <div class="autodoc-docstring"><p>RuntimeClassList is a list of RuntimeClass objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#runtimeclass">RuntimeClass</a></code> - items is a list of schema objects.</li>
+<li><strong>items</strong> <code>List[<a href="#runtimeclass">RuntimeClass</a>]</code> - items is a list of schema objects.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="scheduling">Scheduling</h2>
@@ -1875,7 +1875,7 @@ RuntimeClass.</p>
   matched by this selector. The RuntimeClass nodeSelector is merged with a pod's
   existing nodeSelector. Any conflicts will cause the pod to be rejected in
   admission.</li>
-<li><strong>tolerations</strong> <code>Optional[List[core_v1.Toleration]]</code> - tolerations are appended (excluding duplicates) to pods running with this
+<li><strong>tolerations</strong> <code>Optional[List[<a href="../core_v1/index.html#toleration">core_v1.Toleration</a>]]</code> - tolerations are appended (excluding duplicates) to pods running with this
   RuntimeClass during admission, effectively unioning the set of nodes tolerated
   by the pod and the RuntimeClass.</li>
 </ul></div>

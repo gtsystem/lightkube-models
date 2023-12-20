@@ -2059,11 +2059,11 @@
 <div class="autodoc-docstring"><p>AllocationResult contains attributes of an allocated resource.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>availableOnNodes</strong> <code>Optional[core_v1.NodeSelector]</code> - This field will get set by the resource driver after it has allocated the
+<li><strong>availableOnNodes</strong> <code>Optional[<a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a>]</code> - This field will get set by the resource driver after it has allocated the
   resource to inform the scheduler where it can schedule Pods using the
   ResourceClaim.
   Setting this field is optional. If null, the resource is available everywhere.</li>
-<li><strong>resourceHandles</strong> <code>Optional[List[ResourceHandle]]</code> - ResourceHandles contain the state associated with an allocation that should be
+<li><strong>resourceHandles</strong> <code>Optional[List[<a href="#resourcehandle">ResourceHandle</a>]]</code> - ResourceHandles contain the state associated with an allocation that should be
   maintained throughout the lifetime of a claim. Each ResourceHandle contains
   data that should be passed to a specific kubelet plugin once it lands on a
   node. This data is returned by the driver after a successful allocation and is
@@ -2094,8 +2094,8 @@ feature gate.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata</li>
-<li><strong>status</strong> <code>Optional[PodSchedulingContextStatus]</code> - Status describes where resources for the Pod can be allocated.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+<li><strong>status</strong> <code>Optional[<a href="#podschedulingcontextstatus">PodSchedulingContextStatus</a>]</code> - Status describes where resources for the Pod can be allocated.</li>
 </ul></div>
 </div>
 <h2 id="podschedulingcontextlist">PodSchedulingContextList</h2>
@@ -2104,14 +2104,14 @@ feature gate.</p>
 <div class="autodoc-docstring"><p>PodSchedulingContextList is a collection of Pod scheduling objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#podschedulingcontext">PodSchedulingContext</a></code> - Items is the list of PodSchedulingContext objects.</li>
+<li><strong>items</strong> <code>List[<a href="#podschedulingcontext">PodSchedulingContext</a>]</code> - Items is the list of PodSchedulingContext objects.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
 </ul></div>
 </div>
 <h2 id="podschedulingcontextspec">PodSchedulingContextSpec</h2>
@@ -2136,7 +2136,7 @@ feature gate.</p>
 allocated.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>resourceClaims</strong> <code>Optional[List[ResourceClaimSchedulingStatus]]</code> - ResourceClaims describes resource availability for each pod.spec.resourceClaim
+<li><strong>resourceClaims</strong> <code>Optional[List[<a href="#resourceclaimschedulingstatus">ResourceClaimSchedulingStatus</a>]]</code> - ResourceClaims describes resource availability for each pod.spec.resourceClaim
   entry where the corresponding ResourceClaim uses "WaitForFirstConsumer"
   allocation mode.</li>
 </ul></div>
@@ -2159,8 +2159,8 @@ feature gate.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata</li>
-<li><strong>status</strong> <code>Optional[ResourceClaimStatus]</code> - Status describes whether the resource is available and with which attributes.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+<li><strong>status</strong> <code>Optional[<a href="#resourceclaimstatus">ResourceClaimStatus</a>]</code> - Status describes whether the resource is available and with which attributes.</li>
 </ul></div>
 </div>
 <h2 id="resourceclaimconsumerreference">ResourceClaimConsumerReference</h2>
@@ -2185,14 +2185,14 @@ namespace as the ResourceClaim.</p>
 <div class="autodoc-docstring"><p>ResourceClaimList is a collection of claims.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#resourceclaim">ResourceClaim</a></code> - Items is the list of resource claims.</li>
+<li><strong>items</strong> <code>List[<a href="#resourceclaim">ResourceClaim</a>]</code> - Items is the list of resource claims.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
 </ul></div>
 </div>
 <h2 id="resourceclaimparametersreference">ResourceClaimParametersReference</h2>
@@ -2235,7 +2235,7 @@ ResourceClaim with "WaitForFirstConsumer" allocation mode.</p>
   of a ResourceClass that was created as part of the driver deployment.</li>
 <li><strong>allocationMode</strong> <code>Optional[str]</code> - Allocation can start immediately or when a Pod wants to use the resource.
   "WaitForFirstConsumer" is the default.</li>
-<li><strong>parametersRef</strong> <code>Optional[ResourceClaimParametersReference]</code> - ParametersRef references a separate object with arbitrary parameters that will
+<li><strong>parametersRef</strong> <code>Optional[<a href="#resourceclaimparametersreference">ResourceClaimParametersReference</a>]</code> - ParametersRef references a separate object with arbitrary parameters that will
   be used by the driver when allocating a resource for the claim.
   The object must be in the same namespace as the ResourceClaim.</li>
 </ul></div>
@@ -2247,7 +2247,7 @@ ResourceClaim with "WaitForFirstConsumer" allocation mode.</p>
 the resulting attributes are.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>allocation</strong> <code>Optional[AllocationResult]</code> - Allocation is set by the resource driver once a resource or set of resources
+<li><strong>allocation</strong> <code>Optional[<a href="#allocationresult">AllocationResult</a>]</code> - Allocation is set by the resource driver once a resource or set of resources
   has been allocated successfully. If this is not specified, the resources have
   not been allocated yet.</li>
 <li><strong>deallocationRequested</strong> <code>Optional[bool]</code> - DeallocationRequested indicates that a ResourceClaim is to be deallocated.
@@ -2257,7 +2257,7 @@ the resulting attributes are.</p>
   ReservedFor.</li>
 <li><strong>driverName</strong> <code>Optional[str]</code> - DriverName is a copy of the driver name from the ResourceClass at the time
   when allocation started.</li>
-<li><strong>reservedFor</strong> <code>Optional[List[ResourceClaimConsumerReference]]</code> - ReservedFor indicates which entities are currently allowed to use the claim. A
+<li><strong>reservedFor</strong> <code>Optional[List[<a href="#resourceclaimconsumerreference">ResourceClaimConsumerReference</a>]]</code> - ReservedFor indicates which entities are currently allowed to use the claim. A
   Pod which references a ResourceClaim which is not reserved for that Pod will
   not be started.
   There can be at most 32 such reservations. This may get increased in the
@@ -2279,7 +2279,7 @@ the resulting attributes are.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
 </ul></div>
 </div>
 <h2 id="resourceclaimtemplatelist">ResourceClaimTemplateList</h2>
@@ -2288,14 +2288,14 @@ the resulting attributes are.</p>
 <div class="autodoc-docstring"><p>ResourceClaimTemplateList is a collection of claim templates.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#resourceclaimtemplate">ResourceClaimTemplate</a></code> - Items is the list of resource claim templates.</li>
+<li><strong>items</strong> <code>List[<a href="#resourceclaimtemplate">ResourceClaimTemplate</a>]</code> - Items is the list of resource claim templates.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
 </ul></div>
 </div>
 <h2 id="resourceclaimtemplatespec">ResourceClaimTemplateSpec</h2>
@@ -2308,7 +2308,7 @@ ResourceClaim.</p>
 <li><strong>spec</strong> <code><a href="#resourceclaimspec">ResourceClaimSpec</a></code> - Spec for the ResourceClaim. The entire content is copied unchanged into the
   ResourceClaim that gets created from this template. The same fields as in a
   ResourceClaim are also valid here.</li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - ObjectMeta may contain labels and annotations that will be copied into the PVC
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - ObjectMeta may contain labels and annotations that will be copied into the PVC
   when creating it. No other fields are allowed and will be rejected during
   validation.</li>
 </ul></div>
@@ -2332,12 +2332,12 @@ feature gate.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata</li>
-<li><strong>parametersRef</strong> <code>Optional[ResourceClassParametersReference]</code> - ParametersRef references an arbitrary separate object that may hold parameters
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+<li><strong>parametersRef</strong> <code>Optional[<a href="#resourceclassparametersreference">ResourceClassParametersReference</a>]</code> - ParametersRef references an arbitrary separate object that may hold parameters
   that will be used by the driver when allocating a resource that uses this
   class. A dynamic resource driver can distinguish between parameters stored
   here and and those stored in ResourceClaimSpec.</li>
-<li><strong>suitableNodes</strong> <code>Optional[core_v1.NodeSelector]</code> - Only nodes matching the selector will be considered by the scheduler when
+<li><strong>suitableNodes</strong> <code>Optional[<a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a>]</code> - Only nodes matching the selector will be considered by the scheduler when
   trying to find a Node that fits a Pod when that Pod uses a ResourceClaim that
   has not been allocated yet.
   Setting this field is optional. If null, all nodes are candidates.</li>
@@ -2349,14 +2349,14 @@ feature gate.</p>
 <div class="autodoc-docstring"><p>ResourceClassList is a collection of classes.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#resourceclass">ResourceClass</a></code> - Items is the list of resource classes.</li>
+<li><strong>items</strong> <code>List[<a href="#resourceclass">ResourceClass</a>]</code> - Items is the list of resource classes.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
 </ul></div>
 </div>
 <h2 id="resourceclassparametersreference">ResourceClassParametersReference</h2>

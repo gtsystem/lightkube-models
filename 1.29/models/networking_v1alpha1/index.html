@@ -1918,8 +1918,8 @@ defined by RFC 5952 for IPv6. Valid: 192.168.1.5 or 2001:db8::1 or
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[IPAddressSpec]</code> - spec is the desired state of the IPAddress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#ipaddressspec">IPAddressSpec</a>]</code> - spec is the desired state of the IPAddress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ipaddresslist">IPAddressList</h2>
@@ -1928,14 +1928,14 @@ defined by RFC 5952 for IPv6. Valid: 192.168.1.5 or 2001:db8::1 or
 <div class="autodoc-docstring"><p>IPAddressList contains a list of IPAddress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#ipaddress">IPAddress</a></code> - items is the list of IPAddresses.</li>
+<li><strong>items</strong> <code>List[<a href="#ipaddress">IPAddress</a>]</code> - items is the list of IPAddresses.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ipaddressspec">IPAddressSpec</h2>
@@ -1944,7 +1944,7 @@ defined by RFC 5952 for IPv6. Valid: 192.168.1.5 or 2001:db8::1 or
 <div class="autodoc-docstring"><p>IPAddressSpec describe the attributes in an IP Address.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>parentRef</strong> <code>Optional[ParentReference]</code> - ParentRef references the resource that an IPAddress is attached to. An
+<li><strong>parentRef</strong> <code>Optional[<a href="#parentreference">ParentReference</a>]</code> - ParentRef references the resource that an IPAddress is attached to. An
   IPAddress must reference a parent object.</li>
 </ul></div>
 </div>
@@ -1974,9 +1974,9 @@ Service objects.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[ServiceCIDRSpec]</code> - spec is the desired state of the ServiceCIDR. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
-<li><strong>status</strong> <code>Optional[ServiceCIDRStatus]</code> - status represents the current state of the ServiceCIDR. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#servicecidrspec">ServiceCIDRSpec</a>]</code> - spec is the desired state of the ServiceCIDR. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#servicecidrstatus">ServiceCIDRStatus</a>]</code> - status represents the current state of the ServiceCIDR. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="servicecidrlist">ServiceCIDRList</h2>
@@ -1985,14 +1985,14 @@ Service objects.</p>
 <div class="autodoc-docstring"><p>ServiceCIDRList contains a list of ServiceCIDR objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#servicecidr">ServiceCIDR</a></code> - items is the list of ServiceCIDRs.</li>
+<li><strong>items</strong> <code>List[<a href="#servicecidr">ServiceCIDR</a>]</code> - items is the list of ServiceCIDRs.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="servicecidrspec">ServiceCIDRSpec</h2>
@@ -2013,7 +2013,7 @@ ClusterIPs for Services.</p>
 <div class="autodoc-docstring"><p>ServiceCIDRStatus describes the current state of the ServiceCIDR.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>conditions</strong> <code>Optional[List[meta_v1.Condition]]</code> - conditions holds an array of metav1.Condition that describe the state of the
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - conditions holds an array of metav1.Condition that describe the state of the
   ServiceCIDR. Current service state</li>
 </ul></div>
 </div>

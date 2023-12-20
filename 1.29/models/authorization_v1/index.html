@@ -1986,8 +1986,8 @@ easier to grant namespace scoped policy that includes permissions checking.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>status</strong> <code>Optional[SubjectAccessReviewStatus]</code> - Status is filled in by the server and indicates whether the request is allowed
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a>]</code> - Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -2074,8 +2074,8 @@ perform an action</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>status</strong> <code>Optional[SubjectAccessReviewStatus]</code> - Status is filled in by the server and indicates whether the request is allowed
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a>]</code> - Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -2087,8 +2087,8 @@ one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes
 must be set</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>nonResourceAttributes</strong> <code>Optional[NonResourceAttributes]</code> - NonResourceAttributes describes information for a non-resource access request</li>
-<li><strong>resourceAttributes</strong> <code>Optional[ResourceAttributes]</code> - ResourceAuthorizationAttributes describes information for a resource access
+<li><strong>nonResourceAttributes</strong> <code>Optional[<a href="#nonresourceattributes">NonResourceAttributes</a>]</code> - NonResourceAttributes describes information for a non-resource access request</li>
+<li><strong>resourceAttributes</strong> <code>Optional[<a href="#resourceattributes">ResourceAttributes</a>]</code> - ResourceAuthorizationAttributes describes information for a resource access
   request</li>
 </ul></div>
 </div>
@@ -2113,8 +2113,8 @@ correct way to defer authorization decisions to the API server.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>status</strong> <code>Optional[SubjectRulesReviewStatus]</code> - Status is filled in by the server and indicates the set of actions a user can
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#subjectrulesreviewstatus">SubjectRulesReviewStatus</a>]</code> - Status is filled in by the server and indicates the set of actions a user can
   perform.</li>
 </ul></div>
 </div>
@@ -2142,8 +2142,8 @@ action.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>status</strong> <code>Optional[SubjectAccessReviewStatus]</code> - Status is filled in by the server and indicates whether the request is allowed
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#subjectaccessreviewstatus">SubjectAccessReviewStatus</a>]</code> - Status is filled in by the server and indicates whether the request is allowed
   or not</li>
 </ul></div>
 </div>
@@ -2158,8 +2158,8 @@ be set</p>
 <li><strong>extra</strong> <code>Optional[dict]</code> - Extra corresponds to the user.Info.GetExtra() method from the authenticator.
   Since that is input to the authorizer it needs a reflection here.</li>
 <li><strong>groups</strong> <code>Optional[List[str]]</code> - Groups is the groups you're testing for.</li>
-<li><strong>nonResourceAttributes</strong> <code>Optional[NonResourceAttributes]</code> - NonResourceAttributes describes information for a non-resource access request</li>
-<li><strong>resourceAttributes</strong> <code>Optional[ResourceAttributes]</code> - ResourceAuthorizationAttributes describes information for a resource access
+<li><strong>nonResourceAttributes</strong> <code>Optional[<a href="#nonresourceattributes">NonResourceAttributes</a>]</code> - NonResourceAttributes describes information for a non-resource access request</li>
+<li><strong>resourceAttributes</strong> <code>Optional[<a href="#resourceattributes">ResourceAttributes</a>]</code> - ResourceAuthorizationAttributes describes information for a resource access
   request</li>
 <li><strong>uid</strong> <code>Optional[str]</code> - UID information about the requesting user.</li>
 <li><strong>user</strong> <code>Optional[str]</code> - User is the user you're testing for. If you specify "User" but not "Groups",
@@ -2197,10 +2197,10 @@ that permission, even if that list is incomplete.</p>
 <li><strong>incomplete</strong> <code>bool</code> - Incomplete is true when the rules returned by this call are incomplete. This
   is most commonly encountered when an authorizer, such as an external
   authorizer, doesn't support rules evaluation.</li>
-<li><strong>nonResourceRules</strong> <code><a href="#nonresourcerule">NonResourceRule</a></code> - NonResourceRules is the list of actions the subject is allowed to perform on
+<li><strong>nonResourceRules</strong> <code>List[<a href="#nonresourcerule">NonResourceRule</a>]</code> - NonResourceRules is the list of actions the subject is allowed to perform on
   non-resources. The list ordering isn't significant, may contain duplicates,
   and possibly be incomplete.</li>
-<li><strong>resourceRules</strong> <code><a href="#resourcerule">ResourceRule</a></code> - ResourceRules is the list of actions the subject is allowed to perform on
+<li><strong>resourceRules</strong> <code>List[<a href="#resourcerule">ResourceRule</a>]</code> - ResourceRules is the list of actions the subject is allowed to perform on
   resources. The list ordering isn't significant, may contain duplicates, and
   possibly be incomplete.</li>
 <li><strong>evaluationError</strong> <code>Optional[str]</code> - EvaluationError can appear in combination with Rules. It indicates an error

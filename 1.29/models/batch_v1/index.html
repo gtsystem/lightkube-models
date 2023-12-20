@@ -2009,10 +2009,10 @@
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[CronJobSpec]</code> - Specification of the desired behavior of a cron job, including the schedule.
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#cronjobspec">CronJobSpec</a>]</code> - Specification of the desired behavior of a cron job, including the schedule.
   <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
-<li><strong>status</strong> <code>Optional[CronJobStatus]</code> - Current status of a cron job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#cronjobstatus">CronJobStatus</a>]</code> - Current status of a cron job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="cronjoblist">CronJobList</h2>
@@ -2021,14 +2021,14 @@
 <div class="autodoc-docstring"><p>CronJobList is a collection of cron jobs.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#cronjob">CronJob</a></code> - items is the list of CronJobs.</li>
+<li><strong>items</strong> <code>List[<a href="#cronjob">CronJob</a>]</code> - items is the list of CronJobs.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="cronjobspec">CronJobSpec</h2>
@@ -2072,9 +2072,9 @@ actually run.</p>
 <div class="autodoc-docstring"><p>CronJobStatus represents the current state of a cron job.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>active</strong> <code>Optional[List[core_v1.ObjectReference]]</code> - A list of pointers to currently running jobs.</li>
-<li><strong>lastScheduleTime</strong> <code>Optional[meta_v1.Time]</code> - Information when was the last time the job was successfully scheduled.</li>
-<li><strong>lastSuccessfulTime</strong> <code>Optional[meta_v1.Time]</code> - Information when was the last time the job successfully completed.</li>
+<li><strong>active</strong> <code>Optional[List[<a href="../core_v1/index.html#objectreference">core_v1.ObjectReference</a>]]</code> - A list of pointers to currently running jobs.</li>
+<li><strong>lastScheduleTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Information when was the last time the job was successfully scheduled.</li>
+<li><strong>lastSuccessfulTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Information when was the last time the job successfully completed.</li>
 </ul></div>
 </div>
 <h2 id="job">Job</h2>
@@ -2089,9 +2089,9 @@ actually run.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[JobSpec]</code> - Specification of the desired behavior of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
-<li><strong>status</strong> <code>Optional[JobStatus]</code> - Current status of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#jobspec">JobSpec</a>]</code> - Specification of the desired behavior of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#jobstatus">JobStatus</a>]</code> - Current status of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="jobcondition">JobCondition</h2>
@@ -2102,8 +2102,8 @@ actually run.</p>
 <ul>
 <li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type of job condition, Complete or Failed.</li>
-<li><strong>lastProbeTime</strong> <code>Optional[meta_v1.Time]</code> - Last time the condition was checked.</li>
-<li><strong>lastTransitionTime</strong> <code>Optional[meta_v1.Time]</code> - Last time the condition transit from one status to another.</li>
+<li><strong>lastProbeTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Last time the condition was checked.</li>
+<li><strong>lastTransitionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Last time the condition transit from one status to another.</li>
 <li><strong>message</strong> <code>Optional[str]</code> - Human readable message indicating details about last transition.</li>
 <li><strong>reason</strong> <code>Optional[str]</code> - (brief) reason for the condition's last transition.</li>
 </ul></div>
@@ -2114,14 +2114,14 @@ actually run.</p>
 <div class="autodoc-docstring"><p>JobList is a collection of jobs.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#job">Job</a></code> - items is the list of Jobs.</li>
+<li><strong>items</strong> <code>List[<a href="#job">Job</a>]</code> - items is the list of Jobs.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="jobspec">JobSpec</h2>
@@ -2186,7 +2186,7 @@ actually run.</p>
   time. The actual number of pods running in steady state will be less than this
   number when ((.spec.completions - .status.successful) &lt; .spec.parallelism),
   i.e. when the work left to do is less than max parallelism. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">More info</a></li>
-<li><strong>podFailurePolicy</strong> <code>Optional[PodFailurePolicy]</code> - Specifies the policy of handling failed pods. In particular, it allows to
+<li><strong>podFailurePolicy</strong> <code>Optional[<a href="#podfailurepolicy">PodFailurePolicy</a>]</code> - Specifies the policy of handling failed pods. In particular, it allows to
   specify the set of actions and conditions which need to be satisfied to take
   the associated action. If empty, the default behaviour applies - the counter
   of failed pods, represented by the jobs's .status.failed field, is incremented
@@ -2204,7 +2204,7 @@ actually run.</p>
   TerminatingOrFailed and Failed are allowed values when podFailurePolicy is not
   in use. This is an beta field. To use this, enable the JobPodReplacementPolicy
   feature toggle. This is on by default.</li>
-<li><strong>selector</strong> <code>Optional[meta_v1.LabelSelector]</code> - A label query over pods that should match the pod count. Normally, the system
+<li><strong>selector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - A label query over pods that should match the pod count. Normally, the system
   sets this field for you. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">More info</a></li>
 <li><strong>suspend</strong> <code>Optional[bool]</code> - suspend specifies whether the Job controller should create Pods or not. If a
   Job is created with suspend set to true, no Pods are created by the Job
@@ -2235,11 +2235,11 @@ actually run.</p>
   consecutive numbers are compressed and represented by the first and last
   element of the series, separated by a hyphen. For example, if the completed
   indexes are 1, 3, 4, 5 and 7, they are represented as "1,3-5,7".</li>
-<li><strong>completionTime</strong> <code>Optional[meta_v1.Time]</code> - Represents time when the job was completed. It is not guaranteed to be set in
+<li><strong>completionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Represents time when the job was completed. It is not guaranteed to be set in
   happens-before order across separate operations. It is represented in RFC3339
   form and is in UTC. The completion time is only set when the job finishes
   successfully.</li>
-<li><strong>conditions</strong> <code>Optional[List[JobCondition]]</code> - The latest available observations of an object's current state. When a Job
+<li><strong>conditions</strong> <code>Optional[List[<a href="#jobcondition">JobCondition</a>]]</code> - The latest available observations of an object's current state. When a Job
   fails, one of the conditions will have type "Failed" and status true. When a
   Job is suspended, one of the conditions will have type "Suspended" and status
   true; when the Job is resumed, the status of this condition will become false.
@@ -2256,7 +2256,7 @@ actually run.</p>
   be used when the <code>JobBackoffLimitPerIndex</code> feature gate is enabled (enabled by
   default).</li>
 <li><strong>ready</strong> <code>Optional[int]</code> - The number of pods which have a Ready condition.</li>
-<li><strong>startTime</strong> <code>Optional[meta_v1.Time]</code> - Represents time when the job controller started processing a job. When a Job
+<li><strong>startTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Represents time when the job controller started processing a job. When a Job
   is created in the suspended state, this field is not set until the first time
   it is resumed. This field is reset every time a Job is resumed from
   suspension. It is represented in RFC3339 form and is in UTC.</li>
@@ -2265,7 +2265,7 @@ actually run.</p>
   a deletionTimestamp).
   This field is beta-level. The job controller populates the field when the
   feature gate JobPodReplacementPolicy is enabled (enabled by default).</li>
-<li><strong>uncountedTerminatedPods</strong> <code>Optional[UncountedTerminatedPods]</code> - uncountedTerminatedPods holds the UIDs of Pods that have terminated but the
+<li><strong>uncountedTerminatedPods</strong> <code>Optional[<a href="#uncountedterminatedpods">UncountedTerminatedPods</a>]</code> - uncountedTerminatedPods holds the UIDs of Pods that have terminated but the
   job controller hasn't yet accounted for in the status counters.
   The job controller creates pods with a finalizer. When a pod terminates
   (succeeded or failed), the controller does three steps to account for it in
@@ -2284,8 +2284,8 @@ actually run.</p>
 template</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata of the jobs created from this template. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[JobSpec]</code> - Specification of the desired behavior of the job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata of the jobs created from this template. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#jobspec">JobSpec</a>]</code> - Specification of the desired behavior of the job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="podfailurepolicy">PodFailurePolicy</h2>
@@ -2294,7 +2294,7 @@ template</p>
 <div class="autodoc-docstring"><p>PodFailurePolicy describes how failed pods influence the backoffLimit.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>rules</strong> <code><a href="#podfailurepolicyrule">PodFailurePolicyRule</a></code> - A list of pod failure policy rules. The rules are evaluated in order. Once a
+<li><strong>rules</strong> <code>List[<a href="#podfailurepolicyrule">PodFailurePolicyRule</a>]</code> - A list of pod failure policy rules. The rules are evaluated in order. Once a
   rule matches a Pod failure, the remaining of the rules are ignored. When no
   rule matches the Pod failure, the default handling applies - the counter of
   pod failures is incremented and it is checked against the backoffLimit. At
@@ -2369,8 +2369,8 @@ can be used in each rule.</p>
     counter towards the .backoffLimit is incremented.
   Additional values are considered to be added in the future. Clients should
   react to an unknown action by skipping the rule.</li>
-<li><strong>onExitCodes</strong> <code>Optional[PodFailurePolicyOnExitCodesRequirement]</code> - Represents the requirement on the container exit codes.</li>
-<li><strong>onPodConditions</strong> <code>Optional[List[PodFailurePolicyOnPodConditionsPattern]]</code> - Represents the requirement on the pod conditions. The requirement is
+<li><strong>onExitCodes</strong> <code>Optional[<a href="#podfailurepolicyonexitcodesrequirement">PodFailurePolicyOnExitCodesRequirement</a>]</code> - Represents the requirement on the container exit codes.</li>
+<li><strong>onPodConditions</strong> <code>Optional[List[<a href="#podfailurepolicyonpodconditionspattern">PodFailurePolicyOnPodConditionsPattern</a>]]</code> - Represents the requirement on the pod conditions. The requirement is
   represented as a list of pod condition patterns. The requirement is satisfied
   if at least one pattern matches an actual pod condition. At most 20 elements
   are allowed.</li>

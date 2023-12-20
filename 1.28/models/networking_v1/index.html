@@ -2148,7 +2148,7 @@ url correspond to RFC 3986, this resource will be used to match against
 everything after the last '/' and before the first '?' or '#'.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>paths</strong> <code><a href="#httpingresspath">HTTPIngressPath</a></code> - paths is a collection of paths that map requests to backends.</li>
+<li><strong>paths</strong> <code>List[<a href="#httpingresspath">HTTPIngressPath</a>]</code> - paths is a collection of paths that map requests to backends.</li>
 </ul></div>
 </div>
 <h2 id="ipblock">IPBlock</h2>
@@ -2181,9 +2181,9 @@ based virtual hosting etc.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[IngressSpec]</code> - spec is the desired state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
-<li><strong>status</strong> <code>Optional[IngressStatus]</code> - status is the current state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#ingressspec">IngressSpec</a>]</code> - spec is the desired state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#ingressstatus">IngressStatus</a>]</code> - status is the current state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ingressbackend">IngressBackend</h2>
@@ -2192,10 +2192,10 @@ based virtual hosting etc.</p>
 <div class="autodoc-docstring"><p>IngressBackend describes all endpoints for a given service and port.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>resource</strong> <code>Optional[core_v1.TypedLocalObjectReference]</code> - resource is an ObjectRef to another Kubernetes resource in the namespace of
+<li><strong>resource</strong> <code>Optional[<a href="../core_v1/index.html#typedlocalobjectreference">core_v1.TypedLocalObjectReference</a>]</code> - resource is an ObjectRef to another Kubernetes resource in the namespace of
   the Ingress object. If resource is specified, a service.Name and service.Port
   must not be specified. This is a mutually exclusive setting with "Service".</li>
-<li><strong>service</strong> <code>Optional[IngressServiceBackend]</code> - service references a service as a backend. This is a mutually exclusive
+<li><strong>service</strong> <code>Optional[<a href="#ingressservicebackend">IngressServiceBackend</a>]</code> - service references a service as a backend. This is a mutually exclusive
   setting with "Resource".</li>
 </ul></div>
 </div>
@@ -2215,8 +2215,8 @@ without a class specified will be assigned this default class.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[IngressClassSpec]</code> - spec is the desired state of the IngressClass. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#ingressclassspec">IngressClassSpec</a>]</code> - spec is the desired state of the IngressClass. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ingressclasslist">IngressClassList</h2>
@@ -2225,14 +2225,14 @@ without a class specified will be assigned this default class.</p>
 <div class="autodoc-docstring"><p>IngressClassList is a collection of IngressClasses.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#ingressclass">IngressClass</a></code> - items is the list of IngressClasses.</li>
+<li><strong>items</strong> <code>List[<a href="#ingressclass">IngressClass</a>]</code> - items is the list of IngressClasses.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata.</li>
 </ul></div>
 </div>
 <h2 id="ingressclassparametersreference">IngressClassParametersReference</h2>
@@ -2266,7 +2266,7 @@ specify a cluster or namespace-scoped resource.</p>
   implementing controller. This should be specified as a domain-prefixed path no
   more than 250 characters in length, e.g. "acme.io/ingress-controller". This
   field is immutable.</li>
-<li><strong>parameters</strong> <code>Optional[IngressClassParametersReference]</code> - parameters is a link to a custom resource containing additional configuration
+<li><strong>parameters</strong> <code>Optional[<a href="#ingressclassparametersreference">IngressClassParametersReference</a>]</code> - parameters is a link to a custom resource containing additional configuration
   for the controller. This is optional if the controller does not require extra
   parameters.</li>
 </ul></div>
@@ -2277,14 +2277,14 @@ specify a cluster or namespace-scoped resource.</p>
 <div class="autodoc-docstring"><p>IngressList is a collection of Ingress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#ingress">Ingress</a></code> - items is the list of Ingress.</li>
+<li><strong>items</strong> <code>List[<a href="#ingress">Ingress</a>]</code> - items is the list of Ingress.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="ingressloadbalanceringress">IngressLoadBalancerIngress</h2>
@@ -2296,7 +2296,7 @@ point.</p>
 <ul>
 <li><strong>hostname</strong> <code>Optional[str]</code> - hostname is set for load-balancer ingress points that are DNS based.</li>
 <li><strong>ip</strong> <code>Optional[str]</code> - ip is set for load-balancer ingress points that are IP based.</li>
-<li><strong>ports</strong> <code>Optional[List[IngressPortStatus]]</code> - ports provides information about the ports exposed by this LoadBalancer.</li>
+<li><strong>ports</strong> <code>Optional[List[<a href="#ingressportstatus">IngressPortStatus</a>]]</code> - ports provides information about the ports exposed by this LoadBalancer.</li>
 </ul></div>
 </div>
 <h2 id="ingressloadbalancerstatus">IngressLoadBalancerStatus</h2>
@@ -2305,7 +2305,7 @@ point.</p>
 <div class="autodoc-docstring"><p>IngressLoadBalancerStatus represents the status of a load-balancer.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>ingress</strong> <code>Optional[List[IngressLoadBalancerIngress]]</code> - ingress is a list containing ingress points for the load-balancer.</li>
+<li><strong>ingress</strong> <code>Optional[List[<a href="#ingressloadbalanceringress">IngressLoadBalancerIngress</a>]]</code> - ingress is a list containing ingress points for the load-balancer.</li>
 </ul></div>
 </div>
 <h2 id="ingressportstatus">IngressPortStatus</h2>
@@ -2355,7 +2355,7 @@ IngressRuleValue.</p>
   equal to Host. 2. If host is a wildcard, then the request matches this rule if
   the http host header is to equal to the suffix (removing the first label) of
   the wildcard rule.</li>
-<li><strong>http</strong> <code>Optional[HTTPIngressRuleValue]</code> -</li>
+<li><strong>http</strong> <code>Optional[<a href="#httpingressrulevalue">HTTPIngressRuleValue</a>]</code> -</li>
 </ul></div>
 </div>
 <h2 id="ingressservicebackend">IngressServiceBackend</h2>
@@ -2366,7 +2366,7 @@ IngressRuleValue.</p>
 <ul>
 <li><strong>name</strong> <code>str</code> - name is the referenced service. The service must exist in the same namespace
   as the Ingress object.</li>
-<li><strong>port</strong> <code>Optional[ServiceBackendPort]</code> - port of the referenced service. A port name or port number is required for a
+<li><strong>port</strong> <code>Optional[<a href="#servicebackendport">ServiceBackendPort</a>]</code> - port of the referenced service. A port name or port number is required for a
   IngressServiceBackend.</li>
 </ul></div>
 </div>
@@ -2376,7 +2376,7 @@ IngressRuleValue.</p>
 <div class="autodoc-docstring"><p>IngressSpec describes the Ingress the user wishes to exist.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>defaultBackend</strong> <code>Optional[IngressBackend]</code> - defaultBackend is the backend that should handle requests that don't match any
+<li><strong>defaultBackend</strong> <code>Optional[<a href="#ingressbackend">IngressBackend</a>]</code> - defaultBackend is the backend that should handle requests that don't match any
   rule. If Rules are not specified, DefaultBackend must be specified. If
   DefaultBackend is not set, the handling of requests that do not match any of
   the rules will be up to the Ingress controller.</li>
@@ -2390,9 +2390,9 @@ IngressRuleValue.</p>
   prefer using the field. However, even though the annotation is officially
   deprecated, for backwards compatibility reasons, ingress controllers should
   still honor that annotation if present.</li>
-<li><strong>rules</strong> <code>Optional[List[IngressRule]]</code> - rules is a list of host rules used to configure the Ingress. If unspecified,
+<li><strong>rules</strong> <code>Optional[List[<a href="#ingressrule">IngressRule</a>]]</code> - rules is a list of host rules used to configure the Ingress. If unspecified,
   or no rule matches, all traffic is sent to the default backend.</li>
-<li><strong>tls</strong> <code>Optional[List[IngressTLS]]</code> - tls represents the TLS configuration. Currently the Ingress only supports a
+<li><strong>tls</strong> <code>Optional[List[<a href="#ingresstls">IngressTLS</a>]]</code> - tls represents the TLS configuration. Currently the Ingress only supports a
   single TLS port, 443. If multiple members of this list specify different
   hosts, they will be multiplexed on the same port according to the hostname
   specified through the SNI TLS extension, if the ingress controller fulfilling
@@ -2405,7 +2405,7 @@ IngressRuleValue.</p>
 <div class="autodoc-docstring"><p>IngressStatus describe the current state of the Ingress.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>loadBalancer</strong> <code>Optional[IngressLoadBalancerStatus]</code> - loadBalancer contains the current status of the load-balancer.</li>
+<li><strong>loadBalancer</strong> <code>Optional[<a href="#ingressloadbalancerstatus">IngressLoadBalancerStatus</a>]</code> - loadBalancer contains the current status of the load-balancer.</li>
 </ul></div>
 </div>
 <h2 id="ingresstls">IngressTLS</h2>
@@ -2437,8 +2437,8 @@ IngressRuleValue.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[NetworkPolicySpec]</code> - spec represents the specification of the desired behavior for this
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#networkpolicyspec">NetworkPolicySpec</a>]</code> - spec represents the specification of the desired behavior for this
   NetworkPolicy.</li>
 </ul></div>
 </div>
@@ -2450,12 +2450,12 @@ out of pods matched by a NetworkPolicySpec's podSelector. The traffic must
 match both ports and to. This type is beta-level in 1.8</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>ports</strong> <code>Optional[List[NetworkPolicyPort]]</code> - ports is a list of destination ports for outgoing traffic. Each item in this
+<li><strong>ports</strong> <code>Optional[List[<a href="#networkpolicyport">NetworkPolicyPort</a>]]</code> - ports is a list of destination ports for outgoing traffic. Each item in this
   list is combined using a logical OR. If this field is empty or missing, this
   rule matches all ports (traffic not restricted by port). If this field is
   present and contains at least one item, then this rule allows traffic only if
   the traffic matches at least one port in the list.</li>
-<li><strong>to</strong> <code>Optional[List[NetworkPolicyPeer]]</code> - to is a list of destinations for outgoing traffic of pods selected for this
+<li><strong>to</strong> <code>Optional[List[<a href="#networkpolicypeer">NetworkPolicyPeer</a>]]</code> - to is a list of destinations for outgoing traffic of pods selected for this
   rule. Items in this list are combined using a logical OR operation. If this
   field is empty or missing, this rule matches all destinations (traffic not
   restricted by destination). If this field is present and contains at least one
@@ -2471,13 +2471,13 @@ to the pods matched by a NetworkPolicySpec's podSelector. The traffic must
 match both ports and from.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>from_</strong> <code>Optional[List[NetworkPolicyPeer]]</code> - from is a list of sources which should be able to access the pods selected for
+<li><strong>from_</strong> <code>Optional[List[<a href="#networkpolicypeer">NetworkPolicyPeer</a>]]</code> - from is a list of sources which should be able to access the pods selected for
   this rule. Items in this list are combined using a logical OR operation. If
   this field is empty or missing, this rule matches all sources (traffic not
   restricted by source). If this field is present and contains at least one
   item, this rule allows traffic only if the traffic matches at least one item
   in the from list.</li>
-<li><strong>ports</strong> <code>Optional[List[NetworkPolicyPort]]</code> - ports is a list of ports which should be made accessible on the pods selected
+<li><strong>ports</strong> <code>Optional[List[<a href="#networkpolicyport">NetworkPolicyPort</a>]]</code> - ports is a list of ports which should be made accessible on the pods selected
   for this rule. Each item in this list is combined using a logical OR. If this
   field is empty or missing, this rule matches all ports (traffic not restricted
   by port). If this field is present and contains at least one item, then this
@@ -2490,14 +2490,14 @@ match both ports and from.</p>
 <div class="autodoc-docstring"><p>NetworkPolicyList is a list of NetworkPolicy objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#networkpolicy">NetworkPolicy</a></code> - items is a list of schema objects.</li>
+<li><strong>items</strong> <code>List[<a href="#networkpolicy">NetworkPolicy</a>]</code> - items is a list of schema objects.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="networkpolicypeer">NetworkPolicyPeer</h2>
@@ -2507,15 +2507,15 @@ match both ports and from.</p>
 combinations of fields are allowed</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>ipBlock</strong> <code>Optional[IPBlock]</code> - ipBlock defines policy on a particular IPBlock. If this field is set then
+<li><strong>ipBlock</strong> <code>Optional[<a href="#ipblock">IPBlock</a>]</code> - ipBlock defines policy on a particular IPBlock. If this field is set then
   neither of the other fields can be.</li>
-<li><strong>namespaceSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - namespaceSelector selects namespaces using cluster-scoped labels. This field
+<li><strong>namespaceSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - namespaceSelector selects namespaces using cluster-scoped labels. This field
   follows standard label selector semantics; if present but empty, it selects
   all namespaces.
   If podSelector is also set, then the NetworkPolicyPeer as a whole selects the
   pods matching podSelector in the namespaces selected by namespaceSelector.
   Otherwise it selects all pods in the namespaces selected by namespaceSelector.</li>
-<li><strong>podSelector</strong> <code>Optional[meta_v1.LabelSelector]</code> - podSelector is a label selector which selects pods. This field follows
+<li><strong>podSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - podSelector is a label selector which selects pods. This field follows
   standard label selector semantics; if present but empty, it selects all pods.
   If namespaceSelector is also set, then the NetworkPolicyPeer as a whole
   selects the pods matching podSelector in the Namespaces selected by
@@ -2533,7 +2533,7 @@ combinations of fields are allowed</p>
   inclusive, should be allowed by the policy. This field cannot be defined if
   the port field is not defined or if the port field is defined as a named
   (string) port. The endPort must be equal or greater than port.</li>
-<li><strong>port</strong> <code>Optional[util_intstr.IntOrString]</code> - port represents the port on the given protocol. This can either be a numerical
+<li><strong>port</strong> <code>Optional[<a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a>]</code> - port represents the port on the given protocol. This can either be a numerical
   or named port on a pod. If this field is not provided, this matches all port
   names and numbers. If present, only traffic on the specified protocol AND port
   will be matched.</li>
@@ -2553,14 +2553,14 @@ combinations of fields are allowed</p>
   rules for each are combined additively. This field is NOT optional and follows
   standard label selector semantics. An empty podSelector matches all pods in
   this namespace.</li>
-<li><strong>egress</strong> <code>Optional[List[NetworkPolicyEgressRule]]</code> - egress is a list of egress rules to be applied to the selected pods. Outgoing
+<li><strong>egress</strong> <code>Optional[List[<a href="#networkpolicyegressrule">NetworkPolicyEgressRule</a>]]</code> - egress is a list of egress rules to be applied to the selected pods. Outgoing
   traffic is allowed if there are no NetworkPolicies selecting the pod (and
   cluster policy otherwise allows the traffic), OR if the traffic matches at
   least one egress rule across all of the NetworkPolicy objects whose
   podSelector matches the pod. If this field is empty then this NetworkPolicy
   limits all outgoing traffic (and serves solely to ensure that the pods it
   selects are isolated by default). This field is beta-level in 1.8</li>
-<li><strong>ingress</strong> <code>Optional[List[NetworkPolicyIngressRule]]</code> - ingress is a list of ingress rules to be applied to the selected pods. Traffic
+<li><strong>ingress</strong> <code>Optional[List[<a href="#networkpolicyingressrule">NetworkPolicyIngressRule</a>]]</code> - ingress is a list of ingress rules to be applied to the selected pods. Traffic
   is allowed to a pod if there are no NetworkPolicies selecting the pod (and
   cluster policy otherwise allows the traffic), OR if the traffic source is the
   pod's local node, OR if the traffic matches at least one ingress rule across

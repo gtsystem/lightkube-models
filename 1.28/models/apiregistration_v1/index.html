@@ -1844,9 +1844,9 @@
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[APIServiceSpec]</code> - Spec contains information for locating and communicating with a server</li>
-<li><strong>status</strong> <code>Optional[APIServiceStatus]</code> - Status contains derived information about an API server</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#apiservicespec">APIServiceSpec</a>]</code> - Spec contains information for locating and communicating with a server</li>
+<li><strong>status</strong> <code>Optional[<a href="#apiservicestatus">APIServiceStatus</a>]</code> - Status contains derived information about an API server</li>
 </ul></div>
 </div>
 <h2 id="apiservicecondition">APIServiceCondition</h2>
@@ -1857,7 +1857,7 @@
 <ul>
 <li><strong>status</strong> <code>str</code> - Status is the status of the condition. Can be True, False, Unknown.</li>
 <li><strong>type</strong> <code>str</code> - Type is the type of the condition.</li>
-<li><strong>lastTransitionTime</strong> <code>Optional[meta_v1.Time]</code> - Last time the condition transitioned from one status to another.</li>
+<li><strong>lastTransitionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Last time the condition transitioned from one status to another.</li>
 <li><strong>message</strong> <code>Optional[str]</code> - Human-readable message indicating details about last transition.</li>
 <li><strong>reason</strong> <code>Optional[str]</code> - Unique, one-word, CamelCase reason for the condition's last transition.</li>
 </ul></div>
@@ -1868,14 +1868,14 @@
 <div class="autodoc-docstring"><p>APIServiceList is a list of APIService objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#apiservice">APIService</a></code> - Items is the list of APIService</li>
+<li><strong>items</strong> <code>List[<a href="#apiservice">APIService</a>]</code> - Items is the list of APIService</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="apiservicespec">APIServiceSpec</h2>
@@ -1915,7 +1915,7 @@ verification.</p>
 <li><strong>insecureSkipTLSVerify</strong> <code>Optional[bool]</code> - InsecureSkipTLSVerify disables TLS certificate verification when communicating
   with this server. This is strongly discouraged.  You should use the CABundle
   instead.</li>
-<li><strong>service</strong> <code>Optional[ServiceReference]</code> - Service is a reference to the service for this API server.  It must
+<li><strong>service</strong> <code>Optional[<a href="#servicereference">ServiceReference</a>]</code> - Service is a reference to the service for this API server.  It must
   communicate on port 443. If the Service is nil, that means the handling for
   the API groupversion is handled locally on this server. The call will simply
   delegate to the normal handler chain to be fulfilled.</li>
@@ -1928,7 +1928,7 @@ verification.</p>
 <div class="autodoc-docstring"><p>APIServiceStatus contains derived information about an API server</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>conditions</strong> <code>Optional[List[APIServiceCondition]]</code> - Current service state of apiService.</li>
+<li><strong>conditions</strong> <code>Optional[List[<a href="#apiservicecondition">APIServiceCondition</a>]]</code> - Current service state of apiService.</li>
 </ul></div>
 </div>
 <h2 id="servicereference">ServiceReference</h2>

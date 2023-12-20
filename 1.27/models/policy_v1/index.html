@@ -1788,11 +1788,11 @@ eviction is created by POSTing to .../pods/<pod name>/evictions.</p>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
-<li><strong>deleteOptions</strong> <code>Optional[meta_v1.DeleteOptions]</code> - DeleteOptions may be provided</li>
+<li><strong>deleteOptions</strong> <code>Optional[<a href="../meta_v1/index.html#deleteoptions">meta_v1.DeleteOptions</a>]</code> - DeleteOptions may be provided</li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - ObjectMeta describes the pod that is being evicted.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - ObjectMeta describes the pod that is being evicted.</li>
 </ul></div>
 </div>
 <h2 id="poddisruptionbudget">PodDisruptionBudget</h2>
@@ -1808,9 +1808,9 @@ caused to a collection of pods</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[PodDisruptionBudgetSpec]</code> - Specification of the desired behavior of the PodDisruptionBudget.</li>
-<li><strong>status</strong> <code>Optional[PodDisruptionBudgetStatus]</code> - Most recently observed status of the PodDisruptionBudget.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#poddisruptionbudgetspec">PodDisruptionBudgetSpec</a>]</code> - Specification of the desired behavior of the PodDisruptionBudget.</li>
+<li><strong>status</strong> <code>Optional[<a href="#poddisruptionbudgetstatus">PodDisruptionBudgetStatus</a>]</code> - Most recently observed status of the PodDisruptionBudget.</li>
 </ul></div>
 </div>
 <h2 id="poddisruptionbudgetlist">PodDisruptionBudgetList</h2>
@@ -1819,14 +1819,14 @@ caused to a collection of pods</p>
 <div class="autodoc-docstring"><p>PodDisruptionBudgetList is a collection of PodDisruptionBudgets.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#poddisruptionbudget">PodDisruptionBudget</a></code> - Items is a list of PodDisruptionBudgets</li>
+<li><strong>items</strong> <code>List[<a href="#poddisruptionbudget">PodDisruptionBudget</a>]</code> - Items is a list of PodDisruptionBudgets</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
 </ul></div>
 </div>
 <h2 id="poddisruptionbudgetspec">PodDisruptionBudgetSpec</h2>
@@ -1835,15 +1835,15 @@ caused to a collection of pods</p>
 <div class="autodoc-docstring"><p>PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>maxUnavailable</strong> <code>Optional[util_intstr.IntOrString]</code> - An eviction is allowed if at most "maxUnavailable" pods selected by "selector"
+<li><strong>maxUnavailable</strong> <code>Optional[<a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a>]</code> - An eviction is allowed if at most "maxUnavailable" pods selected by "selector"
   are unavailable after the eviction, i.e. even in absence of the evicted pod.
   For example, one can prevent all voluntary evictions by specifying 0. This is
   a mutually exclusive setting with "minAvailable".</li>
-<li><strong>minAvailable</strong> <code>Optional[util_intstr.IntOrString]</code> - An eviction is allowed if at least "minAvailable" pods selected by "selector"
+<li><strong>minAvailable</strong> <code>Optional[<a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a>]</code> - An eviction is allowed if at least "minAvailable" pods selected by "selector"
   will still be available after the eviction, i.e. even in the absence of the
   evicted pod.  So for example you can prevent all voluntary evictions by
   specifying "100%".</li>
-<li><strong>selector</strong> <code>Optional[meta_v1.LabelSelector]</code> - Label query over pods whose evictions are managed by the disruption budget. A
+<li><strong>selector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - Label query over pods whose evictions are managed by the disruption budget. A
   null selector will match no pods, while an empty ({}) selector will select all
   pods within the namespace.</li>
 <li><strong>unhealthyPodEvictionPolicy</strong> <code>Optional[str]</code> - UnhealthyPodEvictionPolicy defines the criteria for when unhealthy pods should
@@ -1879,7 +1879,7 @@ PodDisruptionBudget. Status may trail the actual state of a system.</p>
 <li><strong>desiredHealthy</strong> <code>int</code> - minimum desired number of healthy pods</li>
 <li><strong>disruptionsAllowed</strong> <code>int</code> - Number of pod disruptions that are currently allowed.</li>
 <li><strong>expectedPods</strong> <code>int</code> - total number of pods counted by this disruption budget</li>
-<li><strong>conditions</strong> <code>Optional[List[meta_v1.Condition]]</code> - Conditions contain conditions for PDB. The disruption controller sets the
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - Conditions contain conditions for PDB. The disruption controller sets the
   DisruptionAllowed condition. The following are known values for the reason
   field (additional reasons could be added in the future): - SyncFailed: The
   controller encountered an error and wasn't able to compute

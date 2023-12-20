@@ -1962,7 +1962,7 @@
 ClusterRole</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>clusterRoleSelectors</strong> <code>Optional[List[meta_v1.LabelSelector]]</code> - ClusterRoleSelectors holds a list of selectors which will be used to find
+<li><strong>clusterRoleSelectors</strong> <code>Optional[List[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]]</code> - ClusterRoleSelectors holds a list of selectors which will be used to find
   ClusterRoles and create the rules. If any of the selectors match, then the
   ClusterRole's permissions will be added</li>
 </ul></div>
@@ -1974,7 +1974,7 @@ ClusterRole</p>
 referenced as a unit by a RoleBinding or ClusterRoleBinding.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>aggregationRule</strong> <code>Optional[AggregationRule]</code> - AggregationRule is an optional field that describes how to build the Rules for
+<li><strong>aggregationRule</strong> <code>Optional[<a href="#aggregationrule">AggregationRule</a>]</code> - AggregationRule is an optional field that describes how to build the Rules for
   this ClusterRole. If AggregationRule is set, then the Rules are controller
   managed and direct changes to Rules will be stomped by the controller.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
@@ -1983,8 +1983,8 @@ referenced as a unit by a RoleBinding or ClusterRoleBinding.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
-<li><strong>rules</strong> <code>Optional[List[PolicyRule]]</code> - Rules holds all the PolicyRules for this ClusterRole</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata.</li>
+<li><strong>rules</strong> <code>Optional[List[<a href="#policyrule">PolicyRule</a>]]</code> - Rules holds all the PolicyRules for this ClusterRole</li>
 </ul></div>
 </div>
 <h2 id="clusterrolebinding">ClusterRoleBinding</h2>
@@ -2004,8 +2004,8 @@ Subject.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
-<li><strong>subjects</strong> <code>Optional[List[Subject]]</code> - Subjects holds references to the objects the role applies to.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata.</li>
+<li><strong>subjects</strong> <code>Optional[List[<a href="#subject">Subject</a>]]</code> - Subjects holds references to the objects the role applies to.</li>
 </ul></div>
 </div>
 <h2 id="clusterrolebindinglist">ClusterRoleBindingList</h2>
@@ -2014,14 +2014,14 @@ Subject.</p>
 <div class="autodoc-docstring"><p>ClusterRoleBindingList is a collection of ClusterRoleBindings</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#clusterrolebinding">ClusterRoleBinding</a></code> - Items is a list of ClusterRoleBindings</li>
+<li><strong>items</strong> <code>List[<a href="#clusterrolebinding">ClusterRoleBinding</a>]</code> - Items is a list of ClusterRoleBindings</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="clusterrolelist">ClusterRoleList</h2>
@@ -2030,14 +2030,14 @@ Subject.</p>
 <div class="autodoc-docstring"><p>ClusterRoleList is a collection of ClusterRoles</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#clusterrole">ClusterRole</a></code> - Items is a list of ClusterRoles</li>
+<li><strong>items</strong> <code>List[<a href="#clusterrole">ClusterRole</a>]</code> - Items is a list of ClusterRoles</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="policyrule">PolicyRule</h2>
@@ -2079,8 +2079,8 @@ as a unit by a RoleBinding.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
-<li><strong>rules</strong> <code>Optional[List[PolicyRule]]</code> - Rules holds all the PolicyRules for this Role</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata.</li>
+<li><strong>rules</strong> <code>Optional[List[<a href="#policyrule">PolicyRule</a>]]</code> - Rules holds all the PolicyRules for this Role</li>
 </ul></div>
 </div>
 <h2 id="rolebinding">RoleBinding</h2>
@@ -2102,8 +2102,8 @@ namespace.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata.</li>
-<li><strong>subjects</strong> <code>Optional[List[Subject]]</code> - Subjects holds references to the objects the role applies to.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata.</li>
+<li><strong>subjects</strong> <code>Optional[List[<a href="#subject">Subject</a>]]</code> - Subjects holds references to the objects the role applies to.</li>
 </ul></div>
 </div>
 <h2 id="rolebindinglist">RoleBindingList</h2>
@@ -2112,14 +2112,14 @@ namespace.</p>
 <div class="autodoc-docstring"><p>RoleBindingList is a collection of RoleBindings</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#rolebinding">RoleBinding</a></code> - Items is a list of RoleBindings</li>
+<li><strong>items</strong> <code>List[<a href="#rolebinding">RoleBinding</a>]</code> - Items is a list of RoleBindings</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="rolelist">RoleList</h2>
@@ -2128,14 +2128,14 @@ namespace.</p>
 <div class="autodoc-docstring"><p>RoleList is a collection of Roles</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#role">Role</a></code> - Items is a list of Roles</li>
+<li><strong>items</strong> <code>List[<a href="#role">Role</a>]</code> - Items is a list of Roles</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard object's metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata.</li>
 </ul></div>
 </div>
 <h2 id="roleref">RoleRef</h2>

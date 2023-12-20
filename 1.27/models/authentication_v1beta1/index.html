@@ -1751,8 +1751,8 @@ ignored and returned as lowercase.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>status</strong> <code>Optional[SelfSubjectReviewStatus]</code> - Status is filled in by the server with the user attributes.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#selfsubjectreviewstatus">SelfSubjectReviewStatus</a>]</code> - Status is filled in by the server with the user attributes.</li>
 </ul></div>
 </div>
 <h2 id="selfsubjectreviewstatus">SelfSubjectReviewStatus</h2>
@@ -1762,7 +1762,7 @@ ignored and returned as lowercase.</p>
 user.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>userInfo</strong> <code>Optional[authentication_v1.UserInfo]</code> - User attributes of the user making this request.</li>
+<li><strong>userInfo</strong> <code>Optional[<a href="../authentication_v1/index.html#userinfo">authentication_v1.UserInfo</a>]</code> - User attributes of the user making this request.</li>
 </ul></div>
 </div>
 

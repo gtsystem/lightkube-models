@@ -1883,9 +1883,9 @@ the referred resource.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
-<li><strong>spec</strong> <code>Optional[HorizontalPodAutoscalerSpec]</code> - spec defines the behaviour of autoscaler. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
-<li><strong>status</strong> <code>Optional[HorizontalPodAutoscalerStatus]</code> - status is the current information about the autoscaler.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</a>]</code> - spec defines the behaviour of autoscaler. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#horizontalpodautoscalerstatus">HorizontalPodAutoscalerStatus</a>]</code> - status is the current information about the autoscaler.</li>
 </ul></div>
 </div>
 <h2 id="horizontalpodautoscalerlist">HorizontalPodAutoscalerList</h2>
@@ -1894,14 +1894,14 @@ the referred resource.</p>
 <div class="autodoc-docstring"><p>list of horizontal pod autoscaler objects.</p>
 <p><strong>parameters</strong></p>
 <ul>
-<li><strong>items</strong> <code><a href="#horizontalpodautoscaler">HorizontalPodAutoscaler</a></code> - items is the list of horizontal pod autoscaler objects.</li>
+<li><strong>items</strong> <code>List[<a href="#horizontalpodautoscaler">HorizontalPodAutoscaler</a>]</code> - items is the list of horizontal pod autoscaler objects.</li>
 <li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
   Servers should convert recognized schemas to the latest internal value, and
   may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ListMeta]</code> - Standard list metadata.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata.</li>
 </ul></div>
 </div>
 <h2 id="horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</h2>
@@ -1938,7 +1938,7 @@ the referred resource.</p>
 <li><strong>currentCPUUtilizationPercentage</strong> <code>Optional[int]</code> - currentCPUUtilizationPercentage is the current average CPU utilization over
   all pods, represented as a percentage of requested CPU, e.g. 70 means that an
   average pod is using now 70% of its requested CPU.</li>
-<li><strong>lastScaleTime</strong> <code>Optional[meta_v1.Time]</code> - lastScaleTime is the last time the HorizontalPodAutoscaler scaled the number
+<li><strong>lastScaleTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - lastScaleTime is the last time the HorizontalPodAutoscaler scaled the number
   of pods; used by the autoscaler to control how often the number of pods is
   changed.</li>
 <li><strong>observedGeneration</strong> <code>Optional[int]</code> - observedGeneration is the most recent generation observed by this autoscaler.</li>
@@ -1956,9 +1956,9 @@ the referred resource.</p>
 <li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
   Servers may infer this from the endpoint the client submits requests to.
   Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
-<li><strong>metadata</strong> <code>Optional[meta_v1.ObjectMeta]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
-<li><strong>spec</strong> <code>Optional[ScaleSpec]</code> - spec defines the behavior of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
-<li><strong>status</strong> <code>Optional[ScaleStatus]</code> - status is the current status of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#scalespec">ScaleSpec</a>]</code> - spec defines the behavior of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#scalestatus">ScaleStatus</a>]</code> - status is the current status of the scale. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a>
   Read-only.</li>
 </ul></div>
 </div>
