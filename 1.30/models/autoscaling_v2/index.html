@@ -1,0 +1,2624 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../autoscaling_v1/">
+      
+      
+        <link rel="next" href="../batch_v1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>autoscaling_v2 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#autoscaling_v2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              autoscaling_v2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#containerresourcemetricsource" class="md-nav__link">
+    ContainerResourceMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerresourcemetricstatus" class="md-nav__link">
+    ContainerResourceMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crossversionobjectreference" class="md-nav__link">
+    CrossVersionObjectReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#externalmetricsource" class="md-nav__link">
+    ExternalMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#externalmetricstatus" class="md-nav__link">
+    ExternalMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpascalingpolicy" class="md-nav__link">
+    HPAScalingPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpascalingrules" class="md-nav__link">
+    HPAScalingRules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscaler" class="md-nav__link">
+    HorizontalPodAutoscaler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerbehavior" class="md-nav__link">
+    HorizontalPodAutoscalerBehavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalercondition" class="md-nav__link">
+    HorizontalPodAutoscalerCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerlist" class="md-nav__link">
+    HorizontalPodAutoscalerList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerspec" class="md-nav__link">
+    HorizontalPodAutoscalerSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerstatus" class="md-nav__link">
+    HorizontalPodAutoscalerStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricidentifier" class="md-nav__link">
+    MetricIdentifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricspec" class="md-nav__link">
+    MetricSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricstatus" class="md-nav__link">
+    MetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrictarget" class="md-nav__link">
+    MetricTarget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricvaluestatus" class="md-nav__link">
+    MetricValueStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmetricsource" class="md-nav__link">
+    ObjectMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmetricstatus" class="md-nav__link">
+    ObjectMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsmetricsource" class="md-nav__link">
+    PodsMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsmetricstatus" class="md-nav__link">
+    PodsMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcemetricsource" class="md-nav__link">
+    ResourceMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcemetricstatus" class="md-nav__link">
+    ResourceMetricStatus
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1beta3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1beta3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1beta3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1beta3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#containerresourcemetricsource" class="md-nav__link">
+    ContainerResourceMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerresourcemetricstatus" class="md-nav__link">
+    ContainerResourceMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crossversionobjectreference" class="md-nav__link">
+    CrossVersionObjectReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#externalmetricsource" class="md-nav__link">
+    ExternalMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#externalmetricstatus" class="md-nav__link">
+    ExternalMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpascalingpolicy" class="md-nav__link">
+    HPAScalingPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpascalingrules" class="md-nav__link">
+    HPAScalingRules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscaler" class="md-nav__link">
+    HorizontalPodAutoscaler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerbehavior" class="md-nav__link">
+    HorizontalPodAutoscalerBehavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalercondition" class="md-nav__link">
+    HorizontalPodAutoscalerCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerlist" class="md-nav__link">
+    HorizontalPodAutoscalerList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerspec" class="md-nav__link">
+    HorizontalPodAutoscalerSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontalpodautoscalerstatus" class="md-nav__link">
+    HorizontalPodAutoscalerStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricidentifier" class="md-nav__link">
+    MetricIdentifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricspec" class="md-nav__link">
+    MetricSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricstatus" class="md-nav__link">
+    MetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrictarget" class="md-nav__link">
+    MetricTarget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricvaluestatus" class="md-nav__link">
+    MetricValueStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmetricsource" class="md-nav__link">
+    ObjectMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmetricstatus" class="md-nav__link">
+    ObjectMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsmetricsource" class="md-nav__link">
+    PodsMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podsmetricstatus" class="md-nav__link">
+    PodsMetricStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcemetricsource" class="md-nav__link">
+    ResourceMetricSource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcemetricstatus" class="md-nav__link">
+    ResourceMetricStatus
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="autoscaling_v2">autoscaling_v2</h1>
+<h2 id="containerresourcemetricsource">ContainerResourceMetricSource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ContainerResourceMetricSource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">container</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ContainerResourceMetricSource indicates how to scale on a resource metric
+known to Kubernetes, as specified in requests and limits, describing each pod
+in the current scale target (e.g. CPU or memory).  The values will be averaged
+together before being compared to the target.  Such metrics are built in to
+Kubernetes, and have special scaling options on top of those available to
+normal per-pod metrics using the "pods" source.  Only one "target" type should
+be set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>container</strong> <code>str</code> - container is the name of the container in the pods of the scaling target</li>
+<li><strong>name</strong> <code>str</code> - name is the name of the resource in question.</li>
+<li><strong>target</strong> <code><a href="#metrictarget">MetricTarget</a></code> - target specifies the target value for the given metric</li>
+</ul></div>
+</div>
+<h2 id="containerresourcemetricstatus">ContainerResourceMetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ContainerResourceMetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">container</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">current</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ContainerResourceMetricStatus indicates the current value of a resource metric
+known to Kubernetes, as specified in requests and limits, describing a single
+container in each pod in the current scale target (e.g. CPU or memory).  Such
+metrics are built in to Kubernetes, and have special scaling options on top of
+those available to normal per-pod metrics using the "pods" source.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>container</strong> <code>str</code> - container is the name of the container in the pods of the scaling target</li>
+<li><strong>current</strong> <code><a href="#metricvaluestatus">MetricValueStatus</a></code> - current contains the current value for the given metric</li>
+<li><strong>name</strong> <code>str</code> - name is the name of the resource in question.</li>
+</ul></div>
+</div>
+<h2 id="crossversionobjectreference">CrossVersionObjectReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>CrossVersionObjectReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CrossVersionObjectReference contains enough information to let you identify
+the referred resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - kind is the kind of the referent; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>name</strong> <code>str</code> - name is the name of the referent; <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names">More info</a></li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - apiVersion is the API version of the referent</li>
+</ul></div>
+</div>
+<h2 id="externalmetricsource">ExternalMetricSource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ExternalMetricSource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ExternalMetricSource indicates how to scale on a metric not associated with
+any Kubernetes object (for example length of queue in cloud messaging service,
+or QPS from loadbalancer running outside of cluster).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+<li><strong>target</strong> <code><a href="#metrictarget">MetricTarget</a></code> - target specifies the target value for the given metric</li>
+</ul></div>
+</div>
+<h2 id="externalmetricstatus">ExternalMetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ExternalMetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">current</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ExternalMetricStatus indicates the current value of a global metric not
+associated with any Kubernetes object.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>current</strong> <code><a href="#metricvaluestatus">MetricValueStatus</a></code> - current contains the current value for the given metric</li>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+</ul></div>
+</div>
+<h2 id="hpascalingpolicy">HPAScalingPolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HPAScalingPolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">periodSeconds</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">value</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HPAScalingPolicy is a single policy which must hold true for a specified past
+interval.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>periodSeconds</strong> <code>int</code> - periodSeconds specifies the window of time for which the policy should hold
+  true. PeriodSeconds must be greater than zero and less than or equal to 1800
+  (30 min).</li>
+<li><strong>type</strong> <code>str</code> - type is used to specify the scaling policy.</li>
+<li><strong>value</strong> <code>int</code> - value contains the amount of change which is permitted by the policy. It must
+  be greater than zero</li>
+</ul></div>
+</div>
+<h2 id="hpascalingrules">HPAScalingRules</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HPAScalingRules</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">policies=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selectPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">stabilizationWindowSeconds=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HPAScalingRules configures the scaling behavior for one direction. These Rules
+are applied after calculating DesiredReplicas from metrics for the HPA. They
+can limit the scaling velocity by specifying scaling policies. They can
+prevent flapping by specifying the stabilization window, so that the number of
+replicas is not set instantly, instead, the safest value from the
+stabilization window is chosen.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>policies</strong> <code>Optional[List[<a href="#hpascalingpolicy">HPAScalingPolicy</a>]]</code> - policies is a list of potential scaling polices which can be used during
+  scaling. At least one policy must be specified, otherwise the HPAScalingRules
+  will be discarded as invalid</li>
+<li><strong>selectPolicy</strong> <code>Optional[str]</code> - selectPolicy is used to specify which policy should be used. If not set, the
+  default value Max is used.</li>
+<li><strong>stabilizationWindowSeconds</strong> <code>Optional[int]</code> - stabilizationWindowSeconds is the number of seconds for which past
+  recommendations should be considered while scaling up or scaling down.
+  StabilizationWindowSeconds must be greater than or equal to zero and less than
+  or equal to 3600 (one hour). If not set, use the default values: - For scale
+  up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the
+  stabilization window is 300 seconds long).</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscaler">HorizontalPodAutoscaler</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscaler</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler,
+which automatically manages the replica count of any resource implementing the
+scale subresource based on the metrics specified.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - metadata is the standard object metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</a>]</code> - spec is the specification for the behaviour of the autoscaler. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status.">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#horizontalpodautoscalerstatus">HorizontalPodAutoscalerStatus</a>]</code> - status is the current information about the autoscaler.</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscalerbehavior">HorizontalPodAutoscalerBehavior</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscalerBehavior</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">scaleDown=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">scaleUp=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscalerBehavior configures the scaling behavior of the target
+in both Up and Down directions (scaleUp and scaleDown fields respectively).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>scaleDown</strong> <code>Optional[<a href="#hpascalingrules">HPAScalingRules</a>]</code> - scaleDown is scaling policy for scaling Down. If not set, the default value is
+  to allow to scale down to minReplicas pods, with a 300 second stabilization
+  window (i.e., the highest recommendation for the last 300sec is used).</li>
+<li><strong>scaleUp</strong> <code>Optional[<a href="#hpascalingrules">HPAScalingRules</a>]</code> - scaleUp is scaling policy for scaling Up. If not set, the default value is the
+  higher of:<ul>
+<li>increase no more than 4 pods per 60 seconds</li>
+<li>double the number of pods per 60 seconds
+  No stabilization is used.</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscalercondition">HorizontalPodAutoscalerCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscalerCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscalerCondition describes the state of a
+HorizontalPodAutoscaler at a certain point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - status is the status of the condition (True, False, Unknown)</li>
+<li><strong>type</strong> <code>str</code> - type describes the current condition</li>
+<li><strong>lastTransitionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - lastTransitionTime is the last time the condition transitioned from one status
+  to another</li>
+<li><strong>message</strong> <code>Optional[str]</code> - message is a human-readable explanation containing details about the
+  transition</li>
+<li><strong>reason</strong> <code>Optional[str]</code> - reason is the reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscalerlist">HorizontalPodAutoscalerList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscalerList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscalerList is a list of horizontal pod autoscaler objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#horizontalpodautoscaler">HorizontalPodAutoscaler</a>]</code> - items is the list of horizontal pod autoscaler objects.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - metadata is the standard list metadata.</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscalerspec">HorizontalPodAutoscalerSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscalerSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">maxReplicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">scaleTargetRef</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">behavior=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metrics=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">minReplicas=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscalerSpec describes the desired functionality of the
+HorizontalPodAutoscaler.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>maxReplicas</strong> <code>int</code> - maxReplicas is the upper limit for the number of replicas to which the
+  autoscaler can scale up. It cannot be less that minReplicas.</li>
+<li><strong>scaleTargetRef</strong> <code><a href="#crossversionobjectreference">CrossVersionObjectReference</a></code> - scaleTargetRef points to the target resource to scale, and is used to the pods
+  for which metrics should be collected, as well as to actually change the
+  replica count.</li>
+<li><strong>behavior</strong> <code>Optional[<a href="#horizontalpodautoscalerbehavior">HorizontalPodAutoscalerBehavior</a>]</code> - behavior configures the scaling behavior of the target in both Up and Down
+  directions (scaleUp and scaleDown fields respectively). If not set, the
+  default HPAScalingRules for scale up and scale down are used.</li>
+<li><strong>metrics</strong> <code>Optional[List[<a href="#metricspec">MetricSpec</a>]]</code> - metrics contains the specifications for which to use to calculate the desired
+  replica count (the maximum replica count across all metrics will be used).
+  The desired replica count is calculated multiplying the ratio between the
+  target value and the current value by the current number of pods.  Ergo,
+  metrics used must decrease as the pod count is increased, and vice-versa.  See
+  the individual metric source types for more information about how each type of
+  metric must respond. If not set, the default metric will be set to 80% average
+  CPU utilization.</li>
+<li><strong>minReplicas</strong> <code>Optional[int]</code> - minReplicas is the lower limit for the number of replicas to which the
+  autoscaler can scale down.  It defaults to 1 pod.  minReplicas is allowed to
+  be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one
+  Object or External metric is configured.  Scaling is active as long as at
+  least one metric value is available.</li>
+</ul></div>
+</div>
+<h2 id="horizontalpodautoscalerstatus">HorizontalPodAutoscalerStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>HorizontalPodAutoscalerStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">desiredReplicas</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentMetrics=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">currentReplicas=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastScaleTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HorizontalPodAutoscalerStatus describes the current status of a horizontal pod
+autoscaler.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>desiredReplicas</strong> <code>int</code> - desiredReplicas is the desired number of replicas of pods managed by this
+  autoscaler, as last calculated by the autoscaler.</li>
+<li><strong>conditions</strong> <code>Optional[List[<a href="#horizontalpodautoscalercondition">HorizontalPodAutoscalerCondition</a>]]</code> - conditions is the set of conditions required for this autoscaler to scale its
+  target, and indicates whether or not those conditions are met.</li>
+<li><strong>currentMetrics</strong> <code>Optional[List[<a href="#metricstatus">MetricStatus</a>]]</code> - currentMetrics is the last read state of the metrics used by this autoscaler.</li>
+<li><strong>currentReplicas</strong> <code>Optional[int]</code> - currentReplicas is current number of replicas of pods managed by this
+  autoscaler, as last seen by the autoscaler.</li>
+<li><strong>lastScaleTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - lastScaleTime is the last time the HorizontalPodAutoscaler scaled the number
+  of pods, used by the autoscaler to control how often the number of pods is
+  changed.</li>
+<li><strong>observedGeneration</strong> <code>Optional[int]</code> - observedGeneration is the most recent generation observed by this autoscaler.</li>
+</ul></div>
+</div>
+<h2 id="metricidentifier">MetricIdentifier</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>MetricIdentifier</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selector=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MetricIdentifier defines the name and optionally selector for a metric</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name is the name of the given metric</li>
+<li><strong>selector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - selector is the string-encoded form of a standard kubernetes label selector
+  for the given metric When set, it is passed as an additional parameter to the
+  metrics server for more specific metrics scoping. When unset, just the
+  metricName will be used to gather metrics.</li>
+</ul></div>
+</div>
+<h2 id="metricspec">MetricSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>MetricSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">containerResource=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">external=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">object=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pods=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resource=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MetricSpec specifies how to scale based on a single metric (only <code>type</code> and
+one other matching field should be set at once).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - type is the type of metric source.  It should be one of "ContainerResource",
+  "External", "Object", "Pods" or "Resource", each mapping to a matching field
+  in the object. Note: "ContainerResource" type is available on when the
+  feature-gate HPAContainerMetrics is enabled</li>
+<li><strong>containerResource</strong> <code>Optional[<a href="#containerresourcemetricsource">ContainerResourceMetricSource</a>]</code> - containerResource refers to a resource metric (such as those specified in
+  requests and limits) known to Kubernetes describing a single container in each
+  pod of the current scale target (e.g. CPU or memory). Such metrics are built
+  in to Kubernetes, and have special scaling options on top of those available
+  to normal per-pod metrics using the "pods" source. This is an alpha feature
+  and can be enabled by the HPAContainerMetrics feature flag.</li>
+<li><strong>external</strong> <code>Optional[<a href="#externalmetricsource">ExternalMetricSource</a>]</code> - external refers to a global metric that is not associated with any Kubernetes
+  object. It allows autoscaling based on information coming from components
+  running outside of cluster (for example length of queue in cloud messaging
+  service, or QPS from loadbalancer running outside of cluster).</li>
+<li><strong>object</strong> <code>Optional[<a href="#objectmetricsource">ObjectMetricSource</a>]</code> - object refers to a metric describing a single kubernetes object (for example,
+  hits-per-second on an Ingress object).</li>
+<li><strong>pods</strong> <code>Optional[<a href="#podsmetricsource">PodsMetricSource</a>]</code> - pods refers to a metric describing each pod in the current scale target (for
+  example, transactions-processed-per-second).  The values will be averaged
+  together before being compared to the target value.</li>
+<li><strong>resource</strong> <code>Optional[<a href="#resourcemetricsource">ResourceMetricSource</a>]</code> - resource refers to a resource metric (such as those specified in requests and
+  limits) known to Kubernetes describing each pod in the current scale target
+  (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have
+  special scaling options on top of those available to normal per-pod metrics
+  using the "pods" source.</li>
+</ul></div>
+</div>
+<h2 id="metricstatus">MetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>MetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">containerResource=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">external=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">object=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pods=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resource=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MetricStatus describes the last-read state of a single metric.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - type is the type of metric source.  It will be one of "ContainerResource",
+  "External", "Object", "Pods" or "Resource", each corresponds to a matching
+  field in the object. Note: "ContainerResource" type is available on when the
+  feature-gate HPAContainerMetrics is enabled</li>
+<li><strong>containerResource</strong> <code>Optional[<a href="#containerresourcemetricstatus">ContainerResourceMetricStatus</a>]</code> - container resource refers to a resource metric (such as those specified in
+  requests and limits) known to Kubernetes describing a single container in each
+  pod in the current scale target (e.g. CPU or memory). Such metrics are built
+  in to Kubernetes, and have special scaling options on top of those available
+  to normal per-pod metrics using the "pods" source.</li>
+<li><strong>external</strong> <code>Optional[<a href="#externalmetricstatus">ExternalMetricStatus</a>]</code> - external refers to a global metric that is not associated with any Kubernetes
+  object. It allows autoscaling based on information coming from components
+  running outside of cluster (for example length of queue in cloud messaging
+  service, or QPS from loadbalancer running outside of cluster).</li>
+<li><strong>object</strong> <code>Optional[<a href="#objectmetricstatus">ObjectMetricStatus</a>]</code> - object refers to a metric describing a single kubernetes object (for example,
+  hits-per-second on an Ingress object).</li>
+<li><strong>pods</strong> <code>Optional[<a href="#podsmetricstatus">PodsMetricStatus</a>]</code> - pods refers to a metric describing each pod in the current scale target (for
+  example, transactions-processed-per-second).  The values will be averaged
+  together before being compared to the target value.</li>
+<li><strong>resource</strong> <code>Optional[<a href="#resourcemetricstatus">ResourceMetricStatus</a>]</code> - resource refers to a resource metric (such as those specified in requests and
+  limits) known to Kubernetes describing each pod in the current scale target
+  (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have
+  special scaling options on top of those available to normal per-pod metrics
+  using the "pods" source.</li>
+</ul></div>
+</div>
+<h2 id="metrictarget">MetricTarget</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>MetricTarget</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">averageUtilization=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">averageValue=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">value=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MetricTarget defines the target value, average value, or average utilization
+of a specific metric</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>type</strong> <code>str</code> - type represents whether the metric type is Utilization, Value, or AverageValue</li>
+<li><strong>averageUtilization</strong> <code>Optional[int]</code> - averageUtilization is the target value of the average of the resource metric
+  across all relevant pods, represented as a percentage of the requested value
+  of the resource for the pods. Currently only valid for Resource metric source
+  type</li>
+<li><strong>averageValue</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - averageValue is the target value of the average of the metric across all
+  relevant pods (as a quantity)</li>
+<li><strong>value</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - value is the target value of the metric (as a quantity).</li>
+</ul></div>
+</div>
+<h2 id="metricvaluestatus">MetricValueStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>MetricValueStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">averageUtilization=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">averageValue=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">value=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>MetricValueStatus holds the current value for a metric</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>averageUtilization</strong> <code>Optional[int]</code> - currentAverageUtilization is the current value of the average of the resource
+  metric across all relevant pods, represented as a percentage of the requested
+  value of the resource for the pods.</li>
+<li><strong>averageValue</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - averageValue is the current value of the average of the metric across all
+  relevant pods (as a quantity)</li>
+<li><strong>value</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - value is the current value of the metric (as a quantity).</li>
+</ul></div>
+</div>
+<h2 id="objectmetricsource">ObjectMetricSource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ObjectMetricSource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">describedObject</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ObjectMetricSource indicates how to scale on a metric describing a kubernetes
+object (for example, hits-per-second on an Ingress object).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>describedObject</strong> <code><a href="#crossversionobjectreference">CrossVersionObjectReference</a></code> - describedObject specifies the descriptions of a object,such as kind,name
+  apiVersion</li>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+<li><strong>target</strong> <code><a href="#metrictarget">MetricTarget</a></code> - target specifies the target value for the given metric</li>
+</ul></div>
+</div>
+<h2 id="objectmetricstatus">ObjectMetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ObjectMetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">current</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">describedObject</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ObjectMetricStatus indicates the current value of a metric describing a
+kubernetes object (for example, hits-per-second on an Ingress object).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>current</strong> <code><a href="#metricvaluestatus">MetricValueStatus</a></code> - current contains the current value for the given metric</li>
+<li><strong>describedObject</strong> <code><a href="#crossversionobjectreference">CrossVersionObjectReference</a></code> - DescribedObject specifies the descriptions of a object,such as kind,name
+  apiVersion</li>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+</ul></div>
+</div>
+<h2 id="podsmetricsource">PodsMetricSource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>PodsMetricSource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodsMetricSource indicates how to scale on a metric describing each pod in the
+current scale target (for example, transactions-processed-per-second). The
+values will be averaged together before being compared to the target value.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+<li><strong>target</strong> <code><a href="#metrictarget">MetricTarget</a></code> - target specifies the target value for the given metric</li>
+</ul></div>
+</div>
+<h2 id="podsmetricstatus">PodsMetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>PodsMetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">current</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metric</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodsMetricStatus indicates the current value of a metric describing each pod
+in the current scale target (for example, transactions-processed-per-second).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>current</strong> <code><a href="#metricvaluestatus">MetricValueStatus</a></code> - current contains the current value for the given metric</li>
+<li><strong>metric</strong> <code><a href="#metricidentifier">MetricIdentifier</a></code> - metric identifies the target metric by name and selector</li>
+</ul></div>
+</div>
+<h2 id="resourcemetricsource">ResourceMetricSource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ResourceMetricSource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceMetricSource indicates how to scale on a resource metric known to
+Kubernetes, as specified in requests and limits, describing each pod in the
+current scale target (e.g. CPU or memory).  The values will be averaged
+together before being compared to the target.  Such metrics are built in to
+Kubernetes, and have special scaling options on top of those available to
+normal per-pod metrics using the "pods" source.  Only one "target" type should
+be set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name is the name of the resource in question.</li>
+<li><strong>target</strong> <code><a href="#metrictarget">MetricTarget</a></code> - target specifies the target value for the given metric</li>
+</ul></div>
+</div>
+<h2 id="resourcemetricstatus">ResourceMetricStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.autoscaling_v2.<strong>ResourceMetricStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">current</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceMetricStatus indicates the current value of a resource metric known to
+Kubernetes, as specified in requests and limits, describing each pod in the
+current scale target (e.g. CPU or memory).  Such metrics are built in to
+Kubernetes, and have special scaling options on top of those available to
+normal per-pod metrics using the "pods" source.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>current</strong> <code><a href="#metricvaluestatus">MetricValueStatus</a></code> - current contains the current value for the given metric</li>
+<li><strong>name</strong> <code>str</code> - name is the name of the resource in question.</li>
+</ul></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
