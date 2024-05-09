@@ -15,7 +15,7 @@ from {{mod.from_module}} import {{mod.module}}
 {% if model.has_properties %}
 @dataclass
 class {{ model.name }}(DictMixin):
-    """{{ (model.description or "") | wordwrap(78, wrapstring='\n  ', break_on_hyphens=False, break_long_words=False) | indent( width=4, first=False) }}
+    r"""{{ (model.description or "") | wordwrap(78, wrapstring='\n  ', break_on_hyphens=False, break_long_words=False) | indent( width=4, first=False) }}
 
       **parameters**
 
