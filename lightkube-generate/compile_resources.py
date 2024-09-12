@@ -250,6 +250,8 @@ def compile_resources(apikey_to_paths: Dict[ApiKey, List[SpecPath]], path: Path,
     if p.exists():
         shutil.rmtree(p)
     p.mkdir()
+    p.joinpath("__init__.py").touch()
+
     modules = defaultdict(list)
     for api_key, elements in apikey_to_paths.items():
         c = compile_one(api_key, elements)
