@@ -1,0 +1,2813 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../flowcontrol_v1/">
+      
+      
+        <link rel="next" href="../networking_v1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>meta_v1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#meta_v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              meta_v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apigroup" class="md-nav__link">
+    APIGroup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apigrouplist" class="md-nav__link">
+    APIGroupList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiresource" class="md-nav__link">
+    APIResource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiresourcelist" class="md-nav__link">
+    APIResourceList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiversions" class="md-nav__link">
+    APIVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    Condition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleteoptions" class="md-nav__link">
+    DeleteOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldselectorrequirement" class="md-nav__link">
+    FieldSelectorRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldsv1" class="md-nav__link">
+    FieldsV1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupversionfordiscovery" class="md-nav__link">
+    GroupVersionForDiscovery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelselector" class="md-nav__link">
+    LabelSelector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelselectorrequirement" class="md-nav__link">
+    LabelSelectorRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listmeta" class="md-nav__link">
+    ListMeta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managedfieldsentry" class="md-nav__link">
+    ManagedFieldsEntry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microtime" class="md-nav__link">
+    MicroTime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmeta" class="md-nav__link">
+    ObjectMeta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownerreference" class="md-nav__link">
+    OwnerReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    Patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preconditions" class="md-nav__link">
+    Preconditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serveraddressbyclientcidr" class="md-nav__link">
+    ServerAddressByClientCIDR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statuscause" class="md-nav__link">
+    StatusCause
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statusdetails" class="md-nav__link">
+    StatusDetails
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watchevent" class="md-nav__link">
+    WatchEvent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apigroup" class="md-nav__link">
+    APIGroup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apigrouplist" class="md-nav__link">
+    APIGroupList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiresource" class="md-nav__link">
+    APIResource
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiresourcelist" class="md-nav__link">
+    APIResourceList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiversions" class="md-nav__link">
+    APIVersions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition" class="md-nav__link">
+    Condition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleteoptions" class="md-nav__link">
+    DeleteOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldselectorrequirement" class="md-nav__link">
+    FieldSelectorRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldsv1" class="md-nav__link">
+    FieldsV1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groupversionfordiscovery" class="md-nav__link">
+    GroupVersionForDiscovery
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelselector" class="md-nav__link">
+    LabelSelector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labelselectorrequirement" class="md-nav__link">
+    LabelSelectorRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listmeta" class="md-nav__link">
+    ListMeta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managedfieldsentry" class="md-nav__link">
+    ManagedFieldsEntry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microtime" class="md-nav__link">
+    MicroTime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectmeta" class="md-nav__link">
+    ObjectMeta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownerreference" class="md-nav__link">
+    OwnerReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patch" class="md-nav__link">
+    Patch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preconditions" class="md-nav__link">
+    Preconditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serveraddressbyclientcidr" class="md-nav__link">
+    ServerAddressByClientCIDR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statuscause" class="md-nav__link">
+    StatusCause
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statusdetails" class="md-nav__link">
+    StatusDetails
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#watchevent" class="md-nav__link">
+    WatchEvent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="meta_v1">meta_v1</h1>
+<h2 id="apigroup">APIGroup</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>APIGroup</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">versions</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">preferredVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">serverAddressByClientCIDRs=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>APIGroup contains the name, the supported versions, and the preferred version
+of a group.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name is the name of the group.</li>
+<li><strong>versions</strong> <code>List[<a href="#groupversionfordiscovery">GroupVersionForDiscovery</a>]</code> - versions are the versions supported in this group.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>preferredVersion</strong> <code>Optional[<a href="#groupversionfordiscovery">GroupVersionForDiscovery</a>]</code> - preferredVersion is the version preferred by the API server, which probably is
+  the storage version.</li>
+<li><strong>serverAddressByClientCIDRs</strong> <code>Optional[List[<a href="#serveraddressbyclientcidr">ServerAddressByClientCIDR</a>]]</code> - a map of client CIDR to server address that is serving this group. This is to
+  help clients reach servers in the most network-efficient way possible. Clients
+  can use the appropriate server address as per the CIDR that they match. In
+  case of multiple matches, clients should use the longest matching CIDR. The
+  server returns only those CIDRs that it thinks that the client can match. For
+  example: the master will return an internal IP CIDR only, if the client
+  reaches the server using an internal IP. Server looks at X-Forwarded-For
+  header or X-Real-Ip header or request.RemoteAddr (in that order) to get the
+  client IP.</li>
+</ul></div>
+</div>
+<h2 id="apigrouplist">APIGroupList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>APIGroupList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">groups</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>APIGroupList is a list of APIGroup, to allow clients to discover the API at
+/apis.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>groups</strong> <code>List[<a href="#apigroup">APIGroup</a>]</code> - groups is a list of APIGroup.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+</ul></div>
+</div>
+<h2 id="apiresource">APIResource</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>APIResource</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespaced</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">singularName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">verbs</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">categories=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">group=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">shortNames=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">storageVersionHash=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">version=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>APIResource specifies the name of a resource and whether it is namespaced.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - kind is the kind for the resource (e.g. 'Foo' is the kind for a resource
+  'foo')</li>
+<li><strong>name</strong> <code>str</code> - name is the plural name of the resource.</li>
+<li><strong>namespaced</strong> <code>bool</code> - namespaced indicates if a resource is namespaced or not.</li>
+<li><strong>singularName</strong> <code>str</code> - singularName is the singular name of the resource.  This allows clients to
+  handle plural and singular opaquely. The singularName is more correct for
+  reporting status on a single item and both singular and plural are allowed
+  from the kubectl CLI interface.</li>
+<li><strong>verbs</strong> <code>List[str]</code> - verbs is a list of supported kube verbs (this includes get, list, watch,
+  create, update, patch, delete, deletecollection, and proxy)</li>
+<li><strong>categories</strong> <code>Optional[List[str]]</code> - categories is a list of the grouped resources this resource belongs to (e.g.
+  'all')</li>
+<li><strong>group</strong> <code>Optional[str]</code> - group is the preferred group of the resource.  Empty implies the group of the
+  containing resource list. For subresources, this may have a different value,
+  for example: Scale".</li>
+<li><strong>shortNames</strong> <code>Optional[List[str]]</code> - shortNames is a list of suggested short names of the resource.</li>
+<li><strong>storageVersionHash</strong> <code>Optional[str]</code> - The hash value of the storage version, the version this resource is converted
+  to when written to the data store. Value must be treated as opaque by clients.
+  Only equality comparison on the value is valid. This is an alpha feature and
+  may change or be removed in the future. The field is populated by the
+  apiserver only if the StorageVersionHash feature gate is enabled. This field
+  will remain optional even if it graduates.</li>
+<li><strong>version</strong> <code>Optional[str]</code> - version is the preferred version of the resource.  Empty implies the version
+  of the containing resource list For subresources, this may have a different
+  value, for example: v1 (while inside a v1beta1 version of the core resource's
+  group)".</li>
+</ul></div>
+</div>
+<h2 id="apiresourcelist">APIResourceList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>APIResourceList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">groupVersion</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resources</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>APIResourceList is a list of APIResource, it is used to expose the name of the
+resources supported in a specific group and version, and if the resource is
+namespaced.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>groupVersion</strong> <code>str</code> - groupVersion is the group and version this APIResourceList is for.</li>
+<li><strong>resources</strong> <code>List[<a href="#apiresource">APIResource</a>]</code> - resources contains the name of the resources and if they are namespaced.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+</ul></div>
+</div>
+<h2 id="apiversions">APIVersions</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>APIVersions</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">serverAddressByClientCIDRs</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">versions</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>APIVersions lists the versions that are available, to allow clients to
+discover the API at /api, which is the root path of the legacy v1 API.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>serverAddressByClientCIDRs</strong> <code>List[<a href="#serveraddressbyclientcidr">ServerAddressByClientCIDR</a>]</code> - a map of client CIDR to server address that is serving this group. This is to
+  help clients reach servers in the most network-efficient way possible. Clients
+  can use the appropriate server address as per the CIDR that they match. In
+  case of multiple matches, clients should use the longest matching CIDR. The
+  server returns only those CIDRs that it thinks that the client can match. For
+  example: the master will return an internal IP CIDR only, if the client
+  reaches the server using an internal IP. Server looks at X-Forwarded-For
+  header or X-Real-Ip header or request.RemoteAddr (in that order) to get the
+  client IP.</li>
+<li><strong>versions</strong> <code>List[str]</code> - versions are the api versions that are available.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+</ul></div>
+</div>
+<h2 id="condition">Condition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>Condition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">lastTransitionTime</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Condition contains details for one aspect of the current state of this API
+Resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>lastTransitionTime</strong> <code><a href="#time">Time</a></code> - lastTransitionTime is the last time the condition transitioned from one status
+  to another. This should be when the underlying condition changed.  If that is
+  not known, then using the time when the API field changed is acceptable.</li>
+<li><strong>message</strong> <code>str</code> - message is a human readable message indicating details about the transition.
+  This may be an empty string.</li>
+<li><strong>reason</strong> <code>str</code> - reason contains a programmatic identifier indicating the reason for the
+  condition's last transition. Producers of specific condition types may define
+  expected values and meanings for this field, and whether the values are
+  considered a guaranteed API. The value should be a CamelCase string. This
+  field may not be empty.</li>
+<li><strong>status</strong> <code>str</code> - status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - type of condition in CamelCase or in foo.example.com/CamelCase.</li>
+<li><strong>observedGeneration</strong> <code>Optional[int]</code> - observedGeneration represents the .metadata.generation that the condition was
+  set based upon. For instance, if .metadata.generation is currently 12, but the
+  .status.conditions[x].observedGeneration is 9, the condition is out of date
+  with respect to the current state of the instance.</li>
+</ul></div>
+</div>
+<h2 id="deleteoptions">DeleteOptions</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>DeleteOptions</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">dryRun=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">gracePeriodSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ignoreStoreReadErrorWithClusterBreakingPotential=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">orphanDependents=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">preconditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">propagationPolicy=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeleteOptions may be provided when deleting an API object.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>dryRun</strong> <code>Optional[List[str]]</code> - When present, indicates that modifications should not be persisted. An invalid
+  or unrecognized dryRun directive will result in an error response and no
+  further processing of the request. Valid values are: - All: all dry run stages
+  will be processed</li>
+<li><strong>gracePeriodSeconds</strong> <code>Optional[int]</code> - The duration in seconds before the object should be deleted. Value must be
+  non-negative integer. The value zero indicates delete immediately. If this
+  value is nil, the default grace period for the specified type will be used.
+  Defaults to a per object value if not specified. zero means delete
+  immediately.</li>
+<li><strong>ignoreStoreReadErrorWithClusterBreakingPotential</strong> <code>Optional[bool]</code> - if set to true, it will trigger an unsafe deletion of the resource in case the
+  normal deletion flow fails with a corrupt object error. A resource is
+  considered corrupt if it can not be retrieved from the underlying storage
+  successfully because of a) its data can not be transformed e.g. decryption
+  failure, or b) it fails to decode into an object. NOTE: unsafe deletion
+  ignores finalizer constraints, skips precondition checks, and removes the
+  object from the storage. WARNING: This may potentially break the cluster if
+  the workload associated with the resource being unsafe-deleted relies on
+  normal deletion flow. Use only if you REALLY know what you are doing. The
+  default value is false, and the user must opt in to enable it</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>orphanDependents</strong> <code>Optional[bool]</code> - Deprecated: please use the PropagationPolicy, this field will be deprecated in
+  1.7. Should the dependent objects be orphaned. If true/false, the "orphan"
+  finalizer will be added to/removed from the object's finalizers list. Either
+  this field or PropagationPolicy may be set, but not both.</li>
+<li><strong>preconditions</strong> <code>Optional[<a href="#preconditions">Preconditions</a>]</code> - Must be fulfilled before a deletion is carried out. If not possible, a 409
+  Conflict status will be returned.</li>
+<li><strong>propagationPolicy</strong> <code>Optional[str]</code> - Whether and how garbage collection will be performed. Either this field or
+  OrphanDependents may be set, but not both. The default policy is decided by
+  the existing finalizer set in the metadata.finalizers and the
+  resource-specific default policy. Acceptable values are: 'Orphan' - orphan the
+  dependents; 'Background' - allow the garbage collector to delete the
+  dependents in the background; 'Foreground' - a cascading policy that deletes
+  all dependents in the foreground.</li>
+</ul></div>
+</div>
+<h2 id="fieldselectorrequirement">FieldSelectorRequirement</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>FieldSelectorRequirement</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">key</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">operator</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">values=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>FieldSelectorRequirement is a selector that contains values, a key, and an
+operator that relates the key and values.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>key</strong> <code>str</code> - key is the field selector key that the requirement applies to.</li>
+<li><strong>operator</strong> <code>str</code> - operator represents a key's relationship to a set of values. Valid operators
+  are In, NotIn, Exists, DoesNotExist. The list of operators may grow in the
+  future.</li>
+<li><strong>values</strong> <code>Optional[List[str]]</code> - values is an array of string values. If the operator is In or NotIn, the
+  values array must be non-empty. If the operator is Exists or DoesNotExist, the
+  values array must be empty.</li>
+</ul></div>
+</div>
+<h2 id="fieldsv1">FieldsV1</h2>
+<h2 id="groupversionfordiscovery">GroupVersionForDiscovery</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>GroupVersionForDiscovery</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">groupVersion</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">version</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>GroupVersion contains the "group/version" and "version" string of a version.
+It is made a struct to keep extensibility.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>groupVersion</strong> <code>str</code> - groupVersion specifies the API group and version in the form "group/version"</li>
+<li><strong>version</strong> <code>str</code> - version specifies the version in the form of "version". This is to save the
+  clients the trouble of splitting the GroupVersion.</li>
+</ul></div>
+</div>
+<h2 id="labelselector">LabelSelector</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>LabelSelector</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">matchExpressions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchLabels=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>A label selector is a label query over a set of resources. The result of
+matchLabels and matchExpressions are ANDed. An empty label selector matches
+all objects. A null label selector matches no objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>matchExpressions</strong> <code>Optional[List[<a href="#labelselectorrequirement">LabelSelectorRequirement</a>]]</code> - matchExpressions is a list of label selector requirements. The requirements
+  are ANDed.</li>
+<li><strong>matchLabels</strong> <code>Optional[dict]</code> - matchLabels is a map of {key,value} pairs. A single {key,value} in the
+  matchLabels map is equivalent to an element of matchExpressions, whose key
+  field is "key", the operator is "In", and the values array contains only
+  "value". The requirements are ANDed.</li>
+</ul></div>
+</div>
+<h2 id="labelselectorrequirement">LabelSelectorRequirement</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>LabelSelectorRequirement</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">key</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">operator</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">values=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>A label selector requirement is a selector that contains values, a key, and an
+operator that relates the key and values.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>key</strong> <code>str</code> - key is the label key that the selector applies to.</li>
+<li><strong>operator</strong> <code>str</code> - operator represents a key's relationship to a set of values. Valid operators
+  are In, NotIn, Exists and DoesNotExist.</li>
+<li><strong>values</strong> <code>Optional[List[str]]</code> - values is an array of string values. If the operator is In or NotIn, the
+  values array must be non-empty. If the operator is Exists or DoesNotExist, the
+  values array must be empty. This array is replaced during a strategic merge
+  patch.</li>
+</ul></div>
+</div>
+<h2 id="listmeta">ListMeta</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>ListMeta</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">continue_=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">remainingItemCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selfLink=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ListMeta describes metadata that synthetic resources must have, including
+lists and various status objects. A resource may have only one of {ObjectMeta,
+ListMeta}.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>continue_</strong> <code>Optional[str]</code> - continue may be set if the user set a limit on the number of items returned,
+  and indicates that the server has more data available. The value is opaque and
+  may be used to issue another request to the endpoint that served this list to
+  retrieve the next set of available objects. Continuing a consistent list may
+  not be possible if the server configuration has changed or more than a few
+  minutes have passed. The resourceVersion field returned when using this
+  continue value will be identical to the value in the first response, unless
+  you have received this token from an error message.</li>
+<li><strong>remainingItemCount</strong> <code>Optional[int]</code> - remainingItemCount is the number of subsequent items in the list which are not
+  included in this list response. If the list request contained label or field
+  selectors, then the number of remaining items is unknown and the field will be
+  left unset and omitted during serialization. If the list is complete (either
+  because it is not chunking or because this is the last chunk), then there are
+  no more remaining items and this field will be left unset and omitted during
+  serialization. Servers older than v1.15 do not set this field. The intended
+  use of the remainingItemCount is <em>estimating</em> the size of a collection.
+  Clients should not rely on the remainingItemCount to be set or to be exact.</li>
+<li><strong>resourceVersion</strong> <code>Optional[str]</code> - String that identifies the server's internal version of this object that can
+  be used by clients to determine when objects have changed. Value must be
+  treated as opaque by clients and passed unmodified back to the server.
+  Populated by the system. Read-only. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency">More info</a></li>
+<li><strong>selfLink</strong> <code>Optional[str]</code> - Deprecated: selfLink is a legacy read-only field that is no longer populated
+  by the system.</li>
+</ul></div>
+</div>
+<h2 id="managedfieldsentry">ManagedFieldsEntry</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>ManagedFieldsEntry</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">fieldsType=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">fieldsV1=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">manager=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">operation=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">subresource=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">time=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the
+resource that the fieldset applies to.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the version of this resource that this field set applies
+  to. The format is "group/version" just like the top-level APIVersion field. It
+  is necessary to track the version of a field set because it cannot be
+  automatically converted.</li>
+<li><strong>fieldsType</strong> <code>Optional[str]</code> - FieldsType is the discriminator for the different fields format and version.
+  There is currently only one possible value: "FieldsV1"</li>
+<li><strong>fieldsV1</strong> <code>Optional[<a href="#fieldsv1">FieldsV1</a>]</code> - FieldsV1 holds the first JSON version format as described in the "FieldsV1"
+  type.</li>
+<li><strong>manager</strong> <code>Optional[str]</code> - Manager is an identifier of the workflow managing these fields.</li>
+<li><strong>operation</strong> <code>Optional[str]</code> - Operation is the type of operation which lead to this ManagedFieldsEntry being
+  created. The only valid values for this field are 'Apply' and 'Update'.</li>
+<li><strong>subresource</strong> <code>Optional[str]</code> - Subresource is the name of the subresource used to update that object, or
+  empty string if the object was updated through the main resource. The value of
+  this field is used to distinguish between managers, even if they share the
+  same name. For example, a status update will be distinct from a regular update
+  using the same manager name. Note that the APIVersion field is not related to
+  the Subresource field and it always corresponds to the version of the main
+  resource.</li>
+<li><strong>time</strong> <code>Optional[<a href="#time">Time</a>]</code> - Time is the timestamp of when the ManagedFields entry was added. The timestamp
+  will also be updated if a field is added, the manager changes any of the owned
+  fields value or removes a field. The timestamp does not update when a field is
+  removed from the entry because another manager took it over.</li>
+</ul></div>
+</div>
+<h2 id="microtime">MicroTime</h2>
+<h2 id="objectmeta">ObjectMeta</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>ObjectMeta</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">annotations=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">creationTimestamp=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">deletionGracePeriodSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">deletionTimestamp=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">finalizers=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">generateName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">generation=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">labels=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">managedFields=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespace=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ownerReferences=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selfLink=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ObjectMeta is metadata that all persisted resources must have, which includes
+all objects users must create.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>annotations</strong> <code>Optional[dict]</code> - Annotations is an unstructured key value map stored with a resource that may
+  be set by external tools to store and retrieve arbitrary metadata. They are
+  not queryable and should be preserved when modifying objects. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations">More info</a></li>
+<li><strong>creationTimestamp</strong> <code>Optional[<a href="#time">Time</a>]</code> - CreationTimestamp is a timestamp representing the server time when this object
+  was created. It is not guaranteed to be set in happens-before order across
+  separate operations. Clients may not set this value. It is represented in
+  RFC3339 form and is in UTC.
+  Populated by the system. Read-only. Null for lists. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>deletionGracePeriodSeconds</strong> <code>Optional[int]</code> - Number of seconds allowed for this object to gracefully terminate before it
+  will be removed from the system. Only set when deletionTimestamp is also set.
+  May only be shortened. Read-only.</li>
+<li><strong>deletionTimestamp</strong> <code>Optional[<a href="#time">Time</a>]</code> - DeletionTimestamp is RFC 3339 date and time at which this resource will be
+  deleted. This field is set by the server when a graceful deletion is requested
+  by the user, and is not directly settable by a client. The resource is
+  expected to be deleted (no longer visible from resource lists, and not
+  reachable by name) after the time in this field, once the finalizers list is
+  empty. As long as the finalizers list contains items, deletion is blocked.
+  Once the deletionTimestamp is set, this value may not be unset or be set
+  further into the future, although it may be shortened or the resource may be
+  deleted prior to this time. For example, a user may request that a pod is
+  deleted in 30 seconds. The Kubelet will react by sending a graceful
+  termination signal to the containers in the pod. After that 30 seconds, the
+  Kubelet will send a hard termination signal (SIGKILL) to the container and
+  after cleanup, remove the pod from the API. In the presence of network
+  partitions, this object may still exist after this timestamp, until an
+  administrator or automated process can determine the resource is fully
+  terminated. If not set, graceful deletion of the object has not been
+  requested.
+  Populated by the system when a graceful deletion is requested. Read-only. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>finalizers</strong> <code>Optional[List[str]]</code> - Must be empty before the object is deleted from the registry. Each entry is an
+  identifier for the responsible component that will remove the entry from the
+  list. If the deletionTimestamp of the object is non-nil, entries in this list
+  can only be removed. Finalizers may be processed and removed in any order.
+  Order is NOT enforced because it introduces significant risk of stuck
+  finalizers. finalizers is a shared field, any actor with permission can
+  reorder it. If the finalizer list is processed in order, then this can lead to
+  a situation in which the component responsible for the first finalizer in the
+  list is waiting for a signal (field value, external system, or other) produced
+  by a component responsible for a finalizer later in the list, resulting in a
+  deadlock. Without enforced ordering finalizers are free to order amongst
+  themselves and are not vulnerable to ordering changes in the list.</li>
+<li><strong>generateName</strong> <code>Optional[str]</code> - GenerateName is an optional prefix, used by the server, to generate a unique
+  name ONLY IF the Name field has not been provided. If this field is used, the
+  name returned to the client will be different than the name passed. This value
+  will also be combined with a unique suffix. The provided value has the same
+  validation rules as the Name field, and may be truncated by the length of the
+  suffix required to make the value unique on the server.
+  If this field is specified and the generated name exists, the server will
+  return a 409.
+  Applied only if Name is not specified. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency">More info</a></li>
+<li><strong>generation</strong> <code>Optional[int]</code> - A sequence number representing a specific generation of the desired state.
+  Populated by the system. Read-only.</li>
+<li><strong>labels</strong> <code>Optional[dict]</code> - Map of string keys and values that can be used to organize and categorize
+  (scope and select) objects. May match selectors of replication controllers and
+  services. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels">More info</a></li>
+<li><strong>managedFields</strong> <code>Optional[List[<a href="#managedfieldsentry">ManagedFieldsEntry</a>]]</code> - ManagedFields maps workflow-id and version to the set of fields that are
+  managed by that workflow. This is mostly for internal housekeeping, and users
+  typically shouldn't need to set or understand this field. A workflow can be
+  the user's name, a controller's name, or the name of a specific apply path
+  like "ci-cd". The set of fields is always in the version that the workflow
+  used when modifying the object.</li>
+<li><strong>name</strong> <code>Optional[str]</code> - Name must be unique within a namespace. Is required when creating resources,
+  although some resources may allow a client to request the generation of an
+  appropriate name automatically. Name is primarily intended for creation
+  idempotence and configuration definition. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names">More info</a></li>
+<li><strong>namespace</strong> <code>Optional[str]</code> - Namespace defines the space within which each name must be unique. An empty
+  namespace is equivalent to the "default" namespace, but "default" is the
+  canonical representation. Not all objects are required to be scoped to a
+  namespace - the value of this field for those objects will be empty.
+  Must be a DNS_LABEL. Cannot be updated. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces">More info</a></li>
+<li><strong>ownerReferences</strong> <code>Optional[List[<a href="#ownerreference">OwnerReference</a>]]</code> - List of objects depended by this object. If ALL objects in the list have been
+  deleted, this object will be garbage collected. If this object is managed by a
+  controller, then an entry in this list will point to this controller, with the
+  controller field set to true. There cannot be more than one managing
+  controller.</li>
+<li><strong>resourceVersion</strong> <code>Optional[str]</code> - An opaque value that represents the internal version of this object that can
+  be used by clients to determine when objects have changed. May be used for
+  optimistic concurrency, change detection, and the watch operation on a
+  resource or set of resources. Clients must treat these values as opaque and
+  passed unmodified back to the server. They may only be valid for a particular
+  resource or set of resources.
+  Populated by the system. Read-only. Value must be treated as opaque by clients
+  and . <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency">More info</a></li>
+<li><strong>selfLink</strong> <code>Optional[str]</code> - Deprecated: selfLink is a legacy read-only field that is no longer populated
+  by the system.</li>
+<li><strong>uid</strong> <code>Optional[str]</code> - UID is the unique in time and space value for this object. It is typically
+  generated by the server on successful creation of a resource and is not
+  allowed to change on PUT operations.
+  Populated by the system. Read-only. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids">More info</a></li>
+</ul></div>
+</div>
+<h2 id="ownerreference">OwnerReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>OwnerReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">blockOwnerDeletion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">controller=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>OwnerReference contains enough information to let you identify an owning
+object. An owning object must be in the same namespace as the dependent, or be
+cluster-scoped, so there is no namespace field.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>str</code> - API version of the referent.</li>
+<li><strong>kind</strong> <code>str</code> - Kind of the referent. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>name</strong> <code>str</code> - Name of the referent. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names">More info</a></li>
+<li><strong>uid</strong> <code>str</code> - UID of the referent. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids">More info</a></li>
+<li><strong>blockOwnerDeletion</strong> <code>Optional[bool]</code> - If true, AND if the owner has the "foregroundDeletion" finalizer, then the
+  owner cannot be deleted from the key-value store until this reference is
+  removed. See
+  <a href="https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion">https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion</a>
+  for how the garbage collector interacts with this field and enforces the
+  foreground deletion. Defaults to false. To set this field, a user needs
+  "delete" permission of the owner, otherwise 422 (Unprocessable Entity) will be
+  returned.</li>
+<li><strong>controller</strong> <code>Optional[bool]</code> - If true, this reference points to the managing controller.</li>
+</ul></div>
+</div>
+<h2 id="patch">Patch</h2>
+<h2 id="preconditions">Preconditions</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>Preconditions</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">resourceVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Preconditions must be fulfilled before an operation (update, delete, etc.) is
+carried out.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>resourceVersion</strong> <code>Optional[str]</code> - Specifies the target ResourceVersion</li>
+<li><strong>uid</strong> <code>Optional[str]</code> - Specifies the target UID.</li>
+</ul></div>
+</div>
+<h2 id="serveraddressbyclientcidr">ServerAddressByClientCIDR</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>ServerAddressByClientCIDR</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">clientCIDR</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">serverAddress</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ServerAddressByClientCIDR helps the client to determine the server address
+that they should use, depending on the clientCIDR that they match.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>clientCIDR</strong> <code>str</code> - The CIDR with which clients can match their IP to figure out the server
+  address that they should use.</li>
+<li><strong>serverAddress</strong> <code>str</code> - Address of this server, suitable for a client that matches the above CIDR.
+  This can be a hostname, hostname:port, IP or IP:port.</li>
+</ul></div>
+</div>
+<h2 id="status">Status</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>Status</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">code=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">details=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Status is a return value for calls that don't return other objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>code</strong> <code>Optional[int]</code> - Suggested HTTP return code for this status, 0 if not set.</li>
+<li><strong>details</strong> <code>Optional[<a href="#statusdetails">StatusDetails</a>]</code> - Extended data associated with the reason.  Each reason may define its own
+  extended details. This field is optional and the data returned is not
+  guaranteed to conform to any schema except that defined by the reason type.</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>message</strong> <code>Optional[str]</code> - A human-readable description of the status of this operation.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="#listmeta">ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>reason</strong> <code>Optional[str]</code> - A machine-readable description of why this operation is in the "Failure"
+  status. If this value is empty there is no information available. A Reason
+  clarifies an HTTP status code but does not override it.</li>
+<li><strong>status</strong> <code>Optional[str]</code> - Status of the operation. One of: "Success" or "Failure". <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="statuscause">StatusCause</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>StatusCause</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">field=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatusCause provides more information about an api.Status failure, including
+cases when multiple errors are encountered.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>field</strong> <code>Optional[str]</code> - The field of the resource that has caused this error, as named by its JSON
+  serialization. May include dot and postfix notation for nested attributes.
+  Arrays are zero-indexed.  Fields may appear more than once in an array of
+  causes due to fields having multiple errors. Optional.
+  Examples:
+    "name" - the field "name" on the current resource
+    "items[0].name" - the field "name" on the first array entry in "items"</li>
+<li><strong>message</strong> <code>Optional[str]</code> - A human-readable description of the cause of the error.  This field may be
+  presented as-is to a reader.</li>
+<li><strong>reason</strong> <code>Optional[str]</code> - A machine-readable description of the cause of the error. If this value is
+  empty there is no information available.</li>
+</ul></div>
+</div>
+<h2 id="statusdetails">StatusDetails</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>StatusDetails</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">causes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">group=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">retryAfterSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>StatusDetails is a set of additional properties that MAY be set by the server
+to provide additional information about a response. The Reason field of a
+Status object defines what attributes will be set. Clients must ignore fields
+that do not match the defined type of each attribute, and should assume that
+any attribute may be empty, invalid, or under defined.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>causes</strong> <code>Optional[List[<a href="#statuscause">StatusCause</a>]]</code> - The Causes array includes more details associated with the StatusReason
+  failure. Not all StatusReasons may provide detailed causes.</li>
+<li><strong>group</strong> <code>Optional[str]</code> - The group attribute of the resource associated with the status StatusReason.</li>
+<li><strong>kind</strong> <code>Optional[str]</code> - The kind attribute of the resource associated with the status StatusReason. On
+  some operations may differ from the requested resource Kind. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>name</strong> <code>Optional[str]</code> - The name attribute of the resource associated with the status StatusReason
+  (when there is a single name which can be described).</li>
+<li><strong>retryAfterSeconds</strong> <code>Optional[int]</code> - If specified, the time in seconds before the operation should be retried. Some
+  errors may indicate the client must take an alternate action - for those
+  errors this field may indicate how long to wait before taking the alternate
+  action.</li>
+<li><strong>uid</strong> <code>Optional[str]</code> - UID of the resource. (when there is a single resource which can be described).
+  <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids">More info</a></li>
+</ul></div>
+</div>
+<h2 id="time">Time</h2>
+<h2 id="watchevent">WatchEvent</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.meta_v1.<strong>WatchEvent</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">object</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Event represents a single event to a watched resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>object</strong> <code><a href="../runtime/index.html#rawextension">runtime.RawExtension</a></code> - Object is:</li>
+<li>If Type is Added or Modified: the new state of the object.</li>
+<li>If Type is Deleted: the state of the object immediately before deletion.</li>
+<li>If Type is Error: *Status is recommended; other types may make sense
+     depending on context.</li>
+<li><strong>type</strong> <code>str</code> -</li>
+</ul></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../meta_v1/">
+      
+      
+        <link rel="next" href="../networking_v1beta1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>networking_v1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#networking_v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              networking_v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#httpingresspath" class="md-nav__link">
+    HTTPIngressPath
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpingressrulevalue" class="md-nav__link">
+    HTTPIngressRuleValue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipblock" class="md-nav__link">
+    IPBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingress" class="md-nav__link">
+    Ingress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressbackend" class="md-nav__link">
+    IngressBackend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclass" class="md-nav__link">
+    IngressClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclasslist" class="md-nav__link">
+    IngressClassList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclassparametersreference" class="md-nav__link">
+    IngressClassParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclassspec" class="md-nav__link">
+    IngressClassSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingresslist" class="md-nav__link">
+    IngressList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressloadbalanceringress" class="md-nav__link">
+    IngressLoadBalancerIngress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressloadbalancerstatus" class="md-nav__link">
+    IngressLoadBalancerStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressportstatus" class="md-nav__link">
+    IngressPortStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressrule" class="md-nav__link">
+    IngressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressservicebackend" class="md-nav__link">
+    IngressServiceBackend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressspec" class="md-nav__link">
+    IngressSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressstatus" class="md-nav__link">
+    IngressStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingresstls" class="md-nav__link">
+    IngressTLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicy" class="md-nav__link">
+    NetworkPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyegressrule" class="md-nav__link">
+    NetworkPolicyEgressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyingressrule" class="md-nav__link">
+    NetworkPolicyIngressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicylist" class="md-nav__link">
+    NetworkPolicyList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicypeer" class="md-nav__link">
+    NetworkPolicyPeer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyport" class="md-nav__link">
+    NetworkPolicyPort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyspec" class="md-nav__link">
+    NetworkPolicySpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicebackendport" class="md-nav__link">
+    ServiceBackendPort
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#httpingresspath" class="md-nav__link">
+    HTTPIngressPath
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpingressrulevalue" class="md-nav__link">
+    HTTPIngressRuleValue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipblock" class="md-nav__link">
+    IPBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingress" class="md-nav__link">
+    Ingress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressbackend" class="md-nav__link">
+    IngressBackend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclass" class="md-nav__link">
+    IngressClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclasslist" class="md-nav__link">
+    IngressClassList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclassparametersreference" class="md-nav__link">
+    IngressClassParametersReference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressclassspec" class="md-nav__link">
+    IngressClassSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingresslist" class="md-nav__link">
+    IngressList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressloadbalanceringress" class="md-nav__link">
+    IngressLoadBalancerIngress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressloadbalancerstatus" class="md-nav__link">
+    IngressLoadBalancerStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressportstatus" class="md-nav__link">
+    IngressPortStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressrule" class="md-nav__link">
+    IngressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressservicebackend" class="md-nav__link">
+    IngressServiceBackend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressspec" class="md-nav__link">
+    IngressSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingressstatus" class="md-nav__link">
+    IngressStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingresstls" class="md-nav__link">
+    IngressTLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicy" class="md-nav__link">
+    NetworkPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyegressrule" class="md-nav__link">
+    NetworkPolicyEgressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyingressrule" class="md-nav__link">
+    NetworkPolicyIngressRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicylist" class="md-nav__link">
+    NetworkPolicyList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicypeer" class="md-nav__link">
+    NetworkPolicyPeer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyport" class="md-nav__link">
+    NetworkPolicyPort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkpolicyspec" class="md-nav__link">
+    NetworkPolicySpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicebackendport" class="md-nav__link">
+    ServiceBackendPort
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="networking_v1">networking_v1</h1>
+<h2 id="httpingresspath">HTTPIngressPath</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>HTTPIngressPath</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">backend</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pathType</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">path=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HTTPIngressPath associates a path with a backend. Incoming urls matching the
+path are forwarded to the backend.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>backend</strong> <code><a href="#ingressbackend">IngressBackend</a></code> - backend defines the referenced service endpoint to which the traffic will be
+  forwarded to.</li>
+<li><strong>pathType</strong> <code>str</code> - pathType determines the interpretation of the path matching. PathType can be
+  one of the following values: * Exact: Matches the URL path exactly. * Prefix:
+  Matches based on a URL path prefix split by '/'. Matching is
+    done on a path element by element basis. A path element refers is the
+    list of labels in the path split by the '/' separator. A request is a
+    match for path p if every p is an element-wise prefix of p of the
+    request path. Note that if the last element of the path is a substring
+    of the last element in request path, it is not a match (e.g. /foo/bar
+    matches /foo/bar/baz, but does not match /foo/barbaz).</li>
+<li>ImplementationSpecific: Interpretation of the Path matching is up to
+    the IngressClass. Implementations can treat this as a separate PathType
+    or treat it identically to Prefix or Exact path types.
+  Implementations are required to support all path types.</li>
+<li><strong>path</strong> <code>Optional[str]</code> - path is matched against the path of an incoming request. Currently it can
+  contain characters disallowed from the conventional "path" part of a URL as
+  defined by RFC 3986. Paths must begin with a '/' and must be present when
+  using PathType with value "Exact" or "Prefix".</li>
+</ul></div>
+</div>
+<h2 id="httpingressrulevalue">HTTPIngressRuleValue</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>HTTPIngressRuleValue</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">paths</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>HTTPIngressRuleValue is a list of http selectors pointing to backends. In the
+example: http://<host>/<path>?<searchpart> -&gt; backend where where parts of the
+url correspond to RFC 3986, this resource will be used to match against
+everything after the last '/' and before the first '?' or '#'.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>paths</strong> <code>List[<a href="#httpingresspath">HTTPIngressPath</a>]</code> - paths is a collection of paths that map requests to backends.</li>
+</ul></div>
+</div>
+<h2 id="ipblock">IPBlock</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IPBlock</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">cidr</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">except_=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IPBlock describes a particular CIDR (Ex. "192.168.1.0/24","2001:db8::/64")
+that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The
+except entry describes CIDRs that should not be included within this rule.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>cidr</strong> <code>str</code> - cidr is a string representing the IPBlock Valid examples are "192.168.1.0/24"
+  or "2001:db8::/64"</li>
+<li><strong>except_</strong> <code>Optional[List[str]]</code> - except is a slice of CIDRs that should not be included within an IPBlock Valid
+  examples are "192.168.1.0/24" or "2001:db8::/64" Except values will be
+  rejected if they are outside the cidr range</li>
+</ul></div>
+</div>
+<h2 id="ingress">Ingress</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>Ingress</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Ingress is a collection of rules that allow inbound connections to reach the
+endpoints defined by a backend. An Ingress can be configured to give services
+externally-reachable urls, load balance traffic, terminate SSL, offer name
+based virtual hosting etc.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#ingressspec">IngressSpec</a>]</code> - spec is the desired state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#ingressstatus">IngressStatus</a>]</code> - status is the current state of the Ingress. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="ingressbackend">IngressBackend</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressBackend</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">resource=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">service=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressBackend describes all endpoints for a given service and port.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>resource</strong> <code>Optional[<a href="../core_v1/index.html#typedlocalobjectreference">core_v1.TypedLocalObjectReference</a>]</code> - resource is an ObjectRef to another Kubernetes resource in the namespace of
+  the Ingress object. If resource is specified, a service.Name and service.Port
+  must not be specified. This is a mutually exclusive setting with "Service".</li>
+<li><strong>service</strong> <code>Optional[<a href="#ingressservicebackend">IngressServiceBackend</a>]</code> - service references a service as a backend. This is a mutually exclusive
+  setting with "Resource".</li>
+</ul></div>
+</div>
+<h2 id="ingressclass">IngressClass</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressClass</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressClass represents the class of the Ingress, referenced by the Ingress
+Spec. The <code>ingressclass.kubernetes.io/is-default-class</code> annotation can be used
+to indicate that an IngressClass should be considered default. When a single
+IngressClass resource has this annotation set to true, new Ingress resources
+without a class specified will be assigned this default class.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#ingressclassspec">IngressClassSpec</a>]</code> - spec is the desired state of the IngressClass. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="ingressclasslist">IngressClassList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressClassList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressClassList is a collection of IngressClasses.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#ingressclass">IngressClass</a>]</code> - items is the list of IngressClasses.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata.</li>
+</ul></div>
+</div>
+<h2 id="ingressclassparametersreference">IngressClassParametersReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressClassParametersReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">kind</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiGroup=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespace=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">scope=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressClassParametersReference identifies an API object. This can be used to
+specify a cluster or namespace-scoped resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>kind</strong> <code>str</code> - kind is the type of resource being referenced.</li>
+<li><strong>name</strong> <code>str</code> - name is the name of resource being referenced.</li>
+<li><strong>apiGroup</strong> <code>Optional[str]</code> - apiGroup is the group for the resource being referenced. If APIGroup is not
+  specified, the specified Kind must be in the core API group. For any other
+  third-party types, APIGroup is required.</li>
+<li><strong>namespace</strong> <code>Optional[str]</code> - namespace is the namespace of the resource being referenced. This field is
+  required when scope is set to "Namespace" and must be unset when scope is set
+  to "Cluster".</li>
+<li><strong>scope</strong> <code>Optional[str]</code> - scope represents if this refers to a cluster or namespace scoped resource.
+  This may be set to "Cluster" (default) or "Namespace".</li>
+</ul></div>
+</div>
+<h2 id="ingressclassspec">IngressClassSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressClassSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">controller=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parameters=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressClassSpec provides information about the class of an Ingress.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>controller</strong> <code>Optional[str]</code> - controller refers to the name of the controller that should handle this class.
+  This allows for different "flavors" that are controlled by the same
+  controller. For example, you may have different parameters for the same
+  implementing controller. This should be specified as a domain-prefixed path no
+  more than 250 characters in length, e.g. "acme.io/ingress-controller". This
+  field is immutable.</li>
+<li><strong>parameters</strong> <code>Optional[<a href="#ingressclassparametersreference">IngressClassParametersReference</a>]</code> - parameters is a link to a custom resource containing additional configuration
+  for the controller. This is optional if the controller does not require extra
+  parameters.</li>
+</ul></div>
+</div>
+<h2 id="ingresslist">IngressList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressList is a collection of Ingress.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#ingress">Ingress</a>]</code> - items is the list of Ingress.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="ingressloadbalanceringress">IngressLoadBalancerIngress</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressLoadBalancerIngress</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">hostname=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ip=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ports=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressLoadBalancerIngress represents the status of a load-balancer ingress
+point.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>hostname</strong> <code>Optional[str]</code> - hostname is set for load-balancer ingress points that are DNS based.</li>
+<li><strong>ip</strong> <code>Optional[str]</code> - ip is set for load-balancer ingress points that are IP based.</li>
+<li><strong>ports</strong> <code>Optional[List[<a href="#ingressportstatus">IngressPortStatus</a>]]</code> - ports provides information about the ports exposed by this LoadBalancer.</li>
+</ul></div>
+</div>
+<h2 id="ingressloadbalancerstatus">IngressLoadBalancerStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressLoadBalancerStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">ingress=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressLoadBalancerStatus represents the status of a load-balancer.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>ingress</strong> <code>Optional[List[<a href="#ingressloadbalanceringress">IngressLoadBalancerIngress</a>]]</code> - ingress is a list containing ingress points for the load-balancer.</li>
+</ul></div>
+</div>
+<h2 id="ingressportstatus">IngressPortStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressPortStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">port</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">protocol</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">error=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressPortStatus represents the error condition of a service port</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>port</strong> <code>int</code> - port is the port number of the ingress port.</li>
+<li><strong>protocol</strong> <code>str</code> - protocol is the protocol of the ingress port. The supported values are: "TCP",
+  "UDP", "SCTP"</li>
+<li><strong>error</strong> <code>Optional[str]</code> - error is to record the problem with the service port The format of the error
+  shall comply with the following rules: - built-in error values shall be
+  specified in this file and those shall use
+    CamelCase names</li>
+<li>cloud provider specific error values must have names that comply with the
+    format foo.example.com/CamelCase.</li>
+</ul></div>
+</div>
+<h2 id="ingressrule">IngressRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">host=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">http=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressRule represents the rules mapping the paths under a specified host to
+the related backend services. Incoming requests are first evaluated for a host
+match, then routed to the backend associated with the matching
+IngressRuleValue.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>host</strong> <code>Optional[str]</code> - host is the fully qualified domain name of a network host, as defined by RFC</li>
+<li>Note the following deviations from the "host" part of the URI as defined
+  in RFC 3986: 1. IPs are not allowed. Currently an IngressRuleValue can only
+  apply to
+     the IP in the Spec of the parent Ingress.</li>
+<li>The <code>:</code> delimiter is not respected because ports are not allowed.
+            Currently the port of an Ingress is implicitly :80 for http and
+            :443 for https.
+  Both these may change in the future. Incoming requests are matched against the
+  host before the IngressRuleValue. If the host is unspecified, the Ingress
+  routes all traffic based on the specified IngressRuleValue.
+  host can be "precise" which is a domain name without the terminating dot of a
+  network host (e.g. "foo.bar.com") or "wildcard", which is a domain name
+  prefixed with a single wildcard label (e.g. "<em>.foo.com"). The wildcard
+  character '</em>' must appear by itself as the first DNS label and matches only a
+  single label. You cannot have a wildcard label by itself (e.g. Host == "*").
+  Requests will be matched against the Host field in the following way: 1. If
+  host is precise, the request matches this rule if the http host header is
+  equal to Host. 2. If host is a wildcard, then the request matches this rule if
+  the http host header is to equal to the suffix (removing the first label) of
+  the wildcard rule.</li>
+<li><strong>http</strong> <code>Optional[<a href="#httpingressrulevalue">HTTPIngressRuleValue</a>]</code> -</li>
+</ul></div>
+</div>
+<h2 id="ingressservicebackend">IngressServiceBackend</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressServiceBackend</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">port=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressServiceBackend references a Kubernetes Service as a Backend.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name is the referenced service. The service must exist in the same namespace
+  as the Ingress object.</li>
+<li><strong>port</strong> <code>Optional[<a href="#servicebackendport">ServiceBackendPort</a>]</code> - port of the referenced service. A port name or port number is required for a
+  IngressServiceBackend.</li>
+</ul></div>
+</div>
+<h2 id="ingressspec">IngressSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">defaultBackend=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ingressClassName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">rules=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">tls=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressSpec describes the Ingress the user wishes to exist.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>defaultBackend</strong> <code>Optional[<a href="#ingressbackend">IngressBackend</a>]</code> - defaultBackend is the backend that should handle requests that don't match any
+  rule. If Rules are not specified, DefaultBackend must be specified. If
+  DefaultBackend is not set, the handling of requests that do not match any of
+  the rules will be up to the Ingress controller.</li>
+<li><strong>ingressClassName</strong> <code>Optional[str]</code> - ingressClassName is the name of an IngressClass cluster resource. Ingress
+  controller implementations use this field to know whether they should be
+  serving this Ingress resource, by a transitive connection (controller -&gt;
+  IngressClass -&gt; Ingress resource). Although the <code>kubernetes.io/ingress.class</code>
+  annotation (simple constant name) was never formally defined, it was widely
+  supported by Ingress controllers to create a direct binding between Ingress
+  controller and Ingress resources. Newly created Ingress resources should
+  prefer using the field. However, even though the annotation is officially
+  deprecated, for backwards compatibility reasons, ingress controllers should
+  still honor that annotation if present.</li>
+<li><strong>rules</strong> <code>Optional[List[<a href="#ingressrule">IngressRule</a>]]</code> - rules is a list of host rules used to configure the Ingress. If unspecified,
+  or no rule matches, all traffic is sent to the default backend.</li>
+<li><strong>tls</strong> <code>Optional[List[<a href="#ingresstls">IngressTLS</a>]]</code> - tls represents the TLS configuration. Currently the Ingress only supports a
+  single TLS port, 443. If multiple members of this list specify different
+  hosts, they will be multiplexed on the same port according to the hostname
+  specified through the SNI TLS extension, if the ingress controller fulfilling
+  the ingress supports SNI.</li>
+</ul></div>
+</div>
+<h2 id="ingressstatus">IngressStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">loadBalancer=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressStatus describe the current state of the Ingress.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>loadBalancer</strong> <code>Optional[<a href="#ingressloadbalancerstatus">IngressLoadBalancerStatus</a>]</code> - loadBalancer contains the current status of the load-balancer.</li>
+</ul></div>
+</div>
+<h2 id="ingresstls">IngressTLS</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>IngressTLS</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">hosts=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">secretName=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>IngressTLS describes the transport layer security associated with an ingress.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>hosts</strong> <code>Optional[List[str]]</code> - hosts is a list of hosts included in the TLS certificate. The values in this
+  list must match the name/s used in the tlsSecret. Defaults to the wildcard
+  host setting for the loadbalancer controller fulfilling this Ingress, if left
+  unspecified.</li>
+<li><strong>secretName</strong> <code>Optional[str]</code> - secretName is the name of the secret used to terminate TLS traffic on port</li>
+<li>Field is left optional to allow TLS routing based on SNI hostname alone.
+  If the SNI host in a listener conflicts with the "Host" header field used by
+  an IngressRule, the SNI host is used for termination and value of the "Host"
+  header is used for routing.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicy">NetworkPolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicy describes what network traffic is allowed for a set of Pods</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#networkpolicyspec">NetworkPolicySpec</a>]</code> - spec represents the specification of the desired behavior for this
+  NetworkPolicy.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicyegressrule">NetworkPolicyEgressRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicyEgressRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">ports=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">to=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicyEgressRule describes a particular set of traffic that is allowed
+out of pods matched by a NetworkPolicySpec's podSelector. The traffic must
+match both ports and to. This type is beta-level in 1.8</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>ports</strong> <code>Optional[List[<a href="#networkpolicyport">NetworkPolicyPort</a>]]</code> - ports is a list of destination ports for outgoing traffic. Each item in this
+  list is combined using a logical OR. If this field is empty or missing, this
+  rule matches all ports (traffic not restricted by port). If this field is
+  present and contains at least one item, then this rule allows traffic only if
+  the traffic matches at least one port in the list.</li>
+<li><strong>to</strong> <code>Optional[List[<a href="#networkpolicypeer">NetworkPolicyPeer</a>]]</code> - to is a list of destinations for outgoing traffic of pods selected for this
+  rule. Items in this list are combined using a logical OR operation. If this
+  field is empty or missing, this rule matches all destinations (traffic not
+  restricted by destination). If this field is present and contains at least one
+  item, this rule allows traffic only if the traffic matches at least one item
+  in the to list.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicyingressrule">NetworkPolicyIngressRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicyIngressRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">from_=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ports=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicyIngressRule describes a particular set of traffic that is allowed
+to the pods matched by a NetworkPolicySpec's podSelector. The traffic must
+match both ports and from.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>from_</strong> <code>Optional[List[<a href="#networkpolicypeer">NetworkPolicyPeer</a>]]</code> - from is a list of sources which should be able to access the pods selected for
+  this rule. Items in this list are combined using a logical OR operation. If
+  this field is empty or missing, this rule matches all sources (traffic not
+  restricted by source). If this field is present and contains at least one
+  item, this rule allows traffic only if the traffic matches at least one item
+  in the from list.</li>
+<li><strong>ports</strong> <code>Optional[List[<a href="#networkpolicyport">NetworkPolicyPort</a>]]</code> - ports is a list of ports which should be made accessible on the pods selected
+  for this rule. Each item in this list is combined using a logical OR. If this
+  field is empty or missing, this rule matches all ports (traffic not restricted
+  by port). If this field is present and contains at least one item, then this
+  rule allows traffic only if the traffic matches at least one port in the list.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicylist">NetworkPolicyList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicyList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicyList is a list of NetworkPolicy objects.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#networkpolicy">NetworkPolicy</a>]</code> - items is a list of schema objects.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="networkpolicypeer">NetworkPolicyPeer</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicyPeer</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">ipBlock=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">namespaceSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">podSelector=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain
+combinations of fields are allowed</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>ipBlock</strong> <code>Optional[<a href="#ipblock">IPBlock</a>]</code> - ipBlock defines policy on a particular IPBlock. If this field is set then
+  neither of the other fields can be.</li>
+<li><strong>namespaceSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - namespaceSelector selects namespaces using cluster-scoped labels. This field
+  follows standard label selector semantics; if present but empty, it selects
+  all namespaces.
+  If podSelector is also set, then the NetworkPolicyPeer as a whole selects the
+  pods matching podSelector in the namespaces selected by namespaceSelector.
+  Otherwise it selects all pods in the namespaces selected by namespaceSelector.</li>
+<li><strong>podSelector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - podSelector is a label selector which selects pods. This field follows
+  standard label selector semantics; if present but empty, it selects all pods.
+  If namespaceSelector is also set, then the NetworkPolicyPeer as a whole
+  selects the pods matching podSelector in the Namespaces selected by
+  NamespaceSelector. Otherwise it selects the pods matching podSelector in the
+  policy's own namespace.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicyport">NetworkPolicyPort</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicyPort</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">endPort=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">port=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">protocol=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicyPort describes a port to allow traffic on</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>endPort</strong> <code>Optional[int]</code> - endPort indicates that the range of ports from port to endPort if set,
+  inclusive, should be allowed by the policy. This field cannot be defined if
+  the port field is not defined or if the port field is defined as a named
+  (string) port. The endPort must be equal or greater than port.</li>
+<li><strong>port</strong> <code>Optional[<a href="../util_intstr/index.html#intorstring">util_intstr.IntOrString</a>]</code> - port represents the port on the given protocol. This can either be a numerical
+  or named port on a pod. If this field is not provided, this matches all port
+  names and numbers. If present, only traffic on the specified protocol AND port
+  will be matched.</li>
+<li><strong>protocol</strong> <code>Optional[str]</code> - protocol represents the protocol (TCP, UDP, or SCTP) which traffic must match.
+  If not specified, this field defaults to TCP.</li>
+</ul></div>
+</div>
+<h2 id="networkpolicyspec">NetworkPolicySpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>NetworkPolicySpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">podSelector</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">egress=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ingress=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">policyTypes=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkPolicySpec provides the specification of a NetworkPolicy</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>podSelector</strong> <code><a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a></code> - podSelector selects the pods to which this NetworkPolicy object applies. The
+  array of ingress rules is applied to any pods selected by this field. Multiple
+  network policies can select the same set of pods. In this case, the ingress
+  rules for each are combined additively. This field is NOT optional and follows
+  standard label selector semantics. An empty podSelector matches all pods in
+  this namespace.</li>
+<li><strong>egress</strong> <code>Optional[List[<a href="#networkpolicyegressrule">NetworkPolicyEgressRule</a>]]</code> - egress is a list of egress rules to be applied to the selected pods. Outgoing
+  traffic is allowed if there are no NetworkPolicies selecting the pod (and
+  cluster policy otherwise allows the traffic), OR if the traffic matches at
+  least one egress rule across all of the NetworkPolicy objects whose
+  podSelector matches the pod. If this field is empty then this NetworkPolicy
+  limits all outgoing traffic (and serves solely to ensure that the pods it
+  selects are isolated by default). This field is beta-level in 1.8</li>
+<li><strong>ingress</strong> <code>Optional[List[<a href="#networkpolicyingressrule">NetworkPolicyIngressRule</a>]]</code> - ingress is a list of ingress rules to be applied to the selected pods. Traffic
+  is allowed to a pod if there are no NetworkPolicies selecting the pod (and
+  cluster policy otherwise allows the traffic), OR if the traffic source is the
+  pod's local node, OR if the traffic matches at least one ingress rule across
+  all of the NetworkPolicy objects whose podSelector matches the pod. If this
+  field is empty then this NetworkPolicy does not allow any traffic (and serves
+  solely to ensure that the pods it selects are isolated by default)</li>
+<li><strong>policyTypes</strong> <code>Optional[List[str]]</code> - policyTypes is a list of rule types that the NetworkPolicy relates to. Valid
+  options are ["Ingress"], ["Egress"], or ["Ingress", "Egress"]. If this field
+  is not specified, it will default based on the existence of ingress or egress
+  rules; policies that contain an egress section are assumed to affect egress,
+  and all policies (whether or not they contain an ingress section) are assumed
+  to affect ingress. If you want to write an egress-only policy, you must
+  explicitly specify policyTypes [ "Egress" ]. Likewise, if you want to write a
+  policy that specifies that no egress is allowed, you must specify a
+  policyTypes value that include "Egress" (since such a policy would not include
+  an egress section and would otherwise default to just [ "Ingress" ]). This
+  field is beta-level in 1.8</li>
+</ul></div>
+</div>
+<h2 id="servicebackendport">ServiceBackendPort</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.networking_v1.<strong>ServiceBackendPort</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">number=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ServiceBackendPort is the service port being referenced.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>Optional[str]</code> - name is the name of the port on the Service. This is a mutually exclusive
+  setting with "Number".</li>
+<li><strong>number</strong> <code>Optional[int]</code> - number is the numerical port number (e.g. 80) on the Service. This is a
+  mutually exclusive setting with "Name".</li>
+</ul></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
