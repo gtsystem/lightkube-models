@@ -7,7 +7,7 @@ from typing import NamedTuple, Iterable, Dict, List, Optional
 
 from .get_template import get_template
 from .compile_models import sort_key
-from .model import Schema, schema_name
+from .model import Schema, schema_name, Resource
 
 RE_PATH = re.compile("/apis?(?P<group>/.*?)?/(?P<version>v[^/]*)(?P<watch>/watch)?"
                      "(?P<ns>/namespaces/{namespace})?/(?P<plural>[^/]*)"
@@ -26,15 +26,6 @@ class ApiKey(NamedTuple):
     group: str
     version: str
     plural: str
-
-
-class Resource(NamedTuple):
-    group: str
-    version: str
-    kind: str
-
-    def definition(self):
-        return f"res.ResourceDef{tuple(self)}"
 
 
 class SpecPath(NamedTuple):

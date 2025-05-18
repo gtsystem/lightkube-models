@@ -1,10 +1,22 @@
 import re
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 import keyword
 
 RE_MODEL = re.compile("^.*[.](apis?|pkg)[.]")
 RE_NEW_LINE = re.compile(r"\n\s*\n")
 KEYWORDS = set(keyword.kwlist)
+
+
+class Resource(NamedTuple):
+    group: str
+    version: str
+    kind: str
+
+    def definition(self):
+        return f"res.ResourceDef{tuple(self)}"
+
+    def api_version(self):
+        return f'{self.group}/{self.version}' if self.group != '' else self.version
 
 
 class Schema(NamedTuple):
@@ -82,9 +94,11 @@ class Model:
         self.name = sc.name
         self.import_module = None
         self.type = None
+        self.resource_info = None
         self.description = defi.get("description")
         if 'properties' in defi:
             self.properties = self.get_props(defi)
+            self.resource_info = self.get_resource_info(defi)
         else:
             self.properties = None
             if 'type' not in defi:  # reference to any json type
@@ -106,6 +120,22 @@ class Model:
     @property
     def has_properties(self):
         return bool(self.properties)
+
+    @staticmethod
+    def get_resource_info(defi) -> Optional[Resource]:
+        x_gvk = defi.get("x-kubernetes-group-version-kind")
+        if x_gvk is None:
+            return None
+
+        resources = [Resource(**item) for item in x_gvk]
+        if len(resources) == 1:
+            return resources[0]
+
+        # multiple group/version/kind assigned here
+        kinds = set(r.kind for r in resources)
+        if len(kinds) == 1:     # we can only automatically set the kind
+            return Resource(group='', version='', kind=kinds.pop())
+        return None
 
     def get_props(self, defi):
         required = set(defi.get('required', []))

@@ -1,5 +1,9 @@
 if [[ ! -z "$1" ]]; then
   VERSIONS=$1   # provide version without `v`
+  if [[ ! "$VERSIONS" =~ ^[0-9]+[.][0-9]+[.][0-9]$ ]]; then
+    echo "Version $VERSIONS must match expression \d+.\d+.\d"
+    exit 1
+  fi
 else
   VERSIONS=$(awk '/([0-9]+.[0-9]+.[0-9]+)/ {print $2}' .github/workflows/python-package.yml)
   rm dist/*.whl dist/*.tar.gz

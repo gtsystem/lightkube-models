@@ -27,6 +27,14 @@ class {{ model.name }}(DictMixin):
    {% for prop in model.properties %}
     {{prop.name}}: '{{prop.type}}'{{prop.default_repr}}
    {% endfor %}
+   {% if model.resource_info %}
+
+    def __post_init__(self):
+       {% if model.resource_info.version != '' %}
+        self.apiVersion = '{{ model.resource_info.api_version() }}'
+       {% endif %}
+        self.kind = '{{model.resource_info.kind}}'
+   {% endif %}
 {% else %}
 {{ model.name }} = {{ model.type }}
 {% endif %}
