@@ -1,0 +1,2731 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../autoscaling_v2/">
+      
+      
+        <link rel="next" href="../certificates_v1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>batch_v1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#batch_v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              batch_v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiserverinternal_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cronjob" class="md-nav__link">
+    CronJob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjoblist" class="md-nav__link">
+    CronJobList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobspec" class="md-nav__link">
+    CronJobSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobstatus" class="md-nav__link">
+    CronJobStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job" class="md-nav__link">
+    Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobcondition" class="md-nav__link">
+    JobCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joblist" class="md-nav__link">
+    JobList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobspec" class="md-nav__link">
+    JobSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobstatus" class="md-nav__link">
+    JobStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobtemplatespec" class="md-nav__link">
+    JobTemplateSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicy" class="md-nav__link">
+    PodFailurePolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyonexitcodesrequirement" class="md-nav__link">
+    PodFailurePolicyOnExitCodesRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyonpodconditionspattern" class="md-nav__link">
+    PodFailurePolicyOnPodConditionsPattern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyrule" class="md-nav__link">
+    PodFailurePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successpolicy" class="md-nav__link">
+    SuccessPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successpolicyrule" class="md-nav__link">
+    SuccessPolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncountedterminatedpods" class="md-nav__link">
+    UncountedTerminatedPods
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    meta_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util_intstr
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    version
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    All resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    admissionregistration_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiextensions_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apiregistration_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    apps_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authentication_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    autoscaling_v2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    batch_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    certificates_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1alpha2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    coordination_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    core_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    discovery_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    events_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    flowcontrol_apiserver_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    internal_apiserver_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    networking_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    node_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    policy_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rbac_authorization_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1alpha3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    resource_v1beta2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scheduling_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1beta1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storage_v1beta1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1alpha1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    storagemigration_v1alpha1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cronjob" class="md-nav__link">
+    CronJob
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjoblist" class="md-nav__link">
+    CronJobList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobspec" class="md-nav__link">
+    CronJobSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronjobstatus" class="md-nav__link">
+    CronJobStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job" class="md-nav__link">
+    Job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobcondition" class="md-nav__link">
+    JobCondition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joblist" class="md-nav__link">
+    JobList
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobspec" class="md-nav__link">
+    JobSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobstatus" class="md-nav__link">
+    JobStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobtemplatespec" class="md-nav__link">
+    JobTemplateSpec
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicy" class="md-nav__link">
+    PodFailurePolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyonexitcodesrequirement" class="md-nav__link">
+    PodFailurePolicyOnExitCodesRequirement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyonpodconditionspattern" class="md-nav__link">
+    PodFailurePolicyOnPodConditionsPattern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podfailurepolicyrule" class="md-nav__link">
+    PodFailurePolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successpolicy" class="md-nav__link">
+    SuccessPolicy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#successpolicyrule" class="md-nav__link">
+    SuccessPolicyRule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uncountedterminatedpods" class="md-nav__link">
+    UncountedTerminatedPods
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="batch_v1">batch_v1</h1>
+<h2 id="cronjob">CronJob</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>CronJob</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CronJob represents the configuration of a single cron job.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#cronjobspec">CronJobSpec</a>]</code> - Specification of the desired behavior of a cron job, including the schedule.
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#cronjobstatus">CronJobStatus</a>]</code> - Current status of a cron job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="cronjoblist">CronJobList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>CronJobList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CronJobList is a collection of cron jobs.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#cronjob">CronJob</a>]</code> - items is the list of CronJobs.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="cronjobspec">CronJobSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>CronJobSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">jobTemplate</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">schedule</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">concurrencyPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">failedJobsHistoryLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">startingDeadlineSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">successfulJobsHistoryLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">suspend=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">timeZone=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CronJobSpec describes how the job execution will look like and when it will
+actually run.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>jobTemplate</strong> <code><a href="#jobtemplatespec">JobTemplateSpec</a></code> - Specifies the job that will be created when executing a CronJob.</li>
+<li><strong>schedule</strong> <code>str</code> - The schedule in Cron format, see <a href="https://en.wikipedia.org/wiki/Cron">https://en.wikipedia.org/wiki/Cron</a>.</li>
+<li><strong>concurrencyPolicy</strong> <code>Optional[str]</code> - Specifies how to treat concurrent executions of a Job. Valid values are:</li>
+<li>"Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids
+  concurrent runs, skipping next run if previous run hasn't finished yet; -
+  "Replace": cancels currently running job and replaces it with a new one</li>
+<li><strong>failedJobsHistoryLimit</strong> <code>Optional[int]</code> - The number of failed finished jobs to retain. Value must be non-negative
+  integer. Defaults to 1.</li>
+<li><strong>startingDeadlineSeconds</strong> <code>Optional[int]</code> - Optional deadline in seconds for starting the job if it misses scheduled time
+  for any reason.  Missed jobs executions will be counted as failed ones.</li>
+<li><strong>successfulJobsHistoryLimit</strong> <code>Optional[int]</code> - The number of successful finished jobs to retain. Value must be non-negative
+  integer. Defaults to 3.</li>
+<li><strong>suspend</strong> <code>Optional[bool]</code> - This flag tells the controller to suspend subsequent executions, it does not
+  apply to already started executions.  Defaults to false.</li>
+<li><strong>timeZone</strong> <code>Optional[str]</code> - The time zone name for the given schedule, see
+  <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>. If not
+  specified, this will default to the time zone of the kube-controller-manager
+  process. The set of valid time zone names and the time zone offset is loaded
+  from the system-wide time zone database by the API server during CronJob
+  validation and the controller manager during execution. If no system-wide time
+  zone database can be found a bundled version of the database is used instead.
+  If the time zone name becomes invalid during the lifetime of a CronJob or due
+  to a change in host configuration, the controller will stop creating new new
+  Jobs and will create a system event with the reason UnknownTimeZone. More
+  information can be found in
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones">https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones</a></li>
+</ul></div>
+</div>
+<h2 id="cronjobstatus">CronJobStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>CronJobStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">active=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastScheduleTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastSuccessfulTime=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CronJobStatus represents the current state of a cron job.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>active</strong> <code>Optional[List[<a href="../core_v1/index.html#objectreference">core_v1.ObjectReference</a>]]</code> - A list of pointers to currently running jobs.</li>
+<li><strong>lastScheduleTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Information when was the last time the job was successfully scheduled.</li>
+<li><strong>lastSuccessfulTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Information when was the last time the job successfully completed.</li>
+</ul></div>
+</div>
+<h2 id="job">Job</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>Job</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Job represents the configuration of a single job.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#jobspec">JobSpec</a>]</code> - Specification of the desired behavior of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#jobstatus">JobStatus</a>]</code> - Current status of a job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="jobcondition">JobCondition</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>JobCondition</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastProbeTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">lastTransitionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reason=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>JobCondition describes current state of a job.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Status of the condition, one of True, False, Unknown.</li>
+<li><strong>type</strong> <code>str</code> - Type of job condition, Complete or Failed.</li>
+<li><strong>lastProbeTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Last time the condition was checked.</li>
+<li><strong>lastTransitionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Last time the condition transit from one status to another.</li>
+<li><strong>message</strong> <code>Optional[str]</code> - Human readable message indicating details about last transition.</li>
+<li><strong>reason</strong> <code>Optional[str]</code> - (brief) reason for the condition's last transition.</li>
+</ul></div>
+</div>
+<h2 id="joblist">JobList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>JobList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>JobList is a collection of jobs.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#job">Job</a>]</code> - items is the list of Jobs.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="jobspec">JobSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>JobSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">template</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">activeDeadlineSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">backoffLimit=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">backoffLimitPerIndex=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">completionMode=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">completions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">managedBy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">manualSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">maxFailedIndexes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parallelism=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">podFailurePolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">podReplacementPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">successPolicy=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">suspend=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ttlSecondsAfterFinished=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>JobSpec describes how the job execution will look like.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>template</strong> <code><a href="../core_v1/index.html#podtemplatespec">core_v1.PodTemplateSpec</a></code> - Describes the pod that will be created when executing a job. The only allowed
+  template.spec.restartPolicy values are "Never" or "OnFailure". <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">More info</a></li>
+<li><strong>activeDeadlineSeconds</strong> <code>Optional[int]</code> - Specifies the duration in seconds relative to the startTime that the job may
+  be continuously active before the system tries to terminate it; value must be
+  positive integer. If a Job is suspended (at creation or through an update),
+  this timer will effectively be stopped and reset when the Job is resumed
+  again.</li>
+<li><strong>backoffLimit</strong> <code>Optional[int]</code> - Specifies the number of retries before marking this job failed. Defaults to 6,
+  unless backoffLimitPerIndex (only Indexed Job) is specified. When
+  backoffLimitPerIndex is specified, backoffLimit defaults to 2147483647.</li>
+<li><strong>backoffLimitPerIndex</strong> <code>Optional[int]</code> - Specifies the limit for the number of retries within an index before marking
+  this index as failed. When enabled the number of failures per index is kept in
+  the pod's batch.kubernetes.io/job-index-failure-count annotation. It can only
+  be set when Job's completionMode=Indexed, and the Pod's restart policy is
+  Never. The field is immutable.</li>
+<li><strong>completionMode</strong> <code>Optional[str]</code> - completionMode specifies how Pod completions are tracked. It can be
+  <code>NonIndexed</code> (default) or <code>Indexed</code>.
+  <code>NonIndexed</code> means that the Job is considered complete when there have been
+  .spec.completions successfully completed Pods. Each Pod completion is
+  homologous to each other.
+  <code>Indexed</code> means that the Pods of a Job get an associated completion index from
+  0 to (.spec.completions - 1), available in the annotation
+  batch.kubernetes.io/job-completion-index. The Job is considered complete when
+  there is one successfully completed Pod for each index. When value is
+  <code>Indexed</code>, .spec.completions must be specified and <code>.spec.parallelism</code> must be
+  less than or equal to 10^5. In addition, The Pod name takes the form
+  <code>$(job-name)-$(index)-$(random-string)</code>, the Pod hostname takes the form
+  <code>$(job-name)-$(index)</code>.
+  More completion modes can be added in the future. If the Job controller
+  observes a mode that it doesn't recognize, which is possible during upgrades
+  due to version skew, the controller skips updates for the Job.</li>
+<li><strong>completions</strong> <code>Optional[int]</code> - Specifies the desired number of successfully finished pods the job should be
+  run with.  Setting to null means that the success of any pod signals the
+  success of all pods, and allows parallelism to have any positive value.
+  Setting to 1 means that parallelism is limited to 1 and the success of that
+  pod signals the success of the job. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">More info</a></li>
+<li><strong>managedBy</strong> <code>Optional[str]</code> - ManagedBy field indicates the controller that manages a Job. The k8s Job
+  controller reconciles jobs which don't have this field at all or the field
+  value is the reserved string <code>kubernetes.io/job-controller</code>, but skips
+  reconciling Jobs with a custom value for this field. The value must be a valid
+  domain-prefixed path (e.g. acme.io/foo) - all characters before the first "/"
+  must be a valid subdomain as defined by RFC 1123. All characters trailing the
+  first "/" must be valid HTTP Path characters as defined by RFC 3986. The value
+  cannot exceed 63 characters. This field is immutable.
+  This field is beta-level. The job controller accepts setting the field when
+  the feature gate JobManagedBy is enabled (enabled by default).</li>
+<li><strong>manualSelector</strong> <code>Optional[bool]</code> - manualSelector controls generation of pod labels and pod selectors. Leave
+  <code>manualSelector</code> unset unless you are certain what you are doing. When false
+  or unset, the system pick labels unique to this job and appends those labels
+  to the pod template.  When true, the user is responsible for picking unique
+  labels and specifying the selector.  Failure to pick a unique label may cause
+  this and other jobs to not function correctly.  However, You may see
+  <code>manualSelector=true</code> in jobs that were created with the old
+  <code>extensions/v1beta1</code> API. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/#specifying-your-own-pod-selector">More info</a></li>
+<li><strong>maxFailedIndexes</strong> <code>Optional[int]</code> - Specifies the maximal number of failed indexes before marking the Job as
+  failed, when backoffLimitPerIndex is set. Once the number of failed indexes
+  exceeds this number the entire Job is marked as Failed and its execution is
+  terminated. When left as null the job continues execution of all of its
+  indexes and is marked with the <code>Complete</code> Job condition. It can only be
+  specified when backoffLimitPerIndex is set. It can be null or up to
+  completions. It is required and must be less than or equal to 10^4 when is
+  completions greater than 10^5.</li>
+<li><strong>parallelism</strong> <code>Optional[int]</code> - Specifies the maximum desired number of pods the job should run at any given
+  time. The actual number of pods running in steady state will be less than this
+  number when ((.spec.completions - .status.successful) &lt; .spec.parallelism),
+  i.e. when the work left to do is less than max parallelism. <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">More info</a></li>
+<li><strong>podFailurePolicy</strong> <code>Optional[<a href="#podfailurepolicy">PodFailurePolicy</a>]</code> - Specifies the policy of handling failed pods. In particular, it allows to
+  specify the set of actions and conditions which need to be satisfied to take
+  the associated action. If empty, the default behaviour applies - the counter
+  of failed pods, represented by the jobs's .status.failed field, is incremented
+  and it is checked against the backoffLimit. This field cannot be used in
+  combination with restartPolicy=OnFailure.</li>
+<li><strong>podReplacementPolicy</strong> <code>Optional[str]</code> - podReplacementPolicy specifies when to create replacement Pods. Possible
+  values are: - TerminatingOrFailed means that we recreate pods
+    when they are terminating (has a metadata.deletionTimestamp) or failed.</li>
+<li>Failed means to wait until a previously created Pod is fully terminated (has
+  phase
+    Failed or Succeeded) before creating a replacement Pod.
+  When using podFailurePolicy, Failed is the the only allowed value.
+  TerminatingOrFailed and Failed are allowed values when podFailurePolicy is not
+  in use.</li>
+<li><strong>selector</strong> <code>Optional[<a href="../meta_v1/index.html#labelselector">meta_v1.LabelSelector</a>]</code> - A label query over pods that should match the pod count. Normally, the system
+  sets this field for you. <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">More info</a></li>
+<li><strong>successPolicy</strong> <code>Optional[<a href="#successpolicy">SuccessPolicy</a>]</code> - successPolicy specifies the policy when the Job can be declared as succeeded.
+  If empty, the default behavior applies - the Job is declared as succeeded only
+  when the number of succeeded pods equals to the completions. When the field is
+  specified, it must be immutable and works only for the Indexed Jobs. Once the
+  Job meets the SuccessPolicy, the lingering pods are terminated.</li>
+<li><strong>suspend</strong> <code>Optional[bool]</code> - suspend specifies whether the Job controller should create Pods or not. If a
+  Job is created with suspend set to true, no Pods are created by the Job
+  controller. If a Job is suspended after creation (i.e. the flag goes from
+  false to true), the Job controller will delete all active Pods associated with
+  this Job. Users must design their workload to gracefully handle this.
+  Suspending a Job will reset the StartTime field of the Job, effectively
+  resetting the ActiveDeadlineSeconds timer too. Defaults to false.</li>
+<li><strong>ttlSecondsAfterFinished</strong> <code>Optional[int]</code> - ttlSecondsAfterFinished limits the lifetime of a Job that has finished
+  execution (either Complete or Failed). If this field is set,
+  ttlSecondsAfterFinished after the Job finishes, it is eligible to be
+  automatically deleted. When the Job is being deleted, its lifecycle guarantees
+  (e.g. finalizers) will be honored. If this field is unset, the Job won't be
+  automatically deleted. If this field is set to zero, the Job becomes eligible
+  to be deleted immediately after it finishes.</li>
+</ul></div>
+</div>
+<h2 id="jobstatus">JobStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>JobStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">active=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">completedIndexes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">completionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">failed=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">failedIndexes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ready=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">startTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">succeeded=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">terminating=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uncountedTerminatedPods=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>JobStatus represents the current state of a Job.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>active</strong> <code>Optional[int]</code> - The number of pending and running pods which are not terminating (without a
+  deletionTimestamp). The value is zero for finished jobs.</li>
+<li><strong>completedIndexes</strong> <code>Optional[str]</code> - completedIndexes holds the completed indexes when .spec.completionMode =
+  "Indexed" in a text format. The indexes are represented as decimal integers
+  separated by commas. The numbers are listed in increasing order. Three or more
+  consecutive numbers are compressed and represented by the first and last
+  element of the series, separated by a hyphen. For example, if the completed
+  indexes are 1, 3, 4, 5 and 7, they are represented as "1,3-5,7".</li>
+<li><strong>completionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Represents time when the job was completed. It is not guaranteed to be set in
+  happens-before order across separate operations. It is represented in RFC3339
+  form and is in UTC. The completion time is set when the job finishes
+  successfully, and only then. The value cannot be updated or removed. The value
+  indicates the same or later point in time as the startTime field.</li>
+<li><strong>conditions</strong> <code>Optional[List[<a href="#jobcondition">JobCondition</a>]]</code> - The latest available observations of an object's current state. When a Job
+  fails, one of the conditions will have type "Failed" and status true. When a
+  Job is suspended, one of the conditions will have type "Suspended" and status
+  true; when the Job is resumed, the status of this condition will become false.
+  When a Job is completed, one of the conditions will have type "Complete" and
+  status true.
+  A job is considered finished when it is in a terminal condition, either
+  "Complete" or "Failed". A Job cannot have both the "Complete" and "Failed"
+  conditions. Additionally, it cannot be in the "Complete" and "FailureTarget"
+  conditions. The "Complete", "Failed" and "FailureTarget" conditions cannot be
+  disabled.
+  <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">More info</a></li>
+<li><strong>failed</strong> <code>Optional[int]</code> - The number of pods which reached phase Failed. The value increases
+  monotonically.</li>
+<li><strong>failedIndexes</strong> <code>Optional[str]</code> - FailedIndexes holds the failed indexes when spec.backoffLimitPerIndex is set.
+  The indexes are represented in the text format analogous as for the
+  <code>completedIndexes</code> field, ie. they are kept as decimal integers separated by
+  commas. The numbers are listed in increasing order. Three or more consecutive
+  numbers are compressed and represented by the first and last element of the
+  series, separated by a hyphen. For example, if the failed indexes are 1, 3, 4,
+  5 and 7, they are represented as "1,3-5,7". The set of failed indexes cannot
+  overlap with the set of completed indexes.</li>
+<li><strong>ready</strong> <code>Optional[int]</code> - The number of active pods which have a Ready condition and are not terminating
+  (without a deletionTimestamp).</li>
+<li><strong>startTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - Represents time when the job controller started processing a job. When a Job
+  is created in the suspended state, this field is not set until the first time
+  it is resumed. This field is reset every time a Job is resumed from
+  suspension. It is represented in RFC3339 form and is in UTC.
+  Once set, the field can only be removed when the job is suspended. The field
+  cannot be modified while the job is unsuspended or finished.</li>
+<li><strong>succeeded</strong> <code>Optional[int]</code> - The number of pods which reached phase Succeeded. The value increases
+  monotonically for a given spec. However, it may decrease in reaction to scale
+  down of elastic indexed jobs.</li>
+<li><strong>terminating</strong> <code>Optional[int]</code> - The number of pods which are terminating (in phase Pending or Running and have
+  a deletionTimestamp).
+  This field is beta-level. The job controller populates the field when the
+  feature gate JobPodReplacementPolicy is enabled (enabled by default).</li>
+<li><strong>uncountedTerminatedPods</strong> <code>Optional[<a href="#uncountedterminatedpods">UncountedTerminatedPods</a>]</code> - uncountedTerminatedPods holds the UIDs of Pods that have terminated but the
+  job controller hasn't yet accounted for in the status counters.
+  The job controller creates pods with a finalizer. When a pod terminates
+  (succeeded or failed), the controller does three steps to account for it in
+  the job status:</li>
+<li>Add the pod UID to the arrays in this field. 2. Remove the pod finalizer.</li>
+<li>Remove the pod UID from the arrays while increasing the corresponding
+      counter.
+  Old jobs might not be tracked using this field, in which case the field
+  remains null. The structure is empty for finished jobs.</li>
+</ul></div>
+</div>
+<h2 id="jobtemplatespec">JobTemplateSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>JobTemplateSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">spec=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>JobTemplateSpec describes the data a Job should have when created from a
+template</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object's metadata of the jobs created from this template. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+<li><strong>spec</strong> <code>Optional[<a href="#jobspec">JobSpec</a>]</code> - Specification of the desired behavior of the job. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="podfailurepolicy">PodFailurePolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>PodFailurePolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">rules</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodFailurePolicy describes how failed pods influence the backoffLimit.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>rules</strong> <code>List[<a href="#podfailurepolicyrule">PodFailurePolicyRule</a>]</code> - A list of pod failure policy rules. The rules are evaluated in order. Once a
+  rule matches a Pod failure, the remaining of the rules are ignored. When no
+  rule matches the Pod failure, the default handling applies - the counter of
+  pod failures is incremented and it is checked against the backoffLimit. At
+  most 20 elements are allowed.</li>
+</ul></div>
+</div>
+<h2 id="podfailurepolicyonexitcodesrequirement">PodFailurePolicyOnExitCodesRequirement</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>PodFailurePolicyOnExitCodesRequirement</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">operator</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">values</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">containerName=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodFailurePolicyOnExitCodesRequirement describes the requirement for handling
+a failed pod based on its container exit codes. In particular, it lookups the
+.state.terminated.exitCode for each app container and init container status,
+represented by the .status.containerStatuses and .status.initContainerStatuses
+fields in the Pod status, respectively. Containers completed with success
+(exit code 0) are excluded from the requirement check.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>operator</strong> <code>str</code> - Represents the relationship between the container exit code(s) and the
+  specified values. Containers completed with success (exit code 0) are excluded
+  from the requirement check. Possible values are:</li>
+<li>In: the requirement is satisfied if at least one container exit code
+    (might be multiple if there are multiple containers not restricted
+    by the 'containerName' field) is in the set of specified values.</li>
+<li>NotIn: the requirement is satisfied if at least one container exit code
+    (might be multiple if there are multiple containers not restricted
+    by the 'containerName' field) is not in the set of specified values.
+  Additional values are considered to be added in the future. Clients should
+  react to an unknown operator by assuming the requirement is not satisfied.</li>
+<li><strong>values</strong> <code>List[int]</code> - Specifies the set of values. Each returned container exit code (might be
+  multiple in case of multiple containers) is checked against this set of values
+  with respect to the operator. The list of values must be ordered and must not
+  contain duplicates. Value '0' cannot be used for the In operator. At least one
+  element is required. At most 255 elements are allowed.</li>
+<li><strong>containerName</strong> <code>Optional[str]</code> - Restricts the check for exit codes to the container with the specified name.
+  When null, the rule applies to all containers. When specified, it should match
+  one the container or initContainer names in the pod template.</li>
+</ul></div>
+</div>
+<h2 id="podfailurepolicyonpodconditionspattern">PodFailurePolicyOnPodConditionsPattern</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>PodFailurePolicyOnPodConditionsPattern</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">status</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">type</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodFailurePolicyOnPodConditionsPattern describes a pattern for matching an
+actual pod condition type.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>status</strong> <code>str</code> - Specifies the required Pod condition status. To match a pod condition it is
+  required that the specified status equals the pod condition status. Defaults
+  to True.</li>
+<li><strong>type</strong> <code>str</code> - Specifies the required Pod condition type. To match a pod condition it is
+  required that specified type equals the pod condition type.</li>
+</ul></div>
+</div>
+<h2 id="podfailurepolicyrule">PodFailurePolicyRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>PodFailurePolicyRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">action</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">onExitCodes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">onPodConditions=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>PodFailurePolicyRule describes how a pod failure is handled when the
+requirements are met. One of onExitCodes and onPodConditions, but not both,
+can be used in each rule.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>action</strong> <code>str</code> - Specifies the action taken on a pod failure when the requirements are
+  satisfied. Possible values are:</li>
+<li>FailJob: indicates that the pod's job is marked as Failed and all
+    running pods are terminated.</li>
+<li>FailIndex: indicates that the pod's index is marked as Failed and will
+    not be restarted.</li>
+<li>Ignore: indicates that the counter towards the .backoffLimit is not
+    incremented and a replacement pod is created.</li>
+<li>Count: indicates that the pod is handled in the default way - the
+    counter towards the .backoffLimit is incremented.
+  Additional values are considered to be added in the future. Clients should
+  react to an unknown action by skipping the rule.</li>
+<li><strong>onExitCodes</strong> <code>Optional[<a href="#podfailurepolicyonexitcodesrequirement">PodFailurePolicyOnExitCodesRequirement</a>]</code> - Represents the requirement on the container exit codes.</li>
+<li><strong>onPodConditions</strong> <code>Optional[List[<a href="#podfailurepolicyonpodconditionspattern">PodFailurePolicyOnPodConditionsPattern</a>]]</code> - Represents the requirement on the pod conditions. The requirement is
+  represented as a list of pod condition patterns. The requirement is satisfied
+  if at least one pattern matches an actual pod condition. At most 20 elements
+  are allowed.</li>
+</ul></div>
+</div>
+<h2 id="successpolicy">SuccessPolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>SuccessPolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">rules</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>SuccessPolicy describes when a Job can be declared as succeeded based on the
+success of some indexes.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>rules</strong> <code>List[<a href="#successpolicyrule">SuccessPolicyRule</a>]</code> - rules represents the list of alternative rules for the declaring the Jobs as
+  successful before <code>.status.succeeded &gt;= .spec.completions</code>. Once any of the
+  rules are met, the "SuccessCriteriaMet" condition is added, and the lingering
+  pods are removed. The terminal state for such a Job has the "Complete"
+  condition. Additionally, these rules are evaluated in order; Once the Job
+  meets one of the rules, other rules are ignored. At most 20 elements are
+  allowed.</li>
+</ul></div>
+</div>
+<h2 id="successpolicyrule">SuccessPolicyRule</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>SuccessPolicyRule</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">succeededCount=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">succeededIndexes=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>SuccessPolicyRule describes rule for declaring a Job as succeeded. Each rule
+must have at least one of the "succeededIndexes" or "succeededCount"
+specified.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>succeededCount</strong> <code>Optional[int]</code> - succeededCount specifies the minimal required size of the actual set of the
+  succeeded indexes for the Job. When succeededCount is used along with
+  succeededIndexes, the check is constrained only to the set of indexes
+  specified by succeededIndexes. For example, given that succeededIndexes is
+  "1-4", succeededCount is "3", and completed indexes are "1", "3", and "5", the
+  Job isn't declared as succeeded because only "1" and "3" indexes are
+  considered in that rules. When this field is null, this doesn't default to any
+  value and is never evaluated at any time. When specified it needs to be a
+  positive integer.</li>
+<li><strong>succeededIndexes</strong> <code>Optional[str]</code> - succeededIndexes specifies the set of indexes which need to be contained in
+  the actual set of the succeeded indexes for the Job. The list of indexes must
+  be within 0 to ".spec.completions-1" and must not contain duplicates. At least
+  one element is required. The indexes are represented as intervals separated by
+  commas. The intervals can be a decimal integer or a pair of decimal integers
+  separated by a hyphen. The number are listed in represented by the first and
+  last element of the series, separated by a hyphen. For example, if the
+  completed indexes are 1, 3, 4, 5 and 7, they are represented as "1,3-5,7".
+  When this field is null, this field doesn't default to any value and is never
+  evaluated at any time.</li>
+</ul></div>
+</div>
+<h2 id="uncountedterminatedpods">UncountedTerminatedPods</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.batch_v1.<strong>UncountedTerminatedPods</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">failed=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">succeeded=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>UncountedTerminatedPods holds UIDs of Pods that have terminated but haven't
+been accounted in Job status counters.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>failed</strong> <code>Optional[List[str]]</code> - failed holds UIDs of failed Pods.</li>
+<li><strong>succeeded</strong> <code>Optional[List[str]]</code> - succeeded holds UIDs of succeeded Pods.</li>
+</ul></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
