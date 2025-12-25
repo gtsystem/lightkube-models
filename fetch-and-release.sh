@@ -29,6 +29,32 @@ if [[ ! "$VERSION" =~ ^[0-9]+[.][0-9]+[.][0-9]+$ ]]; then
     exit 1
 fi
 
+# Extract major.minor for branch name (e.g., 1.35 from 1.35.0)
+MAJOR_MINOR=$(echo "$VERSION" | cut -d. -f1,2 | tr '.' '_')
+EXPECTED_BRANCH="v${MAJOR_MINOR}"
+
+# Check current branch
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+if [ $? -ne 0 ]; then
+    echo "Error: Not in a git repository"
+    exit 1
+fi
+
+
+if [ "$CURRENT_BRANCH" != "$EXPECTED_BRANCH" ]; then
+    echo "Warning: You are not on the expected branch for version $VERSION"
+    read -p "Do you want to create and switch to branch '$EXPECTED_BRANCH'? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "Creating new branch $EXPECTED_BRANCH..."
+        git checkout -b "$EXPECTED_BRANCH"
+        if [ $? -ne 0 ]; then
+            echo "Failed to create/switch to branch"
+            exit 1
+        fi
+    fi
+fi
+
 # 1. Fetch the OpenAPI spec
 echo ""
 echo "Step 1/3: Fetching OpenAPI spec for version $VERSION..."
