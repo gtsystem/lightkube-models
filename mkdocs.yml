@@ -20,6 +20,6 @@ markdown_extensions:
   - codehilite
   - pymdownx.magiclink
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - markdown_include.include:
       base_path: .

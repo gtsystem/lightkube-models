@@ -1,7 +1,3 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "lightkube-models"
 dynamic = ["version"]
@@ -30,6 +26,10 @@ classifiers = [
 Homepage = "https://github.com/gtsystem/lightkube-models"
 Repository = "https://github.com/gtsystem/lightkube-models"
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [tool.hatch.version]
 path = "src/lightkube/models/__init__.py"
 
@@ -40,3 +40,13 @@ sources = ["src/"]
 [tool.hatch.build.targets.wheel]
 packages = ["src/lightkube/models", "src/lightkube/resources"]
 sources = ["src/"]
+
+[dependency-groups]
+compile = [
+    "jinja2>=3.1.6",
+    "markdown-include>=0.8.1",
+    "mkautodoc>=0.2.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+    "mkdocs-material-extensions>=1.3.1",
+]
