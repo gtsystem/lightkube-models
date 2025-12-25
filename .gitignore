@@ -7,3 +7,7 @@ build/
 dist/
 docs/
 site/
+src/lightkube/models/
+src/lightkube/resources/
+test_models.py
+test_resources.py
