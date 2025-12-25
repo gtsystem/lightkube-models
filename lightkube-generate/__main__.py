@@ -15,7 +15,9 @@ if __name__ == "__main__":
         help="Specification file for Kubernetes",
     )
     parser.add_argument("specs", help="Specification file for Kubernetes")
-    parser.add_argument("-d", "--dest", help="Package directory", default="lightkube")
+    parser.add_argument(
+        "-d", "--dest", help="Package directory", default="src/lightkube"
+    )
     parser.add_argument("--docs", help="Docs directory", default="docs")
     parser.add_argument(
         "-t", "--testdir", help="Directory where to generate the test file", default="."
