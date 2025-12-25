@@ -9,6 +9,8 @@ else
   rm dist/*.whl dist/*.tar.gz
 fi
 
+export PYTHONPATH=src
+
 for v in $VERSIONS; do
   MAIN_VERSION=$(echo $v | cut -d. -f1,2 )
   echo "Building v$v"
