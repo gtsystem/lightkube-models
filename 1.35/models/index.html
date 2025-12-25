@@ -1,0 +1,5079 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="admissionregistration_v1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>All models - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#all-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              All models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiserverinternal_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="flowcontrol_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="meta_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    meta_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="networking_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rbac_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resource_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    runtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scheduling_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storage_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="util_intstr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util_intstr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_apiserver_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    internal_apiserver_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/networking_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/resource_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/scheduling_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/storage_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="all-models">All models</h1>
+<table>
+<thead>
+<tr>
+<th>Model name</th>
+<th>Available versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APIGroup</td>
+<td><a href="meta_v1/#apigroup">meta_v1</a></td>
+</tr>
+<tr>
+<td>APIGroupList</td>
+<td><a href="meta_v1/#apigrouplist">meta_v1</a></td>
+</tr>
+<tr>
+<td>APIResource</td>
+<td><a href="meta_v1/#apiresource">meta_v1</a></td>
+</tr>
+<tr>
+<td>APIResourceList</td>
+<td><a href="meta_v1/#apiresourcelist">meta_v1</a></td>
+</tr>
+<tr>
+<td>APIService</td>
+<td><a href="apiregistration_v1/#apiservice">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>APIServiceCondition</td>
+<td><a href="apiregistration_v1/#apiservicecondition">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>APIServiceList</td>
+<td><a href="apiregistration_v1/#apiservicelist">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>APIServiceSpec</td>
+<td><a href="apiregistration_v1/#apiservicespec">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>APIServiceStatus</td>
+<td><a href="apiregistration_v1/#apiservicestatus">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>APIVersions</td>
+<td><a href="meta_v1/#apiversions">meta_v1</a></td>
+</tr>
+<tr>
+<td>AWSElasticBlockStoreVolumeSource</td>
+<td><a href="core_v1/#awselasticblockstorevolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Affinity</td>
+<td><a href="core_v1/#affinity">core_v1</a></td>
+</tr>
+<tr>
+<td>AggregationRule</td>
+<td><a href="rbac_v1/#aggregationrule">rbac_v1</a></td>
+</tr>
+<tr>
+<td>AllocatedDeviceStatus</td>
+<td><a href="resource_v1/#allocateddevicestatus">resource_v1</a>, <a href="resource_v1beta2/#allocateddevicestatus">resource_v1beta2</a>, <a href="resource_v1beta1/#allocateddevicestatus">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>AllocationResult</td>
+<td><a href="resource_v1/#allocationresult">resource_v1</a>, <a href="resource_v1beta2/#allocationresult">resource_v1beta2</a>, <a href="resource_v1beta1/#allocationresult">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>AppArmorProfile</td>
+<td><a href="core_v1/#apparmorprofile">core_v1</a></td>
+</tr>
+<tr>
+<td>ApplyConfiguration</td>
+<td><a href="admissionregistration_v1beta1/#applyconfiguration">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#applyconfiguration">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>AttachedVolume</td>
+<td><a href="core_v1/#attachedvolume">core_v1</a></td>
+</tr>
+<tr>
+<td>AuditAnnotation</td>
+<td><a href="admissionregistration_v1/#auditannotation">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>AzureDiskVolumeSource</td>
+<td><a href="core_v1/#azurediskvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>AzureFilePersistentVolumeSource</td>
+<td><a href="core_v1/#azurefilepersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>AzureFileVolumeSource</td>
+<td><a href="core_v1/#azurefilevolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>BasicDevice</td>
+<td><a href="resource_v1beta1/#basicdevice">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>BasicSchedulingPolicy</td>
+<td><a href="scheduling_v1alpha1/#basicschedulingpolicy">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>Binding</td>
+<td><a href="core_v1/#binding">core_v1</a></td>
+</tr>
+<tr>
+<td>BoundObjectReference</td>
+<td><a href="authentication_v1/#boundobjectreference">authentication_v1</a></td>
+</tr>
+<tr>
+<td>CELDeviceSelector</td>
+<td><a href="resource_v1/#celdeviceselector">resource_v1</a>, <a href="resource_v1beta2/#celdeviceselector">resource_v1beta2</a>, <a href="resource_v1beta1/#celdeviceselector">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CSIDriver</td>
+<td><a href="storage_v1/#csidriver">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSIDriverList</td>
+<td><a href="storage_v1/#csidriverlist">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSIDriverSpec</td>
+<td><a href="storage_v1/#csidriverspec">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSINode</td>
+<td><a href="storage_v1/#csinode">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSINodeDriver</td>
+<td><a href="storage_v1/#csinodedriver">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSINodeList</td>
+<td><a href="storage_v1/#csinodelist">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSINodeSpec</td>
+<td><a href="storage_v1/#csinodespec">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSIPersistentVolumeSource</td>
+<td><a href="core_v1/#csipersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>CSIStorageCapacity</td>
+<td><a href="storage_v1/#csistoragecapacity">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSIStorageCapacityList</td>
+<td><a href="storage_v1/#csistoragecapacitylist">storage_v1</a></td>
+</tr>
+<tr>
+<td>CSIVolumeSource</td>
+<td><a href="core_v1/#csivolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Capabilities</td>
+<td><a href="core_v1/#capabilities">core_v1</a></td>
+</tr>
+<tr>
+<td>CapacityRequestPolicy</td>
+<td><a href="resource_v1/#capacityrequestpolicy">resource_v1</a>, <a href="resource_v1beta2/#capacityrequestpolicy">resource_v1beta2</a>, <a href="resource_v1beta1/#capacityrequestpolicy">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CapacityRequestPolicyRange</td>
+<td><a href="resource_v1/#capacityrequestpolicyrange">resource_v1</a>, <a href="resource_v1beta2/#capacityrequestpolicyrange">resource_v1beta2</a>, <a href="resource_v1beta1/#capacityrequestpolicyrange">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CapacityRequirements</td>
+<td><a href="resource_v1/#capacityrequirements">resource_v1</a>, <a href="resource_v1beta2/#capacityrequirements">resource_v1beta2</a>, <a href="resource_v1beta1/#capacityrequirements">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CephFSPersistentVolumeSource</td>
+<td><a href="core_v1/#cephfspersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>CephFSVolumeSource</td>
+<td><a href="core_v1/#cephfsvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>CertificateSigningRequest</td>
+<td><a href="certificates_v1/#certificatesigningrequest">certificates_v1</a></td>
+</tr>
+<tr>
+<td>CertificateSigningRequestCondition</td>
+<td><a href="certificates_v1/#certificatesigningrequestcondition">certificates_v1</a></td>
+</tr>
+<tr>
+<td>CertificateSigningRequestList</td>
+<td><a href="certificates_v1/#certificatesigningrequestlist">certificates_v1</a></td>
+</tr>
+<tr>
+<td>CertificateSigningRequestSpec</td>
+<td><a href="certificates_v1/#certificatesigningrequestspec">certificates_v1</a></td>
+</tr>
+<tr>
+<td>CertificateSigningRequestStatus</td>
+<td><a href="certificates_v1/#certificatesigningrequeststatus">certificates_v1</a></td>
+</tr>
+<tr>
+<td>CinderPersistentVolumeSource</td>
+<td><a href="core_v1/#cinderpersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>CinderVolumeSource</td>
+<td><a href="core_v1/#cindervolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ClientIPConfig</td>
+<td><a href="core_v1/#clientipconfig">core_v1</a></td>
+</tr>
+<tr>
+<td>ClusterRole</td>
+<td><a href="rbac_v1/#clusterrole">rbac_v1</a></td>
+</tr>
+<tr>
+<td>ClusterRoleBinding</td>
+<td><a href="rbac_v1/#clusterrolebinding">rbac_v1</a></td>
+</tr>
+<tr>
+<td>ClusterRoleBindingList</td>
+<td><a href="rbac_v1/#clusterrolebindinglist">rbac_v1</a></td>
+</tr>
+<tr>
+<td>ClusterRoleList</td>
+<td><a href="rbac_v1/#clusterrolelist">rbac_v1</a></td>
+</tr>
+<tr>
+<td>ClusterTrustBundle</td>
+<td><a href="certificates_v1beta1/#clustertrustbundle">certificates_v1beta1</a>, <a href="certificates_v1alpha1/#clustertrustbundle">certificates_v1alpha1</a></td>
+</tr>
+<tr>
+<td>ClusterTrustBundleList</td>
+<td><a href="certificates_v1beta1/#clustertrustbundlelist">certificates_v1beta1</a>, <a href="certificates_v1alpha1/#clustertrustbundlelist">certificates_v1alpha1</a></td>
+</tr>
+<tr>
+<td>ClusterTrustBundleProjection</td>
+<td><a href="core_v1/#clustertrustbundleprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>ClusterTrustBundleSpec</td>
+<td><a href="certificates_v1beta1/#clustertrustbundlespec">certificates_v1beta1</a>, <a href="certificates_v1alpha1/#clustertrustbundlespec">certificates_v1alpha1</a></td>
+</tr>
+<tr>
+<td>ComponentCondition</td>
+<td><a href="core_v1/#componentcondition">core_v1</a></td>
+</tr>
+<tr>
+<td>ComponentStatus</td>
+<td><a href="core_v1/#componentstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>ComponentStatusList</td>
+<td><a href="core_v1/#componentstatuslist">core_v1</a></td>
+</tr>
+<tr>
+<td>Condition</td>
+<td><a href="meta_v1/#condition">meta_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMap</td>
+<td><a href="core_v1/#configmap">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapEnvSource</td>
+<td><a href="core_v1/#configmapenvsource">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapKeySelector</td>
+<td><a href="core_v1/#configmapkeyselector">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapList</td>
+<td><a href="core_v1/#configmaplist">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapNodeConfigSource</td>
+<td><a href="core_v1/#configmapnodeconfigsource">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapProjection</td>
+<td><a href="core_v1/#configmapprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>ConfigMapVolumeSource</td>
+<td><a href="core_v1/#configmapvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Container</td>
+<td><a href="core_v1/#container">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerExtendedResourceRequest</td>
+<td><a href="core_v1/#containerextendedresourcerequest">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerImage</td>
+<td><a href="core_v1/#containerimage">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerPort</td>
+<td><a href="core_v1/#containerport">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerResizePolicy</td>
+<td><a href="core_v1/#containerresizepolicy">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerResourceMetricSource</td>
+<td><a href="autoscaling_v2/#containerresourcemetricsource">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ContainerResourceMetricStatus</td>
+<td><a href="autoscaling_v2/#containerresourcemetricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ContainerRestartRule</td>
+<td><a href="core_v1/#containerrestartrule">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerRestartRuleOnExitCodes</td>
+<td><a href="core_v1/#containerrestartruleonexitcodes">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerState</td>
+<td><a href="core_v1/#containerstate">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerStateRunning</td>
+<td><a href="core_v1/#containerstaterunning">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerStateTerminated</td>
+<td><a href="core_v1/#containerstateterminated">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerStateWaiting</td>
+<td><a href="core_v1/#containerstatewaiting">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerStatus</td>
+<td><a href="core_v1/#containerstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>ContainerUser</td>
+<td><a href="core_v1/#containeruser">core_v1</a></td>
+</tr>
+<tr>
+<td>ControllerRevision</td>
+<td><a href="apps_v1/#controllerrevision">apps_v1</a></td>
+</tr>
+<tr>
+<td>ControllerRevisionList</td>
+<td><a href="apps_v1/#controllerrevisionlist">apps_v1</a></td>
+</tr>
+<tr>
+<td>Counter</td>
+<td><a href="resource_v1/#counter">resource_v1</a>, <a href="resource_v1beta2/#counter">resource_v1beta2</a>, <a href="resource_v1beta1/#counter">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CounterSet</td>
+<td><a href="resource_v1/#counterset">resource_v1</a>, <a href="resource_v1beta2/#counterset">resource_v1beta2</a>, <a href="resource_v1beta1/#counterset">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>CronJob</td>
+<td><a href="batch_v1/#cronjob">batch_v1</a></td>
+</tr>
+<tr>
+<td>CronJobList</td>
+<td><a href="batch_v1/#cronjoblist">batch_v1</a></td>
+</tr>
+<tr>
+<td>CronJobSpec</td>
+<td><a href="batch_v1/#cronjobspec">batch_v1</a></td>
+</tr>
+<tr>
+<td>CronJobStatus</td>
+<td><a href="batch_v1/#cronjobstatus">batch_v1</a></td>
+</tr>
+<tr>
+<td>CrossVersionObjectReference</td>
+<td><a href="autoscaling_v2/#crossversionobjectreference">autoscaling_v2</a>, <a href="autoscaling_v1/#crossversionobjectreference">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceColumnDefinition</td>
+<td><a href="apiextensions_v1/#customresourcecolumndefinition">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceConversion</td>
+<td><a href="apiextensions_v1/#customresourceconversion">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinition</td>
+<td><a href="apiextensions_v1/#customresourcedefinition">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionCondition</td>
+<td><a href="apiextensions_v1/#customresourcedefinitioncondition">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionList</td>
+<td><a href="apiextensions_v1/#customresourcedefinitionlist">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionNames</td>
+<td><a href="apiextensions_v1/#customresourcedefinitionnames">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionSpec</td>
+<td><a href="apiextensions_v1/#customresourcedefinitionspec">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionStatus</td>
+<td><a href="apiextensions_v1/#customresourcedefinitionstatus">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceDefinitionVersion</td>
+<td><a href="apiextensions_v1/#customresourcedefinitionversion">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceSubresourceScale</td>
+<td><a href="apiextensions_v1/#customresourcesubresourcescale">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceSubresourceStatus</td>
+<td><a href="apiextensions_v1/#customresourcesubresourcestatus">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceSubresources</td>
+<td><a href="apiextensions_v1/#customresourcesubresources">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>CustomResourceValidation</td>
+<td><a href="apiextensions_v1/#customresourcevalidation">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>DaemonEndpoint</td>
+<td><a href="core_v1/#daemonendpoint">core_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSet</td>
+<td><a href="apps_v1/#daemonset">apps_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSetCondition</td>
+<td><a href="apps_v1/#daemonsetcondition">apps_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSetList</td>
+<td><a href="apps_v1/#daemonsetlist">apps_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSetSpec</td>
+<td><a href="apps_v1/#daemonsetspec">apps_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSetStatus</td>
+<td><a href="apps_v1/#daemonsetstatus">apps_v1</a></td>
+</tr>
+<tr>
+<td>DaemonSetUpdateStrategy</td>
+<td><a href="apps_v1/#daemonsetupdatestrategy">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeleteOptions</td>
+<td><a href="meta_v1/#deleteoptions">meta_v1</a></td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td><a href="apps_v1/#deployment">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeploymentCondition</td>
+<td><a href="apps_v1/#deploymentcondition">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeploymentList</td>
+<td><a href="apps_v1/#deploymentlist">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeploymentSpec</td>
+<td><a href="apps_v1/#deploymentspec">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeploymentStatus</td>
+<td><a href="apps_v1/#deploymentstatus">apps_v1</a></td>
+</tr>
+<tr>
+<td>DeploymentStrategy</td>
+<td><a href="apps_v1/#deploymentstrategy">apps_v1</a></td>
+</tr>
+<tr>
+<td>Device</td>
+<td><a href="resource_v1/#device">resource_v1</a>, <a href="resource_v1beta2/#device">resource_v1beta2</a>, <a href="resource_v1beta1/#device">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceAllocationConfiguration</td>
+<td><a href="resource_v1/#deviceallocationconfiguration">resource_v1</a>, <a href="resource_v1beta2/#deviceallocationconfiguration">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceallocationconfiguration">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceAllocationResult</td>
+<td><a href="resource_v1/#deviceallocationresult">resource_v1</a>, <a href="resource_v1beta2/#deviceallocationresult">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceallocationresult">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceAttribute</td>
+<td><a href="resource_v1/#deviceattribute">resource_v1</a>, <a href="resource_v1beta2/#deviceattribute">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceattribute">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceCapacity</td>
+<td><a href="resource_v1/#devicecapacity">resource_v1</a>, <a href="resource_v1beta2/#devicecapacity">resource_v1beta2</a>, <a href="resource_v1beta1/#devicecapacity">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClaim</td>
+<td><a href="resource_v1/#deviceclaim">resource_v1</a>, <a href="resource_v1beta2/#deviceclaim">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclaim">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClaimConfiguration</td>
+<td><a href="resource_v1/#deviceclaimconfiguration">resource_v1</a>, <a href="resource_v1beta2/#deviceclaimconfiguration">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclaimconfiguration">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClass</td>
+<td><a href="resource_v1/#deviceclass">resource_v1</a>, <a href="resource_v1beta2/#deviceclass">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclass">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClassConfiguration</td>
+<td><a href="resource_v1/#deviceclassconfiguration">resource_v1</a>, <a href="resource_v1beta2/#deviceclassconfiguration">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclassconfiguration">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClassList</td>
+<td><a href="resource_v1/#deviceclasslist">resource_v1</a>, <a href="resource_v1beta2/#deviceclasslist">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclasslist">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceClassSpec</td>
+<td><a href="resource_v1/#deviceclassspec">resource_v1</a>, <a href="resource_v1beta2/#deviceclassspec">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceclassspec">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceConstraint</td>
+<td><a href="resource_v1/#deviceconstraint">resource_v1</a>, <a href="resource_v1beta2/#deviceconstraint">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceconstraint">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceCounterConsumption</td>
+<td><a href="resource_v1/#devicecounterconsumption">resource_v1</a>, <a href="resource_v1beta2/#devicecounterconsumption">resource_v1beta2</a>, <a href="resource_v1beta1/#devicecounterconsumption">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceRequest</td>
+<td><a href="resource_v1/#devicerequest">resource_v1</a>, <a href="resource_v1beta2/#devicerequest">resource_v1beta2</a>, <a href="resource_v1beta1/#devicerequest">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceRequestAllocationResult</td>
+<td><a href="resource_v1/#devicerequestallocationresult">resource_v1</a>, <a href="resource_v1beta2/#devicerequestallocationresult">resource_v1beta2</a>, <a href="resource_v1beta1/#devicerequestallocationresult">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceSelector</td>
+<td><a href="resource_v1/#deviceselector">resource_v1</a>, <a href="resource_v1beta2/#deviceselector">resource_v1beta2</a>, <a href="resource_v1beta1/#deviceselector">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceSubRequest</td>
+<td><a href="resource_v1/#devicesubrequest">resource_v1</a>, <a href="resource_v1beta2/#devicesubrequest">resource_v1beta2</a>, <a href="resource_v1beta1/#devicesubrequest">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DeviceTaint</td>
+<td><a href="resource_v1/#devicetaint">resource_v1</a>, <a href="resource_v1beta2/#devicetaint">resource_v1beta2</a>, <a href="resource_v1beta1/#devicetaint">resource_v1beta1</a>, <a href="resource_v1alpha3/#devicetaint">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceTaintRule</td>
+<td><a href="resource_v1alpha3/#devicetaintrule">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceTaintRuleList</td>
+<td><a href="resource_v1alpha3/#devicetaintrulelist">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceTaintRuleSpec</td>
+<td><a href="resource_v1alpha3/#devicetaintrulespec">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceTaintRuleStatus</td>
+<td><a href="resource_v1alpha3/#devicetaintrulestatus">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceTaintSelector</td>
+<td><a href="resource_v1alpha3/#devicetaintselector">resource_v1alpha3</a></td>
+</tr>
+<tr>
+<td>DeviceToleration</td>
+<td><a href="resource_v1/#devicetoleration">resource_v1</a>, <a href="resource_v1beta2/#devicetoleration">resource_v1beta2</a>, <a href="resource_v1beta1/#devicetoleration">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>DownwardAPIProjection</td>
+<td><a href="core_v1/#downwardapiprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>DownwardAPIVolumeFile</td>
+<td><a href="core_v1/#downwardapivolumefile">core_v1</a></td>
+</tr>
+<tr>
+<td>DownwardAPIVolumeSource</td>
+<td><a href="core_v1/#downwardapivolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>EmptyDirVolumeSource</td>
+<td><a href="core_v1/#emptydirvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Endpoint</td>
+<td><a href="discovery_v1/#endpoint">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointAddress</td>
+<td><a href="core_v1/#endpointaddress">core_v1</a></td>
+</tr>
+<tr>
+<td>EndpointConditions</td>
+<td><a href="discovery_v1/#endpointconditions">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointHints</td>
+<td><a href="discovery_v1/#endpointhints">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointPort</td>
+<td><a href="core_v1/#endpointport">core_v1</a>, <a href="discovery_v1/#endpointport">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointSlice</td>
+<td><a href="discovery_v1/#endpointslice">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointSliceList</td>
+<td><a href="discovery_v1/#endpointslicelist">discovery_v1</a></td>
+</tr>
+<tr>
+<td>EndpointSubset</td>
+<td><a href="core_v1/#endpointsubset">core_v1</a></td>
+</tr>
+<tr>
+<td>Endpoints</td>
+<td><a href="core_v1/#endpoints">core_v1</a></td>
+</tr>
+<tr>
+<td>EndpointsList</td>
+<td><a href="core_v1/#endpointslist">core_v1</a></td>
+</tr>
+<tr>
+<td>EnvFromSource</td>
+<td><a href="core_v1/#envfromsource">core_v1</a></td>
+</tr>
+<tr>
+<td>EnvVar</td>
+<td><a href="core_v1/#envvar">core_v1</a></td>
+</tr>
+<tr>
+<td>EnvVarSource</td>
+<td><a href="core_v1/#envvarsource">core_v1</a></td>
+</tr>
+<tr>
+<td>EphemeralContainer</td>
+<td><a href="core_v1/#ephemeralcontainer">core_v1</a></td>
+</tr>
+<tr>
+<td>EphemeralVolumeSource</td>
+<td><a href="core_v1/#ephemeralvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Event</td>
+<td><a href="core_v1/#event">core_v1</a>, <a href="events_v1/#event">events_v1</a></td>
+</tr>
+<tr>
+<td>EventList</td>
+<td><a href="core_v1/#eventlist">core_v1</a>, <a href="events_v1/#eventlist">events_v1</a></td>
+</tr>
+<tr>
+<td>EventSeries</td>
+<td><a href="core_v1/#eventseries">core_v1</a>, <a href="events_v1/#eventseries">events_v1</a></td>
+</tr>
+<tr>
+<td>EventSource</td>
+<td><a href="core_v1/#eventsource">core_v1</a></td>
+</tr>
+<tr>
+<td>Eviction</td>
+<td><a href="policy_v1/#eviction">policy_v1</a></td>
+</tr>
+<tr>
+<td>ExactDeviceRequest</td>
+<td><a href="resource_v1/#exactdevicerequest">resource_v1</a>, <a href="resource_v1beta2/#exactdevicerequest">resource_v1beta2</a></td>
+</tr>
+<tr>
+<td>ExecAction</td>
+<td><a href="core_v1/#execaction">core_v1</a></td>
+</tr>
+<tr>
+<td>ExemptPriorityLevelConfiguration</td>
+<td><a href="flowcontrol_v1/#exemptprioritylevelconfiguration">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>ExpressionWarning</td>
+<td><a href="admissionregistration_v1/#expressionwarning">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ExternalDocumentation</td>
+<td><a href="apiextensions_v1/#externaldocumentation">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>ExternalMetricSource</td>
+<td><a href="autoscaling_v2/#externalmetricsource">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ExternalMetricStatus</td>
+<td><a href="autoscaling_v2/#externalmetricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>FCVolumeSource</td>
+<td><a href="core_v1/#fcvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>FieldSelectorAttributes</td>
+<td><a href="authorization_v1/#fieldselectorattributes">authorization_v1</a></td>
+</tr>
+<tr>
+<td>FieldSelectorRequirement</td>
+<td><a href="meta_v1/#fieldselectorrequirement">meta_v1</a></td>
+</tr>
+<tr>
+<td>FieldsV1</td>
+<td><a href="meta_v1/#fieldsv1">meta_v1</a></td>
+</tr>
+<tr>
+<td>FileKeySelector</td>
+<td><a href="core_v1/#filekeyselector">core_v1</a></td>
+</tr>
+<tr>
+<td>FlexPersistentVolumeSource</td>
+<td><a href="core_v1/#flexpersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>FlexVolumeSource</td>
+<td><a href="core_v1/#flexvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>FlockerVolumeSource</td>
+<td><a href="core_v1/#flockervolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>FlowDistinguisherMethod</td>
+<td><a href="flowcontrol_v1/#flowdistinguishermethod">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>FlowSchema</td>
+<td><a href="flowcontrol_v1/#flowschema">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>FlowSchemaCondition</td>
+<td><a href="flowcontrol_v1/#flowschemacondition">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>FlowSchemaList</td>
+<td><a href="flowcontrol_v1/#flowschemalist">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>FlowSchemaSpec</td>
+<td><a href="flowcontrol_v1/#flowschemaspec">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>FlowSchemaStatus</td>
+<td><a href="flowcontrol_v1/#flowschemastatus">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>ForNode</td>
+<td><a href="discovery_v1/#fornode">discovery_v1</a></td>
+</tr>
+<tr>
+<td>ForZone</td>
+<td><a href="discovery_v1/#forzone">discovery_v1</a></td>
+</tr>
+<tr>
+<td>GCEPersistentDiskVolumeSource</td>
+<td><a href="core_v1/#gcepersistentdiskvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>GRPCAction</td>
+<td><a href="core_v1/#grpcaction">core_v1</a></td>
+</tr>
+<tr>
+<td>GangSchedulingPolicy</td>
+<td><a href="scheduling_v1alpha1/#gangschedulingpolicy">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>GitRepoVolumeSource</td>
+<td><a href="core_v1/#gitrepovolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>GlusterfsPersistentVolumeSource</td>
+<td><a href="core_v1/#glusterfspersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>GlusterfsVolumeSource</td>
+<td><a href="core_v1/#glusterfsvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>GroupResource</td>
+<td><a href="meta_v1/#groupresource">meta_v1</a></td>
+</tr>
+<tr>
+<td>GroupSubject</td>
+<td><a href="flowcontrol_v1/#groupsubject">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>GroupVersionForDiscovery</td>
+<td><a href="meta_v1/#groupversionfordiscovery">meta_v1</a></td>
+</tr>
+<tr>
+<td>HPAScalingPolicy</td>
+<td><a href="autoscaling_v2/#hpascalingpolicy">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>HPAScalingRules</td>
+<td><a href="autoscaling_v2/#hpascalingrules">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>HTTPGetAction</td>
+<td><a href="core_v1/#httpgetaction">core_v1</a></td>
+</tr>
+<tr>
+<td>HTTPHeader</td>
+<td><a href="core_v1/#httpheader">core_v1</a></td>
+</tr>
+<tr>
+<td>HTTPIngressPath</td>
+<td><a href="networking_v1/#httpingresspath">networking_v1</a></td>
+</tr>
+<tr>
+<td>HTTPIngressRuleValue</td>
+<td><a href="networking_v1/#httpingressrulevalue">networking_v1</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscaler</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscaler">autoscaling_v2</a>, <a href="autoscaling_v1/#horizontalpodautoscaler">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscalerBehavior</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscalerbehavior">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscalerCondition</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscalercondition">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscalerList</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscalerlist">autoscaling_v2</a>, <a href="autoscaling_v1/#horizontalpodautoscalerlist">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscalerSpec</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscalerspec">autoscaling_v2</a>, <a href="autoscaling_v1/#horizontalpodautoscalerspec">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>HorizontalPodAutoscalerStatus</td>
+<td><a href="autoscaling_v2/#horizontalpodautoscalerstatus">autoscaling_v2</a>, <a href="autoscaling_v1/#horizontalpodautoscalerstatus">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>HostAlias</td>
+<td><a href="core_v1/#hostalias">core_v1</a></td>
+</tr>
+<tr>
+<td>HostIP</td>
+<td><a href="core_v1/#hostip">core_v1</a></td>
+</tr>
+<tr>
+<td>HostPathVolumeSource</td>
+<td><a href="core_v1/#hostpathvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>IPAddress</td>
+<td><a href="networking_v1/#ipaddress">networking_v1</a>, <a href="networking_v1beta1/#ipaddress">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>IPAddressList</td>
+<td><a href="networking_v1/#ipaddresslist">networking_v1</a>, <a href="networking_v1beta1/#ipaddresslist">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>IPAddressSpec</td>
+<td><a href="networking_v1/#ipaddressspec">networking_v1</a>, <a href="networking_v1beta1/#ipaddressspec">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>IPBlock</td>
+<td><a href="networking_v1/#ipblock">networking_v1</a></td>
+</tr>
+<tr>
+<td>ISCSIPersistentVolumeSource</td>
+<td><a href="core_v1/#iscsipersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ISCSIVolumeSource</td>
+<td><a href="core_v1/#iscsivolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ImageVolumeSource</td>
+<td><a href="core_v1/#imagevolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Info</td>
+<td><a href="version/#info">version</a></td>
+</tr>
+<tr>
+<td>Ingress</td>
+<td><a href="networking_v1/#ingress">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressBackend</td>
+<td><a href="networking_v1/#ingressbackend">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressClass</td>
+<td><a href="networking_v1/#ingressclass">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressClassList</td>
+<td><a href="networking_v1/#ingressclasslist">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressClassParametersReference</td>
+<td><a href="networking_v1/#ingressclassparametersreference">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressClassSpec</td>
+<td><a href="networking_v1/#ingressclassspec">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressList</td>
+<td><a href="networking_v1/#ingresslist">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressLoadBalancerIngress</td>
+<td><a href="networking_v1/#ingressloadbalanceringress">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressLoadBalancerStatus</td>
+<td><a href="networking_v1/#ingressloadbalancerstatus">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressPortStatus</td>
+<td><a href="networking_v1/#ingressportstatus">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressRule</td>
+<td><a href="networking_v1/#ingressrule">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressServiceBackend</td>
+<td><a href="networking_v1/#ingressservicebackend">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressSpec</td>
+<td><a href="networking_v1/#ingressspec">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressStatus</td>
+<td><a href="networking_v1/#ingressstatus">networking_v1</a></td>
+</tr>
+<tr>
+<td>IngressTLS</td>
+<td><a href="networking_v1/#ingresstls">networking_v1</a></td>
+</tr>
+<tr>
+<td>IntOrString</td>
+<td><a href="util_intstr/#intorstring">util_intstr</a></td>
+</tr>
+<tr>
+<td>JSON</td>
+<td><a href="apiextensions_v1/#json">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>JSONPatch</td>
+<td><a href="admissionregistration_v1beta1/#jsonpatch">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#jsonpatch">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>JSONSchemaProps</td>
+<td><a href="apiextensions_v1/#jsonschemaprops">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>JSONSchemaPropsOrArray</td>
+<td><a href="apiextensions_v1/#jsonschemapropsorarray">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>JSONSchemaPropsOrBool</td>
+<td><a href="apiextensions_v1/#jsonschemapropsorbool">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>JSONSchemaPropsOrStringArray</td>
+<td><a href="apiextensions_v1/#jsonschemapropsorstringarray">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>Job</td>
+<td><a href="batch_v1/#job">batch_v1</a></td>
+</tr>
+<tr>
+<td>JobCondition</td>
+<td><a href="batch_v1/#jobcondition">batch_v1</a></td>
+</tr>
+<tr>
+<td>JobList</td>
+<td><a href="batch_v1/#joblist">batch_v1</a></td>
+</tr>
+<tr>
+<td>JobSpec</td>
+<td><a href="batch_v1/#jobspec">batch_v1</a></td>
+</tr>
+<tr>
+<td>JobStatus</td>
+<td><a href="batch_v1/#jobstatus">batch_v1</a></td>
+</tr>
+<tr>
+<td>JobTemplateSpec</td>
+<td><a href="batch_v1/#jobtemplatespec">batch_v1</a></td>
+</tr>
+<tr>
+<td>KeyToPath</td>
+<td><a href="core_v1/#keytopath">core_v1</a></td>
+</tr>
+<tr>
+<td>LabelSelector</td>
+<td><a href="meta_v1/#labelselector">meta_v1</a></td>
+</tr>
+<tr>
+<td>LabelSelectorAttributes</td>
+<td><a href="authorization_v1/#labelselectorattributes">authorization_v1</a></td>
+</tr>
+<tr>
+<td>LabelSelectorRequirement</td>
+<td><a href="meta_v1/#labelselectorrequirement">meta_v1</a></td>
+</tr>
+<tr>
+<td>Lease</td>
+<td><a href="coordination_v1/#lease">coordination_v1</a></td>
+</tr>
+<tr>
+<td>LeaseCandidate</td>
+<td><a href="coordination_v1beta1/#leasecandidate">coordination_v1beta1</a>, <a href="coordination_v1alpha2/#leasecandidate">coordination_v1alpha2</a></td>
+</tr>
+<tr>
+<td>LeaseCandidateList</td>
+<td><a href="coordination_v1beta1/#leasecandidatelist">coordination_v1beta1</a>, <a href="coordination_v1alpha2/#leasecandidatelist">coordination_v1alpha2</a></td>
+</tr>
+<tr>
+<td>LeaseCandidateSpec</td>
+<td><a href="coordination_v1beta1/#leasecandidatespec">coordination_v1beta1</a>, <a href="coordination_v1alpha2/#leasecandidatespec">coordination_v1alpha2</a></td>
+</tr>
+<tr>
+<td>LeaseList</td>
+<td><a href="coordination_v1/#leaselist">coordination_v1</a></td>
+</tr>
+<tr>
+<td>LeaseSpec</td>
+<td><a href="coordination_v1/#leasespec">coordination_v1</a></td>
+</tr>
+<tr>
+<td>Lifecycle</td>
+<td><a href="core_v1/#lifecycle">core_v1</a></td>
+</tr>
+<tr>
+<td>LifecycleHandler</td>
+<td><a href="core_v1/#lifecyclehandler">core_v1</a></td>
+</tr>
+<tr>
+<td>LimitRange</td>
+<td><a href="core_v1/#limitrange">core_v1</a></td>
+</tr>
+<tr>
+<td>LimitRangeItem</td>
+<td><a href="core_v1/#limitrangeitem">core_v1</a></td>
+</tr>
+<tr>
+<td>LimitRangeList</td>
+<td><a href="core_v1/#limitrangelist">core_v1</a></td>
+</tr>
+<tr>
+<td>LimitRangeSpec</td>
+<td><a href="core_v1/#limitrangespec">core_v1</a></td>
+</tr>
+<tr>
+<td>LimitResponse</td>
+<td><a href="flowcontrol_v1/#limitresponse">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>LimitedPriorityLevelConfiguration</td>
+<td><a href="flowcontrol_v1/#limitedprioritylevelconfiguration">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>LinuxContainerUser</td>
+<td><a href="core_v1/#linuxcontaineruser">core_v1</a></td>
+</tr>
+<tr>
+<td>ListMeta</td>
+<td><a href="meta_v1/#listmeta">meta_v1</a></td>
+</tr>
+<tr>
+<td>LoadBalancerIngress</td>
+<td><a href="core_v1/#loadbalanceringress">core_v1</a></td>
+</tr>
+<tr>
+<td>LoadBalancerStatus</td>
+<td><a href="core_v1/#loadbalancerstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>LocalObjectReference</td>
+<td><a href="core_v1/#localobjectreference">core_v1</a></td>
+</tr>
+<tr>
+<td>LocalSubjectAccessReview</td>
+<td><a href="authorization_v1/#localsubjectaccessreview">authorization_v1</a></td>
+</tr>
+<tr>
+<td>LocalVolumeSource</td>
+<td><a href="core_v1/#localvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ManagedFieldsEntry</td>
+<td><a href="meta_v1/#managedfieldsentry">meta_v1</a></td>
+</tr>
+<tr>
+<td>MatchCondition</td>
+<td><a href="admissionregistration_v1/#matchcondition">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#matchcondition">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#matchcondition">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MatchResources</td>
+<td><a href="admissionregistration_v1/#matchresources">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#matchresources">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#matchresources">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MetricIdentifier</td>
+<td><a href="autoscaling_v2/#metricidentifier">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>MetricSpec</td>
+<td><a href="autoscaling_v2/#metricspec">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>MetricStatus</td>
+<td><a href="autoscaling_v2/#metricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>MetricTarget</td>
+<td><a href="autoscaling_v2/#metrictarget">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>MetricValueStatus</td>
+<td><a href="autoscaling_v2/#metricvaluestatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>MicroTime</td>
+<td><a href="meta_v1/#microtime">meta_v1</a></td>
+</tr>
+<tr>
+<td>ModifyVolumeStatus</td>
+<td><a href="core_v1/#modifyvolumestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicy</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicy">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicy">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicyBinding</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicybinding">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicybinding">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicyBindingList</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicybindinglist">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicybindinglist">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicyBindingSpec</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicybindingspec">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicybindingspec">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicyList</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicylist">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicylist">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingAdmissionPolicySpec</td>
+<td><a href="admissionregistration_v1beta1/#mutatingadmissionpolicyspec">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutatingadmissionpolicyspec">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>MutatingWebhook</td>
+<td><a href="admissionregistration_v1/#mutatingwebhook">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>MutatingWebhookConfiguration</td>
+<td><a href="admissionregistration_v1/#mutatingwebhookconfiguration">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>MutatingWebhookConfigurationList</td>
+<td><a href="admissionregistration_v1/#mutatingwebhookconfigurationlist">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>Mutation</td>
+<td><a href="admissionregistration_v1beta1/#mutation">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#mutation">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>NFSVolumeSource</td>
+<td><a href="core_v1/#nfsvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>NamedRuleWithOperations</td>
+<td><a href="admissionregistration_v1/#namedrulewithoperations">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#namedrulewithoperations">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#namedrulewithoperations">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>Namespace</td>
+<td><a href="core_v1/#namespace">core_v1</a></td>
+</tr>
+<tr>
+<td>NamespaceCondition</td>
+<td><a href="core_v1/#namespacecondition">core_v1</a></td>
+</tr>
+<tr>
+<td>NamespaceList</td>
+<td><a href="core_v1/#namespacelist">core_v1</a></td>
+</tr>
+<tr>
+<td>NamespaceSpec</td>
+<td><a href="core_v1/#namespacespec">core_v1</a></td>
+</tr>
+<tr>
+<td>NamespaceStatus</td>
+<td><a href="core_v1/#namespacestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>NetworkDeviceData</td>
+<td><a href="resource_v1/#networkdevicedata">resource_v1</a>, <a href="resource_v1beta2/#networkdevicedata">resource_v1beta2</a>, <a href="resource_v1beta1/#networkdevicedata">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicy</td>
+<td><a href="networking_v1/#networkpolicy">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicyEgressRule</td>
+<td><a href="networking_v1/#networkpolicyegressrule">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicyIngressRule</td>
+<td><a href="networking_v1/#networkpolicyingressrule">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicyList</td>
+<td><a href="networking_v1/#networkpolicylist">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicyPeer</td>
+<td><a href="networking_v1/#networkpolicypeer">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicyPort</td>
+<td><a href="networking_v1/#networkpolicyport">networking_v1</a></td>
+</tr>
+<tr>
+<td>NetworkPolicySpec</td>
+<td><a href="networking_v1/#networkpolicyspec">networking_v1</a></td>
+</tr>
+<tr>
+<td>Node</td>
+<td><a href="core_v1/#node">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeAddress</td>
+<td><a href="core_v1/#nodeaddress">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeAffinity</td>
+<td><a href="core_v1/#nodeaffinity">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeCondition</td>
+<td><a href="core_v1/#nodecondition">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeConfigSource</td>
+<td><a href="core_v1/#nodeconfigsource">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeConfigStatus</td>
+<td><a href="core_v1/#nodeconfigstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeDaemonEndpoints</td>
+<td><a href="core_v1/#nodedaemonendpoints">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeFeatures</td>
+<td><a href="core_v1/#nodefeatures">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeList</td>
+<td><a href="core_v1/#nodelist">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeRuntimeHandler</td>
+<td><a href="core_v1/#noderuntimehandler">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeRuntimeHandlerFeatures</td>
+<td><a href="core_v1/#noderuntimehandlerfeatures">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSelector</td>
+<td><a href="core_v1/#nodeselector">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSelectorRequirement</td>
+<td><a href="core_v1/#nodeselectorrequirement">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSelectorTerm</td>
+<td><a href="core_v1/#nodeselectorterm">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSpec</td>
+<td><a href="core_v1/#nodespec">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeStatus</td>
+<td><a href="core_v1/#nodestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSwapStatus</td>
+<td><a href="core_v1/#nodeswapstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>NodeSystemInfo</td>
+<td><a href="core_v1/#nodesysteminfo">core_v1</a></td>
+</tr>
+<tr>
+<td>NonResourceAttributes</td>
+<td><a href="authorization_v1/#nonresourceattributes">authorization_v1</a></td>
+</tr>
+<tr>
+<td>NonResourcePolicyRule</td>
+<td><a href="flowcontrol_v1/#nonresourcepolicyrule">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>NonResourceRule</td>
+<td><a href="authorization_v1/#nonresourcerule">authorization_v1</a></td>
+</tr>
+<tr>
+<td>ObjectFieldSelector</td>
+<td><a href="core_v1/#objectfieldselector">core_v1</a></td>
+</tr>
+<tr>
+<td>ObjectMeta</td>
+<td><a href="meta_v1/#objectmeta">meta_v1</a></td>
+</tr>
+<tr>
+<td>ObjectMetricSource</td>
+<td><a href="autoscaling_v2/#objectmetricsource">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ObjectMetricStatus</td>
+<td><a href="autoscaling_v2/#objectmetricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ObjectReference</td>
+<td><a href="core_v1/#objectreference">core_v1</a></td>
+</tr>
+<tr>
+<td>OpaqueDeviceConfiguration</td>
+<td><a href="resource_v1/#opaquedeviceconfiguration">resource_v1</a>, <a href="resource_v1beta2/#opaquedeviceconfiguration">resource_v1beta2</a>, <a href="resource_v1beta1/#opaquedeviceconfiguration">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>Overhead</td>
+<td><a href="node_v1/#overhead">node_v1</a></td>
+</tr>
+<tr>
+<td>OwnerReference</td>
+<td><a href="meta_v1/#ownerreference">meta_v1</a></td>
+</tr>
+<tr>
+<td>ParamKind</td>
+<td><a href="admissionregistration_v1/#paramkind">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#paramkind">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#paramkind">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>ParamRef</td>
+<td><a href="admissionregistration_v1/#paramref">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#paramref">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#paramref">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>ParentReference</td>
+<td><a href="networking_v1/#parentreference">networking_v1</a>, <a href="networking_v1beta1/#parentreference">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>Patch</td>
+<td><a href="meta_v1/#patch">meta_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolume</td>
+<td><a href="core_v1/#persistentvolume">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaim</td>
+<td><a href="core_v1/#persistentvolumeclaim">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimCondition</td>
+<td><a href="core_v1/#persistentvolumeclaimcondition">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimList</td>
+<td><a href="core_v1/#persistentvolumeclaimlist">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimSpec</td>
+<td><a href="core_v1/#persistentvolumeclaimspec">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimStatus</td>
+<td><a href="core_v1/#persistentvolumeclaimstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimTemplate</td>
+<td><a href="core_v1/#persistentvolumeclaimtemplate">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeClaimVolumeSource</td>
+<td><a href="core_v1/#persistentvolumeclaimvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeList</td>
+<td><a href="core_v1/#persistentvolumelist">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeSpec</td>
+<td><a href="core_v1/#persistentvolumespec">core_v1</a></td>
+</tr>
+<tr>
+<td>PersistentVolumeStatus</td>
+<td><a href="core_v1/#persistentvolumestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PhotonPersistentDiskVolumeSource</td>
+<td><a href="core_v1/#photonpersistentdiskvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Pod</td>
+<td><a href="core_v1/#pod">core_v1</a></td>
+</tr>
+<tr>
+<td>PodAffinity</td>
+<td><a href="core_v1/#podaffinity">core_v1</a></td>
+</tr>
+<tr>
+<td>PodAffinityTerm</td>
+<td><a href="core_v1/#podaffinityterm">core_v1</a></td>
+</tr>
+<tr>
+<td>PodAntiAffinity</td>
+<td><a href="core_v1/#podantiaffinity">core_v1</a></td>
+</tr>
+<tr>
+<td>PodCertificateProjection</td>
+<td><a href="core_v1/#podcertificateprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>PodCertificateRequest</td>
+<td><a href="certificates_v1beta1/#podcertificaterequest">certificates_v1beta1</a></td>
+</tr>
+<tr>
+<td>PodCertificateRequestList</td>
+<td><a href="certificates_v1beta1/#podcertificaterequestlist">certificates_v1beta1</a></td>
+</tr>
+<tr>
+<td>PodCertificateRequestSpec</td>
+<td><a href="certificates_v1beta1/#podcertificaterequestspec">certificates_v1beta1</a></td>
+</tr>
+<tr>
+<td>PodCertificateRequestStatus</td>
+<td><a href="certificates_v1beta1/#podcertificaterequeststatus">certificates_v1beta1</a></td>
+</tr>
+<tr>
+<td>PodCondition</td>
+<td><a href="core_v1/#podcondition">core_v1</a></td>
+</tr>
+<tr>
+<td>PodDNSConfig</td>
+<td><a href="core_v1/#poddnsconfig">core_v1</a></td>
+</tr>
+<tr>
+<td>PodDNSConfigOption</td>
+<td><a href="core_v1/#poddnsconfigoption">core_v1</a></td>
+</tr>
+<tr>
+<td>PodDisruptionBudget</td>
+<td><a href="policy_v1/#poddisruptionbudget">policy_v1</a></td>
+</tr>
+<tr>
+<td>PodDisruptionBudgetList</td>
+<td><a href="policy_v1/#poddisruptionbudgetlist">policy_v1</a></td>
+</tr>
+<tr>
+<td>PodDisruptionBudgetSpec</td>
+<td><a href="policy_v1/#poddisruptionbudgetspec">policy_v1</a></td>
+</tr>
+<tr>
+<td>PodDisruptionBudgetStatus</td>
+<td><a href="policy_v1/#poddisruptionbudgetstatus">policy_v1</a></td>
+</tr>
+<tr>
+<td>PodExtendedResourceClaimStatus</td>
+<td><a href="core_v1/#podextendedresourceclaimstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PodFailurePolicy</td>
+<td><a href="batch_v1/#podfailurepolicy">batch_v1</a></td>
+</tr>
+<tr>
+<td>PodFailurePolicyOnExitCodesRequirement</td>
+<td><a href="batch_v1/#podfailurepolicyonexitcodesrequirement">batch_v1</a></td>
+</tr>
+<tr>
+<td>PodFailurePolicyOnPodConditionsPattern</td>
+<td><a href="batch_v1/#podfailurepolicyonpodconditionspattern">batch_v1</a></td>
+</tr>
+<tr>
+<td>PodFailurePolicyRule</td>
+<td><a href="batch_v1/#podfailurepolicyrule">batch_v1</a></td>
+</tr>
+<tr>
+<td>PodGroup</td>
+<td><a href="scheduling_v1alpha1/#podgroup">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>PodGroupPolicy</td>
+<td><a href="scheduling_v1alpha1/#podgrouppolicy">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>PodIP</td>
+<td><a href="core_v1/#podip">core_v1</a></td>
+</tr>
+<tr>
+<td>PodList</td>
+<td><a href="core_v1/#podlist">core_v1</a></td>
+</tr>
+<tr>
+<td>PodOS</td>
+<td><a href="core_v1/#podos">core_v1</a></td>
+</tr>
+<tr>
+<td>PodReadinessGate</td>
+<td><a href="core_v1/#podreadinessgate">core_v1</a></td>
+</tr>
+<tr>
+<td>PodResourceClaim</td>
+<td><a href="core_v1/#podresourceclaim">core_v1</a></td>
+</tr>
+<tr>
+<td>PodResourceClaimStatus</td>
+<td><a href="core_v1/#podresourceclaimstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PodSchedulingGate</td>
+<td><a href="core_v1/#podschedulinggate">core_v1</a></td>
+</tr>
+<tr>
+<td>PodSecurityContext</td>
+<td><a href="core_v1/#podsecuritycontext">core_v1</a></td>
+</tr>
+<tr>
+<td>PodSpec</td>
+<td><a href="core_v1/#podspec">core_v1</a></td>
+</tr>
+<tr>
+<td>PodStatus</td>
+<td><a href="core_v1/#podstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PodTemplate</td>
+<td><a href="core_v1/#podtemplate">core_v1</a></td>
+</tr>
+<tr>
+<td>PodTemplateList</td>
+<td><a href="core_v1/#podtemplatelist">core_v1</a></td>
+</tr>
+<tr>
+<td>PodTemplateSpec</td>
+<td><a href="core_v1/#podtemplatespec">core_v1</a></td>
+</tr>
+<tr>
+<td>PodsMetricSource</td>
+<td><a href="autoscaling_v2/#podsmetricsource">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>PodsMetricStatus</td>
+<td><a href="autoscaling_v2/#podsmetricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>PolicyRule</td>
+<td><a href="rbac_v1/#policyrule">rbac_v1</a></td>
+</tr>
+<tr>
+<td>PolicyRulesWithSubjects</td>
+<td><a href="flowcontrol_v1/#policyruleswithsubjects">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PortStatus</td>
+<td><a href="core_v1/#portstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>PortworxVolumeSource</td>
+<td><a href="core_v1/#portworxvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Preconditions</td>
+<td><a href="meta_v1/#preconditions">meta_v1</a></td>
+</tr>
+<tr>
+<td>PreferredSchedulingTerm</td>
+<td><a href="core_v1/#preferredschedulingterm">core_v1</a></td>
+</tr>
+<tr>
+<td>PriorityClass</td>
+<td><a href="scheduling_v1/#priorityclass">scheduling_v1</a></td>
+</tr>
+<tr>
+<td>PriorityClassList</td>
+<td><a href="scheduling_v1/#priorityclasslist">scheduling_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfiguration</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfiguration">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfigurationCondition</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfigurationcondition">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfigurationList</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfigurationlist">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfigurationReference</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfigurationreference">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfigurationSpec</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfigurationspec">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>PriorityLevelConfigurationStatus</td>
+<td><a href="flowcontrol_v1/#prioritylevelconfigurationstatus">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>Probe</td>
+<td><a href="core_v1/#probe">core_v1</a></td>
+</tr>
+<tr>
+<td>ProjectedVolumeSource</td>
+<td><a href="core_v1/#projectedvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td><a href="resource/#quantity">resource</a></td>
+</tr>
+<tr>
+<td>QueuingConfiguration</td>
+<td><a href="flowcontrol_v1/#queuingconfiguration">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>QuobyteVolumeSource</td>
+<td><a href="core_v1/#quobytevolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>RBDPersistentVolumeSource</td>
+<td><a href="core_v1/#rbdpersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>RBDVolumeSource</td>
+<td><a href="core_v1/#rbdvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>RawExtension</td>
+<td><a href="runtime/#rawextension">runtime</a></td>
+</tr>
+<tr>
+<td>ReplicaSet</td>
+<td><a href="apps_v1/#replicaset">apps_v1</a></td>
+</tr>
+<tr>
+<td>ReplicaSetCondition</td>
+<td><a href="apps_v1/#replicasetcondition">apps_v1</a></td>
+</tr>
+<tr>
+<td>ReplicaSetList</td>
+<td><a href="apps_v1/#replicasetlist">apps_v1</a></td>
+</tr>
+<tr>
+<td>ReplicaSetSpec</td>
+<td><a href="apps_v1/#replicasetspec">apps_v1</a></td>
+</tr>
+<tr>
+<td>ReplicaSetStatus</td>
+<td><a href="apps_v1/#replicasetstatus">apps_v1</a></td>
+</tr>
+<tr>
+<td>ReplicationController</td>
+<td><a href="core_v1/#replicationcontroller">core_v1</a></td>
+</tr>
+<tr>
+<td>ReplicationControllerCondition</td>
+<td><a href="core_v1/#replicationcontrollercondition">core_v1</a></td>
+</tr>
+<tr>
+<td>ReplicationControllerList</td>
+<td><a href="core_v1/#replicationcontrollerlist">core_v1</a></td>
+</tr>
+<tr>
+<td>ReplicationControllerSpec</td>
+<td><a href="core_v1/#replicationcontrollerspec">core_v1</a></td>
+</tr>
+<tr>
+<td>ReplicationControllerStatus</td>
+<td><a href="core_v1/#replicationcontrollerstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceAttributes</td>
+<td><a href="authorization_v1/#resourceattributes">authorization_v1</a></td>
+</tr>
+<tr>
+<td>ResourceClaim</td>
+<td><a href="core_v1/#resourceclaim">core_v1</a>, <a href="resource_v1/#resourceclaim">resource_v1</a>, <a href="resource_v1beta2/#resourceclaim">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaim">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimConsumerReference</td>
+<td><a href="resource_v1/#resourceclaimconsumerreference">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimconsumerreference">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimconsumerreference">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimList</td>
+<td><a href="resource_v1/#resourceclaimlist">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimlist">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimlist">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimSpec</td>
+<td><a href="resource_v1/#resourceclaimspec">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimspec">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimspec">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimStatus</td>
+<td><a href="resource_v1/#resourceclaimstatus">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimstatus">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimstatus">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimTemplate</td>
+<td><a href="resource_v1/#resourceclaimtemplate">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimtemplate">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimtemplate">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimTemplateList</td>
+<td><a href="resource_v1/#resourceclaimtemplatelist">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimtemplatelist">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimtemplatelist">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceClaimTemplateSpec</td>
+<td><a href="resource_v1/#resourceclaimtemplatespec">resource_v1</a>, <a href="resource_v1beta2/#resourceclaimtemplatespec">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceclaimtemplatespec">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceFieldSelector</td>
+<td><a href="core_v1/#resourcefieldselector">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceHealth</td>
+<td><a href="core_v1/#resourcehealth">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceMetricSource</td>
+<td><a href="autoscaling_v2/#resourcemetricsource">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ResourceMetricStatus</td>
+<td><a href="autoscaling_v2/#resourcemetricstatus">autoscaling_v2</a></td>
+</tr>
+<tr>
+<td>ResourcePolicyRule</td>
+<td><a href="flowcontrol_v1/#resourcepolicyrule">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>ResourcePool</td>
+<td><a href="resource_v1/#resourcepool">resource_v1</a>, <a href="resource_v1beta2/#resourcepool">resource_v1beta2</a>, <a href="resource_v1beta1/#resourcepool">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceQuota</td>
+<td><a href="core_v1/#resourcequota">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceQuotaList</td>
+<td><a href="core_v1/#resourcequotalist">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceQuotaSpec</td>
+<td><a href="core_v1/#resourcequotaspec">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceQuotaStatus</td>
+<td><a href="core_v1/#resourcequotastatus">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceRequirements</td>
+<td><a href="core_v1/#resourcerequirements">core_v1</a></td>
+</tr>
+<tr>
+<td>ResourceRule</td>
+<td><a href="authorization_v1/#resourcerule">authorization_v1</a></td>
+</tr>
+<tr>
+<td>ResourceSlice</td>
+<td><a href="resource_v1/#resourceslice">resource_v1</a>, <a href="resource_v1beta2/#resourceslice">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceslice">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceSliceList</td>
+<td><a href="resource_v1/#resourceslicelist">resource_v1</a>, <a href="resource_v1beta2/#resourceslicelist">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceslicelist">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceSliceSpec</td>
+<td><a href="resource_v1/#resourceslicespec">resource_v1</a>, <a href="resource_v1beta2/#resourceslicespec">resource_v1beta2</a>, <a href="resource_v1beta1/#resourceslicespec">resource_v1beta1</a></td>
+</tr>
+<tr>
+<td>ResourceStatus</td>
+<td><a href="core_v1/#resourcestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>Role</td>
+<td><a href="rbac_v1/#role">rbac_v1</a></td>
+</tr>
+<tr>
+<td>RoleBinding</td>
+<td><a href="rbac_v1/#rolebinding">rbac_v1</a></td>
+</tr>
+<tr>
+<td>RoleBindingList</td>
+<td><a href="rbac_v1/#rolebindinglist">rbac_v1</a></td>
+</tr>
+<tr>
+<td>RoleList</td>
+<td><a href="rbac_v1/#rolelist">rbac_v1</a></td>
+</tr>
+<tr>
+<td>RoleRef</td>
+<td><a href="rbac_v1/#roleref">rbac_v1</a></td>
+</tr>
+<tr>
+<td>RollingUpdateDaemonSet</td>
+<td><a href="apps_v1/#rollingupdatedaemonset">apps_v1</a></td>
+</tr>
+<tr>
+<td>RollingUpdateDeployment</td>
+<td><a href="apps_v1/#rollingupdatedeployment">apps_v1</a></td>
+</tr>
+<tr>
+<td>RollingUpdateStatefulSetStrategy</td>
+<td><a href="apps_v1/#rollingupdatestatefulsetstrategy">apps_v1</a></td>
+</tr>
+<tr>
+<td>RuleWithOperations</td>
+<td><a href="admissionregistration_v1/#rulewithoperations">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>RuntimeClass</td>
+<td><a href="node_v1/#runtimeclass">node_v1</a></td>
+</tr>
+<tr>
+<td>RuntimeClassList</td>
+<td><a href="node_v1/#runtimeclasslist">node_v1</a></td>
+</tr>
+<tr>
+<td>SELinuxOptions</td>
+<td><a href="core_v1/#selinuxoptions">core_v1</a></td>
+</tr>
+<tr>
+<td>Scale</td>
+<td><a href="autoscaling_v1/#scale">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>ScaleIOPersistentVolumeSource</td>
+<td><a href="core_v1/#scaleiopersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ScaleIOVolumeSource</td>
+<td><a href="core_v1/#scaleiovolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>ScaleSpec</td>
+<td><a href="autoscaling_v1/#scalespec">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>ScaleStatus</td>
+<td><a href="autoscaling_v1/#scalestatus">autoscaling_v1</a></td>
+</tr>
+<tr>
+<td>Scheduling</td>
+<td><a href="node_v1/#scheduling">node_v1</a></td>
+</tr>
+<tr>
+<td>ScopeSelector</td>
+<td><a href="core_v1/#scopeselector">core_v1</a></td>
+</tr>
+<tr>
+<td>ScopedResourceSelectorRequirement</td>
+<td><a href="core_v1/#scopedresourceselectorrequirement">core_v1</a></td>
+</tr>
+<tr>
+<td>SeccompProfile</td>
+<td><a href="core_v1/#seccompprofile">core_v1</a></td>
+</tr>
+<tr>
+<td>Secret</td>
+<td><a href="core_v1/#secret">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretEnvSource</td>
+<td><a href="core_v1/#secretenvsource">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretKeySelector</td>
+<td><a href="core_v1/#secretkeyselector">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretList</td>
+<td><a href="core_v1/#secretlist">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretProjection</td>
+<td><a href="core_v1/#secretprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretReference</td>
+<td><a href="core_v1/#secretreference">core_v1</a></td>
+</tr>
+<tr>
+<td>SecretVolumeSource</td>
+<td><a href="core_v1/#secretvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>SecurityContext</td>
+<td><a href="core_v1/#securitycontext">core_v1</a></td>
+</tr>
+<tr>
+<td>SelectableField</td>
+<td><a href="apiextensions_v1/#selectablefield">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectAccessReview</td>
+<td><a href="authorization_v1/#selfsubjectaccessreview">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectAccessReviewSpec</td>
+<td><a href="authorization_v1/#selfsubjectaccessreviewspec">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectReview</td>
+<td><a href="authentication_v1/#selfsubjectreview">authentication_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectReviewStatus</td>
+<td><a href="authentication_v1/#selfsubjectreviewstatus">authentication_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectRulesReview</td>
+<td><a href="authorization_v1/#selfsubjectrulesreview">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SelfSubjectRulesReviewSpec</td>
+<td><a href="authorization_v1/#selfsubjectrulesreviewspec">authorization_v1</a></td>
+</tr>
+<tr>
+<td>ServerAddressByClientCIDR</td>
+<td><a href="meta_v1/#serveraddressbyclientcidr">meta_v1</a></td>
+</tr>
+<tr>
+<td>ServerStorageVersion</td>
+<td><a href="apiserverinternal_v1alpha1/#serverstorageversion">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>Service</td>
+<td><a href="core_v1/#service">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceAccount</td>
+<td><a href="core_v1/#serviceaccount">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceAccountList</td>
+<td><a href="core_v1/#serviceaccountlist">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceAccountSubject</td>
+<td><a href="flowcontrol_v1/#serviceaccountsubject">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>ServiceAccountTokenProjection</td>
+<td><a href="core_v1/#serviceaccounttokenprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceBackendPort</td>
+<td><a href="networking_v1/#servicebackendport">networking_v1</a></td>
+</tr>
+<tr>
+<td>ServiceCIDR</td>
+<td><a href="networking_v1/#servicecidr">networking_v1</a>, <a href="networking_v1beta1/#servicecidr">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>ServiceCIDRList</td>
+<td><a href="networking_v1/#servicecidrlist">networking_v1</a>, <a href="networking_v1beta1/#servicecidrlist">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>ServiceCIDRSpec</td>
+<td><a href="networking_v1/#servicecidrspec">networking_v1</a>, <a href="networking_v1beta1/#servicecidrspec">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>ServiceCIDRStatus</td>
+<td><a href="networking_v1/#servicecidrstatus">networking_v1</a>, <a href="networking_v1beta1/#servicecidrstatus">networking_v1beta1</a></td>
+</tr>
+<tr>
+<td>ServiceList</td>
+<td><a href="core_v1/#servicelist">core_v1</a></td>
+</tr>
+<tr>
+<td>ServicePort</td>
+<td><a href="core_v1/#serviceport">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceReference</td>
+<td><a href="admissionregistration_v1/#servicereference">admissionregistration_v1</a>, <a href="apiextensions_v1/#servicereference">apiextensions_v1</a>, <a href="apiregistration_v1/#servicereference">apiregistration_v1</a></td>
+</tr>
+<tr>
+<td>ServiceSpec</td>
+<td><a href="core_v1/#servicespec">core_v1</a></td>
+</tr>
+<tr>
+<td>ServiceStatus</td>
+<td><a href="core_v1/#servicestatus">core_v1</a></td>
+</tr>
+<tr>
+<td>SessionAffinityConfig</td>
+<td><a href="core_v1/#sessionaffinityconfig">core_v1</a></td>
+</tr>
+<tr>
+<td>SleepAction</td>
+<td><a href="core_v1/#sleepaction">core_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSet</td>
+<td><a href="apps_v1/#statefulset">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetCondition</td>
+<td><a href="apps_v1/#statefulsetcondition">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetList</td>
+<td><a href="apps_v1/#statefulsetlist">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetOrdinals</td>
+<td><a href="apps_v1/#statefulsetordinals">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetPersistentVolumeClaimRetentionPolicy</td>
+<td><a href="apps_v1/#statefulsetpersistentvolumeclaimretentionpolicy">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetSpec</td>
+<td><a href="apps_v1/#statefulsetspec">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetStatus</td>
+<td><a href="apps_v1/#statefulsetstatus">apps_v1</a></td>
+</tr>
+<tr>
+<td>StatefulSetUpdateStrategy</td>
+<td><a href="apps_v1/#statefulsetupdatestrategy">apps_v1</a></td>
+</tr>
+<tr>
+<td>Status</td>
+<td><a href="meta_v1/#status">meta_v1</a></td>
+</tr>
+<tr>
+<td>StatusCause</td>
+<td><a href="meta_v1/#statuscause">meta_v1</a></td>
+</tr>
+<tr>
+<td>StatusDetails</td>
+<td><a href="meta_v1/#statusdetails">meta_v1</a></td>
+</tr>
+<tr>
+<td>StorageClass</td>
+<td><a href="storage_v1/#storageclass">storage_v1</a></td>
+</tr>
+<tr>
+<td>StorageClassList</td>
+<td><a href="storage_v1/#storageclasslist">storage_v1</a></td>
+</tr>
+<tr>
+<td>StorageOSPersistentVolumeSource</td>
+<td><a href="core_v1/#storageospersistentvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>StorageOSVolumeSource</td>
+<td><a href="core_v1/#storageosvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>StorageVersion</td>
+<td><a href="apiserverinternal_v1alpha1/#storageversion">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>StorageVersionCondition</td>
+<td><a href="apiserverinternal_v1alpha1/#storageversioncondition">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>StorageVersionList</td>
+<td><a href="apiserverinternal_v1alpha1/#storageversionlist">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>StorageVersionMigration</td>
+<td><a href="storagemigration_v1beta1/#storageversionmigration">storagemigration_v1beta1</a></td>
+</tr>
+<tr>
+<td>StorageVersionMigrationList</td>
+<td><a href="storagemigration_v1beta1/#storageversionmigrationlist">storagemigration_v1beta1</a></td>
+</tr>
+<tr>
+<td>StorageVersionMigrationSpec</td>
+<td><a href="storagemigration_v1beta1/#storageversionmigrationspec">storagemigration_v1beta1</a></td>
+</tr>
+<tr>
+<td>StorageVersionMigrationStatus</td>
+<td><a href="storagemigration_v1beta1/#storageversionmigrationstatus">storagemigration_v1beta1</a></td>
+</tr>
+<tr>
+<td>StorageVersionSpec</td>
+<td><a href="apiserverinternal_v1alpha1/#storageversionspec">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>StorageVersionStatus</td>
+<td><a href="apiserverinternal_v1alpha1/#storageversionstatus">apiserverinternal_v1alpha1</a></td>
+</tr>
+<tr>
+<td>Subject</td>
+<td><a href="flowcontrol_v1/#subject">flowcontrol_v1</a>, <a href="rbac_v1/#subject">rbac_v1</a></td>
+</tr>
+<tr>
+<td>SubjectAccessReview</td>
+<td><a href="authorization_v1/#subjectaccessreview">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SubjectAccessReviewSpec</td>
+<td><a href="authorization_v1/#subjectaccessreviewspec">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SubjectAccessReviewStatus</td>
+<td><a href="authorization_v1/#subjectaccessreviewstatus">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SubjectRulesReviewStatus</td>
+<td><a href="authorization_v1/#subjectrulesreviewstatus">authorization_v1</a></td>
+</tr>
+<tr>
+<td>SuccessPolicy</td>
+<td><a href="batch_v1/#successpolicy">batch_v1</a></td>
+</tr>
+<tr>
+<td>SuccessPolicyRule</td>
+<td><a href="batch_v1/#successpolicyrule">batch_v1</a></td>
+</tr>
+<tr>
+<td>Sysctl</td>
+<td><a href="core_v1/#sysctl">core_v1</a></td>
+</tr>
+<tr>
+<td>TCPSocketAction</td>
+<td><a href="core_v1/#tcpsocketaction">core_v1</a></td>
+</tr>
+<tr>
+<td>Taint</td>
+<td><a href="core_v1/#taint">core_v1</a></td>
+</tr>
+<tr>
+<td>Time</td>
+<td><a href="meta_v1/#time">meta_v1</a></td>
+</tr>
+<tr>
+<td>TokenRequest</td>
+<td><a href="authentication_v1/#tokenrequest">authentication_v1</a>, <a href="storage_v1/#tokenrequest">storage_v1</a></td>
+</tr>
+<tr>
+<td>TokenRequestSpec</td>
+<td><a href="authentication_v1/#tokenrequestspec">authentication_v1</a></td>
+</tr>
+<tr>
+<td>TokenRequestStatus</td>
+<td><a href="authentication_v1/#tokenrequeststatus">authentication_v1</a></td>
+</tr>
+<tr>
+<td>TokenReview</td>
+<td><a href="authentication_v1/#tokenreview">authentication_v1</a></td>
+</tr>
+<tr>
+<td>TokenReviewSpec</td>
+<td><a href="authentication_v1/#tokenreviewspec">authentication_v1</a></td>
+</tr>
+<tr>
+<td>TokenReviewStatus</td>
+<td><a href="authentication_v1/#tokenreviewstatus">authentication_v1</a></td>
+</tr>
+<tr>
+<td>Toleration</td>
+<td><a href="core_v1/#toleration">core_v1</a></td>
+</tr>
+<tr>
+<td>TopologySelectorLabelRequirement</td>
+<td><a href="core_v1/#topologyselectorlabelrequirement">core_v1</a></td>
+</tr>
+<tr>
+<td>TopologySelectorTerm</td>
+<td><a href="core_v1/#topologyselectorterm">core_v1</a></td>
+</tr>
+<tr>
+<td>TopologySpreadConstraint</td>
+<td><a href="core_v1/#topologyspreadconstraint">core_v1</a></td>
+</tr>
+<tr>
+<td>TypeChecking</td>
+<td><a href="admissionregistration_v1/#typechecking">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>TypedLocalObjectReference</td>
+<td><a href="core_v1/#typedlocalobjectreference">core_v1</a>, <a href="scheduling_v1alpha1/#typedlocalobjectreference">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>TypedObjectReference</td>
+<td><a href="core_v1/#typedobjectreference">core_v1</a></td>
+</tr>
+<tr>
+<td>UncountedTerminatedPods</td>
+<td><a href="batch_v1/#uncountedterminatedpods">batch_v1</a></td>
+</tr>
+<tr>
+<td>UserInfo</td>
+<td><a href="authentication_v1/#userinfo">authentication_v1</a></td>
+</tr>
+<tr>
+<td>UserSubject</td>
+<td><a href="flowcontrol_v1/#usersubject">flowcontrol_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicy</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicy">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicyBinding</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicybinding">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicyBindingList</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicybindinglist">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicyBindingSpec</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicybindingspec">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicyList</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicylist">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicySpec</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicyspec">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingAdmissionPolicyStatus</td>
+<td><a href="admissionregistration_v1/#validatingadmissionpolicystatus">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingWebhook</td>
+<td><a href="admissionregistration_v1/#validatingwebhook">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingWebhookConfiguration</td>
+<td><a href="admissionregistration_v1/#validatingwebhookconfiguration">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidatingWebhookConfigurationList</td>
+<td><a href="admissionregistration_v1/#validatingwebhookconfigurationlist">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>Validation</td>
+<td><a href="admissionregistration_v1/#validation">admissionregistration_v1</a></td>
+</tr>
+<tr>
+<td>ValidationRule</td>
+<td><a href="apiextensions_v1/#validationrule">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>Variable</td>
+<td><a href="admissionregistration_v1/#variable">admissionregistration_v1</a>, <a href="admissionregistration_v1beta1/#variable">admissionregistration_v1beta1</a>, <a href="admissionregistration_v1alpha1/#variable">admissionregistration_v1alpha1</a></td>
+</tr>
+<tr>
+<td>Volume</td>
+<td><a href="core_v1/#volume">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttachment</td>
+<td><a href="storage_v1/#volumeattachment">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttachmentList</td>
+<td><a href="storage_v1/#volumeattachmentlist">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttachmentSource</td>
+<td><a href="storage_v1/#volumeattachmentsource">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttachmentSpec</td>
+<td><a href="storage_v1/#volumeattachmentspec">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttachmentStatus</td>
+<td><a href="storage_v1/#volumeattachmentstatus">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeAttributesClass</td>
+<td><a href="storage_v1/#volumeattributesclass">storage_v1</a>, <a href="storage_v1beta1/#volumeattributesclass">storage_v1beta1</a></td>
+</tr>
+<tr>
+<td>VolumeAttributesClassList</td>
+<td><a href="storage_v1/#volumeattributesclasslist">storage_v1</a>, <a href="storage_v1beta1/#volumeattributesclasslist">storage_v1beta1</a></td>
+</tr>
+<tr>
+<td>VolumeDevice</td>
+<td><a href="core_v1/#volumedevice">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeError</td>
+<td><a href="storage_v1/#volumeerror">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeMount</td>
+<td><a href="core_v1/#volumemount">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeMountStatus</td>
+<td><a href="core_v1/#volumemountstatus">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeNodeAffinity</td>
+<td><a href="core_v1/#volumenodeaffinity">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeNodeResources</td>
+<td><a href="storage_v1/#volumenoderesources">storage_v1</a></td>
+</tr>
+<tr>
+<td>VolumeProjection</td>
+<td><a href="core_v1/#volumeprojection">core_v1</a></td>
+</tr>
+<tr>
+<td>VolumeResourceRequirements</td>
+<td><a href="core_v1/#volumeresourcerequirements">core_v1</a></td>
+</tr>
+<tr>
+<td>VsphereVirtualDiskVolumeSource</td>
+<td><a href="core_v1/#vspherevirtualdiskvolumesource">core_v1</a></td>
+</tr>
+<tr>
+<td>WatchEvent</td>
+<td><a href="meta_v1/#watchevent">meta_v1</a></td>
+</tr>
+<tr>
+<td>WebhookClientConfig</td>
+<td><a href="admissionregistration_v1/#webhookclientconfig">admissionregistration_v1</a>, <a href="apiextensions_v1/#webhookclientconfig">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>WebhookConversion</td>
+<td><a href="apiextensions_v1/#webhookconversion">apiextensions_v1</a></td>
+</tr>
+<tr>
+<td>WeightedPodAffinityTerm</td>
+<td><a href="core_v1/#weightedpodaffinityterm">core_v1</a></td>
+</tr>
+<tr>
+<td>WindowsSecurityContextOptions</td>
+<td><a href="core_v1/#windowssecuritycontextoptions">core_v1</a></td>
+</tr>
+<tr>
+<td>Workload</td>
+<td><a href="scheduling_v1alpha1/#workload">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>WorkloadList</td>
+<td><a href="scheduling_v1alpha1/#workloadlist">scheduling_v1alpha1</a></td>
+</tr>
+<tr>
+<td>WorkloadReference</td>
+<td><a href="core_v1/#workloadreference">core_v1</a></td>
+</tr>
+<tr>
+<td>WorkloadSpec</td>
+<td><a href="scheduling_v1alpha1/#workloadspec">scheduling_v1alpha1</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

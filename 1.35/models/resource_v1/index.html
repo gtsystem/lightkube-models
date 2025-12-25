@@ -1,0 +1,4696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../resource/">
+      
+      
+        <link rel="next" href="../resource_v1alpha3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>resource_v1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resource_v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              resource_v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiserverinternal_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    meta_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allocateddevicestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AllocatedDeviceStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celdeviceselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CELDeviceSelector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequestpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequestPolicy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequestpolicyrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequestPolicyRange
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counterset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CounterSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceallocationconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAllocationConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceallocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceattribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAttribute
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicecapacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceCapacity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclaim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClaim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclaimconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClaimConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclassconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclasslist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclassspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceconstraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceConstraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicecounterconsumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceCounterConsumption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicerequestallocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceRequestAllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceSelector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicesubrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceSubRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicetaint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceTaint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicetoleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceToleration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exactdevicerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExactDeviceRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkdevicedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetworkDeviceData
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opaquedeviceconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpaqueDeviceConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimconsumerreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimConsumerReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplateList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatespec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplateSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourcePool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSlice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslicelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSliceList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslicespec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSliceSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    runtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util_intstr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_apiserver_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    internal_apiserver_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allocateddevicestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AllocatedDeviceStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celdeviceselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CELDeviceSelector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequestpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequestPolicy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequestpolicyrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequestPolicyRange
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacityrequirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CapacityRequirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counterset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CounterSet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceallocationconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAllocationConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceallocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceattribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceAttribute
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicecapacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceCapacity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclaim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClaim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclaimconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClaimConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclassconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclasslist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceclassspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceClassSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceconstraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceConstraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicecounterconsumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceCounterConsumption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicerequestallocationresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceRequestAllocationResult
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deviceselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceSelector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicesubrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceSubRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicetaint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceTaint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devicetoleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceToleration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exactdevicerequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExactDeviceRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkdevicedata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NetworkDeviceData
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opaquedeviceconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpaqueDeviceConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaim
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimconsumerreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimConsumerReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplateList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceclaimtemplatespec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceClaimTemplateSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourcepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourcePool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSlice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslicelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSliceList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceslicespec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResourceSliceSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="resource_v1">resource_v1</h1>
+<h2 id="allocateddevicestatus">AllocatedDeviceStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>AllocatedDeviceStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">device</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">driver</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pool</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">data=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">networkData=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">shareID=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>AllocatedDeviceStatus contains the status of an allocated device, if the
+driver chooses to report it. This may include driver-specific information.</p>
+<p>The combination of Driver, Pool, Device, and ShareID must match the
+corresponding key in Status.Allocation.Devices.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>device</strong> <code>str</code> - Device references one device instance via its name in the driver's resource
+  pool. It must be a DNS label.</li>
+<li><strong>driver</strong> <code>str</code> - Driver specifies the name of the DRA driver whose kubelet plugin should be
+  invoked to process the allocation once the claim is needed on a node.
+  Must be a DNS subdomain and should end with a DNS domain owned by the vendor
+  of the driver. It should use only lower case characters.</li>
+<li><strong>pool</strong> <code>str</code> - This name together with the driver name and the device name field identify
+  which device was allocated (<code>&lt;driver name&gt;/&lt;pool name&gt;/&lt;device name&gt;</code>).
+  Must not be longer than 253 characters and may contain one or more DNS
+  sub-domains separated by slashes.</li>
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - Conditions contains the latest observation of the device's state. If the
+  device has been configured according to the class and claim config references,
+  the <code>Ready</code> condition should be True.
+  Must not contain more than 8 entries.</li>
+<li><strong>data</strong> <code>Optional[<a href="../runtime/index.html#rawextension">runtime.RawExtension</a>]</code> - Data contains arbitrary driver-specific data.
+  The length of the raw data must be smaller or equal to 10 Ki.</li>
+<li><strong>networkData</strong> <code>Optional[<a href="#networkdevicedata">NetworkDeviceData</a>]</code> - NetworkData contains network-related information specific to the device.</li>
+<li><strong>shareID</strong> <code>Optional[str]</code> - ShareID uniquely identifies an individual allocation share of the device.</li>
+</ul></div>
+</div>
+<h2 id="allocationresult">AllocationResult</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>AllocationResult</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">allocationTimestamp=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">devices=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nodeSelector=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>AllocationResult contains attributes of an allocated resource.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>allocationTimestamp</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - AllocationTimestamp stores the time when the resources were allocated. This
+  field is not guaranteed to be set, in which case that time is unknown.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gate.</li>
+<li><strong>devices</strong> <code>Optional[<a href="#deviceallocationresult">DeviceAllocationResult</a>]</code> - Devices is the result of allocating devices.</li>
+<li><strong>nodeSelector</strong> <code>Optional[<a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a>]</code> - NodeSelector defines where the allocated resources are available. If unset,
+  they are available everywhere.</li>
+</ul></div>
+</div>
+<h2 id="celdeviceselector">CELDeviceSelector</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>CELDeviceSelector</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">expression</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CELDeviceSelector contains a CEL expression for selecting a device.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>expression</strong> <code>str</code> - Expression is a CEL expression which evaluates a single device. It must
+  evaluate to true when the device under consideration satisfies the desired
+  criteria, and false when it does not. Any other result is an error and causes
+  allocation of devices to abort.
+  The expression's input is an object named "device", which carries the
+  following properties:</li>
+<li>driver (string): the name of the driver which defines this device.</li>
+<li>attributes (map[string]object): the device's attributes, grouped by prefix
+     (e.g. device.attributes["dra.example.com"] evaluates to an object with all
+     of the attributes which were prefixed by "dra.example.com".</li>
+<li>capacity (map[string]object): the device's capacities, grouped by prefix.</li>
+<li>allowMultipleAllocations (bool): the allowMultipleAllocations property of
+  the device
+     (v1.34+ with the DRAConsumableCapacity feature enabled).
+  Example: Consider a device with driver="dra.example.com", which exposes two
+  attributes named "model" and "ext.example.com/family" and which exposes one
+  capacity named "modules". This input to this expression would have the
+  following fields:
+      device.driver
+      device.attributes["dra.example.com"].model
+      device.attributes["ext.example.com"].family
+      device.capacity["dra.example.com"].modules
+  The device.driver field can be used to check for a specific driver, either as
+  a high-level precondition (i.e. you only want to consider devices from this
+  driver) or as part of a multi-clause expression that is meant to consider
+  devices from different drivers.
+  The value type of each attribute is defined by the device definition, and
+  users who write these expressions must consult the documentation for their
+  specific drivers. The value type of each capacity is Quantity.
+  If an unknown prefix is used as a lookup in either device.attributes or
+  device.capacity, an empty map will be returned. Any reference to an unknown
+  field will cause an evaluation error and allocation to abort.
+  A robust expression should check for the existence of attributes before
+  referencing them.
+  For ease of use, the cel.bind() function is enabled, and can be used to
+  simplify expressions that access multiple attributes with the same domain. For
+  example:
+      cel.bind(dra, device.attributes["dra.example.com"], dra.someBool &amp;&amp;
+  dra.anotherBool)
+  The length of the expression must be smaller or equal to 10 Ki. The cost of
+  evaluating it is also limited based on the estimated number of logical steps.</li>
+</ul></div>
+</div>
+<h2 id="capacityrequestpolicy">CapacityRequestPolicy</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>CapacityRequestPolicy</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">default=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">validRange=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">validValues=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CapacityRequestPolicy defines how requests consume device capacity.</p>
+<p>Must not set more than one ValidRequestValues.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>default</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - Default specifies how much of this capacity is consumed by a request that does
+  not contain an entry for it in DeviceRequest's Capacity.</li>
+<li><strong>validRange</strong> <code>Optional[<a href="#capacityrequestpolicyrange">CapacityRequestPolicyRange</a>]</code> - ValidRange defines an acceptable quantity value range in consuming requests.
+  If this field is set, Default must be defined and it must fall within the
+  defined ValidRange.
+  If the requested amount does not fall within the defined range, the request
+  violates the policy, and this device cannot be allocated.
+  If the request doesn't contain this capacity entry, Default value is used.</li>
+<li><strong>validValues</strong> <code>Optional[List[<a href="../resource/index.html#quantity">resource.Quantity</a>]]</code> - ValidValues defines a set of acceptable quantity values in consuming requests.
+  Must not contain more than 10 entries. Must be sorted in ascending order.
+  If this field is set, Default must be defined and it must be included in
+  ValidValues list.
+  If the requested amount does not match any valid value but smaller than some
+  valid values, the scheduler calculates the smallest valid value that is
+  greater than or equal to the request. That is: min(ceil(requestedValue) ∈
+  validValues), where requestedValue ≤ max(validValues).
+  If the requested amount exceeds all valid values, the request violates the
+  policy, and this device cannot be allocated.</li>
+</ul></div>
+</div>
+<h2 id="capacityrequestpolicyrange">CapacityRequestPolicyRange</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>CapacityRequestPolicyRange</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">min</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">max=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">step=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CapacityRequestPolicyRange defines a valid range for consumable capacity
+values.</p>
+<ul>
+<li>If the requested amount is less than Min, it is rounded up to the Min
+value.</li>
+<li>If Step is set and the requested amount is between Min and Max but not
+aligned with Step,
+    it will be rounded up to the next value equal to Min + (n * Step).</li>
+<li>If Step is not set, the requested amount is used as-is if it falls within
+the range Min to Max (if set).</li>
+<li>If the requested or rounded amount exceeds Max (if set), the request does
+not satisfy the policy,
+    and the device cannot be allocated.</li>
+</ul>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>min</strong> <code><a href="../resource/index.html#quantity">resource.Quantity</a></code> - Min specifies the minimum capacity allowed for a consumption request.
+  Min must be greater than or equal to zero, and less than or equal to the
+  capacity value. requestPolicy.default must be more than or equal to the
+  minimum.</li>
+<li><strong>max</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - Max defines the upper limit for capacity that can be requested.
+  Max must be less than or equal to the capacity value. Min and
+  requestPolicy.default must be less than or equal to the maximum.</li>
+<li><strong>step</strong> <code>Optional[<a href="../resource/index.html#quantity">resource.Quantity</a>]</code> - Step defines the step size between valid capacity amounts within the range.
+  Max (if set) and requestPolicy.default must be a multiple of Step. Min + Step
+  must be less than or equal to the capacity value.</li>
+</ul></div>
+</div>
+<h2 id="capacityrequirements">CapacityRequirements</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>CapacityRequirements</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">requests=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CapacityRequirements defines the capacity requirements for a specific device
+request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>requests</strong> <code>Optional[dict]</code> - Requests represent individual device resource requests for distinct resources,
+  all of which must be provided by the device.
+  This value is used as an additional filtering condition against the available
+  capacity on the device. This is semantically equivalent to a CEL selector with
+  <code>device.capacity[&lt;domain&gt;].&lt;name&gt;.compareTo(quantity(&lt;request quantity&gt;)) &gt;=
+  0</code>. For example,
+  device.capacity['test-driver.cdi.k8s.io'].counters.compareTo(quantity('2')) &gt;=
+  0.
+  When a requestPolicy is defined, the requested amount is adjusted upward to
+  the nearest valid value based on the policy. If the requested amount cannot be
+  adjusted to a valid value—because it exceeds what the requestPolicy allows—
+  the device is considered ineligible for allocation.
+  For any capacity that is not explicitly requested: - If no requestPolicy is
+  set, the default consumed capacity is equal to the full device capacity
+    (i.e., the whole device is claimed).</li>
+<li>If a requestPolicy is set, the default consumed capacity is determined
+  according to that policy.
+  If the device allows multiple allocation, the aggregated amount across all
+  requests must not exceed the capacity value. The consumed capacity, which may
+  be adjusted based on the requestPolicy if defined, is recorded in the resource
+  claim’s status.devices[*].consumedCapacity field.</li>
+</ul></div>
+</div>
+<h2 id="counter">Counter</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>Counter</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">value</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Counter describes a quantity associated with a device.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>value</strong> <code><a href="../resource/index.html#quantity">resource.Quantity</a></code> - Value defines how much of a certain device counter is available.</li>
+</ul></div>
+</div>
+<h2 id="counterset">CounterSet</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>CounterSet</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">counters</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>CounterSet defines a named set of counters that are available to be used by
+devices defined in the ResourcePool.</p>
+<p>The counters are not allocatable by themselves, but can be referenced by
+devices. When a device is allocated, the portion of counters it uses will no
+longer be available for use by other devices.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>counters</strong> <code>dict</code> - Counters defines the set of counters for this CounterSet The name of each
+  counter must be unique in that set and must be a DNS label.
+  The maximum number of counters is 32.</li>
+<li><strong>name</strong> <code>str</code> - Name defines the name of the counter set. It must be a DNS label.</li>
+</ul></div>
+</div>
+<h2 id="device">Device</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>Device</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allNodes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allowMultipleAllocations=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">attributes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">bindingConditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">bindingFailureConditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">bindsToNode=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">capacity=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">consumesCounters=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nodeName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nodeSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">taints=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Device represents one individual hardware instance that can be selected based
+on its attributes. Besides the name, exactly one field must be set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - Name is unique identifier among all devices managed by the driver in the pool.
+  It must be a DNS label.</li>
+<li><strong>allNodes</strong> <code>Optional[bool]</code> - AllNodes indicates that all nodes have access to the device.
+  Must only be set if Spec.PerDeviceNodeSelection is set to true. At most one of
+  NodeName, NodeSelector and AllNodes can be set.</li>
+<li><strong>allowMultipleAllocations</strong> <code>Optional[bool]</code> - AllowMultipleAllocations marks whether the device is allowed to be allocated
+  to multiple DeviceRequests.
+  If AllowMultipleAllocations is set to true, the device can be allocated more
+  than once, and all of its capacity is consumable, regardless of whether the
+  requestPolicy is defined or not.</li>
+<li><strong>attributes</strong> <code>Optional[dict]</code> - Attributes defines the set of attributes for this device. The name of each
+  attribute must be unique in that set.
+  The maximum number of attributes and capacities combined is 32.</li>
+<li><strong>bindingConditions</strong> <code>Optional[List[str]]</code> - BindingConditions defines the conditions for proceeding with binding. All of
+  these conditions must be set in the per-device status conditions with a value
+  of True to proceed with binding the pod to the node while scheduling the pod.
+  The maximum number of binding conditions is 4.
+  The conditions must be a valid condition type string.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gates.</li>
+<li><strong>bindingFailureConditions</strong> <code>Optional[List[str]]</code> - BindingFailureConditions defines the conditions for binding failure. They may
+  be set in the per-device status conditions. If any is set to "True", a binding
+  failure occurred.
+  The maximum number of binding failure conditions is 4.
+  The conditions must be a valid condition type string.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gates.</li>
+<li><strong>bindsToNode</strong> <code>Optional[bool]</code> - BindsToNode indicates if the usage of an allocation involving this device has
+  to be limited to exactly the node that was chosen when allocating the claim.
+  If set to true, the scheduler will set the
+  ResourceClaim.Status.Allocation.NodeSelector to match the node where the
+  allocation was made.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gates.</li>
+<li><strong>capacity</strong> <code>Optional[dict]</code> - Capacity defines the set of capacities for this device. The name of each
+  capacity must be unique in that set.
+  The maximum number of attributes and capacities combined is 32.</li>
+<li><strong>consumesCounters</strong> <code>Optional[List[<a href="#devicecounterconsumption">DeviceCounterConsumption</a>]]</code> - ConsumesCounters defines a list of references to sharedCounters and the set of
+  counters that the device will consume from those counter sets.
+  There can only be a single entry per counterSet.
+  The maximum number of device counter consumptions per device is 2.</li>
+<li><strong>nodeName</strong> <code>Optional[str]</code> - NodeName identifies the node where the device is available.
+  Must only be set if Spec.PerDeviceNodeSelection is set to true. At most one of
+  NodeName, NodeSelector and AllNodes can be set.</li>
+<li><strong>nodeSelector</strong> <code>Optional[<a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a>]</code> - NodeSelector defines the nodes where the device is available.
+  Must use exactly one term.
+  Must only be set if Spec.PerDeviceNodeSelection is set to true. At most one of
+  NodeName, NodeSelector and AllNodes can be set.</li>
+<li><strong>taints</strong> <code>Optional[List[<a href="#devicetaint">DeviceTaint</a>]]</code> - If specified, these are the driver-defined taints.
+  The maximum number of taints is 16. If taints are set for any device in a
+  ResourceSlice, then the maximum number of allowed devices per ResourceSlice is
+  64 instead of 128.
+  This is an alpha field and requires enabling the DRADeviceTaints feature gate.</li>
+</ul></div>
+</div>
+<h2 id="deviceallocationconfiguration">DeviceAllocationConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceAllocationConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">source</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">opaque=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requests=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceAllocationConfiguration gets embedded in an AllocationResult.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>source</strong> <code>str</code> - Source records whether the configuration comes from a class and thus is not
+  something that a normal user would have been able to set or from a claim.</li>
+<li><strong>opaque</strong> <code>Optional[<a href="#opaquedeviceconfiguration">OpaqueDeviceConfiguration</a>]</code> - Opaque provides driver-specific configuration parameters.</li>
+<li><strong>requests</strong> <code>Optional[List[str]]</code> - Requests lists the names of requests where the configuration applies. If
+  empty, its applies to all requests.
+  References to subrequests must include the name of the main request and may
+  include the subrequest using the format <main request>[/<subrequest>]. If just
+  the main request is given, the configuration applies to all subrequests.</li>
+</ul></div>
+</div>
+<h2 id="deviceallocationresult">DeviceAllocationResult</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceAllocationResult</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">config=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">results=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceAllocationResult is the result of allocating devices.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>config</strong> <code>Optional[List[<a href="#deviceallocationconfiguration">DeviceAllocationConfiguration</a>]]</code> - This field is a combination of all the claim and class configuration
+  parameters. Drivers can distinguish between those based on a flag.
+  This includes configuration parameters for drivers which have no allocated
+  devices in the result because it is up to the drivers which configuration
+  parameters they support. They can silently ignore unknown configuration
+  parameters.</li>
+<li><strong>results</strong> <code>Optional[List[<a href="#devicerequestallocationresult">DeviceRequestAllocationResult</a>]]</code> - Results lists all allocated devices.</li>
+</ul></div>
+</div>
+<h2 id="deviceattribute">DeviceAttribute</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceAttribute</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">bool=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">int=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">string=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">version=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceAttribute must have exactly one field set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>bool</strong> <code>Optional[bool]</code> - BoolValue is a true/false value.</li>
+<li><strong>int</strong> <code>Optional[int]</code> - IntValue is a number.</li>
+<li><strong>string</strong> <code>Optional[str]</code> - StringValue is a string. Must not be longer than 64 characters.</li>
+<li><strong>version</strong> <code>Optional[str]</code> - VersionValue is a semantic version according to semver.org spec 2.0.0. Must
+  not be longer than 64 characters.</li>
+</ul></div>
+</div>
+<h2 id="devicecapacity">DeviceCapacity</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceCapacity</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">value</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requestPolicy=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceCapacity describes a quantity associated with a device.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>value</strong> <code><a href="../resource/index.html#quantity">resource.Quantity</a></code> - Value defines how much of a certain capacity that device has.
+  This field reflects the fixed total capacity and does not change. The consumed
+  amount is tracked separately by scheduler and does not affect this value.</li>
+<li><strong>requestPolicy</strong> <code>Optional[<a href="#capacityrequestpolicy">CapacityRequestPolicy</a>]</code> - RequestPolicy defines how this DeviceCapacity must be consumed when the device
+  is allowed to be shared by multiple allocations.
+  The Device must have allowMultipleAllocations set to true in order to set a
+  requestPolicy.
+  If unset, capacity requests are unconstrained: requests can consume any amount
+  of capacity, as long as the total consumed across all allocations does not
+  exceed the device's defined capacity. If request is also unset, default is the
+  full capacity value.</li>
+</ul></div>
+</div>
+<h2 id="deviceclaim">DeviceClaim</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClaim</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">config=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">constraints=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requests=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClaim defines how to request devices with a ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>config</strong> <code>Optional[List[<a href="#deviceclaimconfiguration">DeviceClaimConfiguration</a>]]</code> - This field holds configuration for multiple potential drivers which could
+  satisfy requests in this claim. It is ignored while allocating the claim.</li>
+<li><strong>constraints</strong> <code>Optional[List[<a href="#deviceconstraint">DeviceConstraint</a>]]</code> - These constraints must be satisfied by the set of devices that get allocated
+  for the claim.</li>
+<li><strong>requests</strong> <code>Optional[List[<a href="#devicerequest">DeviceRequest</a>]]</code> - Requests represent individual requests for distinct devices which must all be
+  satisfied. If empty, nothing needs to be allocated.</li>
+</ul></div>
+</div>
+<h2 id="deviceclaimconfiguration">DeviceClaimConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClaimConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">opaque=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requests=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClaimConfiguration is used for configuration parameters in DeviceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>opaque</strong> <code>Optional[<a href="#opaquedeviceconfiguration">OpaqueDeviceConfiguration</a>]</code> - Opaque provides driver-specific configuration parameters.</li>
+<li><strong>requests</strong> <code>Optional[List[str]]</code> - Requests lists the names of requests where the configuration applies. If
+  empty, it applies to all requests.
+  References to subrequests must include the name of the main request and may
+  include the subrequest using the format <main request>[/<subrequest>]. If just
+  the main request is given, the configuration applies to all subrequests.</li>
+</ul></div>
+</div>
+<h2 id="deviceclass">DeviceClass</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClass</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClass is a vendor- or admin-provided resource that contains device
+configuration and selectors. It can be referenced in the device requests of a
+claim to apply these presets. Cluster scoped.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#deviceclassspec">DeviceClassSpec</a></code> - Spec defines what can be allocated and how to configure it.
+  This is mutable. Consumers have to be prepared for classes changing at any
+  time, either because they get updated or replaced. Claim allocations are done
+  once based on whatever was set in classes at the time of allocation.
+  Changing the spec automatically increments the metadata.generation number.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+</ul></div>
+</div>
+<h2 id="deviceclassconfiguration">DeviceClassConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClassConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">opaque=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClassConfiguration is used in DeviceClass.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>opaque</strong> <code>Optional[<a href="#opaquedeviceconfiguration">OpaqueDeviceConfiguration</a>]</code> - Opaque provides driver-specific configuration parameters.</li>
+</ul></div>
+</div>
+<h2 id="deviceclasslist">DeviceClassList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClassList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClassList is a collection of classes.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#deviceclass">DeviceClass</a>]</code> - Items is the list of resource classes.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="deviceclassspec">DeviceClassSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceClassSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">config=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">extendedResourceName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selectors=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceClassSpec is used in a [DeviceClass] to define what can be allocated and
+how to configure it.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>config</strong> <code>Optional[List[<a href="#deviceclassconfiguration">DeviceClassConfiguration</a>]]</code> - Config defines configuration parameters that apply to each device that is
+  claimed via this class. Some classses may potentially be satisfied by multiple
+  drivers, so each instance of a vendor configuration applies to exactly one
+  driver.
+  They are passed to the driver, but are not considered while allocating the
+  claim.</li>
+<li><strong>extendedResourceName</strong> <code>Optional[str]</code> - ExtendedResourceName is the extended resource name for the devices of this
+  class. The devices of this class can be used to satisfy a pod's extended
+  resource requests. It has the same format as the name of a pod's extended
+  resource. It should be unique among all the device classes in a cluster. If
+  two device classes have the same name, then the class created later is picked
+  to satisfy a pod's extended resource requests. If two classes are created at
+  the same time, then the name of the class lexicographically sorted first is
+  picked.
+  This is an alpha field.</li>
+<li><strong>selectors</strong> <code>Optional[List[<a href="#deviceselector">DeviceSelector</a>]]</code> - Each selector must be satisfied by a device which is claimed via this class.</li>
+</ul></div>
+</div>
+<h2 id="deviceconstraint">DeviceConstraint</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceConstraint</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">distinctAttribute=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">matchAttribute=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requests=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceConstraint must have exactly one field set besides Requests.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>distinctAttribute</strong> <code>Optional[str]</code> - DistinctAttribute requires that all devices in question have this attribute
+  and that its type and value are unique across those devices.
+  This acts as the inverse of MatchAttribute.
+  This constraint is used to avoid allocating multiple requests to the same
+  device by ensuring attribute-level differentiation.
+  This is useful for scenarios where resource requests must be fulfilled by
+  separate physical devices. For example, a container requests two network
+  interfaces that must be allocated from two different physical NICs.</li>
+<li><strong>matchAttribute</strong> <code>Optional[str]</code> - MatchAttribute requires that all devices in question have this attribute and
+  that its type and value are the same across those devices.
+  For example, if you specified "dra.example.com/numa" (a hypothetical
+  example!), then only devices in the same NUMA node will be chosen. A device
+  which does not have that attribute will not be chosen. All devices should use
+  a value of the same type for this attribute because that is part of its
+  specification, but if one device doesn't, then it also will not be chosen.
+  Must include the domain qualifier.</li>
+<li><strong>requests</strong> <code>Optional[List[str]]</code> - Requests is a list of the one or more requests in this claim which must
+  co-satisfy this constraint. If a request is fulfilled by multiple devices,
+  then all of the devices must satisfy the constraint. If this is not specified,
+  this constraint applies to all requests in this claim.
+  References to subrequests must include the name of the main request and may
+  include the subrequest using the format <main request>[/<subrequest>]. If just
+  the main request is given, the constraint applies to all subrequests.</li>
+</ul></div>
+</div>
+<h2 id="devicecounterconsumption">DeviceCounterConsumption</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceCounterConsumption</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">counterSet</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">counters</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceCounterConsumption defines a set of counters that a device will consume
+from a CounterSet.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>counterSet</strong> <code>str</code> - CounterSet is the name of the set from which the counters defined will be
+  consumed.</li>
+<li><strong>counters</strong> <code>dict</code> - Counters defines the counters that will be consumed by the device.
+  The maximum number of counters is 32.</li>
+</ul></div>
+</div>
+<h2 id="devicerequest">DeviceRequest</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceRequest</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">exactly=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">firstAvailable=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceRequest is a request for devices required for a claim. This is typically
+a request for a single resource like a device, but can also ask for several
+identical devices. With FirstAvailable it is also possible to provide a
+prioritized list of requests.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - Name can be used to reference this request in a
+  pod.spec.containers[].resources.claims entry and in a constraint of the claim.
+  References using the name in the DeviceRequest will uniquely identify a
+  request when the Exactly field is set. When the FirstAvailable field is set, a
+  reference to the name of the DeviceRequest will match whatever subrequest is
+  chosen by the scheduler.
+  Must be a DNS label.</li>
+<li><strong>exactly</strong> <code>Optional[<a href="#exactdevicerequest">ExactDeviceRequest</a>]</code> - Exactly specifies the details for a single request that must be met exactly
+  for the request to be satisfied.
+  One of Exactly or FirstAvailable must be set.</li>
+<li><strong>firstAvailable</strong> <code>Optional[List[<a href="#devicesubrequest">DeviceSubRequest</a>]]</code> - FirstAvailable contains subrequests, of which exactly one will be selected by
+  the scheduler. It tries to satisfy them in the order in which they are listed
+  here. So if there are two entries in the list, the scheduler will only check
+  the second one if it determines that the first one can not be used.
+  DRA does not yet implement scoring, so the scheduler will select the first set
+  of devices that satisfies all the requests in the claim. And if the
+  requirements can be satisfied on more than one node, other scheduling features
+  will determine which node is chosen. This means that the set of devices
+  allocated to a claim might not be the optimal set available to the cluster.
+  Scoring will be implemented later.</li>
+</ul></div>
+</div>
+<h2 id="devicerequestallocationresult">DeviceRequestAllocationResult</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceRequestAllocationResult</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">device</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">driver</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pool</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">request</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">adminAccess=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">bindingConditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">bindingFailureConditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">consumedCapacity=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">shareID=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">tolerations=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceRequestAllocationResult contains the allocation result for one request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>device</strong> <code>str</code> - Device references one device instance via its name in the driver's resource
+  pool. It must be a DNS label.</li>
+<li><strong>driver</strong> <code>str</code> - Driver specifies the name of the DRA driver whose kubelet plugin should be
+  invoked to process the allocation once the claim is needed on a node.
+  Must be a DNS subdomain and should end with a DNS domain owned by the vendor
+  of the driver. It should use only lower case characters.</li>
+<li><strong>pool</strong> <code>str</code> - This name together with the driver name and the device name field identify
+  which device was allocated (<code>&lt;driver name&gt;/&lt;pool name&gt;/&lt;device name&gt;</code>).
+  Must not be longer than 253 characters and may contain one or more DNS
+  sub-domains separated by slashes.</li>
+<li><strong>request</strong> <code>str</code> - Request is the name of the request in the claim which caused this device to be
+  allocated. If it references a subrequest in the firstAvailable list on a
+  DeviceRequest, this field must include both the name of the main request and
+  the subrequest using the format <main request>/<subrequest>.
+  Multiple devices may have been allocated per request.</li>
+<li><strong>adminAccess</strong> <code>Optional[bool]</code> - AdminAccess indicates that this device was allocated for administrative
+  access. See the corresponding request field for a definition of mode.
+  This is an alpha field and requires enabling the DRAAdminAccess feature gate.
+  Admin access is disabled if this field is unset or set to false, otherwise it
+  is enabled.</li>
+<li><strong>bindingConditions</strong> <code>Optional[List[str]]</code> - BindingConditions contains a copy of the BindingConditions from the
+  corresponding ResourceSlice at the time of allocation.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gates.</li>
+<li><strong>bindingFailureConditions</strong> <code>Optional[List[str]]</code> - BindingFailureConditions contains a copy of the BindingFailureConditions from
+  the corresponding ResourceSlice at the time of allocation.
+  This is an alpha field and requires enabling the DRADeviceBindingConditions
+  and DRAResourceClaimDeviceStatus feature gates.</li>
+<li><strong>consumedCapacity</strong> <code>Optional[dict]</code> - ConsumedCapacity tracks the amount of capacity consumed per device as part of
+  the claim request. The consumed amount may differ from the requested amount:
+  it is rounded up to the nearest valid value based on the device’s
+  requestPolicy if applicable (i.e., may not be less than the requested amount).
+  The total consumed capacity for each device must not exceed the
+  DeviceCapacity's Value.
+  This field is populated only for devices that allow multiple allocations. All
+  capacity entries are included, even if the consumed amount is zero.</li>
+<li><strong>shareID</strong> <code>Optional[str]</code> - ShareID uniquely identifies an individual allocation share of the device, used
+  when the device supports multiple simultaneous allocations. It serves as an
+  additional map key to differentiate concurrent shares of the same device.</li>
+<li><strong>tolerations</strong> <code>Optional[List[<a href="#devicetoleration">DeviceToleration</a>]]</code> - A copy of all tolerations specified in the request at the time when the device
+  got allocated.
+  The maximum number of tolerations is 16.
+  This is an alpha field and requires enabling the DRADeviceTaints feature gate.</li>
+</ul></div>
+</div>
+<h2 id="deviceselector">DeviceSelector</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceSelector</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">cel=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceSelector must have exactly one field set.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>cel</strong> <code>Optional[<a href="#celdeviceselector">CELDeviceSelector</a>]</code> - CEL contains a CEL expression for selecting a device.</li>
+</ul></div>
+</div>
+<h2 id="devicesubrequest">DeviceSubRequest</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceSubRequest</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">deviceClassName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allocationMode=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">capacity=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">count=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selectors=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">tolerations=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>DeviceSubRequest describes a request for device provided in the
+claim.spec.devices.requests[].firstAvailable array. Each is typically a
+request for a single resource like a device, but can also ask for several
+identical devices.</p>
+<p>DeviceSubRequest is similar to ExactDeviceRequest, but doesn't expose the
+AdminAccess field as that one is only supported when requesting a specific
+device.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>deviceClassName</strong> <code>str</code> - DeviceClassName references a specific DeviceClass, which can define additional
+  configuration and selectors to be inherited by this subrequest.
+  A class is required. Which classes are available depends on the cluster.
+  Administrators may use this to restrict which devices may get requested by
+  only installing classes with selectors for permitted devices. If users are
+  free to request anything without restrictions, then administrators can create
+  an empty DeviceClass for users to reference.</li>
+<li><strong>name</strong> <code>str</code> - Name can be used to reference this subrequest in the list of constraints or
+  the list of configurations for the claim. References must use the format <main
+  request>/<subrequest>.
+  Must be a DNS label.</li>
+<li><strong>allocationMode</strong> <code>Optional[str]</code> - AllocationMode and its related fields define how devices are allocated to
+  satisfy this subrequest. Supported values are:</li>
+<li>ExactCount: This request is for a specific number of devices.
+    This is the default. The exact number is provided in the
+    count field.</li>
+<li>All: This subrequest is for all of the matching devices in a pool.
+    Allocation will fail if some devices are already allocated,
+    unless adminAccess is requested.
+  If AllocationMode is not specified, the default mode is ExactCount. If the
+  mode is ExactCount and count is not specified, the default count is one. Any
+  other subrequests must specify this field.
+  More modes may get added in the future. Clients must refuse to handle requests
+  with unknown modes.</li>
+<li><strong>capacity</strong> <code>Optional[<a href="#capacityrequirements">CapacityRequirements</a>]</code> - Capacity define resource requirements against each capacity.
+  If this field is unset and the device supports multiple allocations, the
+  default value will be applied to each capacity according to requestPolicy. For
+  the capacity that has no requestPolicy, default is the full capacity value.
+  Applies to each device allocation. If Count &gt; 1, the request fails if there
+  aren't enough devices that meet the requirements. If AllocationMode is set to
+  All, the request fails if there are devices that otherwise match the request,
+  and have this capacity, with a value &gt;= the requested amount, but which cannot
+  be allocated to this request.</li>
+<li><strong>count</strong> <code>Optional[int]</code> - Count is used only when the count mode is "ExactCount". Must be greater than
+  zero. If AllocationMode is ExactCount and this field is not specified, the
+  default is one.</li>
+<li><strong>selectors</strong> <code>Optional[List[<a href="#deviceselector">DeviceSelector</a>]]</code> - Selectors define criteria which must be satisfied by a specific device in
+  order for that device to be considered for this subrequest. All selectors must
+  be satisfied for a device to be considered.</li>
+<li><strong>tolerations</strong> <code>Optional[List[<a href="#devicetoleration">DeviceToleration</a>]]</code> - If specified, the request's tolerations.
+  Tolerations for NoSchedule are required to allocate a device which has a taint
+  with that effect. The same applies to NoExecute.
+  In addition, should any of the allocated devices get tainted with NoExecute
+  after allocation and that effect is not tolerated, then all pods consuming the
+  ResourceClaim get deleted to evict them. The scheduler will not let new pods
+  reserve the claim while it has these tainted devices. Once all pods are
+  evicted, the claim will get deallocated.
+  The maximum number of tolerations is 16.
+  This is an alpha field and requires enabling the DRADeviceTaints feature gate.</li>
+</ul></div>
+</div>
+<h2 id="devicetaint">DeviceTaint</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceTaint</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">effect</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">key</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">timeAdded=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">value=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>The device this taint is attached to has the "effect" on any claim which does
+not tolerate the taint and, through the claim, to pods using the claim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>effect</strong> <code>str</code> - The effect of the taint on claims that do not tolerate the taint and through
+  such claims on the pods using them.
+  Valid effects are None, NoSchedule and NoExecute. PreferNoSchedule as used for
+  nodes is not valid here. More effects may get added in the future. Consumers
+  must treat unknown effects like None.</li>
+<li><strong>key</strong> <code>str</code> - The taint key to be applied to a device. Must be a label name.</li>
+<li><strong>timeAdded</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - TimeAdded represents the time at which the taint was added. Added
+  automatically during create or update if not set.</li>
+<li><strong>value</strong> <code>Optional[str]</code> - The taint value corresponding to the taint key. Must be a label value.</li>
+</ul></div>
+</div>
+<h2 id="devicetoleration">DeviceToleration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>DeviceToleration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">effect=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">key=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">operator=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">tolerationSeconds=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">value=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>The ResourceClaim this DeviceToleration is attached to tolerates any taint
+that matches the triple <key,value,effect> using the matching operator
+<operator>.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>effect</strong> <code>Optional[str]</code> - Effect indicates the taint effect to match. Empty means match all taint
+  effects. When specified, allowed values are NoSchedule and NoExecute.</li>
+<li><strong>key</strong> <code>Optional[str]</code> - Key is the taint key that the toleration applies to. Empty means match all
+  taint keys. If the key is empty, operator must be Exists; this combination
+  means to match all values and all keys. Must be a label name.</li>
+<li><strong>operator</strong> <code>Optional[str]</code> - Operator represents a key's relationship to the value. Valid operators are
+  Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for
+  value, so that a ResourceClaim can tolerate all taints of a particular
+  category.</li>
+<li><strong>tolerationSeconds</strong> <code>Optional[int]</code> - TolerationSeconds represents the period of time the toleration (which must be
+  of effect NoExecute, otherwise this field is ignored) tolerates the taint. By
+  default, it is not set, which means tolerate the taint forever (do not evict).
+  Zero and negative values will be treated as 0 (evict immediately) by the
+  system. If larger than zero, the time when the pod needs to be evicted is
+  calculated as <time when taint was adedd> + <toleration seconds>.</li>
+<li><strong>value</strong> <code>Optional[str]</code> - Value is the taint value the toleration matches to. If the operator is Exists,
+  the value must be empty, otherwise just a regular string. Must be a label
+  value.</li>
+</ul></div>
+</div>
+<h2 id="exactdevicerequest">ExactDeviceRequest</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ExactDeviceRequest</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">deviceClassName</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">adminAccess=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allocationMode=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">capacity=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">count=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">selectors=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">tolerations=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ExactDeviceRequest is a request for one or more identical devices.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>deviceClassName</strong> <code>str</code> - DeviceClassName references a specific DeviceClass, which can define additional
+  configuration and selectors to be inherited by this request.
+  A DeviceClassName is required.
+  Administrators may use this to restrict which devices may get requested by
+  only installing classes with selectors for permitted devices. If users are
+  free to request anything without restrictions, then administrators can create
+  an empty DeviceClass for users to reference.</li>
+<li><strong>adminAccess</strong> <code>Optional[bool]</code> - AdminAccess indicates that this is a claim for administrative access to the
+  device(s). Claims with AdminAccess are expected to be used for monitoring or
+  other management services for a device.  They ignore all ordinary claims to
+  the device with respect to access modes and any resource allocations.
+  This is an alpha field and requires enabling the DRAAdminAccess feature gate.
+  Admin access is disabled if this field is unset or set to false, otherwise it
+  is enabled.</li>
+<li><strong>allocationMode</strong> <code>Optional[str]</code> - AllocationMode and its related fields define how devices are allocated to
+  satisfy this request. Supported values are:</li>
+<li>ExactCount: This request is for a specific number of devices.
+    This is the default. The exact number is provided in the
+    count field.</li>
+<li>All: This request is for all of the matching devices in a pool.
+    At least one device must exist on the node for the allocation to succeed.
+    Allocation will fail if some devices are already allocated,
+    unless adminAccess is requested.
+  If AllocationMode is not specified, the default mode is ExactCount. If the
+  mode is ExactCount and count is not specified, the default count is one. Any
+  other requests must specify this field.
+  More modes may get added in the future. Clients must refuse to handle requests
+  with unknown modes.</li>
+<li><strong>capacity</strong> <code>Optional[<a href="#capacityrequirements">CapacityRequirements</a>]</code> - Capacity define resource requirements against each capacity.
+  If this field is unset and the device supports multiple allocations, the
+  default value will be applied to each capacity according to requestPolicy. For
+  the capacity that has no requestPolicy, default is the full capacity value.
+  Applies to each device allocation. If Count &gt; 1, the request fails if there
+  aren't enough devices that meet the requirements. If AllocationMode is set to
+  All, the request fails if there are devices that otherwise match the request,
+  and have this capacity, with a value &gt;= the requested amount, but which cannot
+  be allocated to this request.</li>
+<li><strong>count</strong> <code>Optional[int]</code> - Count is used only when the count mode is "ExactCount". Must be greater than
+  zero. If AllocationMode is ExactCount and this field is not specified, the
+  default is one.</li>
+<li><strong>selectors</strong> <code>Optional[List[<a href="#deviceselector">DeviceSelector</a>]]</code> - Selectors define criteria which must be satisfied by a specific device in
+  order for that device to be considered for this request. All selectors must be
+  satisfied for a device to be considered.</li>
+<li><strong>tolerations</strong> <code>Optional[List[<a href="#devicetoleration">DeviceToleration</a>]]</code> - If specified, the request's tolerations.
+  Tolerations for NoSchedule are required to allocate a device which has a taint
+  with that effect. The same applies to NoExecute.
+  In addition, should any of the allocated devices get tainted with NoExecute
+  after allocation and that effect is not tolerated, then all pods consuming the
+  ResourceClaim get deleted to evict them. The scheduler will not let new pods
+  reserve the claim while it has these tainted devices. Once all pods are
+  evicted, the claim will get deallocated.
+  The maximum number of tolerations is 16.
+  This is an alpha field and requires enabling the DRADeviceTaints feature gate.</li>
+</ul></div>
+</div>
+<h2 id="networkdevicedata">NetworkDeviceData</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>NetworkDeviceData</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">hardwareAddress=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">interfaceName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">ips=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>NetworkDeviceData provides network-related details for the allocated device.
+This information may be filled by drivers or other components to configure or
+identify the device within a network context.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>hardwareAddress</strong> <code>Optional[str]</code> - HardwareAddress represents the hardware address (e.g. MAC Address) of the
+  device's network interface.
+  Must not be longer than 128 characters.</li>
+<li><strong>interfaceName</strong> <code>Optional[str]</code> - InterfaceName specifies the name of the network interface associated with the
+  allocated device. This might be the name of a physical or virtual network
+  interface being configured in the pod.
+  Must not be longer than 256 characters.</li>
+<li><strong>ips</strong> <code>Optional[List[str]]</code> - IPs lists the network addresses assigned to the device's network interface.
+  This can include both IPv4 and IPv6 addresses. The IPs are in the CIDR
+  notation, which includes both the address and the associated subnet mask.
+  e.g.: "192.0.2.5/24" for IPv4 and "2001:db8::5/64" for IPv6.</li>
+</ul></div>
+</div>
+<h2 id="opaquedeviceconfiguration">OpaqueDeviceConfiguration</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>OpaqueDeviceConfiguration</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">driver</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">parameters</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>OpaqueDeviceConfiguration contains configuration parameters for a driver in a
+format defined by the driver vendor.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>driver</strong> <code>str</code> - Driver is used to determine which kubelet plugin needs to be passed these
+  configuration parameters.
+  An admission policy provided by the driver developer could use this to decide
+  whether it needs to validate them.
+  Must be a DNS subdomain and should end with a DNS domain owned by the vendor
+  of the driver. It should use only lower case characters.</li>
+<li><strong>parameters</strong> <code><a href="../runtime/index.html#rawextension">runtime.RawExtension</a></code> - Parameters can contain arbitrary data. It is the responsibility of the driver
+  developer to handle validation and versioning. Typically this includes
+  self-identification and a version ("kind" + "apiVersion" for Kubernetes
+  types), with conversion between different versions.
+  The length of the raw data must be smaller or equal to 10 Ki.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaim">ResourceClaim</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaim</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaim describes a request for access to resources in the cluster, for
+use by workloads. For example, if a workload needs an accelerator device with
+specific properties, this is how that request is expressed. The status stanza
+tracks whether this claim has been satisfied and what specific resources have
+been allocated.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimspec">ResourceClaimSpec</a></code> - Spec describes what is being requested and how to configure it. The spec is
+  immutable.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+<li><strong>status</strong> <code>Optional[<a href="#resourceclaimstatus">ResourceClaimStatus</a>]</code> - Status describes whether the claim is ready to use and what has been
+  allocated.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimconsumerreference">ResourceClaimConsumerReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimConsumerReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resource</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiGroup=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimConsumerReference contains enough information to let you locate
+the consumer of a ResourceClaim. The user must be a resource in the same
+namespace as the ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - Name is the name of resource being referenced.</li>
+<li><strong>resource</strong> <code>str</code> - Resource is the type of resource being referenced, for example "pods".</li>
+<li><strong>uid</strong> <code>str</code> - UID identifies exactly one incarnation of the resource.</li>
+<li><strong>apiGroup</strong> <code>Optional[str]</code> - APIGroup is the group for the resource being referenced. It is empty for the
+  core API. This matches the group in the APIVersion that is used when creating
+  the resources.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimlist">ResourceClaimList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimList is a collection of claims.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#resourceclaim">ResourceClaim</a>]</code> - Items is the list of resource claims.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimspec">ResourceClaimSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">devices=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimSpec defines what is being requested in a ResourceClaim and how
+to configure it.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>devices</strong> <code>Optional[<a href="#deviceclaim">DeviceClaim</a>]</code> - Devices defines how to request devices.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimstatus">ResourceClaimStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">allocation=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">devices=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">reservedFor=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimStatus tracks whether the resource has been allocated and what
+the result of that was.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>allocation</strong> <code>Optional[<a href="#allocationresult">AllocationResult</a>]</code> - Allocation is set once the claim has been allocated successfully.</li>
+<li><strong>devices</strong> <code>Optional[List[<a href="#allocateddevicestatus">AllocatedDeviceStatus</a>]]</code> - Devices contains the status of each device allocated for this claim, as
+  reported by the driver. This can include driver-specific information. Entries
+  are owned by their respective drivers.</li>
+<li><strong>reservedFor</strong> <code>Optional[List[<a href="#resourceclaimconsumerreference">ResourceClaimConsumerReference</a>]]</code> - ReservedFor indicates which entities are currently allowed to use the claim. A
+  Pod which references a ResourceClaim which is not reserved for that Pod will
+  not be started. A claim that is in use or might be in use because it has been
+  reserved must not get deallocated.
+  In a cluster with multiple scheduler instances, two pods might get scheduled
+  concurrently by different schedulers. When they reference the same
+  ResourceClaim which already has reached its maximum number of consumers, only
+  one pod can be scheduled.
+  Both schedulers try to add their pod to the claim.status.reservedFor field,
+  but only the update that reaches the API server first gets stored. The other
+  one fails with an error and the scheduler which issued it knows that it must
+  put the pod back into the queue, waiting for the ResourceClaim to become
+  usable again.
+  There can be at most 256 such reservations. This may get increased in the
+  future, but not reduced.</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplate">ResourceClaimTemplate</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimTemplate</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplate is used to produce ResourceClaim objects.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimtemplatespec">ResourceClaimTemplateSpec</a></code> - Describes the ResourceClaim that is to be generated.
+  This field is immutable. A ResourceClaim will get created by the control plane
+  for a Pod when needed and then not get updated anymore.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplatelist">ResourceClaimTemplateList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimTemplateList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplateList is a collection of claim templates.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#resourceclaimtemplate">ResourceClaimTemplate</a>]</code> - Items is the list of resource claim templates.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceclaimtemplatespec">ResourceClaimTemplateSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceClaimTemplateSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceClaimTemplateSpec contains the metadata and fields for a
+ResourceClaim.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceclaimspec">ResourceClaimSpec</a></code> - Spec for the ResourceClaim. The entire content is copied unchanged into the
+  ResourceClaim that gets created from this template. The same fields as in a
+  ResourceClaim are also valid here.</li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - ObjectMeta may contain labels and annotations that will be copied into the
+  ResourceClaim when creating it. No other fields are allowed and will be
+  rejected during validation.</li>
+</ul></div>
+</div>
+<h2 id="resourcepool">ResourcePool</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourcePool</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">generation</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">resourceSliceCount</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourcePool describes the pool that ResourceSlices belong to.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>generation</strong> <code>int</code> - Generation tracks the change in a pool over time. Whenever a driver changes
+  something about one or more of the resources in a pool, it must change the
+  generation in all ResourceSlices which are part of that pool. Consumers of
+  ResourceSlices should only consider resources from the pool with the highest
+  generation number. The generation may be reset by drivers, which should be
+  fine for consumers, assuming that all ResourceSlices in a pool are updated to
+  match or deleted.
+  Combined with ResourceSliceCount, this mechanism enables consumers to detect
+  pools which are comprised of multiple ResourceSlices and are in an incomplete
+  state.</li>
+<li><strong>name</strong> <code>str</code> - Name is used to identify the pool. For node-local devices, this is often the
+  node name, but this is not required.
+  It must not be longer than 253 characters and must consist of one or more DNS
+  sub-domains separated by slashes. This field is immutable.</li>
+<li><strong>resourceSliceCount</strong> <code>int</code> - ResourceSliceCount is the total number of ResourceSlices in the pool at this
+  generation number. Must be greater than zero.
+  Consumers can use this to check whether they have seen all ResourceSlices
+  belonging to the same pool.</li>
+</ul></div>
+</div>
+<h2 id="resourceslice">ResourceSlice</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceSlice</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceSlice represents one or more resources in a pool of similar resources,
+managed by a common driver. A pool may span more than one ResourceSlice, and
+exactly how many ResourceSlices comprise a pool is determined by the driver.</p>
+<p>At the moment, the only supported resources are devices with attributes and
+capacities. Each device in a given pool, regardless of how many
+ResourceSlices, must have a unique name. The ResourceSlice in which a device
+gets published may change over time. The unique identifier for a device is the
+tuple <driver name>, <pool name>, <device name>.</p>
+<p>Whenever a driver needs to update a pool, it increments the
+pool.Spec.Pool.Generation number and updates all ResourceSlices with that new
+number and new resource definitions. A consumer must only use ResourceSlices
+with the highest generation number and ignore all others.</p>
+<p>When allocating all resources in a pool matching certain criteria or when
+looking for the best solution among several different alternatives, a consumer
+should check the number of ResourceSlices in a pool (included in each
+ResourceSlice) to determine whether its view of a pool is complete and if not,
+should wait until the driver has completed updating the pool.</p>
+<p>For resources that are not local to a node, the node name is not set. Instead,
+the driver may use a node selector to specify where the devices are available.</p>
+<p>This is an alpha type and requires enabling the DynamicResourceAllocation
+feature gate.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#resourceslicespec">ResourceSliceSpec</a></code> - Contains the information published by the driver.
+  Changing the spec automatically increments the metadata.generation number.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - Standard object metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceslicelist">ResourceSliceList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceSliceList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceSliceList is a collection of ResourceSlices.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#resourceslice">ResourceSlice</a>]</code> - Items is the list of resource ResourceSlices.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - Standard list metadata</li>
+</ul></div>
+</div>
+<h2 id="resourceslicespec">ResourceSliceSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.resource_v1.<strong>ResourceSliceSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">driver</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">pool</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">allNodes=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">devices=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nodeName=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">nodeSelector=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">perDeviceNodeSelection=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">sharedCounters=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResourceSliceSpec contains the information published by the driver in one
+ResourceSlice.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>driver</strong> <code>str</code> - Driver identifies the DRA driver providing the capacity information. A field
+  selector can be used to list only ResourceSlice objects with a certain driver
+  name.
+  Must be a DNS subdomain and should end with a DNS domain owned by the vendor
+  of the driver. It should use only lower case characters. This field is
+  immutable.</li>
+<li><strong>pool</strong> <code><a href="#resourcepool">ResourcePool</a></code> - Pool describes the pool that this ResourceSlice belongs to.</li>
+<li><strong>allNodes</strong> <code>Optional[bool]</code> - AllNodes indicates that all nodes have access to the resources in the pool.
+  Exactly one of NodeName, NodeSelector, AllNodes, and PerDeviceNodeSelection
+  must be set.</li>
+<li><strong>devices</strong> <code>Optional[List[<a href="#device">Device</a>]]</code> - Devices lists some or all of the devices in this pool.
+  Must not have more than 128 entries. If any device uses taints or consumes
+  counters the limit is 64.
+  Only one of Devices and SharedCounters can be set in a ResourceSlice.</li>
+<li><strong>nodeName</strong> <code>Optional[str]</code> - NodeName identifies the node which provides the resources in this pool. A
+  field selector can be used to list only ResourceSlice objects belonging to a
+  certain node.
+  This field can be used to limit access from nodes to ResourceSlices with the
+  same node name. It also indicates to autoscalers that adding new nodes of the
+  same type as some old node might also make new resources available.
+  Exactly one of NodeName, NodeSelector, AllNodes, and PerDeviceNodeSelection
+  must be set. This field is immutable.</li>
+<li><strong>nodeSelector</strong> <code>Optional[<a href="../core_v1/index.html#nodeselector">core_v1.NodeSelector</a>]</code> - NodeSelector defines which nodes have access to the resources in the pool,
+  when that pool is not limited to a single node.
+  Must use exactly one term.
+  Exactly one of NodeName, NodeSelector, AllNodes, and PerDeviceNodeSelection
+  must be set.</li>
+<li><strong>perDeviceNodeSelection</strong> <code>Optional[bool]</code> - PerDeviceNodeSelection defines whether the access from nodes to resources in
+  the pool is set on the ResourceSlice level or on each device. If it is set to
+  true, every device defined the ResourceSlice must specify this individually.
+  Exactly one of NodeName, NodeSelector, AllNodes, and PerDeviceNodeSelection
+  must be set.</li>
+<li><strong>sharedCounters</strong> <code>Optional[List[<a href="#counterset">CounterSet</a>]]</code> - SharedCounters defines a list of counter sets, each of which has a name and a
+  list of counters available.
+  The names of the counter sets must be unique in the ResourcePool.
+  Only one of Devices and SharedCounters can be set in a ResourceSlice.
+  The maximum number of counter sets is 8.</li>
+</ul></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
