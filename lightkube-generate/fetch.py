@@ -179,7 +179,7 @@ def update_docs_versions(
     new_minor = int(parts[1])
     new_version_str = f"{new_major}.{new_minor}"
 
-    # Pattern to find version links (e.g., [1.35](https://gtsystem.github.io/lightkube-models/1.35))
+    # Pattern to find version links
     version_pattern = (
         r"\[(\d+)\.(\d+)\]\(https://gtsystem\.github\.io/lightkube-models/\d+\.\d+\)"
     )
@@ -187,78 +187,65 @@ def update_docs_versions(
     # Read file line by line
     lines = docs_file.read_text().splitlines(keepends=True)
     new_lines = []
-    last_version_line_idx = -1
-    first_version_line_idx = -1
+    first_version_idx = -1
     version_already_exists = False
+    version_lines = []
 
-    # Process each line
-    for i, line in enumerate(lines):
+    # First pass: separate version lines from other lines
+    for line in lines:
         match = re.search(version_pattern, line)
         if match:
             line_major = int(match.group(1))
             line_minor = int(match.group(2))
             line_version_str = f"{line_major}.{line_minor}"
 
-            # Track first version line
-            if first_version_line_idx == -1:
-                first_version_line_idx = len(new_lines)
+            if first_version_idx == -1:
+                first_version_idx = len(new_lines)
 
-            # Check if this is the version we're adding
             if line_version_str == new_version_str:
                 version_already_exists = True
-                new_lines.append(line)
-                last_version_line_idx = len(new_lines) - 1
+
+            # Calculate distance from new version
+            version_distance = (new_major * 100 + new_minor) - (
+                line_major * 100 + line_minor
+            )
+
+            # Keep if within range
+            if version_distance < max_versions and version_distance >= 0:
+                version_lines.append(line_version_str)
             else:
-                # Calculate distance from new version (only considering minor version difference)
-                # Versions are kept if they're within max_versions range from the new version
-                version_distance = (new_major * 100 + new_minor) - (
-                    line_major * 100 + line_minor
-                )
-
-                if version_distance < max_versions and version_distance >= 0:
-                    # Keep this version
-                    new_lines.append(line)
-                    last_version_line_idx = len(new_lines) - 1
-                else:
-                    # Remove this version (skip the line)
-                    print(f"Removed old version {line_version_str}")
+                print(f"Removed old version {line_version_str}")
         else:
-            new_lines.append(line)
+            # Non-version line
+            if first_version_idx == -1 or not version_lines:
+                # Before first version or no versions yet
+                new_lines.append(line)
+            # else: we're past the version block, will add later
 
-    # Add new version if it doesn't exist
+    # Add new version if needed
     if not version_already_exists:
-        new_link = f"[{new_version_str}](https://gtsystem.github.io/lightkube-models/{new_version_str})\n"
-        if first_version_line_idx >= 0:
-            # Insert before the first version line (new versions go on top)
-            new_lines.insert(first_version_line_idx, new_link)
-        else:
-            # No version lines found, append at the end
-            if new_lines and not new_lines[-1].endswith("\n"):
-                new_lines.append("\n")
-            new_lines.append(new_link)
+        version_lines.insert(0, new_version_str)
         print(f"Added version {new_version_str}")
     else:
         print(f"Version {new_version_str} already in documentation")
 
-    # Fix punctuation: last version line should end with "." instead of ","
-    # Find the last version line and ensure it ends with "."
-    for i in range(len(new_lines) - 1, -1, -1):
-        if re.search(version_pattern, new_lines[i]):
-            # This is the last version line
-            new_lines[i] = new_lines[i].rstrip("\n").rstrip(",").rstrip() + ".\n"
-            break
+    # Reconstruct version block with proper punctuation
+    for i, ver in enumerate(version_lines):
+        is_last = i == len(version_lines) - 1
+        ending = "." if is_last else ","
+        new_lines.insert(
+            first_version_idx + i,
+            f"[{ver}](https://gtsystem.github.io/lightkube-models/{ver}){ending}\n",
+        )
 
-    # Ensure all other version lines end with ","
-    found_last = False
-    for i in range(len(new_lines) - 1, -1, -1):
-        if re.search(version_pattern, new_lines[i]):
-            if not found_last:
-                found_last = True
-                # Already handled above
-            else:
-                # Not the last line, should end with ","
-                line = new_lines[i].rstrip("\n").rstrip(".").rstrip(",").rstrip()
-                new_lines[i] = line + ",\n"
+    # Add remaining lines after version block
+    in_version_block = False
+    for line in lines:
+        if re.search(version_pattern, line):
+            in_version_block = True
+        elif in_version_block:
+            # Past the version block
+            new_lines.append(line)
 
     # Write back to file
     docs_file.write_text("".join(new_lines))
