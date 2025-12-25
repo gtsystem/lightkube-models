@@ -3,6 +3,7 @@ from pathlib import Path
 
 import httpx
 import typer
+from ruamel.yaml import YAML
 
 app = typer.Typer(
     help="Fetch Kubernetes OpenAPI specifications and list available versions"
@@ -30,7 +31,6 @@ def list_kubernetes_tags(count: int = 10) -> list[str]:
     response.raise_for_status()
 
     tags_data = response.json()
-    print(tags_data)
     # Extract version numbers, removing 'v' prefix
     versions = []
     for tag in tags_data:
@@ -84,6 +84,68 @@ def fetch_spec(version: str, output_dir: str = "openapi") -> Path:
     return output_file
 
 
+def update_workflow_versions(
+    version: str,
+    workflow_path: str = ".github/workflows/python-package.yml",
+    max_versions: int = 16,
+) -> Path:
+    """Update GitHub workflow with new version and maintain only last N versions.
+
+    Args:
+        version: New Kubernetes version to add (format X.Y.Z)
+        workflow_path: Path to the workflow YAML file
+        max_versions: Maximum number of versions to keep (default: 16)
+
+    Returns:
+        Path to the updated workflow file
+
+    Raises:
+        ValueError: If version format is invalid
+        FileNotFoundError: If workflow file doesn't exist
+    """
+    # Validate version format
+    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
+        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+
+    workflow_file = Path(workflow_path)
+    if not workflow_file.exists():
+        raise FileNotFoundError(f"Workflow file not found: {workflow_path}")
+
+    # Initialize YAML with roundtrip mode to preserve formatting
+    yaml = YAML()
+    yaml.preserve_quotes = True
+    yaml.default_flow_style = False
+
+    # Read workflow file
+    with open(workflow_file) as f:
+        workflow = yaml.load(f)
+
+    # Get current versions from matrix
+    matrix = workflow["jobs"]["build"]["strategy"]["matrix"]
+    current_versions = matrix.get("kube-version", [])
+
+    # Add new version if not already present
+    if version not in current_versions:
+        current_versions.append(version)
+        print(f"Added version {version}")
+    else:
+        print(f"Version {version} already in workflow")
+
+    # Keep only the last max_versions
+    if len(current_versions) > max_versions:
+        current_versions = current_versions[-max_versions:]
+
+    # Update workflow
+    matrix["kube-version"] = current_versions
+
+    # Write back to file
+    with open(workflow_file, "w") as f:
+        yaml.dump(workflow, f)
+
+    print(f"Updated {workflow_file} with {len(current_versions)} versions")
+    return workflow_file
+
+
 @app.command()
 def fetch(
     version: str = typer.Argument(
@@ -118,6 +180,24 @@ def list(
     except httpx.HTTPError as e:
         typer.echo(f"HTTP Error: {e}", err=True)
         raise typer.Exit(1)
+
+
+@app.command(name="update-workflow")
+def update_workflow(
+    version: str = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)"),
+    workflow_path: str = typer.Option(
+        ".github/workflows/python-package.yml",
+        "--workflow",
+        "-w",
+        help="Path to workflow file",
+    ),
+    max_versions: int = typer.Option(
+        16, "--max-versions", "-m", help="Maximum number of versions to keep"
+    ),
+) -> None:
+    """Update GitHub workflow with new version and maintain only last N versions."""
+    workflow_file = update_workflow_versions(version, workflow_path, max_versions)
+    typer.echo(f"✓ Successfully updated {workflow_file}")
 
 
 if __name__ == "__main__":
