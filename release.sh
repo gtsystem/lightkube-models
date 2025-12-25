@@ -17,8 +17,7 @@ for v in $VERSIONS; do
   uv run --group compile python -m lightkube-generate resources models openapi/kubernetes_v$v.json --docs docs
   uv run python test_models.py
   uv run python test_resources.py
-  rm -rf build
-  uvx hatch build
+  uv build
   uv run --group compile python -m mkdocs build -d site/$MAIN_VERSION
   #twine upload dist/lightkube_models-${v}.*-py3-none-any.whl -r $1
   ls dist/lightkube_models-${v}.*-py3-none-any.whl
