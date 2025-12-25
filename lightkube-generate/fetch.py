@@ -1,8 +1,47 @@
 import re
-import sys
 from pathlib import Path
 
 import httpx
+import typer
+
+app = typer.Typer(
+    help="Fetch Kubernetes OpenAPI specifications and list available versions"
+)
+
+
+def list_kubernetes_tags(count: int = 10) -> list[str]:
+    """List the last N version tags from kubernetes/kubernetes repository.
+
+    Args:
+        count: Number of tags to retrieve (default: 10)
+
+    Returns:
+        List of version strings (without 'v' prefix), sorted from newest to oldest
+
+    Raises:
+        httpx.HTTPError: If API request fails
+    """
+    url = "https://api.github.com/repos/kubernetes/kubernetes/tags"
+    params = {"per_page": count * 2}
+
+    print(f"Fetching last {count} tags from kubernetes/kubernetes...")
+
+    response = httpx.get(url, params=params, follow_redirects=True)
+    response.raise_for_status()
+
+    tags_data = response.json()
+    print(tags_data)
+    # Extract version numbers, removing 'v' prefix
+    versions = []
+    for tag in tags_data:
+        tag_name = tag.get("name", "")
+        if tag_name.startswith("v"):
+            # Remove 'v' prefix and filter for valid version format
+            version = tag_name[1:]
+            if re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
+                versions.append(version)
+
+    return versions[:count]
 
 
 def fetch_spec(version: str, output_dir: str = "openapi") -> Path:
@@ -45,14 +84,41 @@ def fetch_spec(version: str, output_dir: str = "openapi") -> Path:
     return output_file
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python -m lightkube-generate.fetch <version>")
-        print("Example: python -m lightkube-generate.fetch 1.35.0")
-        sys.exit(1)
-
+@app.command()
+def fetch(
+    version: str = typer.Argument(
+        ..., help="Kubernetes version in format X.Y.Z (without 'v' prefix)"
+    ),
+    output_dir: str = typer.Option(
+        "openapi", "--output-dir", "-o", help="Directory to save the spec file"
+    ),
+) -> None:
+    """Fetch Kubernetes OpenAPI spec for a given version."""
     try:
-        fetch_spec(sys.argv[1])
-    except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
-        sys.exit(1)
+        output_file = fetch_spec(version, output_dir)
+        typer.echo(f"✓ Successfully saved spec to {output_file}")
+    except ValueError as e:
+        typer.echo(f"Error: {e}", err=True)
+        raise typer.Exit(1)
+    except httpx.HTTPError as e:
+        typer.echo(f"HTTP Error: {e}", err=True)
+        raise typer.Exit(1)
+
+
+@app.command()
+def list(
+    count: int = typer.Argument(10, help="Number of tags to retrieve"),
+) -> None:
+    """List the last N version tags from kubernetes/kubernetes repository."""
+    try:
+        versions = list_kubernetes_tags(count)
+        typer.echo(f"\nLast {len(versions)} Kubernetes versions:")
+        for version in versions:
+            typer.echo(f"  {version}")
+    except httpx.HTTPError as e:
+        typer.echo(f"HTTP Error: {e}", err=True)
+        raise typer.Exit(1)
+
+
+if __name__ == "__main__":
+    app()
