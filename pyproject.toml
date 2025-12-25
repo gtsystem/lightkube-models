@@ -36,10 +36,12 @@ path = "src/lightkube/models/__init__.py"
 [tool.hatch.build.targets.sdist]
 packages = ["src/lightkube/models", "src/lightkube/resources"]
 sources = ["src/"]
+ignore-vcs = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lightkube/models", "src/lightkube/resources"]
 sources = ["src/"]
+ignore-vcs = true
 
 [dependency-groups]
 compile = [

@@ -264,15 +264,8 @@ def fetch(
     ),
 ) -> None:
     """Fetch Kubernetes OpenAPI spec for a given version."""
-    try:
-        output_file = fetch_spec(version, output_dir)
-        typer.echo(f"✓ Successfully saved spec to {output_file}")
-    except ValueError as e:
-        typer.echo(f"Error: {e}", err=True)
-        raise typer.Exit(1)
-    except httpx.HTTPError as e:
-        typer.echo(f"HTTP Error: {e}", err=True)
-        raise typer.Exit(1)
+    output_file = fetch_spec(version, output_dir)
+    typer.echo(f"✓ Successfully saved spec to {output_file}")
 
 
 @app.command()
