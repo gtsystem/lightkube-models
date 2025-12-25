@@ -12,7 +12,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -27,21 +26,18 @@ Homepage = "https://github.com/gtsystem/lightkube-models"
 Repository = "https://github.com/gtsystem/lightkube-models"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
-[tool.hatch.version]
+[tool.pdm.build]
+includes = [
+    "src/lightkube/models",
+    "src/lightkube/resources",
+]
+
+[tool.pdm.version]
+source = "file"
 path = "src/lightkube/models/__init__.py"
-
-[tool.hatch.build.targets.sdist]
-packages = ["src/lightkube/models", "src/lightkube/resources"]
-sources = ["src/"]
-ignore-vcs = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/lightkube/models", "src/lightkube/resources"]
-sources = ["src/"]
-ignore-vcs = true
 
 [dependency-groups]
 compile = [
