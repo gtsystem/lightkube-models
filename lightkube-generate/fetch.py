@@ -317,6 +317,78 @@ def update_readme_versions(
     return readme_file
 
 
+def cleanup_site_dirs(
+    version: str,
+    site_path: str = "site",
+    max_versions: int = 16,
+) -> Path:
+    """Clean up old version directories in site folder, keeping only last N versions.
+
+    Args:
+        version: Current Kubernetes version (format X.Y.Z)
+        site_path: Path to the site directory
+        max_versions: Maximum number of version directories to keep (default: 16)
+
+    Returns:
+        Path to the site directory
+
+    Raises:
+        ValueError: If version format is invalid
+        FileNotFoundError: If site directory doesn't exist
+    """
+    # Validate version format
+    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
+        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+
+    site_dir = Path(site_path)
+    if not site_dir.exists():
+        raise FileNotFoundError(f"Site directory not found: {site_path}")
+
+    # Extract major.minor version
+    parts = version.split(".")
+    new_major = int(parts[0])
+    new_minor = int(parts[1])
+
+    # Pattern to match version directories (e.g., 1.35, 1.34, etc.)
+    version_dir_pattern = re.compile(r"^(\d+)\.(\d+)$")
+
+    # Iterate through directories and check if they should be deleted
+    deleted_count = 0
+    skipped_count = 0
+
+    for item in site_dir.iterdir():
+        if item.is_dir():
+            match = version_dir_pattern.match(item.name)
+            if match:
+                major = int(match.group(1))
+                minor = int(match.group(2))
+
+                # Calculate distance from new version
+                version_distance = (new_major * 100 + new_minor) - (major * 100 + minor)
+
+                # Should delete if distance >= max_versions
+                if version_distance >= max_versions:
+                    response = typer.confirm(
+                        f"Delete directory '{item.name}'?", default=False
+                    )
+                    if response:
+                        import shutil
+
+                        shutil.rmtree(item)
+                        print(f"Deleted {item.name}")
+                        deleted_count += 1
+                    else:
+                        print(f"Skipped {item.name}")
+                        skipped_count += 1
+
+    if deleted_count > 0 or skipped_count > 0:
+        print(f"\nCleanup summary: {deleted_count} deleted, {skipped_count} skipped")
+    else:
+        print("No directories need cleanup")
+
+    return site_dir
+
+
 @app.command()
 def fetch(
     version: str = typer.Argument(
@@ -398,6 +470,24 @@ def update_readme(
     """Update README file with new version range."""
     readme_file = update_readme_versions(version, readme_path, max_versions)
     typer.echo(f"✓ Successfully updated {readme_file}")
+
+
+@app.command(name="cleanup-site")
+def cleanup_site(
+    version: str = typer.Argument(..., help="Kubernetes version (format X.Y.Z)"),
+    site_path: str = typer.Option(
+        "site",
+        "--site",
+        "-s",
+        help="Path to site directory",
+    ),
+    max_versions: int = typer.Option(
+        16, "--max-versions", "-m", help="Maximum number of version directories to keep"
+    ),
+) -> None:
+    """Clean up old version directories in site folder."""
+    site_dir = cleanup_site_dirs(version, site_path, max_versions)
+    typer.echo(f"✓ Successfully cleaned up {site_dir}")
 
 
 if __name__ == "__main__":

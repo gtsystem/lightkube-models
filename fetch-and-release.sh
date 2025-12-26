@@ -11,11 +11,9 @@ if [ -z "$VERSIONS" ]; then
 fi
 
 # Display versions and prompt user to select
-echo ""
 echo "Available Kubernetes versions:"
 select VERSION in $VERSIONS; do
     if [ -n "$VERSION" ]; then
-        echo ""
         echo "Selected version: $VERSION"
         break
     else
@@ -56,7 +54,6 @@ if [ "$CURRENT_BRANCH" != "$EXPECTED_BRANCH" ]; then
 fi
 
 # 1. Fetch the OpenAPI spec
-echo ""
 echo "Step 1/3: Fetching OpenAPI spec for version $VERSION..."
 $PYTHON -m lightkube-generate.fetch fetch "$VERSION"
 if [ $? -ne 0 ]; then
@@ -65,7 +62,6 @@ if [ $? -ne 0 ]; then
 fi
 
 # 2. Update workflow file
-echo ""
 echo "Step 2/3: Updating GitHub workflow..."
 $PYTHON -m lightkube-generate.fetch update-workflow "$VERSION"
 if [ $? -ne 0 ]; then
@@ -74,7 +70,6 @@ if [ $? -ne 0 ]; then
 fi
 
 # 3. Update documentation
-echo ""
 echo "Updating documentation..."
 $PYTHON -m lightkube-generate.fetch update-docs "$VERSION"
 if [ $? -ne 0 ]; then
@@ -83,7 +78,6 @@ if [ $? -ne 0 ]; then
 fi
 
 # 4. Update README file
-echo ""
 echo "Updating README..."
 $PYTHON -m lightkube-generate.fetch update-readme "$VERSION"
 if [ $? -ne 0 ]; then
@@ -98,5 +92,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo ""
+# 6. Delete old site direcotories
+echo "Cleanup site directory..."
+$PYTHON -m lightkube-generate.fetch cleanup-site "$VERSION"
+if [ $? -ne 0 ]; then
+    echo "Failed to cleanup site directory"
+    exit 1
+fi
+
 echo "✓ All steps completed successfully for version $VERSION"
