@@ -1,4 +1,6 @@
 import re
+import shutil
+from functools import total_ordering
 from pathlib import Path
 
 import httpx
@@ -10,18 +12,71 @@ app = typer.Typer(
 )
 
 
+# Common CLI helpers
+VERSION_ARG = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)")
+VER_COUNT = 16
+MAX_VERSIONS_OPT = typer.Option(
+    VER_COUNT, "--max-versions", "-m", help="Maximum number of versions to keep"
+)
+# Common default paths
+DEFAULT_WORKFLOW = ".github/workflows/python-package.yml"
+DEFAULT_DOCS = "../lightkube/docs/resources-and-models.md"
+DEFAULT_README = "../lightkube/README.md"
+DEFAULT_SITE = "site"
+DEFAULT_OPENAPI_DIR = "openapi"
+
+
+@total_ordering
+class Version:
+    """Kubernetes version representation with comparison and validation."""
+
+    VERSION_PATTERN = re.compile(r"^(\d+)\.(\d+)(?:\.(\d+))?$")
+
+    def __init__(self, version: str):
+        """Parse and validate version string in format X.Y or X.Y.Z (patch is discarded)."""
+        match = self.VERSION_PATTERN.match(version)
+        if not match:
+            raise ValueError(
+                f"Version {version} must match expression \\d+.\\d+(.\\d+)?"
+            )
+        self.major = int(match.group(1))
+        self.minor = int(match.group(2))
+
+    def __str__(self) -> str:
+        """Return version as X.Y string."""
+        return f"{self.major}.{self.minor}"
+
+    def __eq__(self, other) -> bool:
+        """Compare versions for equality."""
+        if not isinstance(other, Version):
+            return NotImplemented
+        return (self.major, self.minor) == (other.major, other.minor)
+
+    def __lt__(self, other) -> bool:
+        """Compare versions for less than."""
+        if not isinstance(other, Version):
+            return NotImplemented
+        return (self.major, self.minor) < (other.major, other.minor)
+
+    def distance_from(self, other: "Version") -> int:
+        """Calculate version distance (major.minor only) from another version."""
+        return (self.major * 100 + self.minor) - (other.major * 100 + other.minor)
+
+    def is_within_last_n_versions(
+        self, reference: "Version", max_versions: int
+    ) -> bool:
+        """Check if this version is within the last N versions from a reference version."""
+        distance = reference.distance_from(self)
+        return 0 <= distance < max_versions
+
+    def oldest_version_in_range(self, max_versions: int) -> "Version":
+        """Calculate the oldest version to keep within the last N versions."""
+        oldest_minor = max(self.minor - (max_versions - 1), 0)
+        return Version(f"{self.major}.{oldest_minor}")
+
+
 def list_kubernetes_tags(count: int = 10) -> list[str]:
-    """List the last N version tags from kubernetes/kubernetes repository.
-
-    Args:
-        count: Number of tags to retrieve (default: 10)
-
-    Returns:
-        List of version strings (without 'v' prefix), sorted from newest to oldest
-
-    Raises:
-        httpx.HTTPError: If API request fails
-    """
+    """List the last N version tags from kubernetes/kubernetes repository."""
     url = "https://api.github.com/repos/kubernetes/kubernetes/tags"
     params = {"per_page": count * 2}
 
@@ -44,23 +99,10 @@ def list_kubernetes_tags(count: int = 10) -> list[str]:
     return versions[:count]
 
 
-def fetch_spec(version: str, output_dir: str = "openapi") -> Path:
-    """Fetch Kubernetes OpenAPI spec for a given version.
-
-    Args:
-        version: Kubernetes version in format X.Y.Z (without 'v' prefix)
-        output_dir: Directory to save the spec file (default: 'openapi')
-
-    Returns:
-        Path to the saved spec file
-
-    Raises:
-        ValueError: If version format is invalid
-        httpx.HTTPError: If download fails
-    """
+def fetch_spec(version: str, output_dir: str = DEFAULT_OPENAPI_DIR) -> Path:
+    """Fetch Kubernetes OpenAPI spec for a given version."""
     # Validate version format
-    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+    Version(version)
 
     # Ensure output directory exists
     output_path = Path(output_dir)
@@ -85,27 +127,11 @@ def fetch_spec(version: str, output_dir: str = "openapi") -> Path:
 
 
 def update_workflow_versions(
-    version: str,
-    workflow_path: str = ".github/workflows/python-package.yml",
-    max_versions: int = 16,
+    version: str, workflow_path: str = DEFAULT_WORKFLOW, max_versions: int = VER_COUNT
 ) -> Path:
-    """Update GitHub workflow with new version and maintain only last N versions.
-
-    Args:
-        version: New Kubernetes version to add (format X.Y.Z)
-        workflow_path: Path to the workflow YAML file
-        max_versions: Maximum number of versions to keep (default: 16)
-
-    Returns:
-        Path to the updated workflow file
-
-    Raises:
-        ValueError: If version format is invalid
-        FileNotFoundError: If workflow file doesn't exist
-    """
+    """Update GitHub workflow with new version and maintain only last N versions"""
     # Validate version format
-    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+    Version(version)
 
     workflow_file = Path(workflow_path)
     if not workflow_file.exists():
@@ -147,74 +173,41 @@ def update_workflow_versions(
 
 
 def update_docs_versions(
-    version: str,
-    docs_path: str = "../lightkube/docs/resources-and-models.md",
-    max_versions: int = 16,
+    version: str, docs_path: str = DEFAULT_DOCS, max_versions: int = VER_COUNT
 ) -> Path:
-    """Update documentation file with new version link and maintain only last N versions.
-
-    Args:
-        version: New Kubernetes version to add (format X.Y.Z)
-        docs_path: Path to the documentation markdown file
-        max_versions: Maximum number of versions to keep (default: 16)
-
-    Returns:
-        Path to the updated documentation file
-
-    Raises:
-        ValueError: If version format is invalid
-        FileNotFoundError: If documentation file doesn't exist
-    """
+    """Update documentation file with new version link and maintain only last N versions"""
     # Validate version format
-    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+    ver = Version(version)
 
     docs_file = Path(docs_path)
     if not docs_file.exists():
         raise FileNotFoundError(f"Documentation file not found: {docs_path}")
 
-    # Extract major.minor version for the link
-    parts = version.split(".")
-    new_major = int(parts[0])
-    new_minor = int(parts[1])
-    new_version_str = f"{new_major}.{new_minor}"
-
     # Pattern to find version links
     version_pattern = (
-        r"\[(\d+)\.(\d+)\]\(https://gtsystem\.github\.io/lightkube-models/\d+\.\d+\)"
+        r"\[(\d+\.\d+)\]\(https://gtsystem\.github\.io/lightkube-models/\d+\.\d+\)"
     )
 
     # Read file line by line
     lines = docs_file.read_text().splitlines(keepends=True)
     new_lines = []
     first_version_idx = -1
-    version_already_exists = False
     version_lines = []
 
     # First pass: separate version lines from other lines
     for line in lines:
         match = re.search(version_pattern, line)
         if match:
-            line_major = int(match.group(1))
-            line_minor = int(match.group(2))
-            line_version_str = f"{line_major}.{line_minor}"
+            line_ver = Version(match.group(1))
 
             if first_version_idx == -1:
                 first_version_idx = len(new_lines)
 
-            if line_version_str == new_version_str:
-                version_already_exists = True
-
             # Calculate distance from new version
-            version_distance = (new_major * 100 + new_minor) - (
-                line_major * 100 + line_minor
-            )
-
-            # Keep if within range
-            if version_distance < max_versions and version_distance >= 0:
-                version_lines.append(line_version_str)
+            if line_ver.is_within_last_n_versions(ver, max_versions):
+                version_lines.append(str(line_ver))
             else:
-                print(f"Removed old version {line_version_str}")
+                print(f"Removed old version {line_ver}")
         else:
             # Non-version line
             if first_version_idx == -1 or not version_lines:
@@ -223,11 +216,11 @@ def update_docs_versions(
             # else: we're past the version block, will add later
 
     # Add new version if needed
-    if not version_already_exists:
-        version_lines.insert(0, new_version_str)
-        print(f"Added version {new_version_str}")
+    if version_lines[0] != str(ver):
+        version_lines.insert(0, str(ver))
+        print(f"Added version {version_lines[0]}")
     else:
-        print(f"Version {new_version_str} already in documentation")
+        print(f"Version {ver} already in documentation")
 
     # Reconstruct version block with proper punctuation
     for i, ver in enumerate(version_lines):
@@ -255,45 +248,18 @@ def update_docs_versions(
 
 
 def update_readme_versions(
-    version: str,
-    readme_path: str = "../lightkube/README.md",
-    max_versions: int = 16,
+    version: str, readme_path: str = DEFAULT_README, max_versions: int = VER_COUNT
 ) -> Path:
-    """Update README file with new version range.
-
-    Args:
-        version: New Kubernetes version to add (format X.Y.Z)
-        readme_path: Path to the README markdown file
-        max_versions: Maximum number of versions to keep (default: 16)
-
-    Returns:
-        Path to the updated README file
-
-    Raises:
-        ValueError: If version format is invalid
-        FileNotFoundError: If README file doesn't exist
-    """
+    """Update README file with new version range"""
     # Validate version format
-    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+    newest_ver = Version(version)
 
     readme_file = Path(readme_path)
     if not readme_file.exists():
         raise FileNotFoundError(f"README file not found: {readme_path}")
 
-    # Extract major.minor version
-    parts = version.split(".")
-    new_major = int(parts[0])
-    new_minor = int(parts[1])
-
-    # Calculate the oldest version to keep (max_versions - 1 versions back)
-    oldest_minor = new_minor - (max_versions - 1)
-    if oldest_minor < 0:
-        oldest_minor = 0
-
-    oldest_version_str = f"{new_major}.{oldest_minor}"
-    newest_version_str = f"{new_major}.{new_minor}"
-
+    oldest_version = newest_ver.oldest_version_in_range(max_versions)
+    print(oldest_version, newest_ver)
     # Read the file
     content = readme_file.read_text()
 
@@ -302,14 +268,14 @@ def update_readme_versions(
     version_range_pattern = r"(\d+\.\d+)\s+to\s+(\d+\.\d+)"
 
     def replace_version_range(match):
-        return f"{oldest_version_str} to {newest_version_str}"
+        return f"{oldest_version} to {newest_ver}"
 
     # Replace the version range
     new_content, count = re.subn(version_range_pattern, replace_version_range, content)
 
     if count > 0:
         readme_file.write_text(new_content)
-        print(f"Updated version range to {oldest_version_str} to {newest_version_str}")
+        print(f"Updated version range to {oldest_version} to {newest_ver}")
         print(f"Updated {readme_file}")
     else:
         print(f"No version range pattern found in {readme_file}")
@@ -318,36 +284,15 @@ def update_readme_versions(
 
 
 def cleanup_site_dirs(
-    version: str,
-    site_path: str = "site",
-    max_versions: int = 16,
+    version: str, site_path: str = DEFAULT_SITE, max_versions: int = VER_COUNT
 ) -> Path:
-    """Clean up old version directories in site folder, keeping only last N versions.
-
-    Args:
-        version: Current Kubernetes version (format X.Y.Z)
-        site_path: Path to the site directory
-        max_versions: Maximum number of version directories to keep (default: 16)
-
-    Returns:
-        Path to the site directory
-
-    Raises:
-        ValueError: If version format is invalid
-        FileNotFoundError: If site directory doesn't exist
-    """
+    """Clean up old version directories in site folder, keeping only last N versions"""
     # Validate version format
-    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+    ver = Version(version)
 
     site_dir = Path(site_path)
     if not site_dir.exists():
         raise FileNotFoundError(f"Site directory not found: {site_path}")
-
-    # Extract major.minor version
-    parts = version.split(".")
-    new_major = int(parts[0])
-    new_minor = int(parts[1])
 
     # Pattern to match version directories (e.g., 1.35, 1.34, etc.)
     version_dir_pattern = re.compile(r"^(\d+)\.(\d+)$")
@@ -360,20 +305,14 @@ def cleanup_site_dirs(
         if item.is_dir():
             match = version_dir_pattern.match(item.name)
             if match:
-                major = int(match.group(1))
-                minor = int(match.group(2))
+                dir_ver = Version(f"{match.group(1)}.{match.group(2)}")
 
-                # Calculate distance from new version
-                version_distance = (new_major * 100 + new_minor) - (major * 100 + minor)
-
-                # Should delete if distance >= max_versions
-                if version_distance >= max_versions:
+                # Should delete if not within last N versions
+                if not dir_ver.is_within_last_n_versions(ver, max_versions):
                     response = typer.confirm(
                         f"Delete directory '{item.name}'?", default=False
                     )
                     if response:
-                        import shutil
-
                         shutil.rmtree(item)
                         print(f"Deleted {item.name}")
                         deleted_count += 1
@@ -391,11 +330,12 @@ def cleanup_site_dirs(
 
 @app.command()
 def fetch(
-    version: str = typer.Argument(
-        ..., help="Kubernetes version in format X.Y.Z (without 'v' prefix)"
-    ),
+    version: str = VERSION_ARG,
     output_dir: str = typer.Option(
-        "openapi", "--output-dir", "-o", help="Directory to save the spec file"
+        DEFAULT_OPENAPI_DIR,
+        "--output-dir",
+        "-o",
+        help="Directory to save the spec file",
     ),
 ) -> None:
     """Fetch Kubernetes OpenAPI spec for a given version."""
@@ -404,9 +344,7 @@ def fetch(
 
 
 @app.command()
-def list(
-    count: int = typer.Argument(10, help="Number of tags to retrieve"),
-) -> None:
+def list(count: int = typer.Argument(10, help="Number of tags to retrieve")) -> None:
     """List the last N version tags from kubernetes/kubernetes repository."""
     try:
         versions = list_kubernetes_tags(count)
@@ -420,16 +358,14 @@ def list(
 
 @app.command(name="update-workflow")
 def update_workflow(
-    version: str = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)"),
+    version: str = VERSION_ARG,
     workflow_path: str = typer.Option(
-        ".github/workflows/python-package.yml",
+        DEFAULT_WORKFLOW,
         "--workflow",
         "-w",
         help="Path to workflow file",
     ),
-    max_versions: int = typer.Option(
-        16, "--max-versions", "-m", help="Maximum number of versions to keep"
-    ),
+    max_versions: int = MAX_VERSIONS_OPT,
 ) -> None:
     """Update GitHub workflow with new version and maintain only last N versions."""
     workflow_file = update_workflow_versions(version, workflow_path, max_versions)
@@ -438,16 +374,14 @@ def update_workflow(
 
 @app.command(name="update-docs")
 def update_docs(
-    version: str = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)"),
+    version: str = VERSION_ARG,
     docs_path: str = typer.Option(
-        "../lightkube/docs/resources-and-models.md",
+        DEFAULT_DOCS,
         "--docs",
         "-d",
         help="Path to documentation file",
     ),
-    max_versions: int = typer.Option(
-        16, "--max-versions", "-m", help="Maximum number of versions to keep"
-    ),
+    max_versions: int = MAX_VERSIONS_OPT,
 ) -> None:
     """Update documentation file with new version link and maintain only last N versions."""
     docs_file = update_docs_versions(version, docs_path, max_versions)
@@ -456,16 +390,11 @@ def update_docs(
 
 @app.command(name="update-readme")
 def update_readme(
-    version: str = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)"),
+    version: str = VERSION_ARG,
     readme_path: str = typer.Option(
-        "../lightkube/README.md",
-        "--readme",
-        "-r",
-        help="Path to README file",
+        DEFAULT_README, "--readme", "-r", help="Path to README file"
     ),
-    max_versions: int = typer.Option(
-        16, "--max-versions", "-m", help="Maximum number of versions to keep"
-    ),
+    max_versions: int = MAX_VERSIONS_OPT,
 ) -> None:
     """Update README file with new version range."""
     readme_file = update_readme_versions(version, readme_path, max_versions)
@@ -474,16 +403,11 @@ def update_readme(
 
 @app.command(name="cleanup-site")
 def cleanup_site(
-    version: str = typer.Argument(..., help="Kubernetes version (format X.Y.Z)"),
+    version: str = VERSION_ARG,
     site_path: str = typer.Option(
-        "site",
-        "--site",
-        "-s",
-        help="Path to site directory",
+        DEFAULT_SITE, "--site", "-s", help="Path to site directory"
     ),
-    max_versions: int = typer.Option(
-        16, "--max-versions", "-m", help="Maximum number of version directories to keep"
-    ),
+    max_versions: int = MAX_VERSIONS_OPT,
 ) -> None:
     """Clean up old version directories in site folder."""
     site_dir = cleanup_site_dirs(version, site_path, max_versions)
