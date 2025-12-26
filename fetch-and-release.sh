@@ -75,15 +75,23 @@ fi
 
 # 3. Update documentation
 echo ""
-echo "Step 3/3: Updating documentation..."
+echo "Updating documentation..."
 $PYTHON -m lightkube-generate.fetch update-docs "$VERSION"
 if [ $? -ne 0 ]; then
     echo "Failed to update docs"
     exit 1
 fi
 
+# 4. Update README file
+echo ""
+echo "Updating README..."
+$PYTHON -m lightkube-generate.fetch update-readme "$VERSION"
+if [ $? -ne 0 ]; then
+    echo "Failed to update readme"
+    exit 1
+fi
 
-# 4. Execute release script
+# 5. Execute release script
 bash release.sh "$VERSION"
 if [ $? -ne 0 ]; then
     echo "Release script failed"

@@ -254,6 +254,69 @@ def update_docs_versions(
     return docs_file
 
 
+def update_readme_versions(
+    version: str,
+    readme_path: str = "../lightkube/README.md",
+    max_versions: int = 16,
+) -> Path:
+    """Update README file with new version range.
+
+    Args:
+        version: New Kubernetes version to add (format X.Y.Z)
+        readme_path: Path to the README markdown file
+        max_versions: Maximum number of versions to keep (default: 16)
+
+    Returns:
+        Path to the updated README file
+
+    Raises:
+        ValueError: If version format is invalid
+        FileNotFoundError: If README file doesn't exist
+    """
+    # Validate version format
+    if not re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
+        raise ValueError(f"Version {version} must match expression \\d+.\\d+.\\d")
+
+    readme_file = Path(readme_path)
+    if not readme_file.exists():
+        raise FileNotFoundError(f"README file not found: {readme_path}")
+
+    # Extract major.minor version
+    parts = version.split(".")
+    new_major = int(parts[0])
+    new_minor = int(parts[1])
+
+    # Calculate the oldest version to keep (max_versions - 1 versions back)
+    oldest_minor = new_minor - (max_versions - 1)
+    if oldest_minor < 0:
+        oldest_minor = 0
+
+    oldest_version_str = f"{new_major}.{oldest_minor}"
+    newest_version_str = f"{new_major}.{new_minor}"
+
+    # Read the file
+    content = readme_file.read_text()
+
+    # Pattern to find version range in README
+    # Matches: "1.20 to 1.35" or similar patterns
+    version_range_pattern = r"(\d+\.\d+)\s+to\s+(\d+\.\d+)"
+
+    def replace_version_range(match):
+        return f"{oldest_version_str} to {newest_version_str}"
+
+    # Replace the version range
+    new_content, count = re.subn(version_range_pattern, replace_version_range, content)
+
+    if count > 0:
+        readme_file.write_text(new_content)
+        print(f"Updated version range to {oldest_version_str} to {newest_version_str}")
+        print(f"Updated {readme_file}")
+    else:
+        print(f"No version range pattern found in {readme_file}")
+
+    return readme_file
+
+
 @app.command()
 def fetch(
     version: str = typer.Argument(
@@ -317,6 +380,24 @@ def update_docs(
     """Update documentation file with new version link and maintain only last N versions."""
     docs_file = update_docs_versions(version, docs_path, max_versions)
     typer.echo(f"✓ Successfully updated {docs_file}")
+
+
+@app.command(name="update-readme")
+def update_readme(
+    version: str = typer.Argument(..., help="Kubernetes version to add (format X.Y.Z)"),
+    readme_path: str = typer.Option(
+        "../lightkube/README.md",
+        "--readme",
+        "-r",
+        help="Path to README file",
+    ),
+    max_versions: int = typer.Option(
+        16, "--max-versions", "-m", help="Maximum number of versions to keep"
+    ),
+) -> None:
+    """Update README file with new version range."""
+    readme_file = update_readme_versions(version, readme_path, max_versions)
+    typer.echo(f"✓ Successfully updated {readme_file}")
 
 
 if __name__ == "__main__":
