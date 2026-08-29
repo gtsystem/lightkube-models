@@ -1,0 +1,3436 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../flowcontrol_v1/">
+      
+      
+        <link rel="next" href="../meta_v1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>lifecycle_v1alpha1 - lightkube-models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lifecycle_v1alpha1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="lightkube-models" class="md-header__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            lightkube-models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              lifecycle_v1alpha1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="lightkube-models" class="md-nav__button md-logo" aria-label="lightkube-models" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    lightkube-models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gtsystem/lightkube-models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gtsystem/lightkube-models
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Models
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apiserverinternal_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiserverinternal_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flowcontrol_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lifecycle_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lifecycle_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eviction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eviction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionpodreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionPodReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestpodreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestPodReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequeststatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequesttarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestTarget
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictiontarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionTarget
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requester
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResponderStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targetresponder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TargetResponder
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    meta_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rbac_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    runtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scheduling_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util_intstr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util_intstr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/admissionregistration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    admissionregistration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiextensions_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiextensions_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apiregistration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apiregistration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/apps_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    apps_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authentication_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authentication_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/autoscaling_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    autoscaling_v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/batch_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    batch_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/certificates_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    certificates_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1alpha2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1alpha2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/coordination_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    coordination_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/core_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    core_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/discovery_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    discovery_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/events_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    events_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/flowcontrol_apiserver_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    flowcontrol_apiserver_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/internal_apiserver_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    internal_apiserver_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/lifecycle_v1alpha1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lifecycle_v1alpha1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/networking_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networking_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/node_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    node_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/policy_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    policy_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/rbac_authorization_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rbac_authorization_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/resource_v1beta2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource_v1beta2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1alpha3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1alpha3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/scheduling_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scheduling_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storage_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storage_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/storagemigration_v1beta1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    storagemigration_v1beta1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eviction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eviction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionpodreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionPodReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestList
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestpodreference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestPodReference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequestspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequeststatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionrequesttarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionRequestTarget
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionspec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictionstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evictiontarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EvictionTarget
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requester
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responderstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResponderStatus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targetresponder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TargetResponder
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lifecycle_v1alpha1">lifecycle_v1alpha1</h1>
+<h2 id="eviction">Eviction</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>Eviction</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Eviction initiates an eviction process, which should ideally result in a
+graceful eviction of a .spec.target (e.g. termination of a pod).</p>
+<p>The evictionrequest-controller observes intents of all EvictionRequests and
+transforms them into Evictions. It manages the Eviction lifecycle. Requesters
+are preserved in .status.requesters even after they have withdrawn their
+request. If all requesters withdraw their eviction intent for a common target,
+the eviction will be canceled. Once all EvictionRequest corresponding to this
+Eviction .spec.target have been removed, this Eviction object will eventually
+be garbage collected.</p>
+<p>If the target is a pod, the .status.targetResponders is populated from Pod's
+.spec.evictionResponders.</p>
+<p>Responders should observe and communicate through the .status to help with the
+eviction of the target when they see their state == Active in
+.status.targetResponders. ResponderStatus struct should then be periodically
+updated to indicate the progress or completion of the eviction process by each
+responder in .status.responders. If .status.responders[].heartbeatTime is not
+updated within the heartbeat deadline defined by the Eviction API (currently
+20 minutes), the eviction is passed over to the next responder with a lower
+priority.</p>
+<p>If there are no other responders and the target is a pod, the last default
+imperative-eviction.k8s.io/evictor responder with a priority of 100 will evict
+the pod using the imperative Eviction API (pods/<name>/eviction subresource).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#evictionspec">EvictionSpec</a></code> - spec defines the eviction specification.
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status</a></li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - metadata is the standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a>
+  .metadata.name set by the evictionrequest-controller is purely informative and
+  subject to change. .spec.target field should be used to identify the target
+  precisesly.
+  The requester and responder names will be used as label keys and added to the
+  labels of the eviction in one of the following formats: 1. acme.io/foo:
+  "requester" 2. acme.io/foo: "responder" 3. acme.io/foo: "requester-responder"
+  Please see EvictionParticipantRole for available role label values.</li>
+<li><strong>status</strong> <code>Optional[<a href="#evictionstatus">EvictionStatus</a>]</code> - status represents the most recently observed status of the eviction. Populated
+  by responders and evictionrequest-controller. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="evictionlist">EvictionList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionList contains a list of Eviction resources.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#eviction">Eviction</a>]</code> - items is the list of Evictions.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - metadata is the standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="evictionpodreference">EvictionPodReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionPodReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionPodReference contains enough information to locate the referenced pod
+inside the same namespace.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name of the target. This field is required.</li>
+<li><strong>uid</strong> <code>str</code> - uid of the target. It can be found in .metadata.uid of the target and is a
+  lowercase UUID in 8-4-4-4-12 format. This field is required.</li>
+</ul></div>
+</div>
+<h2 id="evictionrequest">EvictionRequest</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequest</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">spec</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">status=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequest defines a request that should ideally result in a graceful
+eviction of a .spec.target (e.g. termination of a pod).</p>
+<p>The evictionrequest-controller observes intents of all EvictionRequests and
+transforms them into Evictions.
+  - .spec.requester is set as a label on the Eviction for easier lookup.
+  - Each target can have a set of responders assigned to it. Eviction objects
+are observed by
+    these responders, who implement the eviction logic and update the
+Eviction's status with
+    progress.</p>
+<p>There is many-to-many relationship between EvictionRequests and Evictions in
+general. And many-to-one if the target is a  pod.</p>
+<p>If all requesters withdraw their eviction intent for a common target, the
+eviction will be canceled. Deleting an EvictionRequest also counts as a
+withdrawal. Once all EvictionRequest of a target are removed, the
+corresponding Evictions are eventually garbage collected.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>spec</strong> <code><a href="#evictionrequestspec">EvictionRequestSpec</a></code> - spec defines the eviction request specification.
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status</a></li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#objectmeta">meta_v1.ObjectMeta</a>]</code> - metadata is the standard object metadata; <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata.">More info</a></li>
+<li><strong>status</strong> <code>Optional[<a href="#evictionrequeststatus">EvictionRequestStatus</a>]</code> - status represents the most recently observed status of the eviction request.
+  <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status">More info</a></li>
+</ul></div>
+</div>
+<h2 id="evictionrequestlist">EvictionRequestList</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequestList</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">items</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">apiVersion=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">kind=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">metadata=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequestList contains a list of EvictionRequests resources.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>items</strong> <code>List[<a href="#evictionrequest">EvictionRequest</a>]</code> - items is the list of EvictionRequests.</li>
+<li><strong>apiVersion</strong> <code>Optional[str]</code> - APIVersion defines the versioned schema of this representation of an object.
+  Servers should convert recognized schemas to the latest internal value, and
+  may reject unrecognized values. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources">More info</a></li>
+<li><strong>kind</strong> <code>Optional[str]</code> - Kind is a string value representing the REST resource this object represents.
+  Servers may infer this from the endpoint the client submits requests to.
+  Cannot be updated. In CamelCase. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">More info</a></li>
+<li><strong>metadata</strong> <code>Optional[<a href="../meta_v1/index.html#listmeta">meta_v1.ListMeta</a>]</code> - metadata is the standard list metadata. <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">More info</a></li>
+</ul></div>
+</div>
+<h2 id="evictionrequestpodreference">EvictionRequestPodReference</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequestPodReference</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">uid</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequestPodReference contains enough information to locate the
+referenced pod inside the same namespace.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name of the target. This field is required.</li>
+<li><strong>uid</strong> <code>str</code> - uid of the target. It can be found in .metadata.uid of the target and is a
+  lowercase UUID in 8-4-4-4-12 format. This field is required.</li>
+</ul></div>
+</div>
+<h2 id="evictionrequestspec">EvictionRequestSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequestSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">intent</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requester</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequestSpec is a specification of an EvictionRequest.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>intent</strong> <code>str</code> - intent specifies the action that should be taken for the specified target.</li>
+<li>Eviction means that the requester is interested in the eviction of the
+  target. - Withdrawn means that the requester is no longer interested in the
+  eviction of the target.
+    If all requesters' intents are withdrawn for a common target, the eviction
+  will be canceled.
+    Cancellation consequences:<ul>
+<li>Inactive responders will never run.</li>
+<li>Active responders are expected to cancel the eviction.</li>
+<li>Completed or Interrupted responders should not take any action.</li>
+</ul>
+</li>
+<li><strong>requester</strong> <code>str</code> - requester allows you to identify the entity, that requested the eviction of
+  the target.
+  It must be a valid domain-prefixed key (such as "acme.io/foo"). Domain names
+  <em>.k8s.io and </em>.kubernetes.io are reserved. This field is required and
+  immutable.</li>
+<li><strong>target</strong> <code><a href="#evictionrequesttarget">EvictionRequestTarget</a></code> - target contains a reference to an object (e.g. a pod) that should be evicted.
+  This field is required and immutable.</li>
+</ul></div>
+</div>
+<h2 id="evictionrequeststatus">EvictionRequestStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequestStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequestStatus represents the last observed status of the eviction
+request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - conditions contain information about the eviction request.
+  EvictionRequest specific conditions are: TargetEvicted or Failed (managed by
+  evictionrequest-controller). - Failed means that the eviction request is no
+  longer being processed
+    by any eviction responder. This can happen if the request is canceled or if
+  no responder
+    managed to evict the target (e.g. terminate or delete a pod).</li>
+<li>TargetEvicted means that the target has been evicted (e.g. a pod has been
+  terminated or deleted).
+  These conditions can be reset if the eviction was unsuccessful and a new
+  Eviction intent has been submitted.
+  The maximum length of the conditions list is 100.</li>
+<li><strong>observedGeneration</strong> <code>Optional[int]</code> - observedGeneration is EvictionRequest's .metadata.generation observed by the
+  evictionrequest-controller. The observed generation value cannot be negative
+  and can only be incremented. The minimum value is 1. This field is managed by
+  evictionrequest-controller.</li>
+</ul></div>
+</div>
+<h2 id="evictionrequesttarget">EvictionRequestTarget</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionRequestTarget</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">pod=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionRequestTarget contains a reference to an object that should be
+evicted.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>pod</strong> <code>Optional[<a href="#evictionrequestpodreference">EvictionRequestPodReference</a>]</code> - pod references a pod that is subject to eviction/termination. Pods that are
+  part of a PodGroup (.spec.schedulingGroup is set) are not supported.</li>
+</ul></div>
+</div>
+<h2 id="evictionspec">EvictionSpec</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionSpec</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">target</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionSpec is a specification of an Eviction.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>target</strong> <code><a href="#evictiontarget">EvictionTarget</a></code> - target contains a reference to an object (e.g. a pod) that should be evicted.
+  This field is required and immutable.</li>
+</ul></div>
+</div>
+<h2 id="evictionstatus">EvictionStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">conditions=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">observedGeneration=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">requesters=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">responders=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">targetResponders=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionStatus represents the last observed status of the eviction request.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>conditions</strong> <code>Optional[List[<a href="../meta_v1/index.html#condition">meta_v1.Condition</a>]]</code> - conditions contain information about the eviction request.
+  Eviction specific conditions are: TargetEvicted or Failed (managed by
+  evictionrequest-controller). - Failed means that the eviction request is no
+  longer being processed
+    by any eviction responder. This can happen if the request is canceled or if
+  no responder
+    managed to evict the target (e.g. terminate or delete a pod).</li>
+<li>TargetEvicted means that the target has been evicted (e.g. a pod has been
+  terminated or deleted).
+          The maximum length of the conditions list is 100.</li>
+<li><strong>observedGeneration</strong> <code>Optional[int]</code> - observedGeneration is Eviction's .metadata.generation observed by the
+  evictionrequest-controller. The observed generation value cannot be negative
+  and can only be incremented. The minimum value is 1. This field is managed by
+  evictionrequest-controller.</li>
+<li><strong>requesters</strong> <code>Optional[List[<a href="#requester">Requester</a>]]</code> - requesters allow you to identify the entities, that requested the eviction of
+  the target. If all the requesters withdraw their eviction intent, the eviction
+  will be canceled.
+  The maximum length of the requesters list is 100. If this limit is exceeded,
+  requesters with Withdrawn intent should be dropped first.</li>
+<li><strong>responders</strong> <code>Optional[List[<a href="#responderstatus">ResponderStatus</a>]]</code> - responders represents the eviction process status of each declared responder.
+  The responder list should be the same length and have the same .name fields as
+  .status.targetResponders. Only responders with .name that have Active state in
+  .targetResponders[].state should be updated and can be mutated. First
+  initialization of the list is allowed.
+  Each ResponderStatus is initialized by evictionrequest-controller and then
+  managed by the designated responder.</li>
+<li><strong>targetResponders</strong> <code>Optional[List[<a href="#targetresponder">TargetResponder</a>]]</code> - targetResponders reference responders that should eventually respond to this
+  eviction to help with the graceful eviction of a target. These responders are
+  selected sequentially, according to their specified priority by setting the
+  Active state to the TargetResponder .state field. The maximum number of active
+  responders allowed is 1. Eventually each responder can end up in an
+  Interrupted, Canceled or, Completed state. Responders should observe these
+  states in order to navigate their lifecycle.
+  If the target is a pod, the field is populated from Pod's
+  .spec.evictionResponders. Default responders may be added to the list
+  according to the target.
+  Default responders: - imperative-eviction.k8s.io/evictor responder with a
+  priority of 100 is added to the list if the
+    target is a pod. It will call the imperative Eviction API
+  (pods/<name>/eviction subresource).
+    This call may not succeed due to PodDisruptionBudgets, which may block the
+  pod termination.
+    It will update the responder message and try again with a backoff.
+  The maximum length of the responders list is 11. The length and keys of the
+  list cannot change once set. This field is managed by
+  evictionrequest-controller.</li>
+</ul></div>
+</div>
+<h2 id="evictiontarget">EvictionTarget</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>EvictionTarget</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">pod=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>EvictionTarget contains a reference to an object that should be evicted.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>pod</strong> <code>Optional[<a href="#evictionpodreference">EvictionPodReference</a>]</code> - pod references a pod that is subject to eviction/termination. Pods that are
+  part of a PodGroup (.spec.schedulingGroup is set) are not supported.</li>
+</ul></div>
+</div>
+<h2 id="requester">Requester</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>Requester</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">intent</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">name</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>Requester allows you to identify the entity, that requested the eviction of
+the target.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>intent</strong> <code>str</code> - intent specifies the action that should be taken for the specified target.</li>
+<li>Eviction means that the requester is interested in the eviction of the
+  target. - Withdrawn means that the requester is no longer interested in the
+  eviction of the target.
+    If all requesters' intents are withdrawn, the eviction will be canceled.
+    Cancellation consequences:<ul>
+<li>Inactive responders will never run.</li>
+<li>Active responders are expected to cancel the eviction.</li>
+<li>Completed or Interrupted responders should not take any action.</li>
+</ul>
+</li>
+<li><strong>name</strong> <code>str</code> - name allows you to identify the entity, that requested the eviction of the
+  target.
+  It must be a valid domain-prefixed key (such as "acme.io/foo"). This field
+  must be unique for each requester. This field is required.</li>
+</ul></div>
+</div>
+<h2 id="responderstatus">ResponderStatus</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>ResponderStatus</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">completionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">expectedCompletionTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">heartbeatTime=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">message=None</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">startTime=None</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>ResponderStatus represents the last observed status of the eviction process of
+the responder. It should be only updated by the designated responder whose
+name is .name field.</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name allows you to identify the responder reacting to the Eviction.
+  It must be a valid domain-prefixed key (such as "acme.io/foo"). This field is
+  initialized by Kubernetes and must be unique for each responder. This field is
+  required.</li>
+<li><strong>completionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - completionTime tracks the time at which the Responder stopped processing the
+  eviction request. Completion means that the responders has either fully or
+  partially completed the eviction process, which may have resulted in target
+  eviction (e.g. pod termination). It should reflect the present time when set.
+  This field becomes immutable once set.</li>
+<li><strong>expectedCompletionTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - expectedCompletionTime is the time at which the eviction process step is
+  expected to end for the responder. The time cannot be set to the past. May be
+  omitted if no estimate can be made.</li>
+<li><strong>heartbeatTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - heartbeatTime is the last time at which the eviction process was reported to
+  be in progress by the responder. It should reflect the present time when set.
+  Responders should avoid heartbeats more frequent than 20 seconds to avoid
+  overloading the control-plane.</li>
+<li><strong>message</strong> <code>Optional[str]</code> - message provides human-readable details about the state of the responder and
+  the eviction process. Maximum length is 4000 characters.</li>
+<li><strong>startTime</strong> <code>Optional[<a href="../meta_v1/index.html#time">meta_v1.Time</a>]</code> - startTime tracks the time at which this responder was designated as active and
+  should start processing the eviction request. It should reflect the present
+  time when set. This field is initialized by Kubernetes when this responder
+  becomes active. This field becomes immutable once set.</li>
+</ul></div>
+</div>
+<h2 id="targetresponder">TargetResponder</h2>
+<div class="autodoc">
+<div class="autodoc-signature"><em>class </em><code>lightkube.models.lifecycle_v1alpha1.<strong>TargetResponder</strong></code><span class="autodoc-punctuation">(</span><em class="autodoc-param">name</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">priority</em><span class="autodoc-punctuation">, </span><em class="autodoc-param">state</em><span class="autodoc-punctuation">)</span></div>
+<div class="autodoc-docstring"><p>TargetResponder allows you to specify the responder reacting to the Eviction.
+Responders should observe and communicate through the Eviction API (see
+.state) to help with the graceful eviction of a target (e.g. termination of a
+pod).</p>
+<p><strong>parameters</strong></p>
+<ul>
+<li><strong>name</strong> <code>str</code> - name allows you to identify the responder reacting to the Eviction.
+  It must be a valid domain-prefixed key (such as "acme.io/foo"). This field
+  must be unique for each responder. This field is required.</li>
+<li><strong>priority</strong> <code>int</code> - priority for this responder. Higher priorities are selected first by the
+  evictionrequest-controller. If there are responders with the same priority,
+  the responder whose domain name comes first in the alphabetical higher domain
+  order, will be picked. This means that the top domain labels are compared
+  alphabetically first, followed by the lower domain labels. The key is compared
+  last.
+  The responder that is the managing controller of the pod should set the value
+  of this field to 10000 to allow both for preemption or fallback registration
+  by other responders.
+  The minimum value is 0 and the maximum value is 100000. The interval 0-999 is
+  reserved for responders with *.k8s.io suffix. This field is required and
+  immutable.</li>
+<li><strong>state</strong> <code>str</code> - state specifies a state that is assigned by the evictionrequest-controller.
+  Responders should observe this state in order to navigate their lifecycle. -
+  Inactive means that the responder should not yet process this eviction
+  request. - Active means that the responder is either running or expected to
+  start soon.
+    Also, startTime has been set in the ResponderStatus by the
+  evictionrequest-controller.
+    An active responder should currently interact with the eviction process by
+  updating
+    .status.responders, where .name is the active responder name.
+  ResponderStatus fields
+    should be periodically updated to indicate the progress or completion of the
+  eviction process.
+    If .status.responders[].heartbeatTime field is not updated within the
+  heartbeat deadline defined
+    by the Eviction API (currently 20 minutes), the eviction is passed over to
+  the next responder
+           with a lower priority. Only one responder can be active at a time.</li>
+<li>Interrupted means that the responder has failed to start or failed to update
+    heartbeatTime in ResponderStatus in a timely manner.</li>
+<li>Canceled means that the responder has been canceled. In other words, there
+  is no
+    EvictionRequest with the same target and Eviction intent in .spec.intent.</li>
+<li>Completed means that the responder has successfully completed and set
+  completionTime
+    in ResponderStatus.
+  Please refer to the ResponderStatus in .status.responders for more details on
+  each responder.</li>
+</ul></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
